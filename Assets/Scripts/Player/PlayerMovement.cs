@@ -1,26 +1,36 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Animator anim;
-    [SerializeField] float TurnSpeed = 15;
-    Camera mainCamera;
-
-    void Start()
-    {
-        mainCamera = Camera.main;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-    }
+    [SerializeField] CinemachineFreeLook camara;
+    [SerializeField] float Aim = 15, normalView = 40;
 
     void Update()
     {
+        if (Input.GetMouseButton(1))
+        {
+            camara.m_Lens.FieldOfView = Aim;
+            anim.SetBool("Aiming", true);
+            anim.SetBool("Running", false);
+        }
+        else if (Input.GetButton("Fire3"))
+        {
+            camara.m_Lens.FieldOfView = normalView;
+            anim.SetBool("Running", true);
+            anim.SetBool("Aiming", false);
+        }
+        else
+        {
+            camara.m_Lens.FieldOfView = normalView;
+            anim.SetBool("Running", false);
+            anim.SetBool("Aiming", false);
+        }
         anim.SetFloat("vertical", Input.GetAxis("Vertical"));
         anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
-
-        float yawCamera = mainCamera.transform.rotation.eulerAngles.y;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yawCamera, 0), TurnSpeed * Time.fixedDeltaTime);
     }
 }
