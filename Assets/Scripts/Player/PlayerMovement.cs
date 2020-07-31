@@ -14,28 +14,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
         {
-            if (camara.m_Lens.FieldOfView > Aim)
-            {
-                camara.m_Lens.FieldOfView -= Time.time;
-            }
+            camara.m_Lens.FieldOfView = Aim;
             anim.SetBool("Aiming", true);
             anim.SetBool("Running", false);
         }
         else if (Input.GetButton("Fire3"))
         {
-            if (camara.m_Lens.FieldOfView < normalView)
-            {
-                camara.m_Lens.FieldOfView += Time.time;
-            }
+            camara.m_Lens.FieldOfView = normalView;
             anim.SetBool("Running", true);
             anim.SetBool("Aiming", false);
         }
         else
         {
-            if (camara.m_Lens.FieldOfView < normalView)
-            {
-                camara.m_Lens.FieldOfView += Time.time;
-            }
+            camara.m_Lens.FieldOfView = normalView;
             anim.SetBool("Running", false);
             anim.SetBool("Aiming", false);
         }
