@@ -16,12 +16,12 @@ public class PauseSystem : MonoBehaviour
     {
         if (IsPaused)
         {
-            PauseMenu.SetActive(true);
+            //PauseMenu.SetActive(true);
             Time.timeScale = 0f;
         }
         else
         {
-            PauseMenu.SetActive(false);
+            //PauseMenu.SetActive(false);
             Time.timeScale = 1f;
         }
         if (Input.GetKeyDown(KeyCode.Escape))
