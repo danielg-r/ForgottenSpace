@@ -14,13 +14,13 @@ public class Interactable : MonoBehaviour
 
     void Awake()
     {
-        //text = GameObject.Find("InteractionText").GetComponent<TextMeshProUGUI>();
+        //text = GetComponentInChildren<TextMeshProUGUI>();
         text.text = "";    
     }
 
     void LateUpdate()
     {
-        if (isInRange)
+        if (isInRange && text != null)
         {
             if (Input.GetKeyDown(interactKey))
             {
@@ -32,15 +32,15 @@ public class Interactable : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && text != null)
         {
             isInRange = true;
-            text.text = "Presiona '"+interactKey+"' para "+interactAction;
+            text.text = "'"+interactKey+"' para "+interactAction;
         }        
     }
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && text != null)
         {
             isInRange = false;
             text.text = "";
