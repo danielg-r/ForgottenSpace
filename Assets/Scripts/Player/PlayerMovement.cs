@@ -2,14 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Player player;
     [SerializeField] Animator anim;
     [SerializeField] CinemachineFreeLook camara;
-    [SerializeField] float Aim = 15, normalView = 40;
+    [SerializeField] float Aim = 15f, normalView = 40f;
 
     public float stamina = 5f;
     public float maxStamina = 5f;    
