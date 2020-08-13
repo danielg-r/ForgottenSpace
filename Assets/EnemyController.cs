@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] float lookRadius = 5f;
-    [SerializeField] PlayerMovement player;
+    //[SerializeField] PlayerMovement player;
 
     NavMeshAgent agent;
     EnemyState state;
@@ -14,7 +14,6 @@ public class EnemyController : MonoBehaviour
     Rigidbody rb;
     //protected Enemy enemy;
     [SerializeField] protected Transform target;
-    //[SerializeField] protected Transform lastPatrolpoint;
     //[SerializeField] protected int patrolwaitSeconds;
     [SerializeField] float followDistance = 8f, attackDistance = 2f;
 
@@ -28,7 +27,7 @@ public class EnemyController : MonoBehaviour
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         //enemy = GetComponent<Enemy>();
-        //FindTarget();
+        FindTarget();
         state = EnemyState.Wander;
         animator.SetFloat("Speed", 0.2f); 
         lastPosition = transform.position;       
@@ -58,6 +57,7 @@ public class EnemyController : MonoBehaviour
     //     }
     // }
 
+    #region PathfindingLogic
     public void Patrol()
     {
         //FindTarget();
@@ -66,6 +66,7 @@ public class EnemyController : MonoBehaviour
         {
             default:
             case EnemyState.Wander:
+                Debug.Log("Enemy Wandering");
                 animator.SetBool("Attack",  false);
                 if (distance < followDistance && target != null)
                 {
@@ -74,6 +75,7 @@ public class EnemyController : MonoBehaviour
                 break;
             
             case EnemyState.Chase:
+                Debug.Log("Enemy Chasing");
                 animator.SetFloat("Speed", 1f);
                 animator.SetBool("Attack",  false);
                 agent.SetDestination(target.position);
@@ -83,6 +85,7 @@ public class EnemyController : MonoBehaviour
                 break;
             
             case EnemyState.BackToStart:
+                Debug.Log("Enemy Back to Start");
                 animator.SetBool("Attack",  false);
                 agent.SetDestination(lastPosition);
                 agent.stoppingDistance = 0.1f; 
@@ -93,20 +96,24 @@ public class EnemyController : MonoBehaviour
                 }
             break;
             case EnemyState.Attack:
-            //enemy.Attack();
-            if (distance > attackDistance) state = EnemyState.Chase;
+                //enemy.Attack();
+                Debug.Log("Enemy Attacking");
+                if (distance > attackDistance) state = EnemyState.Chase;
             break;
         }        
     }
 
-    // public void FindTarget()
-    // {        
-    //     if (PlayerMovement.Instance != null && PlayerMovement.Instance.canBeChased)
-    //     {
-    //         target = PlayerMovement.Instance.transform;
-    //     }
-    //     else {return;}
-    // }
+    public void FindTarget()
+    {        
+        if (Player.Instance != null)
+        {
+            target = Player.Instance.transform;
+        }
+        else {return;}
+    }
+
+    #endregion
+
 }
 
 public enum EnemyState
