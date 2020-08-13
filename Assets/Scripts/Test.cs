@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    [SerializeField] GameObject timeline; 
-    void OnTriggerEnter(Collider other)
+
+    void Update()
     {
-       if(other.gameObject.CompareTag("Player"))
-       {
-           timeline.SetActive(true);
-       } 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.P))
+        {
+            Time.timeScale = 1f;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
+
+
 }

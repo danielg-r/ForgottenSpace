@@ -9,13 +9,15 @@ public class Interactable : MonoBehaviour
     public bool isInRange;
     public KeyCode interactKey;
     public UnityEvent OnInteract;
-    [SerializeField] string interactAction;
+    //[SerializeField] string interactAction;
     [SerializeField] TextMeshProUGUI text;
+    Color green = new Color(0f, 255f, 0f);
 
     void Awake()
     {
         //text = GetComponentInChildren<TextMeshProUGUI>();
-        text.text = "";    
+        text.text = ""; 
+        text.color = green;   
     }
 
     void LateUpdate()
@@ -24,7 +26,7 @@ public class Interactable : MonoBehaviour
         {
             if (Input.GetKeyDown(interactKey))
             {
-                OnInteract.Invoke();
+                OnInteract.Invoke();                
                 text.text = "";
             }
         }        
@@ -35,7 +37,7 @@ public class Interactable : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && text != null)
         {
             isInRange = true;
-            text.text = "'"+interactKey+"' para "+interactAction;
+            text.text = "["+interactKey+"]";
         }        
     }
     void OnTriggerExit(Collider other)
