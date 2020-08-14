@@ -8,9 +8,9 @@ public class InventaryManager : MonoBehaviour
     private float duration = 5f;
 
     public int coin { get; private set; }
-    public int cooldown { get; private set; }
-    public int lifeRegen { get; private set; }
-    public int runCooldown { get; private set; }
+    public int itemcooldown { get; private set; }
+    public int itemlifeRegen { get; private set; }
+    public int itemRunCooldown { get; private set; }
 
     public bool staminaBust = false;
     [SerializeField] Player player;
@@ -47,29 +47,29 @@ public class InventaryManager : MonoBehaviour
     {
         staminaBust = true;
         t1 = 0f;
-        cooldown--;        
+        itemcooldown--;        
     }
     public void RecolectCooldown(int _coldown)
     {
-        cooldown += _coldown;
+        itemcooldown += _coldown;
     }
     //---------------------
     public void UseLifeRegen()
     {
-        lifeRegen--;
+        itemRunCooldown--;
     }
     public void RecolectLifeRegen(int _liferegen)
     {
-        lifeRegen += _liferegen;
+        itemlifeRegen += _liferegen;
     }
     //----------------------
     public void UseRunning()
     {
-        runCooldown--;
+        itemRunCooldown--;
     }
     public void RecolectRunning(int _runCooldown)
     {
-        runCooldown += _runCooldown;
+        itemRunCooldown += _runCooldown;
     }
     #endregion
 
@@ -80,14 +80,19 @@ public class InventaryManager : MonoBehaviour
         {
             coin = 99;
         }
-        if (cooldown > 5)
+        if (itemcooldown > 5)
         {
-            cooldown = 5;
+            itemcooldown = 5;
         }
-        if (lifeRegen > 5)
+        if (itemlifeRegen > 5)
         {
-            lifeRegen = 5;
+            itemlifeRegen = 5;
         }
+        if (itemRunCooldown > 5)
+        {
+            itemRunCooldown = 5;
+        }
+
 
     }
 
