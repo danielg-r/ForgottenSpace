@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Coin : MonoBehaviour
-{    
-
-    [SerializeField] Player player;
-    float speed;
+{
+    [SerializeField] Player player; // = Player.Instance;
+    float speed = 8f;
     float distance;
 
     public bool Inter = false;
@@ -28,7 +27,6 @@ public class Coin : MonoBehaviour
                 //Destroy(this.gameObject);        
             } 
         }
-
     }
 
     void OnTriggerStay(Collider other)
@@ -37,13 +35,13 @@ public class Coin : MonoBehaviour
             {
                 other.GetComponent<InventaryManager>().RecolectCoin(1);
                 Destroy(this.gameObject);
-            } 
-        
+            }         
     }
 
     public void Atrract()
     {
         Inter = true;
+        
     }
 
 }
