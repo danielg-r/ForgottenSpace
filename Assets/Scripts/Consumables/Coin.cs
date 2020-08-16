@@ -35,7 +35,7 @@ public class Coin : MonoBehaviour
     {        
             if (other.gameObject.CompareTag("Player") && Inter == true)
             {
-                other.GetComponent<InventaryManager>().RecolectCoin(1);
+                //other.GetComponent<InventaryManager>().RecolectCoin(1);
                 Destroy(this.gameObject);
             } 
         
