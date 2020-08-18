@@ -3778,7 +3778,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508281849}
-  m_LocalRotation: {x: -0.0012088999, y: -0.0000000025876419, z: -3.128204e-12, w: 0.9999993}
+  m_LocalRotation: {x: -0.0012088999, y: 0.0000000019357165, z: 2.3400856e-12, w: 0.9999993}
   m_LocalPosition: {x: 0.5, y: 1.7410877, z: -3.9490542}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8769,7 +8769,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067080942359689155}
-  m_LocalRotation: {x: 0.044114605, y: 0.000000017189631, z: -7.5905265e-10, w: 0.9990265}
+  m_LocalRotation: {x: 0.044114623, y: -0.000000017189631, z: 7.59053e-10, w: 0.9990265}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8843,7 +8843,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067080942559031404}
-  m_LocalRotation: {x: -0.025436653, y: -0.0000000032251528, z: -8.206365e-11, w: 0.99967647}
+  m_LocalRotation: {x: -0.025436653, y: 0.000000003225152, z: 8.206363e-11, w: 0.99967647}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9210,7 +9210,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067080943085822501}
-  m_LocalRotation: {x: 0.009175482, y: -4.358772e-26, z: 6.706489e-27, w: 0.9999579}
+  m_LocalRotation: {x: 0.009175481, y: 3.1371397e-17, z: -4.3013146e-19, w: 0.9999579}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -35830,6 +35830,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: ba7a33da207eabc4d8abf681521c54fe, type: 2}
+        m_MethodName: AddCurrency
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

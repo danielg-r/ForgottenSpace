@@ -43,19 +43,19 @@ public class InventoryManager : MonoBehaviour
 
     //public void OnTriggerEnter(Collider other) //Interaction test.
     //{
-        //if (other.gameObject.GetComponent<Item>())
-        //{
-        //    GameObject pickedItem = other.gameObject;
-            
-        //    int it = other.gameObject.GetComponent<Item>().type;
-        //    AddItem(pickedItem, it);
-            
-        //}
-        //if (other.gameObject.GetComponent<Currency>())
-        //{
-        //    int curr = other.gameObject.GetComponent<Currency>().currencyAmount;
-        //    AddCurrency(curr);
-        //}
+    //    if (other.gameObject.GetComponent<Item>())
+    //    {
+    //        GameObject pickedItem = other.gameObject;
+
+    //        int it = other.gameObject.GetComponent<Item>().type;
+    //        AddItem(pickedItem, it);
+
+    //    }
+    //    if (other.gameObject.GetComponent<Currency>())
+    //    {
+    //        int curr = other.gameObject.GetComponent<Currency>().currencyAmount;
+    //        AddCurrency(curr);
+    //    }
     //}
 
     //public void OnTriggerExit(Collider other)

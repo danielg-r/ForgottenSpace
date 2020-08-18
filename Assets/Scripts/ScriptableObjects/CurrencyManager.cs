@@ -7,7 +7,7 @@ public class CurrencyManager : ScriptableObject
 {
     public void AddCurrency(int amount)
     {
-        //Instancia del inventario += amount
+        InventoryManager.Instance.currentCurrency += amount;
         //Sonido (?)
     }
 }
