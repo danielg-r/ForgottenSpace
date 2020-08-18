@@ -37,14 +37,14 @@ public class PlayerLife : MonoBehaviour
 
     public void TakeDagame(int amount)
     {
-        if (currentLife - amount/100 <= 1)
+        if (currentLife + amount/100 <= 1)
         {
             currentLife += amount;
             vig.intensity.value = currentLife;
 
             if (regen != null)
                 StopCoroutine(regen);
-            regen = StartCoroutine(regenStamina());
+            regen = StartCoroutine(regenLife());
         }
         else
         {
@@ -52,7 +52,7 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-    IEnumerator regenStamina()
+    IEnumerator regenLife()
     {
         yield return new WaitForSeconds(waitToRegen);
 

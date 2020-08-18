@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     //Este codigo esta muy desordenado, meper d0nas
+        //ÑO... pirata :p
     //[SerializeField] float lookRadius = 5f;
     //[SerializeField] PlayerMovement player;
 
@@ -80,7 +81,7 @@ public class EnemyController : MonoBehaviour
                 }
             break;
             case EnemyState.Attack:
-                //enemy.Attack();
+                //Attack();
                 agent.isStopped = true;
                 animator.SetBool("IsWalking",  false);
                 animator.SetInteger("attackSelector", Random.Range(0,2));
@@ -95,7 +96,7 @@ public class EnemyController : MonoBehaviour
     {        
         if (Player.Instance != null)
         {
-            target = Player.Instance.transform;
+            target = PlayerLife.Instance.transform;
         }
         else {return;}
     }
@@ -127,7 +128,7 @@ public class EnemyController : MonoBehaviour
 
     void Attack()
     {
-        //Llamar al TakeDamage() del jugador o lo que sea xd
+        PlayerLife.Instance.TakeDagame(20); //de min 0 a 100 max
     }
 
     void StopAttack()
