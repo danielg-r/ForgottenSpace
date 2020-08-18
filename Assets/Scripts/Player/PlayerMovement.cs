@@ -6,15 +6,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement Instance { get; private set; }
-    [SerializeField] Player player;
     [SerializeField] Animator anim;
     [SerializeField] CinemachineFreeLook camara;
     [SerializeField] float Aim = 15f, normalView = 40f;
+    [SerializeField] int AmountStamina = 1;
     public bool CanAim;
     public bool Aiming;
-
-    public float stamina = 5f;
-    public float maxStamina = 5f;
+    public bool CanRun;
+    [SerializeField] StaminaBar Bar;
 
     void Awake()
     {
@@ -30,8 +29,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Start()
     {
-        player = Player.Instance;
         CanAim = true;
+        CanRun = true;
     }
     void Update()
     {
@@ -42,21 +41,16 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("Running", false);
             Aiming = true;
         }
-        else if (Input.GetButton("Fire3") && stamina > 0f)
+        else if (Input.GetButton("Fire3") && CanRun)
         {
             camara.m_Lens.FieldOfView = normalView;
             anim.SetBool("Running", true);
             anim.SetBool("Aiming", false);
-            stamina -= Time.deltaTime;
             Aiming = false;
+            Bar.UseStamina(AmountStamina);
         }
         else
         {
-            if(stamina < maxStamina)
-            {
-                stamina += Time.deltaTime;
-            }
-            
             camara.m_Lens.FieldOfView = normalView;
             anim.SetBool("Running", false);
             anim.SetBool("Aiming", false);
@@ -65,5 +59,14 @@ public class PlayerMovement : MonoBehaviour
 
         anim.SetFloat("vertical", Input.GetAxis("Vertical"));
         anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
+    }
+
+    public void NoStamina()
+    {
+        CanRun = false;
+    }
+    public void HasStamina()
+    {
+        CanRun = true;
     }
 }

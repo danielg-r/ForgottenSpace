@@ -11,43 +11,43 @@ namespace SciFiArsenal
         [SerializeField] float speed = 1000;
         [SerializeField] GameObject projectil;
         bool CanShoot;
-        [SerializeField] float Cooldown;
-        float nextTime;
         PlayerMovement playerMovement;
+        [SerializeField] StaminaBar Bar;
+        [SerializeField] int AmountEnergy;
 
         private void Start()
         {
             playerMovement = PlayerMovement.Instance;
+            CanShoot = true;
         }
 
         void Update()
         {
             if (playerMovement.Aiming)
             {
-                if (CanShoot)
+                if (Input.GetKeyDown(KeyCode.Mouse0) && CanShoot)
                 {
-                    if (Input.GetKeyDown(KeyCode.Mouse0))
+                    Bar.UseStamina(AmountEnergy);
+                    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100f))
                     {
-
-                        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100f))
-                        {
-                            GameObject projectile = Instantiate(projectil, spawnPosition.position, Quaternion.identity) as GameObject;
-                            projectile.transform.LookAt(hit.point);
-                            projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * speed);
-                            projectile.GetComponent<SciFiProjectileScript>().impactNormal = hit.normal;
-                        }
-                        CanShoot = false;
-                        nextTime = Time.time + Cooldown;
+                        GameObject projectile = Instantiate(projectil, spawnPosition.position, Quaternion.identity) as GameObject;
+                        projectile.transform.LookAt(hit.point);
+                        projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * speed);
+                        projectile.GetComponent<SciFiProjectileScript>().impactNormal = hit.normal;
                     }
-                } 
-            }
-
-            if (Time.time >= nextTime)
-            {
-                CanShoot = true;
+                }
             }
 
             Debug.DrawRay(Camera.main.ScreenPointToRay(Input.mousePosition).origin, Camera.main.ScreenPointToRay(Input.mousePosition).direction * 100, Color.yellow);
+        }
+
+        public void NoEnergy()
+        {
+            CanShoot = false;
+        }
+        public void HasEnergy()
+        {
+            CanShoot = true;
         }
     }
 }
