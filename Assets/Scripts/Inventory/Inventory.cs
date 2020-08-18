@@ -8,12 +8,27 @@ public class Inventory : MonoBehaviour
     [SerializeField] GameObject invCamera;
     //[SerializeField] GameObject playerCamera;
 
+    //private int freeSlotAmount;
+    //private GameObject[] slots;
+
+    private AudioManager audio;
+
 
     bool isOpen;
 
     void Awake()
     {
+        //if (Instance == null)
+        //{
+        //    Instance = this;
+        //}
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
 
+        //freeSlotAmount = inventory.transform.childCount;
+        //DetectSlots();
     }
 
 
@@ -23,6 +38,7 @@ public class Inventory : MonoBehaviour
         {
             isOpen = !isOpen;
             OpenInventory();
+            //audio.Play("Test");
         }
     }
 
@@ -30,6 +46,17 @@ public class Inventory : MonoBehaviour
     {
         //FreezeGame();
     }
+
+    //public void OnTriggerEnter(Collider other)
+    //{
+        
+    //}
+
+    //public void AddItem(GameObject item)
+    //{
+
+    //}
+
 
     void OpenInventory()
     {
@@ -76,4 +103,9 @@ public class Inventory : MonoBehaviour
     {
         
     }
+
+    //void DetectSlots()
+    //{
+
+    //}
 }
