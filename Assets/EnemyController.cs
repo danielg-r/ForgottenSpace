@@ -5,19 +5,20 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] float lookRadius = 5f;
+    //Este codigo esta muy desordenado, meper d0nas
+    //[SerializeField] float lookRadius = 5f;
     //[SerializeField] PlayerMovement player;
 
     NavMeshAgent agent;
     EnemyState state;
     Animator animator;
     Rigidbody rb;
-    //protected Enemy enemy;
     [SerializeField] protected Transform target;
-    //[SerializeField] protected int patrolwaitSeconds;
     [SerializeField] float followDistance = 8f, attackDistance = 2f;
 
     float distance;
+    [SerializeField] int lives;
+    [SerializeField] int deathTimer;
 
     Vector3 lastPosition;
 
@@ -29,33 +30,13 @@ public class EnemyController : MonoBehaviour
         //enemy = GetComponent<Enemy>();
         FindTarget();
         state = EnemyState.Wander;
-        animator.SetFloat("Speed", 0.2f); 
         lastPosition = transform.position;       
     }
 
     void Update()
     { 
-        Patrol();      
+        Patrol();    
     }
-
-    // IEnumerator PatrolWait ()
-    // {
-    //     animator.SetFloat("Speed", 0f);
-    //     Debug.Log("Conteo iniciado");
-    //     path.Pause();
-    //     yield return new WaitForSeconds(patrolwaitSeconds);
-    //     path.Play();
-    //     animator.SetFloat("Speed", 0.2f);
-    // }
-
-    // void MyCallback(int waypointIndex)
-    // {
-    //     if (waypointIndex >= 0)
-    //     {
-    //         Debug.Log("Iniciando conteo");
-    //         StartCoroutine(PatrolWait());
-    //     }
-    // }
 
     #region PathfindingLogic
     public void Patrol()
@@ -77,9 +58,10 @@ public class EnemyController : MonoBehaviour
             case EnemyState.Chase:
                 Debug.Log("Enemy Chasing");
                 animator.SetFloat("Speed", 1f);
-                animator.SetBool("Attack",  false);
+                animator.SetBool("IsWalking",  true);
                 agent.SetDestination(target.position);
-                agent.stoppingDistance = 1f;
+                agent.isStopped = false;
+                agent.stoppingDistance = 1.8f;
                 if (distance < attackDistance) state = EnemyState.Attack;
                 else if (distance > followDistance) state = EnemyState.BackToStart;
                 break;
@@ -92,11 +74,17 @@ public class EnemyController : MonoBehaviour
                 if (Vector3.Distance(transform.position, lastPosition) < 0.5f)
                 {
                     animator.SetFloat("Speed", 0.2f);
+                    animator.SetBool("IsWalking", false);
+
                     state = EnemyState.Wander;
                 }
             break;
             case EnemyState.Attack:
                 //enemy.Attack();
+                agent.isStopped = true;
+                animator.SetBool("IsWalking",  false);
+                animator.SetInteger("attackSelector", Random.Range(0,2));
+                animator.SetBool("Attack", true);
                 Debug.Log("Enemy Attacking");
                 if (distance > attackDistance) state = EnemyState.Chase;
             break;
@@ -114,6 +102,38 @@ public class EnemyController : MonoBehaviour
 
     #endregion
 
+    void Die()
+    {
+        animator.SetBool("IsDead", true);
+        lives--;
+        if (lives > 0) StartCoroutine("DeathTimer");
+        else 
+        {
+            agent.enabled = false;
+            //Desactivar colliders etc
+            this.enabled = false; 
+        }
+    }
+
+    IEnumerator DeathTimer()
+    {
+        agent.enabled = false;
+        yield return new WaitForSeconds(deathTimer);
+        animator.SetBool("IsDead", false);
+        animator.SetTrigger("GetUp");
+        agent.enabled = true;
+        state = EnemyState.Wander;
+    }
+
+    void Attack()
+    {
+        //Llamar al TakeDamage() del jugador o lo que sea xd
+    }
+
+    void StopAttack()
+    {
+        animator.SetBool("Attack", false);
+    }
 }
 
 public enum EnemyState

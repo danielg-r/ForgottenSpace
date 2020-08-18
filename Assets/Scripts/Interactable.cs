@@ -11,13 +11,16 @@ public class Interactable : MonoBehaviour
     public UnityEvent OnInteract;
     //[SerializeField] string interactAction;
     [SerializeField] TextMeshProUGUI text;
+    [SerializeField] int currencyAmount;
     Color green = new Color(0f, 255f, 0f);
+    InventoryManager inventory;
 
     void Awake()
     {
         //text = GetComponentInChildren<TextMeshProUGUI>();
         text.text = ""; 
-        text.color = green;   
+        text.color = green;
+        inventory = GetComponent<InventoryManager>();
     }
 
     void LateUpdate()
@@ -28,6 +31,7 @@ public class Interactable : MonoBehaviour
             {
                 OnInteract.Invoke();                
                 text.text = "";
+                //inventory.AddCurrency(currencyAmount);
             }
         }        
     }
