@@ -17,6 +17,9 @@ public class PlayerLife : MonoBehaviour
     WaitForSeconds regenTick = new WaitForSeconds(0.1f);
     Coroutine regen;
 
+    public delegate void OnPlayerDied();
+    public event OnPlayerDied onPlayerDied;
+
     void Awake()
     {
         if (Instance == null)
@@ -37,7 +40,7 @@ public class PlayerLife : MonoBehaviour
 
     public void TakeDagame(int amount)
     {
-        if (currentLife + amount/100 <= 1)
+        if (currentLife + amount / 100 <= 1)
         {
             currentLife += amount;
             vig.intensity.value = currentLife;
@@ -48,7 +51,10 @@ public class PlayerLife : MonoBehaviour
         }
         else
         {
-            //se hace el muertito
+            if (onPlayerDied != null)
+            {
+                onPlayerDied();
+            }
         }
     }
 
