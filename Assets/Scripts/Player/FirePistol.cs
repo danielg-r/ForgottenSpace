@@ -18,7 +18,7 @@ namespace SciFiArsenal
         private void Start()
         {
             playerMovement = PlayerMovement.Instance;
-            CanShoot = true;
+            CanShoot = true; 
         }
 
         void Update()

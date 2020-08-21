@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnergyBar : MonoBehaviour
 {
     [SerializeField] Slider energyBar;
-    [SerializeField] int waitToRegen = 0;
+    public int waitToRegen = 0;
     [SerializeField] int maxEnergy = 100;
     [SerializeField] int cantRegen = 10;
     int currentEnergy;
