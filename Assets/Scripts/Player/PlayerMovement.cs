@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     public bool CanRun;
     [SerializeField] StaminaBar Bar;
 
+    [SerializeField] CinemachineVirtualCamera Newcamera;
+
     void Awake()
     {
         if (Instance == null)
@@ -36,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetMouseButton(1) && CanAim)
         {
+            Newcamera.GetCinemachineComponent<Cinemachine3rdPersonFollow>().CameraDistance = 0.6f;
             camara.m_Lens.FieldOfView = Aim;
             anim.SetBool("Aiming", true);
             anim.SetBool("Running", false);
@@ -43,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Input.GetButton("Fire3") && CanRun)
         {
+            Newcamera.GetCinemachineComponent<Cinemachine3rdPersonFollow>().CameraDistance = 1f;
             camara.m_Lens.FieldOfView = normalView;
             anim.SetBool("Running", true);
             anim.SetBool("Aiming", false);
@@ -51,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            Newcamera.GetCinemachineComponent<Cinemachine3rdPersonFollow>().CameraDistance = 1f;
             camara.m_Lens.FieldOfView = normalView;
             anim.SetBool("Running", false);
             anim.SetBool("Aiming", false);
