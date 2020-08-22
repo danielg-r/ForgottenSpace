@@ -9628,6 +9628,30 @@ Transform:
   m_Father: {fileID: 1394982022}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1066490688501441529 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1850599642581020314, guid: 396692065a3502e418957b39c69cdab4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1684989683678989667}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55d88bb81435d043943e4ada6b1dc69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1067080943847342674 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1850206792525434673, guid: 396692065a3502e418957b39c69cdab4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1684989683678989667}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270c040e3ed256a4cb96081c229f304e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1684989683678989667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9659,12 +9683,22 @@ PrefabInstance:
         type: 3}
       propertyPath: CantUse.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2142433179}
+      objectReference: {fileID: 1067080943847342674}
     - target: {fileID: 1684989683917910272, guid: 396692065a3502e418957b39c69cdab4,
         type: 3}
       propertyPath: CanUse.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2142433179}
+      objectReference: {fileID: 1067080943847342674}
+    - target: {fileID: 1684989683917910272, guid: 396692065a3502e418957b39c69cdab4,
+        type: 3}
+      propertyPath: CantUse.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NoStamina
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684989683917910272, guid: 396692065a3502e418957b39c69cdab4,
+        type: 3}
+      propertyPath: CanUse.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HasStamina
+      objectReference: {fileID: 0}
     - target: {fileID: 1684989684048314700, guid: 396692065a3502e418957b39c69cdab4,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -9679,12 +9713,22 @@ PrefabInstance:
         type: 3}
       propertyPath: CantUse.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2142433177}
+      objectReference: {fileID: 1066490688501441529}
     - target: {fileID: 1684989684113561765, guid: 396692065a3502e418957b39c69cdab4,
         type: 3}
       propertyPath: CanUse.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2142433177}
+      objectReference: {fileID: 1067080943847342674}
+    - target: {fileID: 1684989684113561765, guid: 396692065a3502e418957b39c69cdab4,
+        type: 3}
+      propertyPath: CantUse.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NoEnergy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684989684113561765, guid: 396692065a3502e418957b39c69cdab4,
+        type: 3}
+      propertyPath: CanUse.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HasStamina
+      objectReference: {fileID: 0}
     - target: {fileID: 1684989684698690956, guid: 396692065a3502e418957b39c69cdab4,
         type: 3}
       propertyPath: m_Data.m_SourceObjects.m_Item0.transform
@@ -9705,6 +9749,11 @@ PrefabInstance:
       propertyPath: m_Data.m_SourceObjects.m_Item0.transform
       value: 
       objectReference: {fileID: 777532098}
+    - target: {fileID: 1684989685266491216, guid: 396692065a3502e418957b39c69cdab4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1850599642581020308, guid: 396692065a3502e418957b39c69cdab4,
         type: 3}
       propertyPath: m_Name

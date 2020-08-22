@@ -1089,7 +1089,7 @@ MonoBehaviour:
   CantUse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1850206792525434673}
         m_MethodName: NoStamina
         m_Mode: 1
         m_Arguments:
@@ -1103,7 +1103,7 @@ MonoBehaviour:
   CanUse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1850206792525434673}
         m_MethodName: HasStamina
         m_Mode: 1
         m_Arguments:
@@ -1589,7 +1589,7 @@ MonoBehaviour:
   CantUse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1850599642581020314}
         m_MethodName: NoEnergy
         m_Mode: 1
         m_Arguments:
@@ -1603,7 +1603,7 @@ MonoBehaviour:
   CanUse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1850599642581020314}
         m_MethodName: HasEnergy
         m_Mode: 1
         m_Arguments:
@@ -8686,11 +8686,12 @@ GameObject:
   - component: {fileID: 1850599642581020313}
   - component: {fileID: 1850599642581020312}
   - component: {fileID: 1850599642581020319}
+  - component: {fileID: -5633943164313173961}
   - component: {fileID: 1850206792592063388}
   - component: {fileID: 1850206792592063389}
   - component: {fileID: 1850599642581020315}
   m_Layer: 0
-  m_Name: Player with Stamina
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8836,6 +8837,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9fd7a41a4146214aa1503effc9d5d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-5633943164313173961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850599642581020308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c9c805cea6694a4e978fa28a26a1f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
 --- !u!54 &1850206792592063388
 Rigidbody:
   m_ObjectHideFlags: 0
