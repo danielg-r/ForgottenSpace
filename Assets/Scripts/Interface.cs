@@ -52,7 +52,7 @@ public class Interface : MonoBehaviour
         }
     }
 
-    public void OnCreditsClick()
+    public void OnCreditosClick()
     {
         //SceneManager.LoadScene(0);
     }
@@ -99,23 +99,28 @@ public class Interface : MonoBehaviour
 
     public void Onpersonaje1Click()
     {        
-        GameObject vigiaClone = Instantiate(personaje1, spawnPoint.position, spawnPoint.rotation);
+        //GameObject personaje1 = Instantiate(personaje1, spawnPoint.position, spawnPoint.rotation);
         this.gameObject.SetActive(false);
-        //SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void Onpersonaje2Click()
     {        
-        GameObject brujoclone = Instantiate(personaje2, spawnPoint.position, spawnPoint.rotation);
+        //GameObject personaje2 = Instantiate(personaje2, spawnPoint.position, spawnPoint.rotation);
         this.gameObject.SetActive(false);
-        //SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
-    public void Onpersonaje3oClick()
+    public void Onpersonaje3Click()
     {        
-        GameObject piromanoClone = Instantiate(personaje3, spawnPoint.position, spawnPoint.rotation);
+        //GameObject personaj3 = Instantiate(personaje3, spawnPoint.position, spawnPoint.rotation);
         this.gameObject.SetActive(false);
-        //SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
+    }
+
+    public void OnDeathClick() //AQUI ES QUE ME MORI XD
+    {
+        SceneManager.LoadScene(0); //ESCENA 0 = MENU
     }
 
     

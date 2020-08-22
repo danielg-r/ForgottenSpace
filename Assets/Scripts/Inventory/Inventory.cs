@@ -76,6 +76,7 @@ public class Inventory : MonoBehaviour
         }
         else
         {
+            GetComponent<PlayerCameraController>().enabled = true;
             // playerCamera.SetActive(true);
             //invCamera.SetActive(false); ==> Dejar aquí en caso de querer hacer transición más tarde :)
             inventory.SetActive(false);
@@ -83,7 +84,7 @@ public class Inventory : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             //Time.timeScale = 1f;
             GetComponent<PlayerMovement>().enabled = true;
-            Invoke("CCDelay", 2);
+            //Invoke("CCDelay", 2); ==> Dejar aquí en caso de querer hacer transición más tarde :)
             FreezeGame();
         }
     }
