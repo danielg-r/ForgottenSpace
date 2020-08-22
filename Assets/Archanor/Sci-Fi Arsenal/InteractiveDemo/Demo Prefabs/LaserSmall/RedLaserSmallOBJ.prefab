@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 13573974}
   - component: {fileID: 5419462}
   - component: {fileID: 11494570}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RedLaserSmallOBJ
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,3 +89,4 @@ MonoBehaviour:
   trailParticles: []
   impactNormal: {x: 0, y: 0, z: 0}
   damageAmount: 0
+  myObject: {fileID: 0}

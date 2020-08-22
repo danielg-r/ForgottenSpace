@@ -12,6 +12,7 @@ public class SciFiProjectileScript : MonoBehaviour
     [HideInInspector]
     public Vector3 impactNormal; //Used to rotate impactparticle.
     public int damageAmount = 0;
+    public GameObject myObject;
 
     private bool hasCollided = false;
 
@@ -31,12 +32,26 @@ public class SciFiProjectileScript : MonoBehaviour
     {
         if (!hasCollided)
         {
-            hasCollided = true;
             impactParticle = Instantiate(impactParticle, transform.position, Quaternion.FromToRotation(Vector3.up, impactNormal)) as GameObject;
 
             if (hit.gameObject.GetComponent<IDamageable>() != null)
             {
-                hit.gameObject.GetComponent<IDamageable>().TakeDamage(damageAmount);
+                if (gameObject.tag == hit.gameObject.tag)
+                {
+                    Physics.IgnoreCollision(hit.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
+                    hasCollided = false;
+                }
+                else
+                {
+                    hit.gameObject.GetComponent<IDamageable>().TakeDamage(damageAmount);
+                    impactParticle = Instantiate(impactParticle, transform.position, Quaternion.FromToRotation(Vector3.up, impactNormal)) as GameObject;
+                    hasCollided = true;
+                }                    
+            }
+            else
+            {
+                impactParticle = Instantiate(impactParticle, transform.position, Quaternion.FromToRotation(Vector3.up, impactNormal)) as GameObject;
+                hasCollided = true;
             }
  
             if (hit.gameObject.tag == "Destructible") // Projectile will destroy objects tagged as Destructible
@@ -50,9 +65,12 @@ public class SciFiProjectileScript : MonoBehaviour
                 curTrail.transform.parent = null;
                 Destroy(curTrail, 3f);
             }
-            Destroy(projectileParticle, 3f);
-            Destroy(impactParticle, 5f);
-            Destroy(gameObject);
+            if (hasCollided)
+            {
+                Destroy(projectileParticle, 3f);
+                Destroy(impactParticle, 5f);
+                Destroy(gameObject);
+            }
 			
 			ParticleSystem[] trails = GetComponentsInChildren<ParticleSystem>();
             //Component at [0] is that of the parent i.e. this object (if there is any)

@@ -12,7 +12,7 @@ public class PlayerLife : MonoBehaviour, IDamageable
     Vignette vig;
     public int AmountRegen;
     [SerializeField] int waitToRegen;
-    float currentLife;
+    [SerializeField] float currentLife;
 
     WaitForSeconds regenTick = new WaitForSeconds(0.1f);
     Coroutine regen;
@@ -36,13 +36,15 @@ public class PlayerLife : MonoBehaviour, IDamageable
     {
         vol.profile.TryGet<Vignette>(out vig);
         vig.intensity.value = 0;
+        currentLife = 0;
     }
 
     public void TakeDamage(int amount)
     {
-        if (currentLife + amount / 100 <= 1)
+        if (currentLife + (amount / 100) <= 1)
         {
-            currentLife += amount;
+            Debug.Log("Daño recibido");
+            currentLife += ((float)amount / 100);
             vig.intensity.value = currentLife;
 
             if (regen != null)
@@ -62,9 +64,9 @@ public class PlayerLife : MonoBehaviour, IDamageable
     {
         yield return new WaitForSeconds(waitToRegen);
 
-        while (currentLife >= 0)
+        while (currentLife > 0)
         {
-            currentLife -= AmountRegen/100;
+            currentLife -= ((float)AmountRegen/100);
             vig.intensity.value = currentLife;
             yield return regenTick;
         }

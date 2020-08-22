@@ -32,9 +32,10 @@ namespace SciFiArsenal
                     {
                         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100f))
                         {
-                            GameObject projectile = Instantiate(projectil, spawnPosition.position, Quaternion.identity) as GameObject;
+                            GameObject projectile = Instantiate(projectil, spawnPosition.position, spawnPosition.rotation) as GameObject;
                             projectile.transform.LookAt(hit.point);
                             projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * speed);
+                            projectile.GetComponent<SciFiProjectileScript>().gameObject.layer = gameObject.layer;
                             projectile.GetComponent<SciFiProjectileScript>().impactNormal = hit.normal;
                             projectile.GetComponent<SciFiProjectileScript>().damageAmount = damage;
                         } 
