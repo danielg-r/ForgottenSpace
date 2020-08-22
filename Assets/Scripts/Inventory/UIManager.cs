@@ -35,8 +35,8 @@ public class UIManager : MonoBehaviour
         gunPieceText.text = inventory.currentGunPieces.ToString();
         suitPieceText.text = inventory.currentSuitPieces.ToString();
 
-        ItemLifeText.text = itemManager.itemlifeRegen.ToString();
-        ItemStaminaText.text = itemManager.itemRunCooldown.ToString();
-        ItemShotText.text = itemManager.itemcooldown.ToString();
+        //ItemLifeText.text = itemManager.itemlifeRegen.ToString();
+        //ItemStaminaText.text = itemManager.itemRunCooldown.ToString();
+        //ItemShotText.text = itemManager.itemcooldown.ToString();
     }
 }
