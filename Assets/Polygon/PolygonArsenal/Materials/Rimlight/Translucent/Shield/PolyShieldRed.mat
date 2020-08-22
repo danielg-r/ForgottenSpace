@@ -4,12 +4,13 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: PolyShieldRed
   m_Shader: {fileID: 4800000, guid: f2cb1b80b68b95a489fadaa5754bca06, type: 3}
   m_ShaderKeywords: _ALPHABLEND_ON _EMISSION
-  m_LightmapFlags: 1
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -56,6 +57,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_CA637FD8: 5.5
+    - Vector1_D23434D2: 3
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -78,6 +80,8 @@ Material:
     m_Colors:
     - Color_1A0BCCE7: {r: 2.3174946, g: 0.4237069, b: 0, a: 0}
     - Color_8EE4FC62: {r: 0.084905684, g: 0, b: 0, a: 1}
+    - Color_AD8B744C: {r: 0.9372549, g: 0, b: 0.0098889535, a: 0}
+    - Color_B70EC491: {r: 1.4980391, g: 0.5245419, b: 0.4941176, a: 0}
     - _Color: {r: 0.61764705, g: 0.8734281, b: 1, a: 0.103}
     - _EmisColor: {r: 0.66176474, g: 0.66176474, b: 0.66176474, a: 0}
     - _EmissionColor: {r: 0.2506488, g: 0.42396495, b: 0.44852942, a: 1}

@@ -4,18 +4,21 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public class PlayerLife : MonoBehaviour
+public class PlayerLife : MonoBehaviour, IDamageable
 {
     public static PlayerLife Instance { get; private set; }
 
     [SerializeField] Volume vol;
     Vignette vig;
-    [SerializeField] int AmountRegen;
+    public int AmountRegen;
     [SerializeField] int waitToRegen;
     float currentLife;
 
     WaitForSeconds regenTick = new WaitForSeconds(0.1f);
     Coroutine regen;
+
+    public delegate void OnPlayerDied();
+    public event OnPlayerDied onPlayerDied;
 
     void Awake()
     {
@@ -35,9 +38,9 @@ public class PlayerLife : MonoBehaviour
         vig.intensity.value = 0;
     }
 
-    public void TakeDagame(int amount)
+    public void TakeDamage(int amount)
     {
-        if (currentLife + amount/100 <= 1)
+        if (currentLife + amount / 100 <= 1)
         {
             currentLife += amount;
             vig.intensity.value = currentLife;
@@ -48,7 +51,10 @@ public class PlayerLife : MonoBehaviour
         }
         else
         {
-            //se hace el muertito
+            if (onPlayerDied != null)
+            {
+                onPlayerDied();
+            }
         }
     }
 

@@ -5,9 +5,22 @@ using UnityEngine.Animations.Rigging;
 
 public class ActivatePistol : MonoBehaviour
 {
+    public static ActivatePistol Instance { get; private set; }
     [SerializeField] Rig Layer;
     [SerializeField] GameObject Pistol;
     PlayerMovement playerMovement;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {

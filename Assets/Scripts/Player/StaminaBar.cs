@@ -9,7 +9,7 @@ public class StaminaBar : MonoBehaviour
     [SerializeField] Slider staminaBar;
     [SerializeField] int waitToRegen = 2;
     [SerializeField] int maxStamina = 100;
-    [SerializeField] int PlusRegen = 5;
+    public int PlusRegen = 5;
     [SerializeField] int waitToUse = 50;
     int currentStamina;
 
@@ -28,7 +28,7 @@ public class StaminaBar : MonoBehaviour
         WasCalled = false;
     }
 
-    public void UseStamina(int amount)
+    public bool UseStamina(int amount)
     {
         if(currentStamina - amount >= 0)
         {
@@ -38,11 +38,14 @@ public class StaminaBar : MonoBehaviour
             if (regen != null)
                 StopCoroutine(regen);
             regen = StartCoroutine(regenStamina());
+
+            return true;
         }
         else
         {
             CantUse.Invoke();
             WasCalled = false;
+            return false;
         }
     }
 
