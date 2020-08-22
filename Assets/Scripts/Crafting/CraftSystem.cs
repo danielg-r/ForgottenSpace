@@ -5,15 +5,33 @@ using UnityEngine;
 
 public class CraftSystem : MonoBehaviour
 {
-    
+
+    public static CraftSystem Instance { get; private set; }
+
     public int necessaryPiecesAToPistol = 3; //Valor interno
     public int necessaryPiecesBToPistol = 2; //Valor interno
 
     public bool CanCraft = false;
     private bool ItCrafted = false;
 
+    public delegate void OnCurrencySpent();
+    public event OnCurrencySpent onCurrSpent;
+
     [SerializeField] InteraCraft interaCraft;
-    [SerializeField] InventoryManager inventoryManager;
+    InventoryManager inventoryManager;
+
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -49,6 +67,7 @@ public class CraftSystem : MonoBehaviour
                 ActivatePistol.Instance.Activate();
                 inventoryManager.currentGunPieces -= necessaryPiecesAToPistol;
                 inventoryManager.currentSuitPieces -= necessaryPiecesBToPistol;
+                onCurrSpent();
                 CanCraft = false;
                 ItCrafted = true;
             }
