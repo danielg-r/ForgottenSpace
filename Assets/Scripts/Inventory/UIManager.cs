@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI currencyText;
+    [SerializeField] private TextMeshProUGUI gunPieceText;
+    [SerializeField] private TextMeshProUGUI suitPieceText;
 
     [SerializeField] private TextMeshProUGUI ItemLifeText;
     [SerializeField] private TextMeshProUGUI ItemStaminaText;
@@ -18,17 +20,23 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
+        if (CurrencyManager.Instance != null)
+        {
+            CurrencyManager.Instance.onCurrAdded += new CurrencyManager.OnCurrencyAdded(OnCurrAdded);
+        }
         inventory = InventoryManager.Instance;
         itemManager = ItemManager.Instance;
     }
 
-    void Update()
+    void OnCurrAdded()
     {
-        //currencyText.text = inventory.currentCurrency.ToString();
+
+        currencyText.text = inventory.currentCurrency.ToString();
+        gunPieceText.text = inventory.currentGunPieces.ToString();
+        suitPieceText.text = inventory.currentSuitPieces.ToString();
 
         ItemLifeText.text = itemManager.itemlifeRegen.ToString();
         ItemStaminaText.text = itemManager.itemRunCooldown.ToString();
         ItemShotText.text = itemManager.itemcooldown.ToString();
-
     }
 }
