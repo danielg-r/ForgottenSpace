@@ -10,7 +10,7 @@ public class PlayerLife : MonoBehaviour, IDamageable
 
     [SerializeField] Volume vol;
     Vignette vig;
-    [SerializeField] int AmountRegen;
+    public int AmountRegen;
     [SerializeField] int waitToRegen;
     float currentLife;
 

@@ -9,7 +9,7 @@ public class StaminaBar : MonoBehaviour
     [SerializeField] Slider staminaBar;
     [SerializeField] int waitToRegen = 2;
     [SerializeField] int maxStamina = 100;
-    [SerializeField] int PlusRegen = 5;
+    public int PlusRegen = 5;
     [SerializeField] int waitToUse = 50;
     int currentStamina;
 
