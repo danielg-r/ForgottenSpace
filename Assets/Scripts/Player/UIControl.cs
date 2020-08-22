@@ -22,7 +22,7 @@ public class UIControl : MonoBehaviour
         ActivatePistol.Instance.Deactivate();
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        GetComponent<PlayerCameraController>().enabled = false;
+        GetComponent<PlayerCameraControllerTest>().enabled = false;
         GetComponent<PlayerMovement>().enabled = false;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public class PlayerLife : MonoBehaviour
+public class PlayerLife : MonoBehaviour, IDamageable
 {
     public static PlayerLife Instance { get; private set; }
 
@@ -38,7 +38,7 @@ public class PlayerLife : MonoBehaviour
         vig.intensity.value = 0;
     }
 
-    public void TakeDagame(int amount)
+    public void TakeDamage(int amount)
     {
         if (currentLife + amount / 100 <= 1)
         {

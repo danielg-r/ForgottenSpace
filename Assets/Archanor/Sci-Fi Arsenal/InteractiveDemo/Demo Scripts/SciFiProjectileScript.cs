@@ -11,6 +11,7 @@ public class SciFiProjectileScript : MonoBehaviour
     public GameObject[] trailParticles;
     [HideInInspector]
     public Vector3 impactNormal; //Used to rotate impactparticle.
+    public int damageAmount = 0;
 
     private bool hasCollided = false;
 
@@ -32,6 +33,11 @@ public class SciFiProjectileScript : MonoBehaviour
         {
             hasCollided = true;
             impactParticle = Instantiate(impactParticle, transform.position, Quaternion.FromToRotation(Vector3.up, impactNormal)) as GameObject;
+
+            if (hit.gameObject.GetComponent<IDamageable>() != null)
+            {
+                hit.gameObject.GetComponent<IDamageable>().TakeDamage(damageAmount);
+            }
  
             if (hit.gameObject.tag == "Destructible") // Projectile will destroy objects tagged as Destructible
             {
