@@ -44,7 +44,7 @@ public class InteraCraft : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && text != null)
         {
             isInRange = true;
-            text.text = "["+interactKey+"] -- "+craftSystem.pieces+"/"+craftSystem.necessaryPieces;
+            text.text = "["+interactKey+"]";
 
         }        
     }
