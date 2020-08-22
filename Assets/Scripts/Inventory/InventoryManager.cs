@@ -17,6 +17,9 @@ public class InventoryManager : MonoBehaviour
     private Transform[] shipSlots;
     private Transform[] loreSlots;
     public int currentCurrency;
+    public int shipPieceCount;
+    public int currentGunPieces;
+    public int currentSuitPieces;
 
 
     bool itemAdded;
@@ -38,33 +41,19 @@ public class InventoryManager : MonoBehaviour
         shipSlots = new Transform[freeShipSlots];
         DetectSlots();
         curr = GetComponent<Currency>();
-        //currentCurrency = 0;
     }
 
-    //public void OnTriggerEnter(Collider other) //Interaction test.
-    //{
-    //    if (other.gameObject.GetComponent<Item>())
-    //    {
-    //        GameObject pickedItem = other.gameObject;
+    public void OnTriggerEnter(Collider other) //Interaction test.
+    {
+        if (other.gameObject.GetComponent<Item>())
+        {
+            GameObject pickedItem = other.gameObject;
 
-    //        int it = other.gameObject.GetComponent<Item>().type;
-    //        AddItem(pickedItem, it);
+            int it = other.gameObject.GetComponent<Item>().type;
+            AddItem(pickedItem, it);
 
-    //    }
-    //    if (other.gameObject.GetComponent<Currency>())
-    //    {
-    //        int curr = other.gameObject.GetComponent<Currency>().currencyAmount;
-    //        AddCurrency(curr);
-    //    }
-    //}
-
-    //public void OnTriggerExit(Collider other)
-    //{
-    //    if (other.tag == "Item")
-    //    {
-    //        itemAdded = false;
-    //    }
-    //}
+        }
+    }
 
     public void AddItem(GameObject item, int it)
     {
@@ -78,7 +67,6 @@ public class InventoryManager : MonoBehaviour
                         {
                             loreSlots[i].GetComponent<Slot>().item = item;
                             loreSlots[i].GetComponent<Slot>().itemIcon = item.GetComponent<Item>().icon;
-                            //itemAdded = true;
                             break;
                         }
                     }
@@ -99,7 +87,7 @@ public class InventoryManager : MonoBehaviour
                         {
                             shipSlots[i].GetComponent<Slot>().item = item;
                             shipSlots[i].GetComponent<Slot>().itemIcon = item.GetComponent<Item>().icon;
-                            //itemAdded = true;
+                            shipPieceCount += 1;
                             break;
                         }
                     }
@@ -121,24 +109,7 @@ public class InventoryManager : MonoBehaviour
                 }
                 break;
         }
-
-
     }
-
-    public void AddCurrency(int curr)
-    {
-        //if (it == 1)
-        //{
-        currentCurrency += curr;
-        Debug.Log("Currency obtained");
-        //}
-    }
-
-    public void SpendCurrency()
-    {
-
-    }
-
     void DetectSlots()
     {
         for (int i = 0; i < freeShipSlots; i++)
@@ -150,10 +121,5 @@ public class InventoryManager : MonoBehaviour
         {
             loreSlots[i] = loreSlotHolder.transform.GetChild(i);
         }
-    }
-
-    public void CollectCurrency()
-    {
-
     }
 }

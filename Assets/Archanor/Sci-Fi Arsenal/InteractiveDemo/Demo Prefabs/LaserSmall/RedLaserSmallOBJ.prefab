@@ -53,7 +53,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5419462
 Rigidbody:
@@ -88,3 +88,4 @@ MonoBehaviour:
   muzzleParticle: {fileID: 198538, guid: b740dbea58ef93448811620f3225414d, type: 3}
   trailParticles: []
   impactNormal: {x: 0, y: 0, z: 0}
+  damageAmount: 0

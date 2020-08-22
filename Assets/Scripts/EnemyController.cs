@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : MonoBehaviour, IDamageable
 {
     //Este codigo esta muy desordenado, meper d0nas
         //ÑO... pirata :p
@@ -18,20 +18,22 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float followDistance = 8f, attackDistance = 2f;
 
     float distance;
+    [SerializeField] int maxHealth;
+    [SerializeField] int currentHealth;
     [SerializeField] int lives;
     [SerializeField] int deathTimer;
+    [SerializeField] Collider deathCollider;
 
     Vector3 lastPosition;
-
-
+    
     public virtual void Start()
     {        
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        //enemy = GetComponent<Enemy>();
         FindTarget();
         state = EnemyState.Wander;
         lastPosition = transform.position;       
+        currentHealth = maxHealth;
     }
 
     void Update()
@@ -76,10 +78,9 @@ public class EnemyController : MonoBehaviour
                 {
                     animator.SetFloat("Speed", 0.2f);
                     animator.SetBool("IsWalking", false);
-
                     state = EnemyState.Wander;
                 }
-            break;
+                break;
             case EnemyState.Attack:
                 //Attack();
                 agent.isStopped = true;
@@ -87,14 +88,20 @@ public class EnemyController : MonoBehaviour
                 animator.SetInteger("attackSelector", Random.Range(0,2));
                 animator.SetBool("Attack", true);
                 Debug.Log("Enemy Attacking");
-                if (distance > attackDistance) state = EnemyState.Chase;
-            break;
+                
+                break;
+            case EnemyState.Dead:
+                agent.isStopped = true;
+                float t = 0;
+                t+= Time.deltaTime;
+                if (t > 1f) agent.enabled = false;                
+                break;
         }        
     }
 
     public void FindTarget()
     {        
-        if (Player.Instance != null)
+        if (PlayerLife.Instance != null)
         {
             target = PlayerLife.Instance.transform;
         }
@@ -103,37 +110,54 @@ public class EnemyController : MonoBehaviour
 
     #endregion
 
+    public void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+        if (currentHealth <= 0) Die();
+    }
+
     void Die()
     {
+        //lastState = state; 
+        state = EnemyState.Dead;
         animator.SetBool("IsDead", true);
         lives--;
         if (lives > 0) StartCoroutine("DeathTimer");
         else 
         {
-            agent.enabled = false;
-            //Desactivar colliders etc
+            //agent.enabled = false;
+            //Sistema de particulas destrucción
+            Destroy(transform.parent.gameObject);
             this.enabled = false; 
         }
     }
 
     IEnumerator DeathTimer()
     {
-        agent.enabled = false;
+        deathCollider.enabled = false;        
         yield return new WaitForSeconds(deathTimer);
         animator.SetBool("IsDead", false);
         animator.SetTrigger("GetUp");
+        currentHealth = maxHealth;
         agent.enabled = true;
+        yield return new WaitForSeconds(3f);
         state = EnemyState.Wander;
+        deathCollider.enabled = true;
     }
 
     void Attack()
     {
-        PlayerLife.Instance.TakeDagame(20); //de min 0 a 100 max
+        PlayerLife.Instance.TakeDamage(20); //de min 0 a 100 max
     }
 
     void StopAttack()
     {
         animator.SetBool("Attack", false);
+    }
+
+    void ResumeChase()
+    {
+        if (distance > attackDistance) state = EnemyState.Chase;
     }
 }
 
@@ -142,5 +166,6 @@ public enum EnemyState
     Wander,
     Chase,
     Attack,
+    Dead,
     BackToStart
 }

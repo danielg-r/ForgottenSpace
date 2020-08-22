@@ -88,3 +88,4 @@ MonoBehaviour:
   muzzleParticle: {fileID: 148596, guid: 4a655ad86d1fbd648bb35a9b74bdab24, type: 3}
   trailParticles: []
   impactNormal: {x: 0, y: 0, z: 0}
+  damageAmount: 0

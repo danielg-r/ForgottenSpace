@@ -14,6 +14,7 @@ namespace SciFiArsenal
         PlayerMovement playerMovement;
         [SerializeField] StaminaBar Bar;
         [SerializeField] int AmountEnergy;
+        [SerializeField] int damage;
 
         private void Start()
         {
@@ -35,6 +36,7 @@ namespace SciFiArsenal
                             projectile.transform.LookAt(hit.point);
                             projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * speed);
                             projectile.GetComponent<SciFiProjectileScript>().impactNormal = hit.normal;
+                            projectile.GetComponent<SciFiProjectileScript>().damageAmount = damage;
                         } 
                     }
                 }
