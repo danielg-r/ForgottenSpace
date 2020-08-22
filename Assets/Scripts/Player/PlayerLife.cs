@@ -50,11 +50,11 @@ public class PlayerLife : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            TakeDagame(20);
+            TakeDamage(20);
         }
     }
 
-    public void TakeDagame(int amount)
+    public void TakeDamage(int amount)
     {
         if (currentLife - amount > 0)
         {
