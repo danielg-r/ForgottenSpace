@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -12,10 +13,14 @@ public class PlayerLife : MonoBehaviour
     Vignette vig;
     public int AmountRegen;
     [SerializeField] int waitToRegen;
-    float currentLife;
+
+    [SerializeField] Slider staminaBar;
+    [SerializeField] int maxLife;
+    int currentLife;
 
     WaitForSeconds regenTick = new WaitForSeconds(0.1f);
     Coroutine regen;
+    Coroutine restarScreen;
 
     public delegate void OnPlayerDied();
     public event OnPlayerDied onPlayerDied;
@@ -34,16 +39,28 @@ public class PlayerLife : MonoBehaviour
 
     void Start()
     {
+        currentLife = maxLife;
+        staminaBar.maxValue = maxLife;
+        staminaBar.value = maxLife;
         vol.profile.TryGet<Vignette>(out vig);
         vig.intensity.value = 0;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDagame(20);
+        }
+    }
+
     public void TakeDagame(int amount)
     {
-        if (currentLife + amount / 100 <= 1)
+        if (currentLife - amount > 0)
         {
-            currentLife += amount;
-            vig.intensity.value = currentLife;
+            currentLife -= amount;
+            staminaBar.value = currentLife;
+            vig.intensity.value = 0.4f;
 
             if (regen != null)
                 StopCoroutine(regen);
@@ -53,6 +70,8 @@ public class PlayerLife : MonoBehaviour
         {
             if (onPlayerDied != null)
             {
+                staminaBar.value = 0;
+                StopCoroutine(regen);
                 onPlayerDied();
             }
         }
@@ -62,10 +81,11 @@ public class PlayerLife : MonoBehaviour
     {
         yield return new WaitForSeconds(waitToRegen);
 
-        while (currentLife >= 0)
+        while (currentLife < maxLife)
         {
-            currentLife -= AmountRegen/100;
-            vig.intensity.value = currentLife;
+            currentLife += AmountRegen;
+            staminaBar.value = currentLife;
+            vig.intensity.value -= 0.02f;
             yield return regenTick;
         }
         regen = null;

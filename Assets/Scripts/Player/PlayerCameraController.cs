@@ -5,9 +5,16 @@ using UnityEngine.Animations.Rigging;
 
 public class PlayerCameraController : MonoBehaviour
 {
+    public static PlayerCameraController Instance {get; set;}
+
     [SerializeField] float TurnSpeed = 15f, aimDuration = 0.3f;
     [SerializeField] Rig aimLayer;
     Camera mainCamera;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
