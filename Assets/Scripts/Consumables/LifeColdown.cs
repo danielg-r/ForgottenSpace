@@ -5,7 +5,7 @@ using UnityEngine;
 public class LifeColdown : MonoBehaviour
 {
     [SerializeField] PlayerLife LBar;
-    [SerializeField] int AmountRegenOriginal;
+    [SerializeField] float AmountRegenOriginal;
     [SerializeField] int AmountRegenPlus;
 
     float Duration = 15f;

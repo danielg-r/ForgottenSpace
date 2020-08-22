@@ -31,6 +31,7 @@ public class UIControl : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         PlayerMovement.Instance.camara.enabled = false;
         PlayerMovement.Instance.enabled = false;
+        PlayerMovement.Instance.GetComponent<CapsuleCollider>().enabled = false;
         PlayerCameraController.Instance.enabled = false;
     }
 }

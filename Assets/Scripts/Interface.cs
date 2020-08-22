@@ -118,7 +118,7 @@ public class Interface : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void OnDeathClick() //AQUI ES QUE ME MORI XD
+    public void OnMenuClick() //AQUI ES QUE ME MORI XD
     {
         SceneManager.LoadScene(0); //ESCENA 0 = MENU
     }

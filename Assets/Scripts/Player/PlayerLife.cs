@@ -11,12 +11,12 @@ public class PlayerLife : MonoBehaviour
 
     [SerializeField] Volume vol;
     Vignette vig;
-    public int AmountRegen;
+    public float AmountRegen;
     [SerializeField] int waitToRegen;
 
     [SerializeField] Slider staminaBar;
     [SerializeField] int maxLife;
-    int currentLife;
+    float currentLife;
 
     WaitForSeconds regenTick = new WaitForSeconds(0.1f);
     Coroutine regen;
@@ -54,13 +54,13 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         if (currentLife - amount > 0)
         {
             currentLife -= amount;
             staminaBar.value = currentLife;
-            vig.intensity.value = 0.4f;
+            vig.intensity.value += (amount/100);
 
             if (regen != null)
                 StopCoroutine(regen);
@@ -85,7 +85,7 @@ public class PlayerLife : MonoBehaviour
         {
             currentLife += AmountRegen;
             staminaBar.value = currentLife;
-            vig.intensity.value -= 0.02f;
+            vig.intensity.value -= (AmountRegen/100);
             yield return regenTick;
         }
         regen = null;
