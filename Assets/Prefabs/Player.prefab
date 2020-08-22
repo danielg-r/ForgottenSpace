@@ -6074,7 +6074,7 @@ GameObject:
   - component: {fileID: 7049504777847237822}
   - component: {fileID: 7050166316576520632}
   m_Layer: 0
-  m_Name: Player with Stamina
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7511,7 +7511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.12941177, b: 0.5647059, a: 1}
+  m_Color: {r: 0, g: 0.5647059, b: 0.011764706, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
