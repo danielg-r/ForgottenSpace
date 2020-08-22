@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIControl : MonoBehaviour
 {
-    [SerializeField] Text label;
+    [SerializeField] TextMeshProUGUI label;
+    [SerializeField] GameObject buttonMenú;
+    [SerializeField] GameObject buttonReiniciar;
 
     void Start()
     {
+        buttonMenú.SetActive(false);
+        buttonMenú.SetActive(false);
         label.text = "";
         if(PlayerLife.Instance != null)
         {
@@ -18,6 +23,8 @@ public class UIControl : MonoBehaviour
 
     void OnPlayerDied()
     {
+        buttonMenú.SetActive(true);
+        buttonMenú.SetActive(true);
         label.text = "HAS MUERTO";
         ActivatePistol.Instance.Deactivate();
         Cursor.visible = true;
