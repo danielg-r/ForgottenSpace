@@ -13,7 +13,7 @@ public class UIControl : MonoBehaviour
     void Start()
     {
         buttonMenú.SetActive(false);
-        buttonMenú.SetActive(false);
+        buttonReiniciar.SetActive(false);
         label.text = "";
         if(PlayerLife.Instance != null)
         {
@@ -24,7 +24,7 @@ public class UIControl : MonoBehaviour
     void OnPlayerDied()
     {
         buttonMenú.SetActive(true);
-        buttonMenú.SetActive(true);
+        buttonReiniciar.SetActive(true);
         label.text = "HAS MUERTO";
         ActivatePistol.Instance.Deactivate();
         Cursor.visible = true;
