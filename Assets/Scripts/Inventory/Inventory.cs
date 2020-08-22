@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     [SerializeField] GameObject inventory;
-    [SerializeField] GameObject invCamera;
+    //[SerializeField] GameObject invCamera; ==> Dejar aquí en caso de querer hacer transición más tarde :)
     //[SerializeField] GameObject playerCamera;
 
     //private int freeSlotAmount;
@@ -69,21 +69,22 @@ public class Inventory : MonoBehaviour
             //Time.timeScale = 0f;
             inventory.SetActive(true);
             GetComponent<PlayerMovement>().enabled = false;
-            invCamera.SetActive(true);
+            FreezeGame();
+            //invCamera.SetActive(true); ==> Dejar aquí en caso de querer hacer transición más tarde :)
             //Invoke("ActivateCamera", 1);
-            
+
         }
         else
         {
             // playerCamera.SetActive(true);
-            invCamera.SetActive(false);
+            //invCamera.SetActive(false); ==> Dejar aquí en caso de querer hacer transición más tarde :)
             inventory.SetActive(false);
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             //Time.timeScale = 1f;
             GetComponent<PlayerMovement>().enabled = true;
             Invoke("CCDelay", 2);
-
+            FreezeGame();
         }
     }
 
