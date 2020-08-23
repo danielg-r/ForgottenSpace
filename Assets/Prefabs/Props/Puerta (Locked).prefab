@@ -4993,7 +4993,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   text: {fileID: 7295268107793365067}
-  currencyAmount: 0
 --- !u!1 &5713448457702519437
 GameObject:
   m_ObjectHideFlags: 0
@@ -28793,7 +28792,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   text: {fileID: 8744708233781100379}
-  currencyAmount: 0
 --- !u!1 &7810768073823455253
 GameObject:
   m_ObjectHideFlags: 0
@@ -38805,8 +38803,8 @@ GameObject:
   - component: {fileID: 8739867730081239880}
   - component: {fileID: 8731980158379355934}
   - component: {fileID: 8723213515851969088}
-  - component: {fileID: 8772455318112278180}
   - component: {fileID: 8745782148249153351}
+  - component: {fileID: 5095698109820109962}
   m_Layer: 8
   m_Name: SM_Bld_Wall_Door_01
   m_TagString: Untagged
@@ -38875,20 +38873,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8772455318112278180
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745782148249153350}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: d15e6ce658984be4dba714b6201bc4d3, type: 3}
 --- !u!114 &8745782148249153351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38994,6 +38978,19 @@ MonoBehaviour:
   optionalRotationMode: 0
   optionalScrambleMode: 0
   optionalString: 
+--- !u!65 &5095698109820109962
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745782148249153350}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.609867, y: 3.058591, z: 0.18863682}
+  m_Center: {x: 0, y: 1.4423761, z: -0.0000007152559}
 --- !u!1 &8913287839315807064
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6337253057499425428}
   - component: {fileID: 6312490648595613932}
   - component: {fileID: 6318718253450762488}
-  - component: {fileID: 6270987832455083628}
   - component: {fileID: 6332506323827446326}
   - component: {fileID: 6332506323827446329}
   m_Layer: 8
@@ -85,20 +84,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6270987832455083628
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6332506323827446328}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43932208150992382, guid: d8a8c46481173034286b3f5ba20a2795, type: 2}
 --- !u!65 &6332506323827446326
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -163,7 +148,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   text: {fileID: 8744708233781100379}
-  currencyAmount: 0
 --- !u!1 &8744708233311217218
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +159,7 @@ GameObject:
   - component: {fileID: 8744708233540311233}
   - component: {fileID: 8744708233311217216}
   - component: {fileID: 8744708233311217219}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BlueHexagonZone (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4933,7 +4917,7 @@ GameObject:
   - component: {fileID: 8744708233372619790}
   - component: {fileID: 8744708233372619788}
   - component: {fileID: 8744708233372619791}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9642,7 +9626,7 @@ GameObject:
   - component: {fileID: 8744708233548927027}
   - component: {fileID: 8744708233548927025}
   - component: {fileID: 8744708233548927024}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hexagon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14665,7 +14649,7 @@ GameObject:
   - component: {fileID: 8744708234687438023}
   - component: {fileID: 8744708234687438021}
   - component: {fileID: 8744708234687438020}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hexagon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19419,7 +19403,7 @@ GameObject:
   - component: {fileID: 8744708233471958595}
   - component: {fileID: 8744708233471958593}
   - component: {fileID: 8744708234786031672}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BlueHexagonZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24176,7 +24160,7 @@ GameObject:
   - component: {fileID: 8744708235121015506}
   - component: {fileID: 8744708235121015504}
   - component: {fileID: 8744708235121015507}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28885,7 +28869,7 @@ GameObject:
   - component: {fileID: 8744708235327669476}
   - component: {fileID: 8744708235327669474}
   - component: {fileID: 8744708235327669477}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33640,7 +33624,7 @@ GameObject:
   - component: {fileID: 8744708235335473379}
   - component: {fileID: 8744708235335473377}
   - component: {fileID: 8744708235335473376}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38395,7 +38379,6 @@ GameObject:
   - component: {fileID: 8740149758562965254}
   - component: {fileID: 8731950385538141402}
   - component: {fileID: 8721664191337218062}
-  - component: {fileID: 8772759272250315232}
   m_Layer: 8
   m_Name: SM_Bld_Wall_Doorframe_Outer_01 (17)
   m_TagString: Untagged
@@ -38464,20 +38447,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8772759272250315232
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8744992090933443114}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: caa0cf711f7d8b94cb0b28b4c10dbe69, type: 3}
 --- !u!1 &8745438750067360940
 GameObject:
   m_ObjectHideFlags: 0
@@ -38505,7 +38474,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8745438750067360940}
-  m_LocalRotation: {x: -0, y: -0.7071083, z: -0, w: -0.70710534}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: -0.7071068}
   m_LocalPosition: {x: 487.22034, y: 1406.3746, z: 1469.6626}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -38601,8 +38570,8 @@ GameObject:
   - component: {fileID: 8739867730081239880}
   - component: {fileID: 8731980158379355934}
   - component: {fileID: 8723213515851969088}
-  - component: {fileID: 8772455318112278180}
   - component: {fileID: 8745782148249153351}
+  - component: {fileID: 830889834}
   m_Layer: 8
   m_Name: SM_Bld_Wall_Door_01
   m_TagString: Untagged
@@ -38671,20 +38640,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8772455318112278180
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745782148249153350}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: d15e6ce658984be4dba714b6201bc4d3, type: 3}
 --- !u!114 &8745782148249153351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38790,3 +38745,16 @@ MonoBehaviour:
   optionalRotationMode: 0
   optionalScrambleMode: 0
   optionalString: 
+--- !u!65 &830889834
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745782148249153350}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.609867, y: 3.058591, z: 0.18863682}
+  m_Center: {x: 0.000011444092, y: 1.4423761, z: -0.000017881393}
