@@ -38,7 +38,7 @@ public class ItemManager : MonoBehaviour
 
 
 
-    #region Use & Recolect    
+    #region Use & Recolect
     //--------------------
     public void UseCooldown()
     {                

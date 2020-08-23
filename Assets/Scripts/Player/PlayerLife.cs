@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour
 {
-    public static PlayerLife Instance { get; private set; }
+    public static PlayerLife Instance { get; protected set; }
 
     [SerializeField] Volume vol;
     Vignette vig;
@@ -20,7 +20,6 @@ public class PlayerLife : MonoBehaviour
 
     WaitForSeconds regenTick = new WaitForSeconds(0.1f);
     Coroutine regen;
-    Coroutine restarScreen;
 
     public delegate void OnPlayerDied();
     public event OnPlayerDied onPlayerDied;
@@ -34,6 +33,14 @@ public class PlayerLife : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(40); 
         }
     }
 
