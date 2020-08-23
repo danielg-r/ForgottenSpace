@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
-public class PlayerLife : MonoBehaviour
+public class PlayerLife : MonoBehaviour, IDamageable
 {
     public static PlayerLife Instance { get; private set; }
 
@@ -44,14 +44,6 @@ public class PlayerLife : MonoBehaviour
         staminaBar.value = maxLife;
         vol.profile.TryGet<Vignette>(out vig);
         vig.intensity.value = 0;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
     }
 
     public void TakeDamage(int amount)

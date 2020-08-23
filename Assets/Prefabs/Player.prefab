@@ -6074,7 +6074,7 @@ GameObject:
   - component: {fileID: 7049504777847237822}
   - component: {fileID: 7050166316576520632}
   m_Layer: 0
-  m_Name: Player with Stamina
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

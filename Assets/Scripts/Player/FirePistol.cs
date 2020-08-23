@@ -26,13 +26,13 @@ namespace SciFiArsenal
         {
             if (playerMovement.Aiming)
             {
-                if (Input.GetKeyDown(KeyCode.Mouse0) && CanShoot)
+                if (Input.GetKeyDown(KeyCode.Mouse0) && CanShoot) // Camera.main.ScreenPointToRay(Input.mousePosition) // spawnPosition.position, spawnPosition.forward, out hit, 100f
                 {
                     if (Bar.UseStamina(AmountEnergy))
                     {
                         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100f))
                         {
-                            GameObject projectile = Instantiate(projectil, spawnPosition.position, spawnPosition.rotation) as GameObject;
+                            GameObject projectile = Instantiate(projectil, spawnPosition.position, Quaternion.identity) as GameObject;
                             projectile.transform.LookAt(hit.point);
                             projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * speed);
                             projectile.GetComponent<SciFiProjectileScript>().gameObject.layer = gameObject.layer;

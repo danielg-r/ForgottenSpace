@@ -12,8 +12,8 @@ public class DroneAttack : MonoBehaviour, IDamageable
     public Transform spawnPosition;
     Vector3 dispersion; 
     NavMeshAgent agent;
+    PlayerLife player;
     
-    [SerializeField] LayerMask playerLayer;
     [SerializeField] float maxHealth; 
     [SerializeField] float currentHealth;
     [SerializeField] GameObject deathFX;
@@ -25,30 +25,42 @@ public class DroneAttack : MonoBehaviour, IDamageable
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        agent = GetComponentInParent<NavMeshAgent>();
         currentHealth = maxHealth;
+        player = PlayerLife.Instance;
     }
 
     // Camera.main.ScreenPointToRay(Input.mousePosition)
     void FixedUpdate()
     {
-        if (Physics.Raycast(spawnPosition.position, spawnPosition.forward, out hit, shootingDistance, playerLayer) && !isShooting)
-        {	
-            StartCoroutine("ShootLaser");       
-            isShooting = true;
-        }        
+        if (Vector3.Distance(transform.position, player.transform.position) < shootingDistance + 5f) ChaseTarget();
+        if (Vector3.Distance(transform.position, player.transform.position) < shootingDistance + 2f) transform.LookAt(player.transform.position + new Vector3(0,1.5f,0));
+        if (Physics.Raycast(spawnPosition.position, spawnPosition.forward, out hit, shootingDistance) && !isShooting)
+        {
+            if(hit.collider.gameObject.tag == "Player")
+            {
+                StartCoroutine("ShootLaser");       
+                isShooting = true;
+            }
+        }
+        else return; 
+    }
+
+    void ChaseTarget()
+    {
+        agent.SetDestination(PlayerLife.Instance.transform.position);
+        agent.stoppingDistance = shootingDistance; 
+        agent.speed = 2f;
     }
 
     IEnumerator ShootLaser()
     {
         SpawnLaser();
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         SpawnLaser();
-        yield return new WaitForSeconds(0.3f);
-        SpawnLaser();
-        yield return new WaitForSeconds(1f);
-        isShooting = false;
+        yield return new WaitForSeconds(2f);
         StopCoroutine("ShootLaser");
+        isShooting = false;
     }
 
     void SpawnLaser()
@@ -74,7 +86,8 @@ public class DroneAttack : MonoBehaviour, IDamageable
     {
         GameObject deathPS = Instantiate(deathFX, transform.position, Quaternion.identity);
         deathPS.transform.localScale = Vector3.one * 0.5f;
-        Destroy(gameObject);
+        Destroy(deathPS, 2f);
+        Destroy(transform.parent.transform.parent.gameObject);
     }
     
 }

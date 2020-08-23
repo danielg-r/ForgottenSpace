@@ -350,6 +350,11 @@ MonoBehaviour:
   - {fileID: 809943204616752776}
   - {fileID: 809943205098862003}
   - {fileID: 809943204203247499}
+  attackDroneSpawn: {fileID: 809943204828357258}
+  attackDronePrefab: {fileID: 1565718094820318482, guid: 847184c4c15808543a38d389429300fc,
+    type: 3}
+  attackDroneAmount: 3
+  spawnInterval: 1
   maxHealth: 20
   currentHealth: 0
   deathFX: {fileID: 1533753553117432, guid: 75f1089cb32e0394c953a6d7b2c3e1f9, type: 3}
@@ -561,6 +566,7 @@ GameObject:
   m_Component:
   - component: {fileID: 809943205364158750}
   - component: {fileID: 809943205364158751}
+  - component: {fileID: 7069472394452426360}
   m_Layer: 0
   m_Name: Detection
   m_TagString: Untagged
@@ -596,6 +602,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 9dc298289ae195f4aab2ff40e02a219e, type: 3}
+--- !u!114 &7069472394452426360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809943205364158749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cf5c579e3470d544ba242765637f25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionCooldown: 0
 --- !u!1 &7548516947088188670
 GameObject:
   m_ObjectHideFlags: 0

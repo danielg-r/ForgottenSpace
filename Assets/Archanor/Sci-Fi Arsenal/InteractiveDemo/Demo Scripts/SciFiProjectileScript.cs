@@ -15,11 +15,13 @@ public class SciFiProjectileScript : MonoBehaviour
     public GameObject myObject;
 
     private bool hasCollided = false;
+    private bool projectileCreated = false;
 
     void Start()
     {
         projectileParticle = Instantiate(projectileParticle, transform.position, transform.rotation) as GameObject;
         projectileParticle.transform.parent = transform;
+        projectileCreated = true;
         if (muzzleParticle)
         {
             muzzleParticle = Instantiate(muzzleParticle, transform.position, transform.rotation) as GameObject;
@@ -30,33 +32,30 @@ public class SciFiProjectileScript : MonoBehaviour
 
     void OnCollisionEnter(Collision hit)
     {
+        if (gameObject.CompareTag("Projectile") && hit.gameObject.CompareTag("Projectile"))
+        {
+            Debug.Log("Ignorando collision");
+            Physics.IgnoreCollision(GetComponent<Collider>(), hit.gameObject.GetComponent<Collider>(),true);
+            hasCollided = false;
+        }
+
         if (!hasCollided)
         {
             impactParticle = Instantiate(impactParticle, transform.position, Quaternion.FromToRotation(Vector3.up, impactNormal)) as GameObject;
 
             if (hit.gameObject.GetComponent<IDamageable>() != null)
-            {
-                if (gameObject.tag == hit.gameObject.tag)
-                {
-                    Physics.IgnoreCollision(hit.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
-                    hasCollided = false;
-                }
-                else
-                {
+            {                
+                // else
+                // {
                     hit.gameObject.GetComponent<IDamageable>().TakeDamage(damageAmount);
-                    impactParticle = Instantiate(impactParticle, transform.position, Quaternion.FromToRotation(Vector3.up, impactNormal)) as GameObject;
+                    //impactParticle = Instantiate(impactParticle, transform.position, Quaternion.FromToRotation(Vector3.up, impactNormal)) as GameObject;
                     hasCollided = true;
-                }                    
+                //}                    
             }
             else
             {
-                impactParticle = Instantiate(impactParticle, transform.position, Quaternion.FromToRotation(Vector3.up, impactNormal)) as GameObject;
+                //impactParticle = Instantiate(impactParticle, transform.position, Quaternion.FromToRotation(Vector3.up, impactNormal)) as GameObject;
                 hasCollided = true;
-            }
- 
-            if (hit.gameObject.tag == "Destructible") // Projectile will destroy objects tagged as Destructible
-            {
-                Destroy(hit.gameObject);
             }
  
             foreach (GameObject trail in trailParticles)
@@ -65,12 +64,10 @@ public class SciFiProjectileScript : MonoBehaviour
                 curTrail.transform.parent = null;
                 Destroy(curTrail, 3f);
             }
-            if (hasCollided)
-            {
-                Destroy(projectileParticle, 3f);
-                Destroy(impactParticle, 5f);
-                Destroy(gameObject);
-            }
+
+            if (projectileCreated) Destroy(impactParticle, 3f);
+            if (projectileCreated) Destroy(projectileParticle, 5f);
+            Destroy(gameObject);
 			
 			ParticleSystem[] trails = GetComponentsInChildren<ParticleSystem>();
             //Component at [0] is that of the parent i.e. this object (if there is any)
@@ -86,6 +83,9 @@ public class SciFiProjectileScript : MonoBehaviour
 				}
             }
         }
+        // Destroy(impactParticle, 3f);
+        // Destroy(projectileParticle, 5f);
+        // Destroy(gameObject);            
     }
 }
 }

@@ -609,13 +609,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 133456, guid: 8824db73d5a760e479d5db6a614258aa, type: 3}
   spawnPosition: {fileID: 1565718093629035936}
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 1024
   maxHealth: 20
   currentHealth: 0
   deathFX: {fileID: 1533753553117432, guid: 75f1089cb32e0394c953a6d7b2c3e1f9, type: 3}
-  damage: 0
+  damage: 5
   shootingDistance: 10
   speed: 1000
 --- !u!135 &8846554570515506040
