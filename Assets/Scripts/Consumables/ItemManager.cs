@@ -25,9 +25,6 @@ public class ItemManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        itemcooldown++;
-        itemlifeRegen++;
-        itemRunCooldown++;
     }
     private void Start()
     {        
