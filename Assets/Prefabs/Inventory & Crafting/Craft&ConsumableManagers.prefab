@@ -158,7 +158,6 @@ GameObject:
   - component: {fileID: 5190149984398331045}
   - component: {fileID: 5190149984398331040}
   - component: {fileID: 5190149984398331047}
-  - component: {fileID: 5190149984398331046}
   m_Layer: 5
   m_Name: Slot (10)
   m_TagString: Untagged
@@ -219,21 +218,6 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &5190149984398331046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5190149984398331044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c1360db22350ed4f80ffb1dd4a47b2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isEmpty: 0
-  item: {fileID: 5190149984398331044}
-  itemIcon: {fileID: 2800000, guid: df646550bafb34bbc8544dc1cb378d6e, type: 3}
 --- !u!1 &5190149984408357716
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +513,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000091552734, y: 0}
+  m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 1108, y: 622.99243}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5190149984453471891
@@ -6698,7 +6682,6 @@ GameObject:
   - component: {fileID: 5190149985585234221}
   - component: {fileID: 5190149985585234216}
   - component: {fileID: 5190149985585234223}
-  - component: {fileID: 5190149985585234222}
   m_Layer: 5
   m_Name: Slot (11)
   m_TagString: Untagged
@@ -6759,21 +6742,6 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &5190149985585234222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5190149985585234220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c1360db22350ed4f80ffb1dd4a47b2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isEmpty: 0
-  item: {fileID: 0}
-  itemIcon: {fileID: 2800000, guid: fb7e3d821132d42bbbc37a4b177c2a0f, type: 3}
 --- !u!1 &5190149985610783248
 GameObject:
   m_ObjectHideFlags: 0
@@ -7294,8 +7262,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5190149985647206937}
-  - component: {fileID: 5190149985647206932}
-  - component: {fileID: 5190149985647206939}
   - component: {fileID: 5190149985647206938}
   m_Layer: 8
   m_Name: CraftingManager
@@ -7320,60 +7286,6 @@ Transform:
   m_Father: {fileID: 5190149985852994588}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!65 &5190149985647206932
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5190149985647206936}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.7492532, y: 2.8201509, z: 1.1740808}
-  m_Center: {x: 0.000030372035, y: 0.08262377, z: 0.5321536}
---- !u!114 &5190149985647206939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5190149985647206936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31220b212ff369e469dc3a8328b874d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInRange: 0
-  interactKey: 101
-  OnInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5190149984453471888}
-        m_MethodName: OpenWindow
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5190149986149707862}
-        m_MethodName: ShowCursor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  text: {fileID: 5190149986237700458}
-  craftSystem: {fileID: 5190149985647206938}
 --- !u!114 &5190149985647206938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7389,7 +7301,7 @@ MonoBehaviour:
   necessaryPiecesAToPistol: 3
   necessaryPiecesBToPistol: 2
   CanCraft: 1
-  interaCraft: {fileID: 5190149985647206939}
+  interaCraft: {fileID: 0}
 --- !u!1 &5190149985722140250
 GameObject:
   m_ObjectHideFlags: 0
@@ -8760,7 +8672,6 @@ GameObject:
   - component: {fileID: 5190149986086755530}
   - component: {fileID: 5190149986086755525}
   - component: {fileID: 5190149986086755524}
-  - component: {fileID: 5190149986086755531}
   m_Layer: 5
   m_Name: Slot (12)
   m_TagString: Untagged
@@ -8821,21 +8732,6 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &5190149986086755531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5190149986086755529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c1360db22350ed4f80ffb1dd4a47b2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isEmpty: 0
-  item: {fileID: 0}
-  itemIcon: {fileID: 2800000, guid: d0ca99642fe5f4ffa9859004dacf948c, type: 3}
 --- !u!1 &5190149986118644158
 GameObject:
   m_ObjectHideFlags: 0

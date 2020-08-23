@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 5538179740145839755}
   - component: {fileID: 5538179740145839754}
   m_Layer: 5
-  m_Name: LoreCollectibles(Cambiar por lista)
+  m_Name: LoreCollectibles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
