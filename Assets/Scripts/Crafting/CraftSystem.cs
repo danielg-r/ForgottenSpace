@@ -17,7 +17,6 @@ public class CraftSystem : MonoBehaviour
     public delegate void OnCurrencySpent();
     public event OnCurrencySpent onCurrSpent;
 
-    [SerializeField] InteraCraft interaCraft;
     InventoryManager inventoryManager;
 
 
