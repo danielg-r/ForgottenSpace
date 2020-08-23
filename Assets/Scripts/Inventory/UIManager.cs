@@ -9,10 +9,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI currencyText;
     [SerializeField] private TextMeshProUGUI gunPieceText;
     [SerializeField] private TextMeshProUGUI suitPieceText;
+    [SerializeField] private TextMeshProUGUI aPieceText;
+    [SerializeField] private TextMeshProUGUI bPieceText;
 
-    [SerializeField] private TextMeshProUGUI ItemLifeText;
-    [SerializeField] private TextMeshProUGUI ItemStaminaText;
-    [SerializeField] private TextMeshProUGUI ItemShotText;
+    //[SerializeField] private TextMeshProUGUI ItemLifeText;
+    //[SerializeField] private TextMeshProUGUI ItemStaminaText;
+    //[SerializeField] private TextMeshProUGUI ItemShotText;
 
     private InventoryManager inventory;
     ItemManager itemManager;
@@ -24,6 +26,10 @@ public class UIManager : MonoBehaviour
         {
             CurrencyManager.Instance.onCurrAdded += new CurrencyManager.OnCurrencyAdded(OnCurrAdded);
         }
+        if (CraftSystem.Instance != null)
+        {
+            CraftSystem.Instance.onCurrSpent += new CraftSystem.OnCurrencySpent(OnCurrSpent);
+        }
         inventory = InventoryManager.Instance;
         itemManager = ItemManager.Instance;
     }
@@ -34,9 +40,20 @@ public class UIManager : MonoBehaviour
         currencyText.text = inventory.currentCurrency.ToString();
         gunPieceText.text = inventory.currentGunPieces.ToString();
         suitPieceText.text = inventory.currentSuitPieces.ToString();
+        aPieceText.text = inventory.currentGunPieces.ToString();
+        bPieceText.text = inventory.currentSuitPieces.ToString();
 
-        // ItemLifeText.text = itemManager.itemlifeRegen.ToString();
-        // ItemStaminaText.text = itemManager.itemRunCooldown.ToString();
-        // ItemShotText.text = itemManager.itemcooldown.ToString();
+        //ItemLifeText.text = itemManager.itemlifeRegen.ToString();
+        //ItemStaminaText.text = itemManager.itemRunCooldown.ToString();
+        //ItemShotText.text = itemManager.itemcooldown.ToString();
+    }
+
+    void OnCurrSpent()
+    {
+        currencyText.text = inventory.currentCurrency.ToString();
+        gunPieceText.text = inventory.currentGunPieces.ToString();
+        suitPieceText.text = inventory.currentSuitPieces.ToString();
+        aPieceText.text = inventory.currentGunPieces.ToString();
+        bPieceText.text = inventory.currentSuitPieces.ToString();
     }
 }

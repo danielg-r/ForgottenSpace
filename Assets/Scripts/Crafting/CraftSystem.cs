@@ -5,17 +5,43 @@ using UnityEngine;
 
 public class CraftSystem : MonoBehaviour
 {
-    public int pieces = 0; //Esto serian piezas del inventario
-    public int necessaryPieces = 3; //Valor interno
+
+    public static CraftSystem Instance { get; private set; }
+
+    public int necessaryPiecesAToPistol = 3; //Valor interno
+    public int necessaryPiecesBToPistol = 2; //Valor interno
+
     public bool CanCraft = false;
     private bool ItCrafted = false;
 
-    [SerializeField] InteraCraft interaCraft;
+    public delegate void OnCurrencySpent();
+    public event OnCurrencySpent onCurrSpent;
 
-    
+    [SerializeField] InteraCraft interaCraft;
+    InventoryManager inventoryManager;
+
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        inventoryManager = InventoryManager.Instance;
+        ItCrafted = false;
+    }
+
     public void Update()
     {
-        if ( pieces >= necessaryPieces)
+        if ( inventoryManager.currentGunPieces >= necessaryPiecesAToPistol && inventoryManager.currentSuitPieces >= necessaryPiecesBToPistol)
         {
             CanCraft = true;
         }
@@ -36,10 +62,12 @@ public class CraftSystem : MonoBehaviour
     {
         if (CanCraft)
         {
-            if (pieces >= necessaryPieces)
+            if (inventoryManager.currentGunPieces >= necessaryPiecesAToPistol && inventoryManager.currentSuitPieces >= necessaryPiecesBToPistol)
             {
                 ActivatePistol.Instance.Activate();
-                pieces -= necessaryPieces;                
+                inventoryManager.currentGunPieces -= necessaryPiecesAToPistol;
+                inventoryManager.currentSuitPieces -= necessaryPiecesBToPistol;
+                onCurrSpent();
                 CanCraft = false;
                 ItCrafted = true;
             }

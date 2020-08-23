@@ -5,18 +5,18 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
-public class PlayerLife : MonoBehaviour, IDamageable
+public class PlayerLife : MonoBehaviour
 {
     public static PlayerLife Instance { get; private set; }
 
     [SerializeField] Volume vol;
     Vignette vig;
-    public int AmountRegen;
+    public float AmountRegen;
     [SerializeField] int waitToRegen;
 
     [SerializeField] Slider staminaBar;
     [SerializeField] int maxLife;
-    int currentLife;
+    float currentLife;
 
     WaitForSeconds regenTick = new WaitForSeconds(0.1f);
     Coroutine regen;
@@ -46,13 +46,22 @@ public class PlayerLife : MonoBehaviour, IDamageable
         vig.intensity.value = 0;
     }
 
-    public void TakeDamage(int amount)
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(20);
+        }
+    }
+
+    public void TakeDamage(float amount)
     {
         if (currentLife - amount > 0)
         {
             currentLife -= amount;
             staminaBar.value = currentLife;
-            vig.intensity.value = 0.4f;
+            vig.intensity.value += (amount/100);
+            AudioManager.Instance.Play("HurtPlayer");
 
             if (regen != null)
                 StopCoroutine(regen);
@@ -64,6 +73,7 @@ public class PlayerLife : MonoBehaviour, IDamageable
             {
                 staminaBar.value = 0;
                 StopCoroutine(regen);
+                AudioManager.Instance.Play("PlayerDeath");
                 onPlayerDied();
             }
         }
@@ -77,7 +87,7 @@ public class PlayerLife : MonoBehaviour, IDamageable
         {
             currentLife += AmountRegen;
             staminaBar.value = currentLife;
-            vig.intensity.value -= 0.02f;
+            vig.intensity.value -= (AmountRegen/100);
             yield return regenTick;
         }
         regen = null;
