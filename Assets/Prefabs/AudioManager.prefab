@@ -56,3 +56,51 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+  - Nombre: RobotDetect
+    pista: {fileID: 8300000, guid: db8ed9ee356e02245acf3cf36a754f1a, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: RobotStun
+    pista: {fileID: 8300000, guid: 141d28368b3be0548868f3035936ee89, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: DroneDeath
+    pista: {fileID: 8300000, guid: ba8309d40647c1e4491ec2f214689445, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: DroneDetect
+    pista: {fileID: 8300000, guid: ba8309d40647c1e4491ec2f214689445, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: RobotAttack
+    pista: {fileID: 8300000, guid: ba8309d40647c1e4491ec2f214689445, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: RobotWalk
+    pista: {fileID: 8300000, guid: ba8309d40647c1e4491ec2f214689445, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: Click
+    pista: {fileID: 8300000, guid: 1bf42d39567452449bb2870433b11896, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: DroneDeath
+    pista: {fileID: 8300000, guid: ba8309d40647c1e4491ec2f214689445, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
