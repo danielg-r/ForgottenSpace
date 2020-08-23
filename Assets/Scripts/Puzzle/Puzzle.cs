@@ -7,8 +7,8 @@ public class Puzzle : MonoBehaviour
 {
 
     public GameObject[] Levers;
-    public int[] code;
-    int[] internalCode;
+    [Range(0, 2)] public int[] code;    
+    int[] internalCode; 
     //-----
     public UnityEvent OnInteract;
 

@@ -46,14 +46,6 @@ public class PlayerLife : MonoBehaviour
         vig.intensity.value = 0;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
-    }
-
     public void TakeDamage(float amount)
     {
         if (currentLife - amount > 0)
