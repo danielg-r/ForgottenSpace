@@ -61,6 +61,7 @@ public class PlayerLife : MonoBehaviour
             currentLife -= amount;
             staminaBar.value = currentLife;
             vig.intensity.value += (amount/100);
+            AudioManager.Instance.Play("HurtPlayer");
 
             if (regen != null)
                 StopCoroutine(regen);
@@ -72,6 +73,7 @@ public class PlayerLife : MonoBehaviour
             {
                 staminaBar.value = 0;
                 StopCoroutine(regen);
+                AudioManager.Instance.Play("PlayerDeath");
                 onPlayerDied();
             }
         }
