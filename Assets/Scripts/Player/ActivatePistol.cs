@@ -22,6 +22,11 @@ public class ActivatePistol : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F)) Activate();
+    }
+
     private void Start()
     {
         playerMovement = PlayerMovement.Instance;

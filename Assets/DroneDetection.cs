@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 
 public class DroneDetection : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class DroneDetection : MonoBehaviour
     [SerializeField] float detectionCooldown;
     [SerializeField] bool canDetectPlayer;
     List<float> distances = new List<float>();
+    public UnityEvent OnDetection;
 
     void Start()
     {
@@ -23,6 +26,7 @@ public class DroneDetection : MonoBehaviour
             GetClosestSpawner();
             StartCoroutine("DetectionCooldown");
             Debug.Log("Jugador detectado");
+            OnDetection.Invoke();
         }        
     }
 

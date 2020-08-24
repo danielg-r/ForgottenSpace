@@ -24,6 +24,7 @@ public class PlayerLife : MonoBehaviour
 
     public delegate void OnPlayerDied();
     public event OnPlayerDied onPlayerDied;
+    public bool isDead;
 
     void Awake()
     {
@@ -63,6 +64,7 @@ public class PlayerLife : MonoBehaviour
         {
             if (onPlayerDied != null)
             {
+                isDead = true;
                 staminaBar.value = 0;
                 StopCoroutine(regen);
                 AudioManager.Instance.Play("PlayerDeath");

@@ -5,27 +5,30 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour, IDamageable
 {
-    //Este codigo esta muy desordenado, meper d0nas
-        //ÑO... pirata :p
-    //[SerializeField] float lookRadius = 5f;
-    //[SerializeField] PlayerMovement player;
-
+    #region Variables
     NavMeshAgent agent;
     EnemyState state;
     Animator animator;
     Rigidbody rb;
+    float distance;
+    [Header("PathFinding")]
     [SerializeField] protected Transform target;
     [SerializeField] float followDistance = 8f, attackDistance = 2f;
-
-    float distance;
+    [Header("Attributes")]
     [SerializeField] int maxHealth;
     [SerializeField] int currentHealth;
+    public int damage;
     [SerializeField] int lives;
     [SerializeField] int deathTimer;
+    [SerializeField] GameObject deathFX;
+    [Header("Attack Colliders")]
     [SerializeField] Collider deathCollider;
+    [SerializeField] Collider rightCollider;
+    [SerializeField] Collider leftCollider;
 
     Vector3 lastPosition;
-    
+    #endregion
+
     public virtual void Start()
     {        
         animator = GetComponent<Animator>();
@@ -50,7 +53,6 @@ public class EnemyController : MonoBehaviour, IDamageable
         {
             default:
             case EnemyState.Wander:
-                Debug.Log("Enemy Wandering");
                 animator.SetBool("Attack",  false);
                 if (distance < followDistance && target != null)
                 {
@@ -59,8 +61,6 @@ public class EnemyController : MonoBehaviour, IDamageable
                 break;
             
             case EnemyState.Chase:
-                Debug.Log("Enemy Chasing");
-                animator.SetFloat("Speed", 1f);
                 animator.SetBool("IsWalking",  true);
                 agent.SetDestination(target.position);
                 agent.isStopped = false;
@@ -70,24 +70,25 @@ public class EnemyController : MonoBehaviour, IDamageable
                 break;
             
             case EnemyState.BackToStart:
-                Debug.Log("Enemy Back to Start");
                 animator.SetBool("Attack",  false);
                 agent.SetDestination(lastPosition);
                 agent.stoppingDistance = 0.1f; 
                 if (Vector3.Distance(transform.position, lastPosition) < 0.5f)
-                {
-                    animator.SetFloat("Speed", 0.2f);
+                {                    
                     animator.SetBool("IsWalking", false);
                     state = EnemyState.Wander;
                 }
                 break;
-            case EnemyState.Attack:
-                //Attack();
+            case EnemyState.Attack:                
                 agent.isStopped = true;
                 animator.SetBool("IsWalking",  false);
                 animator.SetInteger("attackSelector", Random.Range(0,2));
                 animator.SetBool("Attack", true);
-                Debug.Log("Enemy Attacking");
+                if (PlayerLife.Instance.isDead)
+                {
+                    state = EnemyState.BackToStart;
+                    target = null;
+                } 
                 
                 break;
             case EnemyState.Dead:
@@ -126,7 +127,7 @@ public class EnemyController : MonoBehaviour, IDamageable
         else 
         {
             //agent.enabled = false;
-            //Sistema de particulas destrucción
+            GameObject ps = Instantiate(deathFX, transform.position + new Vector3(0f, 1f, 0f), transform.rotation);
             Destroy(transform.parent.gameObject);
             this.enabled = false; 
         }
@@ -153,6 +154,20 @@ public class EnemyController : MonoBehaviour, IDamageable
     void StopAttack()
     {
         animator.SetBool("Attack", false);
+        if (rightCollider.enabled || leftCollider.enabled)
+        {
+            rightCollider.enabled = false;
+            leftCollider.enabled = false;
+        }
+    }
+
+    void RightAttack()
+    {
+        rightCollider.enabled = true;
+    }
+    void LeftAttack()
+    {
+        leftCollider.enabled = true;
     }
 
     void ResumeChase()
