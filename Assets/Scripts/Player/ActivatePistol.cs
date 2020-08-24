@@ -26,6 +26,7 @@ public class ActivatePistol : MonoBehaviour
     void Start()
     {
         playerMovement = PlayerMovement.Instance;
+        playerMovement.CanAim = false;
         Deactivate();        
     }
 
@@ -42,6 +43,7 @@ public class ActivatePistol : MonoBehaviour
     }
     public void Deactivate()
     {
+        Debug.Log("Desactivando");
         Layer.weight = 0f;
         Pistol.SetActive(false);
         playerMovement.CanAim = false;

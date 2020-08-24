@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour, IDamageable
 {
     #region Variables
     NavMeshAgent agent;
-    EnemyState state;
+    public EnemyState state;
     Animator animator;
     Rigidbody rb;
     float distance;
@@ -28,6 +28,7 @@ public class EnemyController : MonoBehaviour, IDamageable
     [SerializeField] Collider leftCollider;
 
     Vector3 lastPosition;
+    bool isAttacking;
     #endregion
 
     public virtual void Start()
@@ -54,6 +55,12 @@ public class EnemyController : MonoBehaviour, IDamageable
         {
             default:
             case EnemyState.Wander:
+                FindTarget();
+                if (!agent.enabled)
+                { 
+                    agent.enabled = true;
+                    agent.isStopped = false;       
+                }                    
                 animator.SetBool("Attack",  false);
                 if (distance < followDistance && target != null)
                 {
@@ -62,11 +69,12 @@ public class EnemyController : MonoBehaviour, IDamageable
                 break;
             
             case EnemyState.Chase:
-                animator.SetBool("IsWalking",  true);
-                agent.SetDestination(target.position);
                 agent.isStopped = false;
+                if (currentHealth <= 0) state = EnemyState.Dead;
+                animator.SetBool("IsWalking",  true);
+                if (!isAttacking && state != EnemyState.Dead) agent.SetDestination(target.position);
                 agent.stoppingDistance = 1.8f;
-                if (distance < attackDistance) state = EnemyState.Attack;
+                if (distance < attackDistance && !isAttacking) state = EnemyState.Attack;
                 else if (distance > followDistance) state = EnemyState.BackToStart;
                 break;
             
@@ -80,7 +88,8 @@ public class EnemyController : MonoBehaviour, IDamageable
                     state = EnemyState.Wander;
                 }
                 break;
-            case EnemyState.Attack:                
+            case EnemyState.Attack:
+                isAttacking = true;                
                 agent.isStopped = true;
                 animator.SetBool("IsWalking",  false);
                 animator.SetInteger("attackSelector", Random.Range(0,2));
@@ -89,14 +98,16 @@ public class EnemyController : MonoBehaviour, IDamageable
                 {
                     state = EnemyState.BackToStart;
                     target = null;
-                } 
-                
+                }
+                state = EnemyState.Chase;                 
                 break;
             case EnemyState.Dead:
-                agent.isStopped = true;
+                isAttacking = false;
+                animator.SetBool("IsWalking",  false);
+                animator.SetBool("Attack", false);
                 float t = 0;
                 t+= Time.deltaTime;
-                if (t > 1f) agent.enabled = false;                
+                if (t > 0.05f) agent.enabled = false;                
                 break;
         }        
     }
@@ -122,7 +133,7 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     void Die()
     {
-        //lastState = state; 
+        agent.isStopped = true; 
         state = EnemyState.Dead;
         animator.SetBool("IsDead", true);
         lives--;
@@ -147,6 +158,7 @@ public class EnemyController : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(3f);
         state = EnemyState.Wander;
         deathCollider.enabled = true;
+        StopCoroutine("DeathTimer");
     }
 
     void Attack()
@@ -156,6 +168,8 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     void StopAttack()
     {
+        agent.isStopped = false;
+        isAttacking = false;
         animator.SetBool("Attack", false);
         if (rightCollider.enabled || leftCollider.enabled)
         {

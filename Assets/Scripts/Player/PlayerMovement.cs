@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Start()
     {
-        CanAim = true;
+        //CanAim = true;
         CanRun = true;
     }
     void Update()
