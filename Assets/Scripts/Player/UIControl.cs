@@ -9,6 +9,10 @@ public class UIControl : MonoBehaviour
     [SerializeField] TextMeshProUGUI label;
     [SerializeField] GameObject buttonMenú;
     [SerializeField] GameObject buttonReiniciar;
+    [SerializeField] GameObject bars;
+    [SerializeField] GameObject bars1;
+    [SerializeField] GameObject bars2;
+    [SerializeField] GameObject hotBar;
 
     void Start()
     {
@@ -23,6 +27,10 @@ public class UIControl : MonoBehaviour
 
     void OnPlayerDied()
     {
+        bars.SetActive(false);
+        bars1.SetActive(false);
+        bars2.SetActive(false);
+        hotBar.SetActive(false);
         buttonMenú.SetActive(true);
         buttonReiniciar.SetActive(true);
         label.text = "HAS MUERTO";
