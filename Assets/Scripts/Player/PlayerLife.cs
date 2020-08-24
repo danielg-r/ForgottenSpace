@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
-public class PlayerLife : MonoBehaviour
+public class PlayerLife : MonoBehaviour, IDamageable
 {
     public static PlayerLife Instance { get; protected set; }
 
@@ -46,14 +46,14 @@ public class PlayerLife : MonoBehaviour
         vig.intensity.value = 0;
     }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(int amount)
     {
+        AudioManager.Instance.Play("HurtPlayer");
         if (currentLife - amount > 0)
         {
             currentLife -= amount;
             staminaBar.value = currentLife;
-            vig.intensity.value += (amount/100);
-            AudioManager.Instance.Play("HurtPlayer");
+            vig.intensity.value += ((float)amount/100);
 
             if (regen != null)
                 StopCoroutine(regen);

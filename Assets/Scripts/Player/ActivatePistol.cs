@@ -20,16 +20,18 @@ public class ActivatePistol : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+    }
+
+    void Start()
+    {
+        playerMovement = PlayerMovement.Instance;
+        Deactivate();        
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F)) Activate();
-    }
-
-    private void Start()
-    {
-        playerMovement = PlayerMovement.Instance;
     }
 
     public void Activate()

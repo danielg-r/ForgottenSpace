@@ -41,7 +41,7 @@ public class DroneSpawner : MonoBehaviour
     void SpawnAttackDrone()
     {
         GameObject drone = Instantiate(attackDronePrefab, attackDroneSpawn.position + positionRandomizer, attackDroneSpawn.rotation);
-        GameObject ps = Instantiate(attackDroneFX, attackDroneSpawn.position + new Vector3 (0,-1f,0), attackDroneSpawn.rotation);
+        GameObject ps = Instantiate(attackDroneFX, attackDroneSpawn.position + positionRandomizer + new Vector3 (0,-1f,0), attackDroneFX.transform.rotation);
         ps.transform.localScale = Vector3.one * 0.7f;
         drone.GetComponentInChildren<NavMeshAgent>().SetDestination(PlayerLife.Instance.transform.position); 
     }
