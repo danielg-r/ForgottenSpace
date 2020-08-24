@@ -28,7 +28,7 @@ public class Puzzle : MonoBehaviour
         AudioManager.Instance.Play("PuzzleSolved");
     }
 
-    public void ReceberSignal(GameObject go, int _state)
+    public void ReciveSignal(GameObject go, int _state)
     {
         for(int i = 0; i < Levers.Length;i++)
         {
@@ -38,10 +38,10 @@ public class Puzzle : MonoBehaviour
                 break;
             }
         }
-        verificar();
+        Verifier();
     }
 
-    void verificar()
+    void Check()
     {
         bool correct = true;
 
@@ -58,7 +58,7 @@ public class Puzzle : MonoBehaviour
         {
             foreach(GameObject a in Levers)
             {
-                a.GetComponent<Levers>().puedegirar = false;
+                a.GetComponent<Levers>().CanTurn = false;
             }
             CorrectCode();
         }

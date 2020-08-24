@@ -3225,7 +3225,6 @@ GameObject:
   - component: {fileID: 5952533717481216116}
   - component: {fileID: 2895386197900752668}
   - component: {fileID: 1187108014}
-  - component: {fileID: 7536569431419783344}
   m_Layer: 0
   m_Name: Hand_L
   m_TagString: Untagged
@@ -3264,19 +3263,6 @@ SphereCollider:
   m_Radius: 0.04
   m_Center: {x: -0.01, y: 0, z: 0}
 --- !u!114 &1187108014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5948977493444132000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d440852a0cc5dfe44b8e65f3166024f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
---- !u!114 &7536569431419783344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
