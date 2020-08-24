@@ -60,12 +60,10 @@ public class CraftSystem : MonoBehaviour
                 inventoryManager.currentGunPieces -= necessaryPiecesAToPistol;
                 inventoryManager.currentSuitPieces -= necessaryPiecesBToPistol;
                 onCurrSpent();
+                AudioManager.Instance.Play("Click");
                 CanCraft = false;
                 ItCrafted = true;
             }
         }
     }
-
-    
-
 }

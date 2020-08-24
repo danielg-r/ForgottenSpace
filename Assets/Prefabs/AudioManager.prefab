@@ -98,8 +98,38 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
-  - Nombre: DroneDeath
-    pista: {fileID: 8300000, guid: ba8309d40647c1e4491ec2f214689445, type: 3}
+  - Nombre: PuzzleSolved
+    pista: {fileID: 8300000, guid: 0c74617e90bcf2a4193a83c057b40736, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: Loot
+    pista: {fileID: 8300000, guid: 0c74617e90bcf2a4193a83c057b40736, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: PuzzleSolved
+    pista: {fileID: 8300000, guid: 0c74617e90bcf2a4193a83c057b40736, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: PuzzleSolved
+    pista: {fileID: 8300000, guid: 0c74617e90bcf2a4193a83c057b40736, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: PuzzleSolved
+    pista: {fileID: 8300000, guid: 0c74617e90bcf2a4193a83c057b40736, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: PuzzleSolved
+    pista: {fileID: 8300000, guid: 0c74617e90bcf2a4193a83c057b40736, type: 3}
     Vol: 1
     Pitch: 1
     Loop: 0

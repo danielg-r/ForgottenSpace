@@ -25,6 +25,7 @@ public class Puzzle : MonoBehaviour
         {
             g.SetActive(false);
         }
+        AudioManager.Instance.Play("PuzzleSolved");
     }
 
     public void ReceberSignal(GameObject go, int _state)
