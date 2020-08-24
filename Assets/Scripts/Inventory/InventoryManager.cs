@@ -43,20 +43,9 @@ public class InventoryManager : MonoBehaviour
         curr = GetComponent<Currency>();
     }
 
-    public void OnTriggerEnter(Collider other) //Interaction test.
+    public void AddItem(Item item)
     {
-        if (other.gameObject.GetComponent<Item>())
-        {
-            GameObject pickedItem = other.gameObject;
-
-            int it = other.gameObject.GetComponent<Item>().type;
-            AddItem(pickedItem, it);
-
-        }
-    }
-
-    public void AddItem(GameObject item, int it)
-    {
+        int it = item.type;
         switch (it)
         {
             case 1:
@@ -66,7 +55,7 @@ public class InventoryManager : MonoBehaviour
                         if (loreSlots[i].GetComponent<Slot>().isEmpty)
                         {
                             loreSlots[i].GetComponent<Slot>().item = item;
-                            loreSlots[i].GetComponent<Slot>().itemIcon = item.GetComponent<Item>().icon;
+                            loreSlots[i].GetComponent<Slot>().itemIcon = item.icon;
                             break;
                         }
                     }
@@ -83,10 +72,10 @@ public class InventoryManager : MonoBehaviour
 
                     for (int i = 0; i < freeShipSlots; i++)
                     {
-                        if (shipSlots[i].GetComponent<Slot>().isEmpty) // && itemAdded == false
+                        if (shipSlots[i].GetComponent<Slot>().isEmpty)
                         {
                             shipSlots[i].GetComponent<Slot>().item = item;
-                            shipSlots[i].GetComponent<Slot>().itemIcon = item.GetComponent<Item>().icon;
+                            shipSlots[i].GetComponent<Slot>().itemIcon = item.icon;
                             shipPieceCount += 1;
                             break;
                         }
