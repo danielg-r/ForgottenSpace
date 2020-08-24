@@ -11,15 +11,15 @@ public class ConsumableUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI ConsumableStaminaText;
     [SerializeField] private TextMeshProUGUI ConsumableEnergyText;
 
-    ComsuManager ComsuManager;
+    ConsuManager ComsuManager;
 
 
     void Start()
     {
         
-        if (ComsuManager.Instance != null)
+        if (ConsuManager.Instance != null)
         {
-            ComsuManager.Instance.OnConsumableUses += new ComsuManager.OnItemAdded(onItemAdded);
+            ConsuManager.Instance.OnConsumableUses += new ConsuManager.OnItemAdded(onItemAdded);
         }
         onItemAdded();
     }
@@ -27,9 +27,9 @@ public class ConsumableUI : MonoBehaviour
 
     void onItemAdded()
     {
-        ConsumableLifeText.text = ComsuManager.Instance.ConsuLifeRegen.ToString();
-        ConsumableStaminaText.text = ComsuManager.Instance.ConsuStaminaCooldown.ToString();
-        ConsumableEnergyText.text = ComsuManager.Instance.ConsumableCooldown.ToString();
+        ConsumableLifeText.text = ConsuManager.Instance.ConsuLifeRegen.ToString();
+        ConsumableStaminaText.text = ConsuManager.Instance.ConsuStaminaCooldown.ToString();
+        ConsumableEnergyText.text = ConsuManager.Instance.ConsumableCooldown.ToString();
     }
 
 

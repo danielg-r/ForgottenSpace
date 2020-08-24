@@ -34,7 +34,7 @@ public class Levers : MonoBehaviour
         }
 
 
-        Controller.GetComponent<Puzzle>().ReciveSignal(this.gameObject, State);
+        Controller.GetComponent<Puzzle>().ReceiveSignal(this.gameObject, State);
     }
 
     public void MoveLevers()

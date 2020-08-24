@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ComsuManager : MonoBehaviour
+public class ConsuManager : MonoBehaviour
 {
     public delegate void OnItemAdded();
     public event OnItemAdded OnConsumableUses;
 
     public delegate void OnItemUsed();
     public event OnItemUsed onItemUsed;
-    public static ComsuManager Instance { get; private set; }
+    public static ConsuManager Instance { get; private set; }
 
     public int ConsumableCooldown; //{ get; private set; }
     public int ConsuLifeRegen; //{ get; private set; }

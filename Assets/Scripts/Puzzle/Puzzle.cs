@@ -28,7 +28,7 @@ public class Puzzle : MonoBehaviour
         AudioManager.Instance.Play("PuzzleSolved");
     }
 
-    public void ReciveSignal(GameObject go, int _state)
+    public void ReceiveSignal(GameObject go, int _state)
     {
         for(int i = 0; i < Levers.Length;i++)
         {
@@ -38,7 +38,7 @@ public class Puzzle : MonoBehaviour
                 break;
             }
         }
-        Verifier();
+        Check();
     }
 
     void Check()

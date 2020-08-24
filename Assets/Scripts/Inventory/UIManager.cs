@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
     //[SerializeField] private TextMeshProUGUI ItemShotText;
 
     private InventoryManager inventory;
-    ComsuManager itemManager;
+    ConsuManager itemManager;
 
 
     void Start()
@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
             CraftSystem.Instance.onCurrSpent += new CraftSystem.OnCurrencySpent(OnCurrSpent);
         }
         inventory = InventoryManager.Instance;
-        itemManager = ItemManager.Instance;
+        itemManager = ConsuManager.Instance;
     }
 
     void OnCurrAdded()
