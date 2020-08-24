@@ -10,7 +10,7 @@ public class Puzzle : MonoBehaviour
     [Range(0, 2)] public int[] code;    
     int[] internalCode; 
     //-----
-    public UnityEvent OnInteract;
+    public UnityEvent OnPuzzleCompleted;
 
     private void Start()
     {
@@ -19,7 +19,7 @@ public class Puzzle : MonoBehaviour
 
     void CorrectCode()
     {
-        OnInteract.Invoke();
+        OnPuzzleCompleted.Invoke();
     }
 
     public void ReceberSignal(GameObject go, int _state)

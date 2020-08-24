@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/PolygonSciFiCity/URP_ExtractMe.unitypackage.meta
+guid: 92a80e6f6cd90464b8f87b98fc72999a
+DefaultImporter:
+=======
 guid: 5dae6f6c9534f824e9b0c089f388a2eb
 PrefabImporter:
+>>>>>>> 7858abb7151109d92d4a8af63f7473ffa943dc37:Assets/Prefabs/ObjetoInventario.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

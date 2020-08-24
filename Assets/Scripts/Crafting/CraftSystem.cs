@@ -36,6 +36,7 @@ public class CraftSystem : MonoBehaviour
     {
         inventoryManager = InventoryManager.Instance;
         ItCrafted = false;
+        ActivatePistol.Instance.Deactivate();
     }
 
     public void Update()
@@ -52,9 +53,8 @@ public class CraftSystem : MonoBehaviour
 
         if (ItCrafted == false)
         {
-            ActivatePistol.Instance.Deactivate();
+            //ActivatePistol.Instance.Deactivate();
         }
-
     }
 
     public void Craft()

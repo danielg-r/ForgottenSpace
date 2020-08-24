@@ -23,10 +23,10 @@ public class Interface : MonoBehaviour
     public Transform spawnPoint;
 
 
-      //Timer
-      public float timer = 0f;
-      public float d = 1.2f;
-      public int mode;
+    //Timer
+    public float timer = 0f;
+    public float d = 1.2f;
+    public int mode;
 
     public void Update()
     {        
@@ -60,6 +60,7 @@ public class Interface : MonoBehaviour
 
     public void OnPlayClick()
     {
+        AudioManager.Instance.Play("Click");
         camara1Play.SetActive(false);
         camara2Personajes.SetActive(true);
         camara3Options.SetActive(false);
@@ -72,6 +73,7 @@ public class Interface : MonoBehaviour
     }
     public void OnReturnClick()
     {
+        AudioManager.Instance.Play("Click");
         camara1Play.SetActive(true);
         camara2Personajes.SetActive(false);
         camara3Options.SetActive(false);
@@ -86,6 +88,7 @@ public class Interface : MonoBehaviour
 
     public void OnOptionsClick()
     {
+        AudioManager.Instance.Play("Click");
         camara1Play.SetActive(false);
         camara2Personajes.SetActive(false);
         camara3Options.SetActive(true);
@@ -98,8 +101,9 @@ public class Interface : MonoBehaviour
     }
 
     public void Onpersonaje1Click()
-    {        
+    {
         //GameObject personaje1 = Instantiate(personaje1, spawnPoint.position, spawnPoint.rotation);
+        AudioManager.Instance.Play("Click");
         this.gameObject.SetActive(false);
         SceneManager.LoadScene(1);
     }
@@ -107,13 +111,6 @@ public class Interface : MonoBehaviour
     public void Onpersonaje2Click()
     {        
         //GameObject personaje2 = Instantiate(personaje2, spawnPoint.position, spawnPoint.rotation);
-        this.gameObject.SetActive(false);
-        SceneManager.LoadScene(1);
-    }
-
-    public void Onpersonaje3Click()
-    {        
-        //GameObject personaj3 = Instantiate(personaje3, spawnPoint.position, spawnPoint.rotation);
         this.gameObject.SetActive(false);
         SceneManager.LoadScene(1);
     }
