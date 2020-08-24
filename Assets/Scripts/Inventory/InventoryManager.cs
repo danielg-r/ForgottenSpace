@@ -56,7 +56,6 @@ public class InventoryManager : MonoBehaviour
                         {
                             loreSlots[i].GetComponent<Slot>().item = item;
                             loreSlots[i].GetComponent<Slot>().itemIcon = item.icon;
-                            //Destroy(item.gameObject);
                             item.gameObject.SetActive(false);
                             break;
                         }

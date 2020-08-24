@@ -1,36 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] GameObject inventory;
+    [SerializeField] Image inventory;
     //[SerializeField] GameObject invCamera; ==> Dejar aquí en caso de querer hacer transición más tarde :)
-    //[SerializeField] GameObject playerCamera;
-
-    //private int freeSlotAmount;
-    //private GameObject[] slots;
-
     private AudioManager audio;
-
-
     bool isOpen;
-
-    void Awake()
-    {
-        //if (Instance == null)
-        //{
-        //    Instance = this;
-        //}
-        //else
-        //{
-        //    Destroy(gameObject);
-        //}
-
-        //freeSlotAmount = inventory.transform.childCount;
-        //DetectSlots();
-    }
-
 
     void Update()
     {
@@ -38,51 +16,27 @@ public class Inventory : MonoBehaviour
         {
             isOpen = !isOpen;
             OpenInventory();
-            //audio.Play("Test");
         }
     }
-
-    void LateUpdate()
-    {
-        //FreezeGame();
-    }
-
-    //public void OnTriggerEnter(Collider other)
-    //{
-        
-    //}
-
-    //public void AddItem(GameObject item)
-    //{
-
-    //}
-
-
     void OpenInventory()
     {
         if (isOpen == true)
         {
             GetComponent<PlayerCameraController>().enabled = false;
-            // playerCamera.SetActive(false);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-            //Time.timeScale = 0f;
-            inventory.SetActive(true);
+            inventory.rectTransform.localScale = Vector3.one;
             GetComponent<PlayerMovement>().enabled = false;
             FreezeGame();
             //invCamera.SetActive(true); ==> Dejar aquí en caso de querer hacer transición más tarde :)
-            //Invoke("ActivateCamera", 1);
-
         }
         else
         {
             GetComponent<PlayerCameraController>().enabled = true;
-            // playerCamera.SetActive(true);
             //invCamera.SetActive(false); ==> Dejar aquí en caso de querer hacer transición más tarde :)
-            inventory.SetActive(false);
+            inventory.rectTransform.localScale = Vector3.zero;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
-            //Time.timeScale = 1f;
             GetComponent<PlayerMovement>().enabled = true;
             //Invoke("CCDelay", 2); ==> Dejar aquí en caso de querer hacer transición más tarde :)
             FreezeGame();
@@ -100,14 +54,4 @@ public class Inventory : MonoBehaviour
     {
         GetComponent<PlayerCameraController>().enabled = true;
     }
-
-    void ActivateCamera()
-    {
-        
-    }
-
-    //void DetectSlots()
-    //{
-
-    //}
 }
