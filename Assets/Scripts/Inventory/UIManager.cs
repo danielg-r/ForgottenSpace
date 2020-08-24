@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
     //[SerializeField] private TextMeshProUGUI ItemShotText;
 
     private InventoryManager inventory;
-    ItemManager itemManager;
+    ComsuManager itemManager;
 
 
     void Start()

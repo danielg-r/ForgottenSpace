@@ -41,7 +41,7 @@ public class Puzzle : MonoBehaviour
         Verifier();
     }
 
-    void Verifier()
+    void Check()
     {
         bool correct = true;
 

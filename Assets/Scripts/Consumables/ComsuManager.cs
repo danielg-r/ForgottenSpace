@@ -5,15 +5,15 @@ using UnityEngine;
 public class ComsuManager : MonoBehaviour
 {
     public delegate void OnItemAdded();
-    public event OnItemAdded onItemAdded;
+    public event OnItemAdded OnConsumableUses;
 
     public delegate void OnItemUsed();
     public event OnItemUsed onItemUsed;
     public static ComsuManager Instance { get; private set; }
 
-    public int itemcooldown; //{ get; private set; }
-    public int itemlifeRegen; //{ get; private set; }
-    public int itemRunCooldown; // { get; private set; }
+    public int ConsumableCooldown; //{ get; private set; }
+    public int ConsuLifeRegen; //{ get; private set; }
+    public int ConsuStaminaCooldown; // { get; private set; }
     
     void Awake()
     {
@@ -42,35 +42,35 @@ public class ComsuManager : MonoBehaviour
     //--------------------
     public void UseCooldown()
     {                
-        itemcooldown--;
-        onItemAdded();
+        ConsumableCooldown--;
+        OnConsumableUses();
     }
     public void RecolectCooldown(int _coldown)
     {
-        itemcooldown += _coldown;
-        onItemAdded();
+        ConsumableCooldown += _coldown;
+        OnConsumableUses();
     }
     //---------------------
     public void UseLifeRegen()
     {
-        itemlifeRegen--;
-        onItemAdded();
+        ConsuLifeRegen--;
+        OnConsumableUses();
     }
     public void RecolectLifeRegen(int _liferegen)
     {
-        itemlifeRegen += _liferegen;
-        onItemAdded();
+        ConsuLifeRegen += _liferegen;
+        OnConsumableUses();
     }
     //----------------------
     public void UseRunning()
     {
-        itemRunCooldown--;
-        onItemAdded();
+        ConsuStaminaCooldown--;
+        OnConsumableUses();
     }
     public void RecolectRunning(int _runCooldown)
     {
-        itemRunCooldown += _runCooldown;
-        onItemAdded();
+        ConsuStaminaCooldown += _runCooldown;
+        OnConsumableUses();
 
     }
     #endregion
@@ -78,17 +78,17 @@ public class ComsuManager : MonoBehaviour
 
     private void LimitMaxValues() //Limita la cantidad máxima de cada item que puede llevar el jugador.
     {                
-        if (itemcooldown > 5)
+        if (ConsumableCooldown > 5)
         {
-            itemcooldown = 5;
+            ConsumableCooldown = 5;
         }
-        if (itemlifeRegen > 5)
+        if (ConsuLifeRegen > 5)
         {
-            itemlifeRegen = 5;
+            ConsuLifeRegen = 5;
         }
-        if (itemRunCooldown > 5)
+        if (ConsuStaminaCooldown > 5)
         {
-            itemRunCooldown = 5;
+            ConsuStaminaCooldown = 5;
         }
 
 
