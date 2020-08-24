@@ -20,6 +20,7 @@ public class Puzzle : MonoBehaviour
     void CorrectCode()
     {
         OnPuzzleCompleted.Invoke();
+        AudioManager.Instance.Play("PuzzleSolved");
     }
 
     public void ReceberSignal(GameObject go, int _state)
