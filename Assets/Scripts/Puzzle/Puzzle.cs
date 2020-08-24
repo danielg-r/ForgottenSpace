@@ -38,10 +38,10 @@ public class Puzzle : MonoBehaviour
                 break;
             }
         }
-        verificar();
+        Verifier();
     }
 
-    void verificar()
+    void Verifier()
     {
         bool correct = true;
 
@@ -58,7 +58,7 @@ public class Puzzle : MonoBehaviour
         {
             foreach(GameObject a in Levers)
             {
-                a.GetComponent<Levers>().puedegirar = false;
+                a.GetComponent<Levers>().CanTurn = false;
             }
             CorrectCode();
         }
