@@ -56,6 +56,8 @@ public class InventoryManager : MonoBehaviour
                         {
                             loreSlots[i].GetComponent<Slot>().item = item;
                             loreSlots[i].GetComponent<Slot>().itemIcon = item.icon;
+                            //Destroy(item.gameObject);
+                            item.gameObject.SetActive(false);
                             break;
                         }
                     }
@@ -77,6 +79,7 @@ public class InventoryManager : MonoBehaviour
                             shipSlots[i].GetComponent<Slot>().item = item;
                             shipSlots[i].GetComponent<Slot>().itemIcon = item.icon;
                             shipPieceCount += 1;
+                            item.gameObject.SetActive(false);
                             break;
                         }
                     }
