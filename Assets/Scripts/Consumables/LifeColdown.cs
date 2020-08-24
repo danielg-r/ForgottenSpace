@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class LifeColdown : MonoBehaviour
 {
-    [SerializeField] PlayerLife LBar;
     [SerializeField] float AmountRegenOriginal;
-    [SerializeField] int AmountRegenPlus;
+    [SerializeField] float AmountRegenPlus;
 
     float Duration = 15f;
 
 
     void OnEnable() //Se llama esta función cuando el gameobject se pone activo.
     {
-        LBar = GetComponent<PlayerLife>();
-        AmountRegenOriginal = LBar.AmountRegen;
-        LBar.AmountRegen = AmountRegenPlus;
+        AmountRegenOriginal = PlayerLife.Instance.AmountRegen;
+        PlayerLife.Instance.AmountRegen = AmountRegenPlus + PlayerLife.Instance.AmountRegen;
 
         StartCoroutine(ActiveTimeRegen());
     }
 
     void Disable()
     {
-        LBar.AmountRegen = AmountRegenOriginal;
+        PlayerLife.Instance.AmountRegen = AmountRegenOriginal;
         this.gameObject.SetActive(false);
     }
 

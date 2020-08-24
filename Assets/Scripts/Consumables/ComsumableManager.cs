@@ -17,17 +17,17 @@ public class ComsumableManager : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && itemManager.itemlifeRegen > 0)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && itemManager.itemlifeRegen > 0)
         {//Life
             ComLifeRegen.SetActive(true);
             itemManager.UseLifeRegen();
         }
-        if (Input.GetKeyDown(KeyCode.T) && itemManager.itemcooldown > 0)
+        if (Input.GetKeyDown(KeyCode.Alpha3) && itemManager.itemcooldown > 0)
         {//Disparo
             ComPistolRegen.SetActive(true);
             itemManager.UseCooldown();
         }
-        if (Input.GetKeyDown(KeyCode.Y) && itemManager.itemRunCooldown > 0)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && itemManager.itemRunCooldown > 0)
         {//Stamina
             ComStaminaRegen.SetActive(true);
             itemManager.UseRunning();

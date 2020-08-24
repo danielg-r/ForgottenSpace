@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Item : MonoBehaviour//ScriptableObject
+public class Item : MonoBehaviour
 {
     public Texture icon;
     public int type;

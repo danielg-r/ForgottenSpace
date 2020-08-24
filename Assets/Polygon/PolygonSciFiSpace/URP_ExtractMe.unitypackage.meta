@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Polygon/PolygonSciFiSpace/URP_ExtractMe.unitypackage.meta
 guid: 7ded4542e1954a347851f312655daf69
+=======
+guid: d8ffd6aa53ad89b4aa695b8617135104
+folderAsset: yes
+>>>>>>> 88ecb37afcdea1177396c5a942e8573cbfa753c0:Assets/Scripts/ScriptableObjects.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

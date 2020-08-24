@@ -8,7 +8,7 @@ public class Slot : MonoBehaviour
 
    public bool isEmpty;
 
-    public GameObject item;
+    public Item item;
     public Texture itemIcon;
     //private SpriteRenderer icon;
 
@@ -22,7 +22,7 @@ public class Slot : MonoBehaviour
         if (item)
         {
             isEmpty = false;
-            itemIcon = item.GetComponent<Item>().icon;
+            itemIcon = item.icon;
             this.GetComponent<RawImage>().texture = itemIcon;
         }
         else
