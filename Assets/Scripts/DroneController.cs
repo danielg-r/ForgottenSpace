@@ -32,6 +32,8 @@ public class DroneController : MonoBehaviour, IDamageable
 
         agent.destination = patrolPoints[destPoint].position;
 
+        AudioManager.Instance.Play("DroneHover");
+
         destPoint = (destPoint + 1) % patrolPoints.Length;
     }
 
