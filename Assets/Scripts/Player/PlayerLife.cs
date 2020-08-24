@@ -36,14 +36,6 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(40); 
-        }
-    }
-
     void Start()
     {
         currentLife = maxLife;
