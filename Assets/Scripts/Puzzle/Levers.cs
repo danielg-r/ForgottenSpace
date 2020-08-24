@@ -6,18 +6,18 @@ public class Levers : MonoBehaviour
 {
 
     public int State = 0;
-    public bool puedegirar = true;
+    public bool CanTurn = true;
 
-    public GameObject controlador;
+    public GameObject Controller;
 
     public GameObject Green;
     public GameObject Blue;
     public GameObject Red;
 
-    IEnumerator girar()
+    IEnumerator Turn()
     {
         yield return new WaitForSeconds(0.5f);
-        puedegirar = true;
+        CanTurn = true;
         switch (State)
         {
             case 0:
@@ -34,34 +34,34 @@ public class Levers : MonoBehaviour
         }
 
 
-        controlador.GetComponent<Puzzle>().ReceberSignal(this.gameObject, State);
+        Controller.GetComponent<Puzzle>().ReceiveSignal(this.gameObject, State);
     }
 
-    public void MoveLever()
+    public void MoveLevers()
     {
         //girado = true;
 
-        if(puedegirar)
+        if(CanTurn)
         {
             //1 Blue - 2 Green - 0 Red
-            puedegirar = false;
+            CanTurn = false;
             if (State == 0)
             {
-                StartCoroutine(girar());
+                StartCoroutine(Turn());
                 Blue.gameObject.SetActive(true);
                 Green.gameObject.SetActive(false);
                 Red.gameObject.SetActive(false);
             }
             else if (State == 1)
             {
-                StartCoroutine(girar());
+                StartCoroutine(Turn());
                 Blue.gameObject.SetActive(false);
                 Green.gameObject.SetActive(true);
                 Red.gameObject.SetActive(false);
             }
             if (State == 2)
             {
-                StartCoroutine(girar());
+                StartCoroutine(Turn());
                 Blue.gameObject.SetActive(false);
                 Green.gameObject.SetActive(false);
                 Red.gameObject.SetActive(true);

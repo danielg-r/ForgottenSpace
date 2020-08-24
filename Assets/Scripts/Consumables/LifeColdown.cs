@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LifeColdown : MonoBehaviour
 {
-    [SerializeField] float AmountRegenOriginal;
+    float AmountRegenOriginal;
     [SerializeField] float AmountRegenPlus;
 
     float Duration = 15f;
