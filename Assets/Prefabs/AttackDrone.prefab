@@ -612,7 +612,7 @@ MonoBehaviour:
   maxHealth: 20
   currentHealth: 0
   deathFX: {fileID: 1533753553117432, guid: 75f1089cb32e0394c953a6d7b2c3e1f9, type: 3}
-  damage: 5
+  damage: 20
   shootingDistance: 10
   speed: 1000
 --- !u!135 &8846554570515506040

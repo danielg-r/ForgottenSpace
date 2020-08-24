@@ -20,6 +20,11 @@ public class Puzzle : MonoBehaviour
     void CorrectCode()
     {
         OnPuzzleCompleted.Invoke();
+        this.enabled = false;
+        foreach(GameObject g in Levers)
+        {
+            g.SetActive(false);
+        }
     }
 
     public void ReceberSignal(GameObject go, int _state)

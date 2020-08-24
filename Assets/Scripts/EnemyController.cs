@@ -21,6 +21,7 @@ public class EnemyController : MonoBehaviour, IDamageable
     [SerializeField] int lives;
     [SerializeField] int deathTimer;
     [SerializeField] GameObject deathFX;
+    [SerializeField] GameObject hitFX;
     [Header("Attack Colliders")]
     [SerializeField] Collider deathCollider;
     [SerializeField] Collider rightCollider;
@@ -113,6 +114,8 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     public void TakeDamage(int amount)
     {
+        GameObject hit = Instantiate(hitFX, transform.position + new Vector3(0f, 1f, 0f), transform.rotation);
+        hit.transform.localScale = Vector3.one * 0.6f;
         currentHealth -= amount;
         if (currentHealth <= 0) Die();
     }

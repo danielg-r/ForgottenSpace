@@ -9,8 +9,10 @@ public class DroneDetection : MonoBehaviour
     [SerializeField] DroneSpawner[] spawners; // = FindObjectsOfType(typeof(DroneSpawner)) as DroneSpawner[];
     [SerializeField] float detectionCooldown;
     [SerializeField] bool canDetectPlayer;
+    //float[] distances = new float [spawners.Length];
     List<float> distances = new List<float>();
     public UnityEvent OnDetection;
+    float min = 100f;
 
     void Start()
     {
@@ -38,12 +40,11 @@ public class DroneDetection : MonoBehaviour
     }
 
     void GetClosestSpawner()
-    {
-        float min = 100f;
+    {        
         int index = 0;
-        for (int i = 1; i < spawners.Length - 1; i++)
+        for (int i = 0; i < spawners.Length; i++)
         {
-            distances[i] = spawners[i].GetDistance();
+            distances.Add(spawners[i].GetDistance()); //[i] = ;
             if (distances[i] < min)
             {
                 min = distances[i];
