@@ -75,13 +75,13 @@ MonoBehaviour:
     Loop: 0
     Source: {fileID: 0}
   - Nombre: DroneDetect
-    pista: {fileID: 8300000, guid: ba8309d40647c1e4491ec2f214689445, type: 3}
+    pista: {fileID: 8300000, guid: 22b0e0ad1f5b830499333eee6e0715c7, type: 3}
     Vol: 1
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
   - Nombre: RobotAttack
-    pista: {fileID: 8300000, guid: ba8309d40647c1e4491ec2f214689445, type: 3}
+    pista: {fileID: 8300000, guid: f219fe45fbf7d1d4cbadcdc2e0320ac7, type: 3}
     Vol: 1
     Pitch: 1
     Loop: 0
@@ -110,14 +110,14 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
-  - Nombre: PuzzleSolved
-    pista: {fileID: 8300000, guid: 0c74617e90bcf2a4193a83c057b40736, type: 3}
+  - Nombre: DroneHover
+    pista: {fileID: 8300000, guid: b1a5644f5079afc4aa992cdfc9342c8d, type: 3}
     Vol: 1
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
-  - Nombre: PuzzleSolved
-    pista: {fileID: 8300000, guid: 0c74617e90bcf2a4193a83c057b40736, type: 3}
+  - Nombre: LoreText
+    pista: {fileID: 8300000, guid: 3c208ff056bb56444b3123efe79f5ddc, type: 3}
     Vol: 1
     Pitch: 1
     Loop: 0
