@@ -8,11 +8,11 @@ public class ComsumableManager : MonoBehaviour
     public GameObject ComPistolRegen;
     public GameObject ComStaminaRegen;
 
-    ItemManager itemManager;
+    ComsuManager itemManager;
 
     private void Start()
     {
-        itemManager = ItemManager.Instance;
+        itemManager = ComsuManager.Instance;
     }
 
     public void Update()

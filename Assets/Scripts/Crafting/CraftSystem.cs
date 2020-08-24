@@ -54,16 +54,14 @@ public class CraftSystem : MonoBehaviour
     {
         if (CanCraft)
         {
-            if (inventoryManager.currentGunPieces >= necessaryPiecesAToPistol && inventoryManager.currentSuitPieces >= necessaryPiecesBToPistol)
-            {
-                ActivatePistol.Instance.Activate();
-                inventoryManager.currentGunPieces -= necessaryPiecesAToPistol;
-                inventoryManager.currentSuitPieces -= necessaryPiecesBToPistol;
-                onCurrSpent();
-                AudioManager.Instance.Play("Click");
-                CanCraft = false;
-                ItCrafted = true;
-            }
+            ActivatePistol.Instance.Activate();
+            inventoryManager.currentGunPieces -= necessaryPiecesAToPistol;
+            inventoryManager.currentSuitPieces -= necessaryPiecesBToPistol;
+            onCurrSpent();
+            AudioManager.Instance.Play("Click");
+            CanCraft = false;
+            ItCrafted = true;
+            
         }
     }
 }

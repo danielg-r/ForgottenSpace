@@ -11,15 +11,15 @@ public class ItemUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI ItemStaminaText;
     [SerializeField] private TextMeshProUGUI ItemShotText;
 
-    ItemManager itemManager;
+    ComsuManager ComsuManager;
 
 
     void Start()
     {
         
-        if (ItemManager.Instance != null)
+        if (ComsuManager.Instance != null)
         {
-            ItemManager.Instance.onItemAdded += new ItemManager.OnItemAdded(onItemAdded);
+            ComsuManager.Instance.onItemAdded += new ComsuManager.OnItemAdded(onItemAdded);
         }
         onItemAdded();
     }
@@ -27,9 +27,9 @@ public class ItemUI : MonoBehaviour
 
     void onItemAdded()
     {
-        ItemLifeText.text = ItemManager.Instance.itemlifeRegen.ToString();
-        ItemStaminaText.text = ItemManager.Instance.itemRunCooldown.ToString();
-        ItemShotText.text = ItemManager.Instance.itemcooldown.ToString();
+        ItemLifeText.text = ComsuManager.Instance.itemlifeRegen.ToString();
+        ItemStaminaText.text = ComsuManager.Instance.itemRunCooldown.ToString();
+        ItemShotText.text = ComsuManager.Instance.itemcooldown.ToString();
     }
 
 
