@@ -13,12 +13,10 @@ SONIDOS
 Sacados de (https://freesound.org/)
 
 PACK USADOS
-    Synty Studios (All Packs) (https://syntystore.com/)
+    Synty Studios (Scifi City y Scifi Space ) (https://syntystore.com/)
     Partículas : Polygon Arsenal
 
 POSIBLES BUGS
-    Debe abrirse por primera vez el inventario para poder qué funcione. (Arreglado, pero podria pasar)
-    El enemigo debe volver a su punto de inicio 
     Cuando muere el enemigo (el Robot) puede crashear el juego, [Dificil de reproducir]
     
 COSAS NO IMPLEMENTADOS

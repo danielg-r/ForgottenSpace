@@ -99,38 +99,38 @@ MonoBehaviour:
     Loop: 0
     Source: {fileID: 0}
   - Nombre: PuzzleSolved
-    pista: {fileID: 8300000, guid: 0c74617e90bcf2a4193a83c057b40736, type: 3}
-    Vol: 1
+    pista: {fileID: 8300000, guid: ffb1afa357396884dbd2cdf2e80fcb31, type: 3}
+    Vol: 0.66
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
   - Nombre: Loot
-    pista: {fileID: 8300000, guid: 0c74617e90bcf2a4193a83c057b40736, type: 3}
-    Vol: 1
+    pista: {fileID: 8300000, guid: 170062204a3b5ad40aa3228dd7f4879f, type: 3}
+    Vol: 0.49
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
   - Nombre: DroneHover
-    pista: {fileID: 8300000, guid: b1a5644f5079afc4aa992cdfc9342c8d, type: 3}
-    Vol: 0.37
+    pista: {fileID: 8300000, guid: 8a154c4212afe7d409f0fb937b2f603b, type: 3}
+    Vol: 0.08
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
   - Nombre: LoreText
     pista: {fileID: 8300000, guid: 3c208ff056bb56444b3123efe79f5ddc, type: 3}
-    Vol: 1
+    Vol: 0.45
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
   - Nombre: DoorOpen
     pista: {fileID: 8300000, guid: 55d230cf2c134d248842972f6781f270, type: 3}
-    Vol: 1
+    Vol: 0.34
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
-  - Nombre: PuzzleSolved
-    pista: {fileID: 8300000, guid: 0c74617e90bcf2a4193a83c057b40736, type: 3}
-    Vol: 1
+  - Nombre: DoorClose
+    pista: {fileID: 8300000, guid: 8dbd497ec48fd534893863b70ed2ad6b, type: 3}
+    Vol: 0.34
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
