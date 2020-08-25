@@ -11,7 +11,7 @@ public class ConsumableUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI ConsumableStaminaText;
     [SerializeField] private TextMeshProUGUI ConsumableEnergyText;
 
-    ConsuManager ComsuManager;
+    ConsuManager ConsuManager;
 
 
     void Start()

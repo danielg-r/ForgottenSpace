@@ -1,0 +1,38 @@
+----------------------------------------------------------------------------------------------------------------------------------------------
+README:
+
+El juego es un survival horror, por lo qué tiene una temática oscura y tétrica. aunque tiene sus toques de survival. por lo qué tiene unas barras referenciando la salud del jugador, una stamina para poder correr y moverse más rápido, así escapando de los enemigos. además puede defenderse de los mismos con una pistola qué tiene. esta también tendrá su energía por lo qué deberá cuidar dónde apunta, esta deberá ser crafteada mediante la recolección de piezas qué se encontraran en los cofres, en estos cofres también pueden ir monedas básicas qué se usarán en la tienda(Consumibles) para comprar consumibles (Ahora se encuentran en cofres) qué aumentaran stats por un corto periodo de tiempo, ya sea más regeneración de stamina para correr,  una mayor regeneración de la salud o la energía de la pistola.
+El objetivo principal del juego es recolectar las piezas de la nave para poder arreglar una nave, una vez hecho esto podrás escapar de la nave pero no será tan fácil debido a qué la nave donde despertaste está llena de enemigos y secretos qué no te dejarán avanzar. como puzzles qué deberás arreglar con las entradas de Lore qué encontrarás en las terminales
+(Para el Alpha solo tendrá qué recolectar 2 piezas y una vez hecho esto se acabara el juego, sorteando los obstáculos ya propuestos)
+
+PLUGINS USADOS
+    DoTwen (http://dotween.demigiant.com/)
+    Modern UI (https://assetstore.unity.com/packages/tools/gui/modern-ui-pack-150824)
+
+SONIDOS
+Sacados de (https://freesound.org/)
+
+PACK USADOS
+    Synty Studios (All Packs) (https://syntystore.com/)
+    Partículas : Polygon Arsenal
+
+POSIBLES BUGS
+    Debe abrirse por primera vez el inventario para poder qué funcione. (Arreglado, pero podria pasar)
+    El enemigo debe volver a su punto de inicio 
+    Cuando muere el enemigo (el Robot) puede crashear el juego, [Dificil de reproducir]
+    
+COSAS NO IMPLEMENTADOS
+    Falta por implementarse la tienda, aunque se hizo un avance con el sistema de crafteo de como podria llegar a ser la tienda.
+    Falta por mejor la interfaz de crafteo y demas, debido a que tiene muchos placeHolders y mejorar esta a nivel de objetos que puedas craftear
+    Falta implementar la mayor parte del flow del juego, debido a que se deben agregar mas lore y misiones al juego
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+TABLA DE REQUISITOS.
+https://docs.google.com/spreadsheets/d/e/2PACX-1vSw0RboqcErqJi2U5R7zTLrDT9dlHht83duWsxhJcWt6GrWwLEnOhI9oJDl_dZ_fFIo-UtiGA0oojuK/pubhtml
+
+UML
+https://imgur.com/a/VL1IX8a
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
