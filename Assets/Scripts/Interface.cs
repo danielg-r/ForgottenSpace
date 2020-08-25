@@ -120,5 +120,10 @@ public class Interface : MonoBehaviour
         SceneManager.LoadScene(0); //ESCENA 0 = MENU
     }
 
-    
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
+
 }

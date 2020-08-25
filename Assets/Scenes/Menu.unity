@@ -8491,7 +8491,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1864710036}
+      - m_Target: {fileID: 1864710037}
         m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
@@ -16166,7 +16166,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1864710035}
-  - component: {fileID: 1864710036}
   - component: {fileID: 1864710037}
   - component: {fileID: 1864710038}
   m_Layer: 5
@@ -16195,20 +16194,6 @@ RectTransform:
   m_AnchoredPosition: {x: -273.1265, y: 497.9401}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1864710036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864710034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7868fe9146204ea4bb8299351eceb22a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsPaused: 0
-  PauseMenu: {fileID: 0}
 --- !u!114 &1864710037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17687,7 +17672,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112183975}
   m_LocalRotation: {x: -0.00024687682, y: 0.9992143, z: -0.039128203, w: -0.006304442}
-  m_LocalPosition: {x: 0, y: 0, z: 657.9813}
+  m_LocalPosition: {x: 0, y: 0, z: 657.98}
   m_LocalScale: {x: 0.35625, y: 0.35625002, z: 0.35625}
   m_Children: []
   m_Father: {fileID: 1767715630}
@@ -17695,8 +17680,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -187.2749, y: -175.38786}
-  m_SizeDelta: {x: -687.2202, y: -518.85376}
+  m_AnchoredPosition: {x: -189.34, y: -174.59}
+  m_SizeDelta: {x: -407.28027, y: -520.7644}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2112183977
 MonoBehaviour:
@@ -17791,7 +17776,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 2
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
