@@ -29,6 +29,12 @@ public class CurrencyManager : MonoBehaviour
         //Sonido (?) SITUVIERAUNO
     }
 
+    public void UseCurrency(int _currAmount)
+    {
+        InventoryManager.Instance.currentCurrency -= _currAmount;
+        onCurrAdded();
+    }
+
     public void AddGunPiece(int gPieceAmount)
     {
         InventoryManager.Instance.currentGunPieces += gPieceAmount;

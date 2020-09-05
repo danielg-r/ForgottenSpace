@@ -7,10 +7,21 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI currencyText;
+
     [SerializeField] private TextMeshProUGUI gunPieceText;
     [SerializeField] private TextMeshProUGUI suitPieceText;
+
+    [Header("Pistola")]
     [SerializeField] private TextMeshProUGUI aPieceText;
     [SerializeField] private TextMeshProUGUI bPieceText;
+
+    [Header("Armor")]
+    [SerializeField] private TextMeshProUGUI aPieceTextArmor;
+    [SerializeField] private TextMeshProUGUI bPieceTextAmor;
+
+    [Header("Ship")]
+    [SerializeField] private TextMeshProUGUI aPieceTextShip;
+    [SerializeField] private TextMeshProUGUI bPieceTextShip;
 
     //[SerializeField] private TextMeshProUGUI ItemLifeText;
     //[SerializeField] private TextMeshProUGUI ItemStaminaText;
@@ -40,6 +51,9 @@ public class UIManager : MonoBehaviour
         currencyText.text = inventory.currentCurrency.ToString();
         gunPieceText.text = inventory.currentGunPieces.ToString();
         suitPieceText.text = inventory.currentSuitPieces.ToString();
+
+
+
         aPieceText.text = inventory.currentGunPieces.ToString();
         bPieceText.text = inventory.currentSuitPieces.ToString();
 
@@ -53,7 +67,16 @@ public class UIManager : MonoBehaviour
         currencyText.text = inventory.currentCurrency.ToString();
         gunPieceText.text = inventory.currentGunPieces.ToString();
         suitPieceText.text = inventory.currentSuitPieces.ToString();
+
+
+
         aPieceText.text = inventory.currentGunPieces.ToString();
         bPieceText.text = inventory.currentSuitPieces.ToString();
+
+        aPieceTextArmor.text = inventory.currentGunPieces.ToString();
+        bPieceTextAmor.text = inventory.currentSuitPieces.ToString();
+
+        aPieceTextShip.text = inventory.currentGunPieces.ToString();
+        bPieceTextShip.text = inventory.currentSuitPieces.ToString();
     }
 }
