@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17af10a21769ed04fa5949ceb3a3969c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 0}
   soundList:
   - Nombre: HurtPlayer
     pista: {fileID: 8300000, guid: 69941cd5177247742aa147627b28c049, type: 3}
@@ -58,13 +59,13 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Nombre: RobotDetect
     pista: {fileID: 8300000, guid: db8ed9ee356e02245acf3cf36a754f1a, type: 3}
-    Vol: 1
+    Vol: 0.3
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
   - Nombre: RobotStun
     pista: {fileID: 8300000, guid: 141d28368b3be0548868f3035936ee89, type: 3}
-    Vol: 1
+    Vol: 0.33
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
@@ -112,7 +113,7 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Nombre: DroneHover
     pista: {fileID: 8300000, guid: 8a154c4212afe7d409f0fb937b2f603b, type: 3}
-    Vol: 0.08
+    Vol: 0.17
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
@@ -129,6 +130,18 @@ MonoBehaviour:
     Loop: 0
     Source: {fileID: 0}
   - Nombre: DoorClose
+    pista: {fileID: 8300000, guid: 8dbd497ec48fd534893863b70ed2ad6b, type: 3}
+    Vol: 0.34
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: VDoorOpen
+    pista: {fileID: 8300000, guid: 8218cc3ba3066b64faa8c68292f5c7b6, type: 3}
+    Vol: 0.41
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: xxx
     pista: {fileID: 8300000, guid: 8dbd497ec48fd534893863b70ed2ad6b, type: 3}
     Vol: 0.34
     Pitch: 1

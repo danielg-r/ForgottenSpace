@@ -7,7 +7,6 @@ public class Inventory : MonoBehaviour
 {
     [SerializeField] Image inventory;
     //[SerializeField] GameObject invCamera; ==> Dejar aquí en caso de querer hacer transición más tarde :)
-    private AudioManager audio;
     bool isOpen;
 
     void Update()
