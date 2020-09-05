@@ -59,10 +59,6 @@ public class CraftSystem : MonoBehaviour
         
     }
 
-    public void Update()
-    {        
-    }
-
     public void Craft()
     {
         if (CanCraftPistol && ( ICraftPistol == false) && inventoryManager.currentGunPieces >= necessaryPiecesAToPistol && inventoryManager.currentSuitPieces >= necessaryPiecesBToPistol )
