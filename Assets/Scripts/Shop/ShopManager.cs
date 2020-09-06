@@ -6,13 +6,9 @@ public class ShopManager : MonoBehaviour
 {
     public static ShopManager Instance { get; private set; }
 
-    [SerializeField]public int StaminaValue;
-    [SerializeField]public int EnergyValue;
-    [SerializeField]public int LifeValue;
-
-    /*public int StaminaValue;
+    public int StaminaValue;
     public int EnergyValue;
-    public int LifeValue;*/
+    public int LifeValue;
 
     ConsuManager consuManager;
     InventoryManager inventoryManager;
@@ -35,11 +31,6 @@ public class ShopManager : MonoBehaviour
         consuManager = ConsuManager.Instance;
         inventoryManager = InventoryManager.Instance;
         currencymanager = CurrencyManager.Instance;
-    }
-
-    private void Update()
-    {       
-
     }
 
     public void BuyStamina()
@@ -70,8 +61,6 @@ public class ShopManager : MonoBehaviour
             currencymanager.UseCurrency(LifeValue);
             AudioManager.Instance.Play("Click");
         }
-        else {  }
-        
     }
 
 }

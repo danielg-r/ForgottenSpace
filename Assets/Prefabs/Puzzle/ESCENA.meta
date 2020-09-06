@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/Enemies.meta
+guid: cf5732891a91cad4499e3d620b78b072
+=======
 guid: 1b0c4742edba1a441a1a90594e93b770
+>>>>>>> 5fe1f32930be145a289f3c38b023f5a1e2b13fbe:Assets/Prefabs/Puzzle/ESCENA.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
