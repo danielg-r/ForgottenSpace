@@ -9,8 +9,8 @@ public class CraftSystem : MonoBehaviour
 
     #region Pistol
     [Header("Pistola")]
-    public int necessaryPiecesAToPistol = 3; //Valor interno
-    public int necessaryPiecesBToPistol = 2; //Valor interno
+    public int CircuitsToPistol = 3; //Valor interno
+    public int PlatesToPistol = 2; //Valor interno
     public bool CanCraftPistol = true;
     bool ICraftPistol=false;
     #endregion
@@ -18,8 +18,8 @@ public class CraftSystem : MonoBehaviour
 
     #region Armadura
     [Header("Armadura")]
-    public int necessaryPiecesAToArmor = 2; //Valor interno
-    public int necessaryPiecesBToArmor = 3; //Valor interno
+    public int CircuitsToArmor = 2; //Valor interno
+    public int PlatesToArmor = 3; //Valor interno
     public bool CanCraftArmor = true;
     bool ICraftArmor = false;
     public GameObject Armor;
@@ -27,8 +27,8 @@ public class CraftSystem : MonoBehaviour
 
     #region Ship
     [Header("Ship")]
-    public int necessaryPiecesAToShip = 4; //Valor interno
-    public int necessaryPiecesBToShip = 4; //Valor interno
+    public int CircuitsToShip = 4; //Valor interno
+    public int PlatesToShip = 4; //Valor interno
     public bool CanCraftShip = true;
     bool ICraftShip = false;
     //public GameObject Ship;
@@ -36,7 +36,6 @@ public class CraftSystem : MonoBehaviour
 
     public delegate void OnCurrencySpent();
     public event OnCurrencySpent onCurrSpent;
-
     InventoryManager inventoryManager;
 
 
@@ -59,17 +58,13 @@ public class CraftSystem : MonoBehaviour
         
     }
 
-    public void Update()
-    {        
-    }
-
     public void Craft()
     {
-        if (CanCraftPistol && ( ICraftPistol == false) && inventoryManager.currentGunPieces >= necessaryPiecesAToPistol && inventoryManager.currentSuitPieces >= necessaryPiecesBToPistol )
+        if (CanCraftPistol && ( ICraftPistol == false) && inventoryManager.currentGunPieces >= CircuitsToPistol && inventoryManager.currentSuitPieces >= PlatesToPistol )
         {
             ActivatePistol.Instance.Activate();
-            inventoryManager.currentGunPieces -= necessaryPiecesAToPistol;
-            inventoryManager.currentSuitPieces -= necessaryPiecesBToPistol;
+            inventoryManager.currentGunPieces -= CircuitsToPistol;
+            inventoryManager.currentSuitPieces -= PlatesToPistol;
             onCurrSpent();
             AudioManager.Instance.Play("Click");            
             ICraftPistol = true;
@@ -79,10 +74,10 @@ public class CraftSystem : MonoBehaviour
 
     public void CraftArmor()
     {
-        if (CanCraftArmor && ICraftArmor == false  && inventoryManager.currentGunPieces >= necessaryPiecesAToArmor && inventoryManager.currentSuitPieces >= necessaryPiecesBToArmor)
+        if (CanCraftArmor && ICraftArmor == false  && inventoryManager.currentGunPieces >= CircuitsToArmor && inventoryManager.currentSuitPieces >= PlatesToArmor)
         {            
-            inventoryManager.currentGunPieces -= necessaryPiecesAToPistol;
-            inventoryManager.currentSuitPieces -= necessaryPiecesBToPistol;
+            inventoryManager.currentGunPieces -= CircuitsToArmor;
+            inventoryManager.currentSuitPieces -= PlatesToArmor;
             onCurrSpent();
             AudioManager.Instance.Play("Click");
             ICraftArmor = true;
@@ -93,10 +88,10 @@ public class CraftSystem : MonoBehaviour
 
     public void CraftShip()
     {
-        if (CanCraftShip && ICraftShip == false && inventoryManager.currentGunPieces >= necessaryPiecesAToShip && inventoryManager.currentSuitPieces >= necessaryPiecesBToShip)
+        if (CanCraftShip && ICraftShip == false && inventoryManager.currentGunPieces >= CircuitsToShip && inventoryManager.currentSuitPieces >= PlatesToShip)
         {
-            inventoryManager.currentGunPieces -= necessaryPiecesAToPistol;
-            inventoryManager.currentSuitPieces -= necessaryPiecesBToPistol;
+            inventoryManager.currentGunPieces -= CircuitsToShip;
+            inventoryManager.currentSuitPieces -= PlatesToShip;
             onCurrSpent();
             AudioManager.Instance.Play("Click");
             ICraftShip = true;
