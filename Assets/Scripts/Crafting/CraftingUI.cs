@@ -44,12 +44,10 @@ public class CraftingUI : MonoBehaviour
 
         CircuitsShip.text = inventory.currentGunPieces.ToString();
         PlatesShip.text = inventory.currentSuitPieces.ToString();
-
     }
 
     void OnCurrSpent()
     {      
-
         CircuitsPistol.text = inventory.currentGunPieces.ToString();
         PlatesPistol.text = inventory.currentSuitPieces.ToString();
 
