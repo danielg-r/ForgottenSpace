@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.019120539, g: 0.009632148, b: 0.039120574, a: 1}
+  m_IndirectSpecularColor: {r: 0.019120552, g: 0.009632196, b: 0.039120577, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2367,11 +2367,11 @@ RectTransform:
   - {fileID: 676404487}
   - {fileID: 843124181}
   m_Father: {fileID: 1509551533}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -340.04224, y: -496.60925}
+  m_AnchoredPosition: {x: 356.95776, y: -496.60925}
   m_SizeDelta: {x: 627, y: 1200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &237224801
@@ -6160,7 +6160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6906,14 +6906,14 @@ RectTransform:
   m_GameObject: {fileID: 843124180}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 8}
-  m_LocalScale: {x: 1.9200017, y: 1.9200017, z: 1.9200017}
+  m_LocalScale: {x: 3.19, y: 1.9200017, z: 1.9200017}
   m_Children: []
   m_Father: {fileID: 237224800}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 14}
+  m_AnchoredPosition: {x: 1, y: -5.12}
   m_SizeDelta: {x: 256, y: 512}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &843124182
@@ -6935,7 +6935,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
+  m_Texture: {fileID: 2800000, guid: c3f45a21de2628e45998ea6fd1d4fe37, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -7485,7 +7485,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLAY
+  m_text: SELECT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7554,7 +7554,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 941750849}
-    characterCount: 4
+    characterCount: 6
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -8215,11 +8215,11 @@ RectTransform:
   - {fileID: 1449190129}
   - {fileID: 758360923}
   m_Father: {fileID: 1509551533}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 356.95776, y: -496.60925}
+  m_AnchoredPosition: {x: -340.04224, y: -496.60925}
   m_SizeDelta: {x: 627, y: 1200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &986377851
@@ -12486,7 +12486,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449190128}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -12500,9 +12500,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.5568628, g: 0.5568628, b: 0.5568628, a: 1}
+    m_PressedColor: {r: 0.32156864, g: 0.32156864, b: 0.32156864, a: 1}
+    m_SelectedColor: {r: 0.5568628, g: 0.5568628, b: 0.5568628, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -12518,12 +12518,12 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1449190131}
+  m_TargetGraphic: {fileID: 676404489}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1864710037}
-        m_MethodName: Onpersonaje2Click
+        m_MethodName: Onpersonaje1Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13030,8 +13030,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 986377850}
   - {fileID: 237224800}
+  - {fileID: 986377850}
   m_Father: {fileID: 81724683}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13498,9 +13498,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'NO DISPONIBLE
-
-'
+  m_text: SELECT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13569,10 +13567,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1577546631}
-    characterCount: 14
+    characterCount: 6
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -16167,6 +16165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1864710035}
   - component: {fileID: 1864710037}
+  - component: {fileID: 1864710036}
   - component: {fileID: 1864710038}
   m_Layer: 5
   m_Name: MenuController
@@ -16194,6 +16193,18 @@ RectTransform:
   m_AnchoredPosition: {x: -273.1265, y: 497.9401}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1864710036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864710034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d650d31624a24e4d9388d7f8d65eb63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1864710037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16212,10 +16223,6 @@ MonoBehaviour:
   canvas1Play: {fileID: 1756677123}
   canvas2Personajes: {fileID: 81724679}
   canvas3Options: {fileID: 443928444}
-  personaje1: {fileID: 0}
-  personaje2: {fileID: 0}
-  personaje3: {fileID: 0}
-  spawnPoint: {fileID: 0}
   timer: 0
   d: 2
   mode: 0

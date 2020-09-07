@@ -974,9 +974,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45730ec91ca455a41b05de1d89d2da11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemLifeText: {fileID: 47114810738486219}
-  ItemStaminaText: {fileID: 47114809866333163}
-  ItemShotText: {fileID: 47114810020021116}
+  ConsumableLifeText: {fileID: 0}
+  ConsumableStaminaText: {fileID: 0}
+  ConsumableEnergyText: {fileID: 0}
 --- !u!1 &1684989683244771558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,7 +1288,7 @@ MonoBehaviour:
       m_Item7:
         transform: {fileID: 0}
         weight: 0
-    m_Offset: {x: 0.06, y: 0, z: 0.2}
+    m_Offset: {x: 0.09, y: 0, z: 0.2}
     m_ConstrainedAxes:
       x: 1
       y: 1
@@ -1373,7 +1373,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684989683314480443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.53, y: 1.533, z: -0.432}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1854394641756348864}
@@ -2788,10 +2788,6 @@ MonoBehaviour:
   canvas1Play: {fileID: 0}
   canvas2Personajes: {fileID: 0}
   canvas3Options: {fileID: 0}
-  personaje1: {fileID: 0}
-  personaje2: {fileID: 0}
-  personaje3: {fileID: 0}
-  spawnPoint: {fileID: 0}
   timer: 0
   d: 1.2
   mode: 0
@@ -2865,7 +2861,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684989684495350549}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.024, y: 0, z: 0.334}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1847177475810503370}
@@ -9792,6 +9788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Layer: {fileID: 1684989684117013857}
   Pistol: {fileID: 4034723121614785103}
+  avatar: {fileID: 31900000, guid: 72b08461f1465a64f988953a9ef108a5, type: 2}
 --- !u!114 &1850599642581020312
 MonoBehaviour:
   m_ObjectHideFlags: 0
