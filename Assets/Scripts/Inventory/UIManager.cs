@@ -11,17 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI gunPieceText;
     [SerializeField] private TextMeshProUGUI suitPieceText;
 
-    [Header("Pistola")]
-    [SerializeField] private TextMeshProUGUI aPieceText;
-    [SerializeField] private TextMeshProUGUI bPieceText;
 
-    [Header("Armor")]
-    [SerializeField] private TextMeshProUGUI aPieceTextArmor;
-    [SerializeField] private TextMeshProUGUI bPieceTextAmor;
-
-    [Header("Ship")]
-    [SerializeField] private TextMeshProUGUI aPieceTextShip;
-    [SerializeField] private TextMeshProUGUI bPieceTextShip;
 
     //[SerializeField] private TextMeshProUGUI ItemLifeText;
     //[SerializeField] private TextMeshProUGUI ItemStaminaText;
@@ -53,10 +43,6 @@ public class UIManager : MonoBehaviour
         suitPieceText.text = inventory.currentSuitPieces.ToString();
 
 
-
-        aPieceText.text = inventory.currentGunPieces.ToString();
-        bPieceText.text = inventory.currentSuitPieces.ToString();
-
         //ItemLifeText.text = itemManager.itemlifeRegen.ToString();
         //ItemStaminaText.text = itemManager.itemRunCooldown.ToString();
         //ItemShotText.text = itemManager.itemcooldown.ToString();
@@ -68,15 +54,5 @@ public class UIManager : MonoBehaviour
         gunPieceText.text = inventory.currentGunPieces.ToString();
         suitPieceText.text = inventory.currentSuitPieces.ToString();
 
-
-
-        aPieceText.text = inventory.currentGunPieces.ToString();
-        bPieceText.text = inventory.currentSuitPieces.ToString();
-
-        aPieceTextArmor.text = inventory.currentGunPieces.ToString();
-        bPieceTextAmor.text = inventory.currentSuitPieces.ToString();
-
-        aPieceTextShip.text = inventory.currentGunPieces.ToString();
-        bPieceTextShip.text = inventory.currentSuitPieces.ToString();
     }
 }
