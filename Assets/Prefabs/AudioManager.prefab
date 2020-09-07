@@ -141,8 +141,8 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
-  - Nombre: xxx
-    pista: {fileID: 8300000, guid: 8dbd497ec48fd534893863b70ed2ad6b, type: 3}
+  - Nombre: PickItem
+    pista: {fileID: 8300000, guid: 383c7b29906dc5b4f921b8f600867ba6, type: 3}
     Vol: 0.34
     Pitch: 1
     Loop: 0
