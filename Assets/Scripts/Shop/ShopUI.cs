@@ -12,17 +12,25 @@ public class ShopUI : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI Money;
 
-    ShopManager ShopManager;
-
     void Start()
     {
-        StaminaValue.text = InventoryManager.Instance.currentCurrency.ToString();
+
+        if (CurrencyManager.Instance != null)
+        {
+            CurrencyManager.Instance.onCurrAdded += new CurrencyManager.OnCurrencyAdded(onCurrAdded);
+        }
+        //Money.text = InventoryManager.Instance.currentCurrency.ToString();
 
         StaminaValue.text = ShopManager.Instance.StaminaValue.ToString();
         EnergyValue.text = ShopManager.Instance.EnergyValue.ToString();
         LifeValue.text = ShopManager.Instance.LifeValue.ToString();
     }
 
-    
+    void onCurrAdded()
+    {
+        Money.text = InventoryManager.Instance.currentCurrency.ToString();
+    }
+
+
 
 }
