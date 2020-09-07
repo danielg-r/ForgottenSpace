@@ -27,8 +27,7 @@ public class CraftSystem : MonoBehaviour
 
     #region Ship
     [Header("Ship")]
-    public int CircuitsToShip = 4; //Valor interno
-    public int PlatesToShip = 4; //Valor interno
+    public int PiecesToShip = 5; //Valor interno
     public bool CanCraftShip = true;
     bool ICraftShip = false;
     //public GameObject Ship;
@@ -88,10 +87,8 @@ public class CraftSystem : MonoBehaviour
 
     public void CraftShip()
     {
-        if (CanCraftShip && ICraftShip == false && inventoryManager.currentGunPieces >= CircuitsToShip && inventoryManager.currentSuitPieces >= PlatesToShip)
-        {
-            inventoryManager.currentGunPieces -= CircuitsToShip;
-            inventoryManager.currentSuitPieces -= PlatesToShip;
+        if (CanCraftShip && ICraftShip == false && (inventoryManager.shipPieceCount == PiecesToShip) )
+        {                    
             onCurrSpent();
             AudioManager.Instance.Play("Click");
             ICraftShip = true;
