@@ -5581,7 +5581,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1864710037}
-        m_MethodName: Onpersonaje1Click
+        m_MethodName: Onpersonaje2Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12518,7 +12518,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 676404489}
+  m_TargetGraphic: {fileID: 1449190131}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
