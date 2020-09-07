@@ -22,6 +22,10 @@ public class InventoryManager : MonoBehaviour
     public int currentSuitPieces;
 
 
+    public delegate void OnCurrencyAdded();
+    public event OnCurrencyAdded onPiecesAdded;
+    
+
     bool itemAdded;
 
     void Awake()
@@ -78,6 +82,7 @@ public class InventoryManager : MonoBehaviour
                             shipSlots[i].GetComponent<Slot>().item = item;
                             shipSlots[i].GetComponent<Slot>().itemIcon = item.icon;
                             shipPieceCount += 1;
+                            onPiecesAdded();
                             item.gameObject.SetActive(false);
                             break;
                         }
