@@ -48,4 +48,5 @@ public class CurrencyManager : MonoBehaviour
         onCurrAdded();
         //Sonido (?) SITUVIERAUNO
     }
+
 }

@@ -15,8 +15,9 @@ public class CraftingUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI PlatesArmor;
 
     [Header("Ship")]
-    [SerializeField] private TextMeshProUGUI CircuitsShip;
-    [SerializeField] private TextMeshProUGUI PlatesShip;
+    //[SerializeField] private TextMeshProUGUI CircuitsShip;
+    [SerializeField] private TextMeshProUGUI CurrentShipPieces;
+
 
     private InventoryManager inventory;
     ConsuManager itemManager;
@@ -31,8 +32,14 @@ public class CraftingUI : MonoBehaviour
         {
             CraftSystem.Instance.onCurrSpent += new CraftSystem.OnCurrencySpent(OnCurrSpent);
         }
+        if (InventoryManager.Instance != null)
+        {
+            InventoryManager.Instance.onPiecesAdded += new InventoryManager.OnCurrencyAdded(OnPiecesAdd);
+        }
+
         inventory = InventoryManager.Instance;
         itemManager = ConsuManager.Instance;
+
     }
     void OnCurrAdded()
     {
@@ -40,11 +47,10 @@ public class CraftingUI : MonoBehaviour
         PlatesPistol.text = inventory.currentSuitPieces.ToString();
 
         CircuitsArmor.text = inventory.currentGunPieces.ToString();
-        PlatesArmor.text = inventory.currentSuitPieces.ToString();
-
-        //CircuitsShip.text = inventory.currentGunPieces.ToString();
-        //PlatesShip.text = inventory.currentSuitPieces.ToString();
+        PlatesArmor.text = inventory.currentSuitPieces.ToString();        
     }
+
+
 
     void OnCurrSpent()
     {      
@@ -53,10 +59,14 @@ public class CraftingUI : MonoBehaviour
 
         CircuitsArmor.text = inventory.currentGunPieces.ToString();
         PlatesArmor.text = inventory.currentSuitPieces.ToString();
-
-        //CircuitsShip.text = inventory.currentGunPieces.ToString();
-        //PlatesShip.text = inventory.currentSuitPieces.ToString();
     }
+
+    void OnPiecesAdd()
+    {
+        CurrentShipPieces.text = inventory.shipPieceCount.ToString();
+
+    }
+
 
 
 }
