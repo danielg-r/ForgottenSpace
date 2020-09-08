@@ -54,8 +54,8 @@ public class CraftingUI : MonoBehaviour
         CircuitsArmor.text = inventory.currentGunPieces.ToString();
         PlatesArmor.text = inventory.currentSuitPieces.ToString();
 
-        CircuitsShip.text = inventory.currentGunPieces.ToString();
-        PlatesShip.text = inventory.currentSuitPieces.ToString();
+        //CircuitsShip.text = inventory.currentGunPieces.ToString();
+        //PlatesShip.text = inventory.currentSuitPieces.ToString();
     }
 
 
