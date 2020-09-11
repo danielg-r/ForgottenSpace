@@ -9,6 +9,7 @@ public class UIDeathControl : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI label;
     [SerializeField] GameObject buttonMenú;
+    [SerializeField] GameObject buttonExit;
     [SerializeField] GameObject bars;
     [SerializeField] GameObject bars1;
     [SerializeField] GameObject bars2;
@@ -16,6 +17,7 @@ public class UIDeathControl : MonoBehaviour
 
     void Start()
     {
+        buttonExit.SetActive(false);
         buttonMenú.SetActive(false);
         label.text = "";
         if(PlayerLife.Instance != null)
@@ -30,6 +32,7 @@ public class UIDeathControl : MonoBehaviour
         bars1.SetActive(false);
         bars2.SetActive(false);
         hotBar.SetActive(false);
+        buttonExit.SetActive(true);
         buttonMenú.SetActive(true);
         label.text = "HAS MUERTO";
         ActivatePistol.Instance.Deactivate();
