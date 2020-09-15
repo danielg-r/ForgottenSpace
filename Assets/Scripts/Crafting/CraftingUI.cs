@@ -43,22 +43,22 @@ public class CraftingUI : MonoBehaviour
     }
     void OnCurrAdded()
     {
-        CircuitsPistol.text = inventory.currentGunPieces.ToString();
-        PlatesPistol.text = inventory.currentSuitPieces.ToString();
+        CircuitsPistol.text = inventory.currentCircuits.ToString();
+        PlatesPistol.text = inventory.currentPlates.ToString();
 
-        CircuitsArmor.text = inventory.currentGunPieces.ToString();
-        PlatesArmor.text = inventory.currentSuitPieces.ToString();        
+        CircuitsArmor.text = inventory.currentCircuits.ToString();
+        PlatesArmor.text = inventory.currentPlates.ToString();        
     }
 
 
 
     void OnCurrSpent()
     {      
-        CircuitsPistol.text = inventory.currentGunPieces.ToString();
-        PlatesPistol.text = inventory.currentSuitPieces.ToString();
+        CircuitsPistol.text = inventory.currentCircuits.ToString();
+        PlatesPistol.text = inventory.currentPlates.ToString();
 
-        CircuitsArmor.text = inventory.currentGunPieces.ToString();
-        PlatesArmor.text = inventory.currentSuitPieces.ToString();
+        CircuitsArmor.text = inventory.currentCircuits.ToString();
+        PlatesArmor.text = inventory.currentPlates.ToString();
     }
 
     void OnPiecesAdd()

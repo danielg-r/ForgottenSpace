@@ -59,11 +59,11 @@ public class CraftSystem : MonoBehaviour
 
     public void Craft()
     {
-        if (CanCraftPistol && ( ICraftPistol == false) && inventoryManager.currentGunPieces >= CircuitsToPistol && inventoryManager.currentSuitPieces >= PlatesToPistol )
+        if (CanCraftPistol && ( ICraftPistol == false) && inventoryManager.currentCircuits >= CircuitsToPistol && inventoryManager.currentPlates >= PlatesToPistol )
         {
             ActivatePistol.Instance.Activate();
-            inventoryManager.currentGunPieces -= CircuitsToPistol;
-            inventoryManager.currentSuitPieces -= PlatesToPistol;
+            inventoryManager.currentCircuits -= CircuitsToPistol;
+            inventoryManager.currentPlates -= PlatesToPistol;
             onCurrSpent();
             AudioManager.Instance.Play("Click");            
             ICraftPistol = true;
@@ -73,10 +73,10 @@ public class CraftSystem : MonoBehaviour
 
     public void CraftArmor()
     {
-        if (CanCraftArmor && ICraftArmor == false  && inventoryManager.currentGunPieces >= CircuitsToArmor && inventoryManager.currentSuitPieces >= PlatesToArmor)
+        if (CanCraftArmor && ICraftArmor == false  && inventoryManager.currentCircuits >= CircuitsToArmor && inventoryManager.currentPlates >= PlatesToArmor)
         {            
-            inventoryManager.currentGunPieces -= CircuitsToArmor;
-            inventoryManager.currentSuitPieces -= PlatesToArmor;
+            inventoryManager.currentCircuits -= CircuitsToArmor;
+            inventoryManager.currentPlates -= PlatesToArmor;
             onCurrSpent();
             AudioManager.Instance.Play("Click");
             ICraftArmor = true;

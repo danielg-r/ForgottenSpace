@@ -18,8 +18,8 @@ public class InventoryManager : MonoBehaviour
     private Transform[] loreSlots;
     public int currentCurrency;
     public int shipPieceCount;
-    public int currentGunPieces;
-    public int currentSuitPieces;
+    public int currentCircuits;
+    public int currentPlates;
 
 
     public delegate void OnCurrencyAdded();

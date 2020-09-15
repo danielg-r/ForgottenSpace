@@ -39,8 +39,8 @@ public class UIManager : MonoBehaviour
     {
 
         currencyText.text = inventory.currentCurrency.ToString();
-        gunPieceText.text = inventory.currentGunPieces.ToString();
-        suitPieceText.text = inventory.currentSuitPieces.ToString();
+        gunPieceText.text = inventory.currentCircuits.ToString();
+        suitPieceText.text = inventory.currentPlates.ToString();
 
 
         //ItemLifeText.text = itemManager.itemlifeRegen.ToString();
@@ -51,8 +51,8 @@ public class UIManager : MonoBehaviour
     void OnCurrSpent()
     {
         currencyText.text = inventory.currentCurrency.ToString();
-        gunPieceText.text = inventory.currentGunPieces.ToString();
-        suitPieceText.text = inventory.currentSuitPieces.ToString();
+        gunPieceText.text = inventory.currentCircuits.ToString();
+        suitPieceText.text = inventory.currentPlates.ToString();
 
     }
 }
