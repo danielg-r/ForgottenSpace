@@ -2478,6 +2478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: {fileID: 1684989685252534203}
   "buttonMen\xFA": {fileID: 1684989684574232655}
+  buttonExit: {fileID: 4372798538834841063}
   bars: {fileID: 1684989684072342135}
   bars1: {fileID: 1684989683917910274}
   bars2: {fileID: 1684989684113561766}

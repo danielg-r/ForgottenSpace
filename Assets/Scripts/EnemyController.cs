@@ -26,9 +26,12 @@ public class EnemyController : MonoBehaviour, IDamageable
     [SerializeField] Collider deathCollider;
     [SerializeField] Collider rightCollider;
     [SerializeField] Collider leftCollider;
+    [SerializeField] LayerMask playerMask;
+
 
     Vector3 lastPosition;
     bool isAttacking;
+    AudioSource overloadSound;
     #endregion
 
     public virtual void Start()
@@ -39,6 +42,7 @@ public class EnemyController : MonoBehaviour, IDamageable
         state = EnemyState.Wander;
         lastPosition = transform.position;       
         currentHealth = maxHealth;
+        overloadSound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -74,7 +78,7 @@ public class EnemyController : MonoBehaviour, IDamageable
                 if (currentHealth <= 0) state = EnemyState.Dead;
                 animator.SetBool("IsWalking",  true); 
                 if (!isAttacking && state != EnemyState.Dead) agent.SetDestination(target.position);
-                agent.stoppingDistance = 1.8f;
+                agent.stoppingDistance = 1.2f;
                 if (distance < attackDistance && !isAttacking) state = EnemyState.Attack;
                 else if (distance > followDistance) state = EnemyState.BackToStart;
                 break;
@@ -103,12 +107,13 @@ public class EnemyController : MonoBehaviour, IDamageable
                 state = EnemyState.Chase;                 
                 break;
             case EnemyState.Dead:
+                agent.isStopped = true; 
                 isAttacking = false;
                 animator.SetBool("IsWalking",  false);
                 animator.SetBool("Attack", false);
                 float t = 0;
                 t+= Time.deltaTime;
-                if (t > 0.05f) agent.enabled = false;                
+                //if (t > 0.05f) agent.enabled = false;                
                 break;
         }        
     }
@@ -128,12 +133,15 @@ public class EnemyController : MonoBehaviour, IDamageable
     {
         GameObject hit = Instantiate(hitFX, transform.position + new Vector3(0f, 1f, 0f), transform.rotation);
         hit.transform.localScale = Vector3.one * 0.6f;
+        hit.transform.parent = transform;
         currentHealth -= amount;
         if (currentHealth <= 0) Die();
     }
 
     void Die()
     {
+        agent.enabled = true;
+        //agent.isStopped = true; 
         AudioManager.Instance.Play("RobotStun");
         agent.isStopped = true; 
         state = EnemyState.Dead;
@@ -143,7 +151,13 @@ public class EnemyController : MonoBehaviour, IDamageable
         else 
         {
             //agent.enabled = false;
+            Collider[] hitPlayer = Physics.OverlapSphere(transform.position, 4f, playerMask);
+            if (hitPlayer.Length >= 1) 
+            {
+                PlayerLife.Instance.TakeDamage((int)((float)damage*1.3f));
+            }
             GameObject ps = Instantiate(deathFX, transform.position + new Vector3(0f, 1f, 0f), transform.rotation);
+            Destroy(ps, 0.5f);
             Destroy(transform.parent.gameObject);
             this.enabled = false; 
         }
@@ -155,12 +169,21 @@ public class EnemyController : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(deathTimer);
         animator.SetBool("IsDead", false);
         animator.SetTrigger("GetUp");
+        if (overloadSound != null) StartCoroutine("OverloadSound");
         currentHealth = maxHealth;
         agent.enabled = true;
         yield return new WaitForSeconds(3f);
         state = EnemyState.Wander;
         deathCollider.enabled = true;
+        agent.speed *= 1.1f;
         StopCoroutine("DeathTimer");
+    }
+
+    IEnumerator OverloadSound()
+    {
+        overloadSound.Play();
+        yield return new WaitForSeconds(overloadSound.clip.length);
+        Die();
     }
 
     void Attack()
@@ -170,7 +193,7 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     void StopAttack()
     {
-        agent.isStopped = false;
+        //agent.isStopped = false;         Esto causaba el error random cuando moría en el ataque
         isAttacking = false;
         animator.SetBool("Attack", false);
         if (rightCollider.enabled || leftCollider.enabled)
@@ -193,13 +216,12 @@ public class EnemyController : MonoBehaviour, IDamageable
     {
         if (distance > attackDistance) state = EnemyState.Chase;
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position, 4);
+    }
 }
 
-public enum EnemyState
-{
-    Wander,
-    Chase,
-    Attack,
-    Dead,
-    BackToStart
-}
+public enum EnemyState { Wander, Chase,Attack, Dead, BackToStart }

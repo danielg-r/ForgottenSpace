@@ -51,7 +51,6 @@ public class ActivatePistol : MonoBehaviour
         avatar.SetHumanoidBodyPartActive(AvatarMaskBodyPart.RightArm, true);
         avatar.SetHumanoidBodyPartActive(AvatarMaskBodyPart.LeftFingers, true);
         avatar.SetHumanoidBodyPartActive(AvatarMaskBodyPart.RightFingers, true);
-        Debug.Log("Desactivando");
         Layer.weight = 0f;
         Pistol.SetActive(false);
         playerMovement.CanAim = false;
