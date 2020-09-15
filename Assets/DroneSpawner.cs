@@ -11,7 +11,7 @@ public class DroneSpawner : MonoBehaviour
     [SerializeField] Transform attackDroneSpawn;
     [SerializeField] GameObject attackDronePrefab;
     [SerializeField] GameObject attackDroneFX;
-    //[SerializeField] int attackDroneAmount;
+    [SerializeField] int attackDroneAmount;
     [SerializeField] float spawnInterval;
     bool isSpawning;
     Vector3 positionRandomizer;
@@ -23,10 +23,10 @@ public class DroneSpawner : MonoBehaviour
         return distanceToPlayer;
     }
 
-    public IEnumerator SpawnDrones(int droneAmount)
+    IEnumerator SpawnDrones()
     {
         spawnerLights.SetActive(true);
-        for (int i = 0; i < droneAmount; i++)
+        for (int i = 0; i < attackDroneAmount; i++)
         {
             positionRandomizer = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
             SpawnAttackDrone();

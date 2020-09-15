@@ -1,40 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class DroneDetection : MonoBehaviour
 {
-    DroneSpawner[] spawners; // = FindObjectsOfType(typeof(DroneSpawner)) as DroneSpawner[];
+    [SerializeField] DroneSpawner[] spawners; // = FindObjectsOfType(typeof(DroneSpawner)) as DroneSpawner[];
     [SerializeField] float detectionCooldown;
     [SerializeField] bool canDetectPlayer;
-    [SerializeField] int dronesAmount;
-    AudioSource detectionSound;
+    //float[] distances = new float [spawners.Length];
     List<float> distances = new List<float>();
+    public UnityEvent OnDetection;
     float min = 100f;
 
     void Start()
     {
         spawners = FindObjectsOfType(typeof(DroneSpawner)) as DroneSpawner[];
         canDetectPlayer = true;
-        detectionSound = GetComponent<AudioSource>();
     }
 
-    void OnEnable()
+    void OnTriggerEnter(Collider other)
     {
-        canDetectPlayer = true;
-    }
-
-    public void PlayerDetected()
-    {
-        if (canDetectPlayer)
+        if (other.gameObject.CompareTag("Player") && canDetectPlayer)
         {
             canDetectPlayer = false;
             GetClosestSpawner();
             StartCoroutine("DetectionCooldown");
-            if (detectionSound != null) detectionSound.Play();
-            NotificationHandler.Instance.Detected();
-        }
+            Debug.Log("Jugador detectado");
+            OnDetection.Invoke();
+        }        
     }
 
     IEnumerator DetectionCooldown()
@@ -49,13 +44,17 @@ public class DroneDetection : MonoBehaviour
         int index = 0;
         for (int i = 0; i < spawners.Length; i++)
         {
-            distances.Add(spawners[i].GetDistance());
+            distances.Add(spawners[i].GetDistance()); //[i] = ;
             if (distances[i] < min)
             {
                 min = distances[i];
                 index = i;
             }
         }
-        spawners[index].StartCoroutine("SpawnDrones", dronesAmount);
-    }    
+        spawners[index].StartCoroutine("SpawnDrones");
+    }
+
+
+
+    
 }
