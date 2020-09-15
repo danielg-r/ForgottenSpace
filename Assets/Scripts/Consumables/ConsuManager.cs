@@ -7,8 +7,6 @@ public class ConsuManager : MonoBehaviour
     public delegate void OnItemAdded();
     public event OnItemAdded OnConsumableUses;
 
-    public delegate void OnItemUsed();
-    public event OnItemUsed onItemUsed;
     public static ConsuManager Instance { get; private set; }
 
     public int ConsumableCooldown; //{ get; private set; }

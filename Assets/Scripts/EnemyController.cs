@@ -69,13 +69,14 @@ public class EnemyController : MonoBehaviour, IDamageable
                 if (distance < followDistance && target != null)
                 {
                     state = EnemyState.Chase;
+                    AudioManager.Instance.Play("RobotDetect");
                 }
                 break;
             
             case EnemyState.Chase:
                 agent.isStopped = false;
                 if (currentHealth <= 0) state = EnemyState.Dead;
-                animator.SetBool("IsWalking",  true);
+                animator.SetBool("IsWalking",  true); 
                 if (!isAttacking && state != EnemyState.Dead) agent.SetDestination(target.position);
                 agent.stoppingDistance = 1.2f;
                 if (distance < attackDistance && !isAttacking) state = EnemyState.Attack;
@@ -140,8 +141,9 @@ public class EnemyController : MonoBehaviour, IDamageable
     void Die()
     {
         agent.enabled = true;
-
         //agent.isStopped = true; 
+        AudioManager.Instance.Play("RobotStun");
+        agent.isStopped = true; 
         state = EnemyState.Dead;
         animator.SetBool("IsDead", true);
         lives--;

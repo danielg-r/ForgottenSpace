@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public bool Aiming;
     public bool CanRun;
     [SerializeField] StaminaBar Bar;
+    float vertical;
+    float horizontal;
 
     void Awake()
     {
@@ -29,11 +31,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void Start()
     {
-        //CanAim = true;
         CanRun = true;
     }
     void Update()
     {
+        vertical = Input.GetAxis("Vertical");
+        horizontal = Input.GetAxis("Horizontal");
+
         if (Input.GetMouseButton(1) && CanAim)
         {
             camara.m_Lens.FieldOfView = Aim;
@@ -47,7 +51,10 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("Running", true);
             anim.SetBool("Aiming", false);
             Aiming = false;
-            Bar.UseStamina(AmountStamina);
+            if (vertical > 0.7 || vertical < -0.7 || horizontal > 0.7 || horizontal < -0.7)
+            {
+                Bar.UseStamina(AmountStamina);
+            }
         }
         else
         {
@@ -57,8 +64,8 @@ public class PlayerMovement : MonoBehaviour
             Aiming = false;
         }
 
-        anim.SetFloat("vertical", Input.GetAxis("Vertical"));
-        anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
+        anim.SetFloat("vertical", vertical);
+        anim.SetFloat("horizontal", horizontal);
     }
 
     public void NoStamina()

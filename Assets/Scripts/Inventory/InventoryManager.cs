@@ -18,9 +18,13 @@ public class InventoryManager : MonoBehaviour
     private Transform[] loreSlots;
     public int currentCurrency;
     public int shipPieceCount;
-    public int currentGunPieces;
-    public int currentSuitPieces;
+    public int currentCircuits;
+    public int currentPlates;
 
+
+    public delegate void OnCurrencyAdded();
+    public event OnCurrencyAdded onPiecesAdded;
+    
 
     bool itemAdded;
 
@@ -78,25 +82,11 @@ public class InventoryManager : MonoBehaviour
                             shipSlots[i].GetComponent<Slot>().item = item;
                             shipSlots[i].GetComponent<Slot>().itemIcon = item.icon;
                             shipPieceCount += 1;
+                            onPiecesAdded();
                             item.gameObject.SetActive(false);
                             break;
                         }
                     }
-                }
-                break;
-            case 4:
-                {
-
-                }
-                break;
-            case 5:
-                {
-
-                }
-                break;
-            case 6:
-                {
-
                 }
                 break;
         }

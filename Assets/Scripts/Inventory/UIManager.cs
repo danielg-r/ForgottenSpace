@@ -7,10 +7,11 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI currencyText;
+
     [SerializeField] private TextMeshProUGUI gunPieceText;
     [SerializeField] private TextMeshProUGUI suitPieceText;
-    [SerializeField] private TextMeshProUGUI aPieceText;
-    [SerializeField] private TextMeshProUGUI bPieceText;
+
+
 
     //[SerializeField] private TextMeshProUGUI ItemLifeText;
     //[SerializeField] private TextMeshProUGUI ItemStaminaText;
@@ -38,10 +39,9 @@ public class UIManager : MonoBehaviour
     {
 
         currencyText.text = inventory.currentCurrency.ToString();
-        gunPieceText.text = inventory.currentGunPieces.ToString();
-        suitPieceText.text = inventory.currentSuitPieces.ToString();
-        aPieceText.text = inventory.currentGunPieces.ToString();
-        bPieceText.text = inventory.currentSuitPieces.ToString();
+        gunPieceText.text = inventory.currentCircuits.ToString();
+        suitPieceText.text = inventory.currentPlates.ToString();
+
 
         //ItemLifeText.text = itemManager.itemlifeRegen.ToString();
         //ItemStaminaText.text = itemManager.itemRunCooldown.ToString();
@@ -51,9 +51,8 @@ public class UIManager : MonoBehaviour
     void OnCurrSpent()
     {
         currencyText.text = inventory.currentCurrency.ToString();
-        gunPieceText.text = inventory.currentGunPieces.ToString();
-        suitPieceText.text = inventory.currentSuitPieces.ToString();
-        aPieceText.text = inventory.currentGunPieces.ToString();
-        bPieceText.text = inventory.currentSuitPieces.ToString();
+        gunPieceText.text = inventory.currentCircuits.ToString();
+        suitPieceText.text = inventory.currentPlates.ToString();
+
     }
 }

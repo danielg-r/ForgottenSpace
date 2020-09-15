@@ -5,18 +5,36 @@ using UnityEngine;
 
 public class CraftSystem : MonoBehaviour
 {
-
     public static CraftSystem Instance { get; private set; }
 
-    public int necessaryPiecesAToPistol = 3; //Valor interno
-    public int necessaryPiecesBToPistol = 2; //Valor interno
+    #region Pistol
+    [Header("Pistola")]
+    public int CircuitsToPistol = 3; //Valor interno
+    public int PlatesToPistol = 2; //Valor interno
+    public bool CanCraftPistol = true;
+    bool ICraftPistol=false;
+    #endregion
 
-    public bool CanCraft = false;
-    private bool ItCrafted = false;
+
+    #region Armadura
+    [Header("Armadura")]
+    public int CircuitsToArmor = 2; //Valor interno
+    public int PlatesToArmor = 3; //Valor interno
+    public bool CanCraftArmor = true;
+    bool ICraftArmor = false;
+    public GameObject Armor;
+    #endregion
+
+    #region Ship
+    [Header("Ship")]
+    public int PiecesToShip = 5; //Valor interno
+    public bool CanCraftShip = true;
+    bool ICraftShip = false;
+    //public GameObject Ship;
+    #endregion
 
     public delegate void OnCurrencySpent();
     public event OnCurrencySpent onCurrSpent;
-
     InventoryManager inventoryManager;
 
 
@@ -30,38 +48,52 @@ public class CraftSystem : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
 
     private void Start()
     {
         inventoryManager = InventoryManager.Instance;
-        ItCrafted = false;
-    }
-
-    public void Update()
-    {
-        if ( inventoryManager.currentGunPieces >= necessaryPiecesAToPistol && inventoryManager.currentSuitPieces >= necessaryPiecesBToPistol)
-        {
-            CanCraft = true;
-        }
-        else
-        {
-            CanCraft = false;            
-        }
+        
     }
 
     public void Craft()
     {
-        if (CanCraft)
+        if (CanCraftPistol && ( ICraftPistol == false) && inventoryManager.currentCircuits >= CircuitsToPistol && inventoryManager.currentPlates >= PlatesToPistol )
         {
             ActivatePistol.Instance.Activate();
-            inventoryManager.currentGunPieces -= necessaryPiecesAToPistol;
-            inventoryManager.currentSuitPieces -= necessaryPiecesBToPistol;
+            inventoryManager.currentCircuits -= CircuitsToPistol;
+            inventoryManager.currentPlates -= PlatesToPistol;
             onCurrSpent();
-            AudioManager.Instance.Play("Click");
-            CanCraft = false;
-            ItCrafted = true;
+            AudioManager.Instance.Play("Click");            
+            ICraftPistol = true;
             
         }
     }
+
+    public void CraftArmor()
+    {
+        if (CanCraftArmor && ICraftArmor == false  && inventoryManager.currentCircuits >= CircuitsToArmor && inventoryManager.currentPlates >= PlatesToArmor)
+        {            
+            inventoryManager.currentCircuits -= CircuitsToArmor;
+            inventoryManager.currentPlates -= PlatesToArmor;
+            onCurrSpent();
+            AudioManager.Instance.Play("Click");
+            ICraftArmor = true;
+            Armor.gameObject.SetActive(true);
+        }
+    }
+
+
+    public void CraftShip()
+    {
+        if (CanCraftShip && ICraftShip == false && (inventoryManager.shipPieceCount == PiecesToShip) )
+        {                    
+            onCurrSpent();
+            AudioManager.Instance.Play("Click");
+            ICraftShip = true;
+            //Ship.gameObject.SetActive(true); BUSCAR LA NAVE
+        }
+    }
+
 }

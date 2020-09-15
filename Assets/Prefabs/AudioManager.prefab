@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17af10a21769ed04fa5949ceb3a3969c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 0}
   soundList:
   - Nombre: HurtPlayer
     pista: {fileID: 8300000, guid: 69941cd5177247742aa147627b28c049, type: 3}
@@ -58,13 +59,13 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Nombre: RobotDetect
     pista: {fileID: 8300000, guid: db8ed9ee356e02245acf3cf36a754f1a, type: 3}
-    Vol: 1
+    Vol: 0.3
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
   - Nombre: RobotStun
     pista: {fileID: 8300000, guid: 141d28368b3be0548868f3035936ee89, type: 3}
-    Vol: 1
+    Vol: 0.33
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
@@ -94,7 +95,7 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Nombre: Click
     pista: {fileID: 8300000, guid: e076dd2f325f66a4a910c08aaf333340, type: 3}
-    Vol: 0.19
+    Vol: 0.45
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
@@ -106,13 +107,13 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Nombre: Loot
     pista: {fileID: 8300000, guid: 170062204a3b5ad40aa3228dd7f4879f, type: 3}
-    Vol: 0.49
+    Vol: 0.34
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
   - Nombre: DroneHover
     pista: {fileID: 8300000, guid: 8a154c4212afe7d409f0fb937b2f603b, type: 3}
-    Vol: 0.08
+    Vol: 0.17
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
@@ -130,6 +131,24 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Nombre: DoorClose
     pista: {fileID: 8300000, guid: 8dbd497ec48fd534893863b70ed2ad6b, type: 3}
+    Vol: 0.34
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: VDoorOpen
+    pista: {fileID: 8300000, guid: 8218cc3ba3066b64faa8c68292f5c7b6, type: 3}
+    Vol: 0.41
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: PickItem
+    pista: {fileID: 8300000, guid: 383c7b29906dc5b4f921b8f600867ba6, type: 3}
+    Vol: 0.34
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: Beep
+    pista: {fileID: 8300000, guid: 01fff1f6533425849be3ce37ee30837e, type: 3}
     Vol: 0.34
     Pitch: 1
     Loop: 0

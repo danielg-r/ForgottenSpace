@@ -26,12 +26,12 @@ public class InteraCraft : MonoBehaviour
     {
         if (isInRange && text != null)
         {
-            if (Input.GetKeyDown(interactKey) && craftSystem.CanCraft)
+            if (Input.GetKeyDown(interactKey) && craftSystem.CanCraftPistol)
             {
                 OnInteract.Invoke();                
                 text.text = "Item Crafteado";
             }
-            if (Input.GetKeyDown(interactKey) && !craftSystem.CanCraft)
+            if (Input.GetKeyDown(interactKey) && !craftSystem.CanCraftPistol)
             {
                 OnInteract.Invoke();
                 text.text = "No Piezas";

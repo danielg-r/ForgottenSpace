@@ -29,17 +29,24 @@ public class CurrencyManager : MonoBehaviour
         //Sonido (?) SITUVIERAUNO
     }
 
-    public void AddGunPiece(int gPieceAmount)
+    public void UseCurrency(int _currAmount)
     {
-        InventoryManager.Instance.currentGunPieces += gPieceAmount;
+        InventoryManager.Instance.currentCurrency -= _currAmount;
+        onCurrAdded();
+    }
+
+    public void AddCircuits(int circAmount)
+    {
+        InventoryManager.Instance.currentCircuits += circAmount;
         onCurrAdded();
         //Sonido (?) SITUVIERAUNO
     }
 
-    public void AddSuitPiece(int sPieceAmount)
+    public void AddPlates(int plateAmount)
     {
-        InventoryManager.Instance.currentSuitPieces += sPieceAmount;
+        InventoryManager.Instance.currentPlates += plateAmount;
         onCurrAdded();
         //Sonido (?) SITUVIERAUNO
     }
+
 }
