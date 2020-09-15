@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: eb23b5accb591a7429f6e31c9bb653a9
+=======
+guid: edd8432d86ac96e4c834bdc31cff5c01
+>>>>>>> parent of 05991033... Finish Sprint 7
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
