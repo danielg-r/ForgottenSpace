@@ -8,8 +8,8 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI currencyText;
 
-    [SerializeField] private TextMeshProUGUI gunPieceText;
-    [SerializeField] private TextMeshProUGUI suitPieceText;
+    [SerializeField] private TextMeshProUGUI circsText;
+    [SerializeField] private TextMeshProUGUI platesText;
 
 
 
@@ -39,8 +39,8 @@ public class UIManager : MonoBehaviour
     {
 
         currencyText.text = inventory.currentCurrency.ToString();
-        gunPieceText.text = inventory.currentCircuits.ToString();
-        suitPieceText.text = inventory.currentPlates.ToString();
+        circsText.text = inventory.currentCircuits.ToString();
+        platesText.text = inventory.currentPlates.ToString();
 
 
         //ItemLifeText.text = itemManager.itemlifeRegen.ToString();
@@ -51,8 +51,7 @@ public class UIManager : MonoBehaviour
     void OnCurrSpent()
     {
         currencyText.text = inventory.currentCurrency.ToString();
-        gunPieceText.text = inventory.currentCircuits.ToString();
-        suitPieceText.text = inventory.currentPlates.ToString();
-
+        circsText.text = inventory.currentCircuits.ToString();
+        platesText.text = inventory.currentPlates.ToString();
     }
 }
