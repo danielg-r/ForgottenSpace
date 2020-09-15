@@ -96,4 +96,18 @@ public class CraftSystem : MonoBehaviour
         }
     }
 
+
+
+    //METODOS PARA EL CURSOR
+    public void ShowCursor()
+    {
+        CursorManager.Instance.ShowCursor();
+    }
+    public void HideCursor()
+    {
+        CursorManager.Instance.HideCursor();
+    }
+
+
+
 }

@@ -10,8 +10,6 @@ public class PauseSystem : MonoBehaviour
     public GameObject PauseButton;
     public GameObject InstrucPanel;
 
-    public CursorManager cursorManager;
-
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -24,7 +22,7 @@ public class PauseSystem : MonoBehaviour
             PauseMenu.SetActive(true);
             PauseButton.SetActive(false);
             Time.timeScale = 0f;
-            cursorManager.ShowCursor();
+            CursorManager.Instance.ShowCursor();
 
         }
         else
@@ -37,7 +35,7 @@ public class PauseSystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             IsPaused = !IsPaused;
-            if(!IsPaused) cursorManager.HideCursor();
+            if(!IsPaused) CursorManager.Instance.HideCursor();
         }
     }
 
@@ -61,7 +59,7 @@ public class PauseSystem : MonoBehaviour
     public void Pause()
     {
         IsPaused = !IsPaused;
-        cursorManager.HideCursor();
+        CursorManager.Instance.HideCursor();
     }
 }
 
