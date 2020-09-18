@@ -25,7 +25,9 @@ public class AirSystem : MonoBehaviour
         m = minutes;
         s = seconds;
         writerTimer(m, s);
+        TimerUI.SetActive(true);
         Invoke("UpdateTimer", 1f);
+
     }
     public void StopTimer() //Cuando prenda la energia
     {
