@@ -48,6 +48,7 @@ public class DroneController : MonoBehaviour, IDamageable
         GameObject deathPS = Instantiate(deathFX, transform.position, Quaternion.identity);
         deathPS.transform.localScale = Vector3.one * 0.5f;
         AudioManager.Instance.Play("DroneDeath");
+        Destroy(deathPS, 0.5F);
         Destroy(gameObject);        
     }
 

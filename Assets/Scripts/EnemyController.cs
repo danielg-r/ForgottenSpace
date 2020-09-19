@@ -142,7 +142,7 @@ public class EnemyController : MonoBehaviour, IDamageable
     {
         agent.enabled = true;
         //agent.isStopped = true; 
-        AudioManager.Instance.Play("RobotStun");
+        
         agent.isStopped = true; 
         state = EnemyState.Dead;
         animator.SetBool("IsDead", true);
@@ -165,6 +165,7 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     IEnumerator DeathTimer()
     {
+        AudioManager.Instance.Play("RobotStun");
         deathCollider.enabled = false;        
         yield return new WaitForSeconds(deathTimer);
         animator.SetBool("IsDead", false);
@@ -217,11 +218,11 @@ public class EnemyController : MonoBehaviour, IDamageable
         if (distance > attackDistance) state = EnemyState.Chase;
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, 4);
-    }
+    // private void OnDrawGizmosSelected()
+    // {
+    //     Gizmos.color = Color.red;        
+    //     Gizmos.DrawSphere(transform.position, 4);
+    // }
 }
 
 public enum EnemyState { Wander, Chase,Attack, Dead, BackToStart }
