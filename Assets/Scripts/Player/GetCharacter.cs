@@ -1,31 +1,60 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GetCharacter : MonoBehaviour
 {
+    public static GetCharacter Instance { get; private set; }
+
     readonly string selectedCharacter = "SelectedCharacter";
     int getCharacter;
-    [SerializeField] GameObject[] skins;
+    [SerializeField] Mesh[] skins;
+    [SerializeField] Material[] materials;
     Animator animator;
+
+    [HideInInspector] public bool IsMale;
+
+    [SerializeField] SkinnedMeshRenderer Skinnedrenderer;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
+        // 1 cryoMale, 2 cryoFemale, 3 crewMale, 4 crewFemale, 5 crewCaptainMale, 6 crewCaptainFemale, 7 junkerMale
+        //8 junkerFemale, 9 Medic, 10 hunterFemale, 11 name, 12 name, 13 name, 14 name
+
         animator = PlayerMovement.Instance.GetComponent<Animator>();
         getCharacter = PlayerPrefs.GetInt(selectedCharacter);
-        // 1: hombre 2: mujer
-        switch (getCharacter)
+
+        Skinnedrenderer.sharedMesh = skins[getCharacter - 1];
+
+        if (getCharacter <= 5)
         {
-            case 1:
-                skins[0].SetActive(true);
-                skins[1].SetActive(false);
-                animator.runtimeAnimatorController = Resources.Load("Player") as RuntimeAnimatorController;
-                break;
-            case 2:
-                skins[0].SetActive(false);
-                skins[1].SetActive(true);
-                animator.runtimeAnimatorController = Resources.Load("PlayerWoman") as RuntimeAnimatorController;
-                break;
+            Skinnedrenderer.sharedMaterials[0] = materials[1];
         }
+        else Skinnedrenderer.sharedMaterials[0] = materials[0];
+
+        if (getCharacter == 2 || getCharacter == 4 || getCharacter == 9 || getCharacter == 10 || getCharacter == 15)
+        {
+            IsMale = false;
+        }
+        else IsMale = true;
+
+        if (IsMale)
+        {
+            animator.runtimeAnimatorController = Resources.Load("Player") as RuntimeAnimatorController;
+        }
+        else animator.runtimeAnimatorController = Resources.Load("PlayerWoman") as RuntimeAnimatorController;
     }
 }

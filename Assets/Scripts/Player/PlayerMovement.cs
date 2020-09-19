@@ -7,12 +7,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement Instance { get; private set; }
     [SerializeField] Animator anim;
-    public CinemachineFreeLook camara;
-    [SerializeField] float Aim = 15f, normalView = 40f;
+    [HideInInspector] public CinemachineFreeLook camara;
+    float Aim = 40f, normalView = 70f;
     [SerializeField] int AmountStamina = 1;
-    public bool CanAim;
-    public bool Aiming;
-    public bool CanRun;
+    [HideInInspector] public bool CanAim;
+    [HideInInspector] public bool Aiming;
+    bool CanRun;
     [SerializeField] StaminaBar Bar;
     float vertical;
     float horizontal;

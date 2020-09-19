@@ -23,7 +23,7 @@ public class PlayerLife : MonoBehaviour, IDamageable
 
     public delegate void OnPlayerDied();
     public event OnPlayerDied onPlayerDied;
-    public bool isDead;
+    [HideInInspector] public bool isDead;
 
     void Awake()
     {

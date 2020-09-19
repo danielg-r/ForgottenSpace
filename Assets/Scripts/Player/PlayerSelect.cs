@@ -20,16 +20,9 @@ public class PlayerSelect : MonoBehaviour
     }
 
     public void CharacterSelected(int CharacterInt)
-    // 1: hombre 2: mujer
     {
-        switch (CharacterInt)
-        {
-            case 1:
-                PlayerPrefs.SetInt(selectedCharacter, 1);
-                break;
-            case 2:
-                PlayerPrefs.SetInt(selectedCharacter, 2);
-                break;
-        }
+        // 1 cryoMale, 2 cryoFemale, 3 crewMale, 4 crewFemale, 5 crewCaptainMale, 6 crewCaptainFemale, 7 junkerMale, 8 junkerFemale, 9 Medic, 10 hunterFemale
+
+        PlayerPrefs.SetInt(selectedCharacter, CharacterInt);
     }
 }
