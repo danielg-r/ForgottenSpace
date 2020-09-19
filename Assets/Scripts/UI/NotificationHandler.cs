@@ -50,6 +50,11 @@ public class NotificationHandler : MonoBehaviour
     {
         doorLocked.OpenNotification();
     }
+    public void LootFound(string desc)
+    {
+        lootFound.description = desc.ToString();
+        lootFound.OpenNotification();
+    }
 
     // Función de ejemplo con posibilidad de modificar la notificación en caso de que sea necesario.
     // public void PuzzleHint(string title, string desc)
