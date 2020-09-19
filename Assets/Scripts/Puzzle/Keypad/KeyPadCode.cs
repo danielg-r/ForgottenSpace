@@ -65,6 +65,7 @@ public class KeyPadCode : MonoBehaviour
         }
         else
         {
+            AudioManager.Instance.Play("Beep3");
             Screen.text = ErrorText;            
             OffScreen();
         }     

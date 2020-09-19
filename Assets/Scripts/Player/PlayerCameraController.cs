@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 using UnityEngine.Animations.Rigging;
 
 public class PlayerCameraController : MonoBehaviour
@@ -9,6 +11,8 @@ public class PlayerCameraController : MonoBehaviour
 
     float TurnSpeed = 15f, aimDuration = 0.1f;
     [SerializeField] Rig aimLayer;
+    public TextMeshProUGUI canvasText;
+
     Camera mainCamera;
 
     private void Awake()

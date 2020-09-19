@@ -142,7 +142,7 @@ public class EnemyController : MonoBehaviour, IDamageable
     {
         agent.enabled = true;
         //agent.isStopped = true; 
-        AudioManager.Instance.Play("RobotStun");
+        
         agent.isStopped = true; 
         state = EnemyState.Dead;
         animator.SetBool("IsDead", true);
@@ -152,9 +152,12 @@ public class EnemyController : MonoBehaviour, IDamageable
         {
             //agent.enabled = false;
             Collider[] hitPlayer = Physics.OverlapSphere(transform.position, 4f, playerMask);
-            if (hitPlayer.Length >= 1) 
+            foreach (Collider col in hitPlayer)
             {
-                PlayerLife.Instance.TakeDamage((int)((float)damage*1.3f));
+                if (col.gameObject.GetComponent<PlayerLife>() != null)
+                {
+                    PlayerLife.Instance.TakeDamage((int)((float)damage*1.3f));
+                }
             }
             GameObject ps = Instantiate(deathFX, transform.position + new Vector3(0f, 1f, 0f), transform.rotation);
             Destroy(ps, 0.5f);
@@ -165,6 +168,7 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     IEnumerator DeathTimer()
     {
+        AudioManager.Instance.Play("RobotStun");
         deathCollider.enabled = false;        
         yield return new WaitForSeconds(deathTimer);
         animator.SetBool("IsDead", false);
@@ -172,7 +176,7 @@ public class EnemyController : MonoBehaviour, IDamageable
         if (overloadSound != null) StartCoroutine("OverloadSound");
         currentHealth = maxHealth;
         agent.enabled = true;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2.5f);
         state = EnemyState.Wander;
         deathCollider.enabled = true;
         agent.speed *= 1.1f;
@@ -217,11 +221,11 @@ public class EnemyController : MonoBehaviour, IDamageable
         if (distance > attackDistance) state = EnemyState.Chase;
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, 4);
-    }
+    // private void OnDrawGizmosSelected()
+    // {
+    //     Gizmos.color = Color.red;        
+    //     Gizmos.DrawSphere(transform.position, 4);
+    // }
 }
 
 public enum EnemyState { Wander, Chase,Attack, Dead, BackToStart }
