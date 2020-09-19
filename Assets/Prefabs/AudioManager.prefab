@@ -153,3 +153,33 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+  - Nombre: Beep5
+    pista: {fileID: 8300000, guid: fc0b3531f8424eb4f827bacace2d4890, type: 3}
+    Vol: 0.34
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: Beep3
+    pista: {fileID: 8300000, guid: 8bf956b5bbd97f441b9ef989abe9da0a, type: 3}
+    Vol: 0.34
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: Beep5
+    pista: {fileID: 8300000, guid: fc0b3531f8424eb4f827bacace2d4890, type: 3}
+    Vol: 0.34
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: Beep5
+    pista: {fileID: 8300000, guid: fc0b3531f8424eb4f827bacace2d4890, type: 3}
+    Vol: 0.34
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: Beep5
+    pista: {fileID: 8300000, guid: fc0b3531f8424eb4f827bacace2d4890, type: 3}
+    Vol: 0.34
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
