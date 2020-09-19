@@ -17,6 +17,7 @@ public class PlayerSelect : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        CharacterSelected(6);
     }
 
     public void CharacterSelected(int CharacterInt)
