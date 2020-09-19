@@ -7,7 +7,7 @@ public class PlayerCameraController : MonoBehaviour
 {
     public static PlayerCameraController Instance {get; set;}
 
-    [SerializeField] float TurnSpeed = 15f, aimDuration = 0.3f;
+    float TurnSpeed = 15f, aimDuration = 0.1f;
     [SerializeField] Rig aimLayer;
     Camera mainCamera;
 

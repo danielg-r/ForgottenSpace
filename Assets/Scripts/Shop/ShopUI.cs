@@ -28,7 +28,7 @@ public class ShopUI : MonoBehaviour
 
     void onCurrAdded()
     {
-        Money.text = InventoryManager.Instance.currentCurrency.ToString();
+        Money.text = "$ " + InventoryManager.Instance.currentCurrency.ToString();
     }
 
 

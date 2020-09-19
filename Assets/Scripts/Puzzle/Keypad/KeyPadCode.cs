@@ -29,7 +29,7 @@ public class KeyPadCode : MonoBehaviour
         Screen.text = WaitText;
     }
 
-    private void OffScreen()
+    public void OffScreen()
     {
         cod.Clear();
         index = 0;
@@ -40,41 +40,34 @@ public class KeyPadCode : MonoBehaviour
         cod.Clear();
         index = 0;
         Screen.text = WaitText;
-    } //BOTON
+    } //NADA
 
 
-    public void Check() //BOTON
+    private void Check() //Interno
     {
-        if (index == CorrectCode.Length)
+        
+        bool correct = true;
+        
+        for (int i = 0; i < CorrectCode.Length; i++)
+        {                
+            if (cod[i] != CorrectCode[i])
+             {                
+                correct = false;
+                break;
+             }
+        }
+        if (correct)
         {
-            bool correct = true;
-
-            for (int i = 0; i < CorrectCode.Length; i++)
-            {
-                if (cod[i] != CorrectCode[i])
-                {
-                    correct = false;
-                    break;
-                }
-            }
-            if (correct)
-            {
-                CompletedCode.Invoke();
-                DisableButton.Invoke();
-                Screen.text = CorrectText;
-                OffScreen();
-            }
-            else
-            {
-                Screen.text = ErrorText;
-                OffScreen();
-            }
+            CompletedCode.Invoke();
+            DisableButton.Invoke();
+            Screen.text = CorrectText;
+            OffScreen();
         }
         else
         {
-            Screen.text = ErrorText;
+            Screen.text = ErrorText;            
             OffScreen();
-        }
+        }     
     }
 
     public void PressButton(int num) //BOTON
@@ -86,7 +79,23 @@ public class KeyPadCode : MonoBehaviour
         {
             Screen.text += "*";
         }
+        if (index == CorrectCode.Length)
+        {
+            Check();
+        }
+
     }
 
+
+
+    //METODOS PARA EL CURSOR
+    public void ShowCursor()
+    {
+        CursorManager.Instance.ShowCursor();
+    }
+    public void HideCursor()
+    {
+        CursorManager.Instance.HideCursor();
+    }
 
 }

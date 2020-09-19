@@ -39,12 +39,6 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    public void OnCreditosClick()
-    {
-        //SceneManager.LoadScene(0);
-    }
-
-
     public void OnPlayClick()
     {
         AudioManager.Instance.Play("Click");
@@ -69,30 +63,14 @@ public class MenuManager : MonoBehaviour
         canvas2Players.SetActive(false);
     }
 
-    public void Onpersonaje1Click()
+    public void OnplayerClick(int i) 
     {
-        AudioManager.Instance.Play("Click");
-        PlayerSelect.Instance.CharacterSelected(1);
-        this.gameObject.SetActive(false);
-        //canvas1Play.SetActive(false);
-        //canvasSkins.SetActive(true);
-        SceneManager.LoadScene(1);
-    }
+        // 1 cryoMale, 2 cryoFemale, 3 crewMale, 4 crewFemale, 5 crewCaptainMale, 6 crewCaptainFemale, 7 junkerMale, 8 junkerFemale, 9 Medic, 10 hunterFemale
 
-    public void Onpersonaje2Click()
-    {
         AudioManager.Instance.Play("Click");
-        PlayerSelect.Instance.CharacterSelected(2);
+        PlayerSelect.Instance.CharacterSelected(i);
         this.gameObject.SetActive(false);
-        //canvas1Play.SetActive(false);
-        //canvasSkins.SetActive(true);
         SceneManager.LoadScene(1);
-    }
-
-    public void BackPlayerScreen()
-    {
-        canvasSkins.SetActive(false);
-        canvas1Play.SetActive(true);
     }
 
     public void Exit()

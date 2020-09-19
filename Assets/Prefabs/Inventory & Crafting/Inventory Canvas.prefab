@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 1159347513691256269}
   - component: {fileID: 3157357869594272472}
   m_Layer: 5
-  m_Name: APiece
+  m_Name: Circuits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: df646550bafb34bbc8544dc1cb378d6e, type: 3}
+  m_Texture: {fileID: 2800000, guid: ecfe282e4b5469945987b2d306c96151, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 1091035170558812068}
   - component: {fileID: 2753276262153271826}
   m_Layer: 5
-  m_Name: BPiece
+  m_Name: Plates
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: d0ca99642fe5f4ffa9859004dacf948c, type: 3}
+  m_Texture: {fileID: 2800000, guid: 3a4ba47b066e58644b0eb6ecef32b198, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 5538179740038427228}
   - component: {fileID: 5538179740038427231}
   m_Layer: 5
-  m_Name: GunPieceText
+  m_Name: CircuitsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1328,10 +1328,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currencyText: {fileID: 5538179741324651439}
-  gunPieceText: {fileID: 5538179740038427231}
-  suitPieceText: {fileID: 5538179741886633829}
-  aPieceText: {fileID: 0}
-  bPieceText: {fileID: 0}
+  circsText: {fileID: 5538179740038427231}
+  platesText: {fileID: 5538179741886633829}
 --- !u!1 &5538179740349131587
 GameObject:
   m_ObjectHideFlags: 0
@@ -3810,7 +3808,7 @@ GameObject:
   - component: {fileID: 5538179741886633754}
   - component: {fileID: 5538179741886633829}
   m_Layer: 5
-  m_Name: SuitPieceText
+  m_Name: PlatesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -9,7 +9,8 @@ public class ActivatePistol : MonoBehaviour
     [SerializeField] Rig Layer;
     [SerializeField] GameObject Pistol;
     PlayerMovement playerMovement;
-    [SerializeField] AvatarMask avatar;
+    Animator animator;
+
     void Awake()
     {
         if (Instance == null)
@@ -26,8 +27,8 @@ public class ActivatePistol : MonoBehaviour
     void Start()
     {
         playerMovement = PlayerMovement.Instance;
-        playerMovement.CanAim = false;
-        Deactivate();        
+        animator = GetComponent<Animator>();
+        Deactivate();
     }
 
     void Update()
@@ -37,20 +38,17 @@ public class ActivatePistol : MonoBehaviour
 
     public void Activate()
     {
-        avatar.SetHumanoidBodyPartActive(AvatarMaskBodyPart.LeftArm, false);
-        avatar.SetHumanoidBodyPartActive(AvatarMaskBodyPart.RightArm, false);
-        avatar.SetHumanoidBodyPartActive(AvatarMaskBodyPart.LeftFingers, false);
-        avatar.SetHumanoidBodyPartActive(AvatarMaskBodyPart.RightFingers, false);
+        if (GetCharacter.Instance.IsMale)
+        {
+            animator.runtimeAnimatorController = Resources.Load("PlayerMask") as RuntimeAnimatorController;
+        }
+        else animator.runtimeAnimatorController = Resources.Load("PlayerWomanMask") as RuntimeAnimatorController;
         Layer.weight = 1f;
         Pistol.SetActive(true);
         playerMovement.CanAim = true;
     }
     public void Deactivate()
     {
-        avatar.SetHumanoidBodyPartActive(AvatarMaskBodyPart.LeftArm, true);
-        avatar.SetHumanoidBodyPartActive(AvatarMaskBodyPart.RightArm, true);
-        avatar.SetHumanoidBodyPartActive(AvatarMaskBodyPart.LeftFingers, true);
-        avatar.SetHumanoidBodyPartActive(AvatarMaskBodyPart.RightFingers, true);
         Layer.weight = 0f;
         Pistol.SetActive(false);
         playerMovement.CanAim = false;
