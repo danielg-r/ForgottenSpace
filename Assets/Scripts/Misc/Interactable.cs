@@ -10,15 +10,16 @@ public class Interactable : MonoBehaviour
     public KeyCode interactKey;
     public UnityEvent OnInteract;
     //[SerializeField] string interactAction;
-    [SerializeField] TextMeshProUGUI text;
+    TextMeshProUGUI text;
     Color green = new Color(0f, 255f, 0f);
 
-    void Awake()
+
+    void Start()
     {
-        //text = GetComponentInChildren<TextMeshProUGUI>();
+        text = PlayerCameraController.Instance.canvasText;
         text.text = ""; 
         text.color = green;
-    }
+    }    
 
     void Update()
     {

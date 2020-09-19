@@ -41,9 +41,13 @@ public class GetCharacter : MonoBehaviour
 
         if (getCharacter <= 5)
         {
-            Skinnedrenderer.sharedMaterials[0] = materials[1];
+            Skinnedrenderer.material = materials[1];
         }
-        else Skinnedrenderer.sharedMaterials[0] = materials[0];
+        else
+        {
+            Skinnedrenderer.material = materials[0];
+        }
+            
 
         if (getCharacter == 2 || getCharacter == 4 || getCharacter == 9 || getCharacter == 10 || getCharacter == 15)
         {
