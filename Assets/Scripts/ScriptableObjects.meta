@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 457cd9dfd777ba74091059ef5a2495ca
+<<<<<<< HEAD:Assets/KeyBorad Assets.meta
+guid: f2ffdf41b3792b842be191d1c7762c52
+=======
+guid: 0bb2e2c90224cb347b04ad70a0b1800a
+>>>>>>> 5c8122326b70c78d74f172e12ca68f69c0b3cc26:Assets/Animations/Avatar.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

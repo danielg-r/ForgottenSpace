@@ -1,5 +1,10 @@
 fileFormatVersion: 2
-guid: 92a80e6f6cd90464b8f87b98fc72999a
+<<<<<<< HEAD:Assets/Prefabs/Puzzle/ESCENA.meta
+guid: 993d5b0c052520c478c579bfb6172e96
+folderAsset: yes
+=======
+guid: 7ded4542e1954a347851f312655daf69
+>>>>>>> 5c8122326b70c78d74f172e12ca68f69c0b3cc26:Assets/Polygon/PolygonSciFiSpace/URP_ExtractMe.unitypackage.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
