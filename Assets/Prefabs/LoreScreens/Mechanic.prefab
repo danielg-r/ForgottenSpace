@@ -1447,8 +1447,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<i>[Entrada personal #416]\r</i>\n<i>Fecha: 7/04/2554\r</i>\n\n<<<<i>RECUPERANDO
-    FRAGMENTO DE AUDIO</i>>>>\r\n\nOtro d\xEDa m\xE1s en esta <color=#00FF00>[1]</color=\t#00FF00>pocilga,
+  m_text: "<i>[Entrada personal #416]\r</i>\n<i>Fecha: 7/04/2554\r</i>\n\n<i><<<RECUPERANDO
+    FRAGMENTO DE AUDIO>>>\r</i>\n\nOtro d\xEDa m\xE1s en esta <color=#00FF00>[1]</color=\t#00FF00>pocilga,
     para este punto creo que ya he compartido m\xE1s con el motor de la estaci\xF3n
     que con un ser humano real, menos mal solo nos queda una semana aqu\xED, de qued<color=#00FF00>[6]</color=\t#00FF00>arnos
     m\xE1s tiempo creo que empezar\xEDa a ponerle nombre a es<color=#00FF00>[7]</color=\t#00FF00>tas
@@ -1457,8 +1457,8 @@ MonoBehaviour:
     te refieres a estar metido en una puta c\xE1psula durante un mes para luego <color=#00FF00>[4]</color=\t#00FF00>estar
     sentado moviendo tuercas por un a\xF1o creo que prefiero la comodidad de la tierra,
     no s\xE9 qu\xE9 carajos hay aqu\xED que no haya en <color=#00FF00>[4]</color=\t#00FF00>nuestro
-    planeta, en fin, al menos las vistas son buenas cuando salgo de este cuarto.\r\n\n<<<<i>FIN
-    DEL REGISTRO</i>>>>\r\n"
+    planeta, en fin, al menos las vistas son buenas cuando salgo de este cuarto.\r\n\n<i><<<FIN
+    DEL REGISTRO>>>\r</i>\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
   m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
@@ -2048,8 +2048,8 @@ MonoBehaviour:
   cancelButton: {fileID: 0}
   icon: {fileID: 21300000, guid: f7fad078681824845adaa6aa333d9de8, type: 3}
   titleText: Registro de diario
-  descriptionText: "<i>[Entrada personal #416]\r</i>\n<i>Fecha: 7/04/2554\r</i>\n\n<<<<i>RECUPERANDO
-    FRAGMENTO DE AUDIO</i>>>>\r\n\nOtro d\xEDa m\xE1s en esta <color=#00FF00>[1]</color=\t#00FF00>pocilga,
+  descriptionText: "<i>[Entrada personal #416]\r</i>\n<i>Fecha: 7/04/2554\r</i>\n\n<i><<<RECUPERANDO
+    FRAGMENTO DE AUDIO>>>\r</i>\n\nOtro d\xEDa m\xE1s en esta <color=#00FF00>[1]</color=\t#00FF00>pocilga,
     para este punto creo que ya he compartido m\xE1s con el motor de la estaci\xF3n
     que con un ser humano real, menos mal solo nos queda una semana aqu\xED, de qued<color=#00FF00>[6]</color=\t#00FF00>arnos
     m\xE1s tiempo creo que empezar\xEDa a ponerle nombre a es<color=#00FF00>[7]</color=\t#00FF00>tas
@@ -2058,8 +2058,8 @@ MonoBehaviour:
     te refieres a estar metido en una puta c\xE1psula durante un mes para luego <color=#00FF00>[4]</color=\t#00FF00>estar
     sentado moviendo tuercas por un a\xF1o creo que prefiero la comodidad de la tierra,
     no s\xE9 qu\xE9 carajos hay aqu\xED que no haya en <color=#00FF00>[4]</color=\t#00FF00>nuestro
-    planeta, en fin, al menos las vistas son buenas cuando salgo de este cuarto.\r\n\n<<<<i>FIN
-    DEL REGISTRO</i>>>>\r\n"
+    planeta, en fin, al menos las vistas son buenas cuando salgo de este cuarto.\r\n\n<i><<<FIN
+    DEL REGISTRO>>>\r</i>\n"
   onConfirm:
     m_PersistentCalls:
       m_Calls: []
