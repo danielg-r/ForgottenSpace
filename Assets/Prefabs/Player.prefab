@@ -2306,7 +2306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staminaBar: {fileID: 1684989683917910279}
   waitToRegen: 2
-  maxStamina: 500
+  maxStamina: 1500
   PlusRegen: 20
   waitToUse: 50
   CantUse:
