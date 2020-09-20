@@ -11,8 +11,4 @@ public class LockedDoor : MonoBehaviour
         lockedPs.SetActive(false);
         unlockedPs.SetActive(true);
     }
-    // Update is called once per frame
-    void Update()
-    {
-    }
 }

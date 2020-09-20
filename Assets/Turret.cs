@@ -24,6 +24,15 @@ public class Turret : MonoBehaviour
         player = PlayerLife.Instance;
     }
 
+    public void Disable()
+    {
+        StopAllCoroutines();
+        GetComponentInChildren<Viewcone>().gameObject.SetActive(false);
+        GetComponentInChildren<Light>().intensity = 0;
+        this.enabled = false;        
+        //Todo: Un sonidito, un dotweensito, unas particulitas
+    }
+
     public void StartShooting()
     {
         print("Player detected started shooting");

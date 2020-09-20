@@ -24267,6 +24267,7 @@ GameObject:
   - component: {fileID: 7824793664417521747}
   - component: {fileID: 7792182785672709773}
   - component: {fileID: 7836486063798153850}
+  - component: {fileID: 7048801185681705454}
   m_Layer: 0
   m_Name: ShipSwitch
   m_TagString: Untagged
@@ -24400,3 +24401,16 @@ MonoBehaviour:
           m_StringArgument: PickItem
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!135 &7048801185681705454
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7836486063798153849}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8
+  m_Center: {x: 0.00000000976336, y: 0.32760304, z: 0.0000009243843}
