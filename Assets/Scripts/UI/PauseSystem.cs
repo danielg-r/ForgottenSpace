@@ -41,6 +41,7 @@ public class PauseSystem : MonoBehaviour
 
     public void Exit()
     {
+        Pause();
         SceneManager.LoadScene(0);
     }
 
@@ -53,8 +54,6 @@ public class PauseSystem : MonoBehaviour
     {
         InstrucPanel.SetActive(false);
     }
-
-
 
     public void Pause()
     {
