@@ -26,6 +26,8 @@ public class Puzzle : MonoBehaviour
             g.SetActive(false);
         }
         AudioManager.Instance.Play("PuzzleSolved");
+        PlayerCameraController.Instance.canvasText.text = "";
+
     }
 
     public void ReceiveSignal(GameObject go, int _state)
