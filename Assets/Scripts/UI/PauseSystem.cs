@@ -32,7 +32,7 @@ public class PauseSystem : MonoBehaviour
             Time.timeScale = 1f;
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             IsPaused = !IsPaused;
             if(!IsPaused) CursorManager.Instance.HideCursor();

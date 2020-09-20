@@ -15,7 +15,7 @@ public class AlphaCompleted : MonoBehaviour
 
     void Update()
     {
-        if (inventory.shipPieceCount > 1)
+        if (inventory.shipPieceCount > 3)
         {
             onAlphaCompleted.Invoke();
             this.enabled = false;

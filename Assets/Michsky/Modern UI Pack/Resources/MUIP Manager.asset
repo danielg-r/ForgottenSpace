@@ -58,14 +58,14 @@ MonoBehaviour:
   modalWindowIconColor: {r: 1, g: 1, b: 1, a: 1}
   modalWindowBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
   modalWindowContentPanelColor: {r: 0.12156863, g: 0.34117648, b: 0.11372549, a: 1}
-  notificationTitleFont: {fileID: 11400000, guid: 4bd810f1cbcb0f446a8f5a31453e243f,
+  notificationTitleFont: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   notificationTitleFontSize: 22.5
-  notificationDescriptionFont: {fileID: 11400000, guid: 4bd810f1cbcb0f446a8f5a31453e243f,
+  notificationDescriptionFont: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   notificationDescriptionFontSize: 18
   notificationThemeType: 0
-  notificationBackgroundColor: {r: 0.3254902, g: 0.3529412, b: 0.38431373, a: 1}
+  notificationBackgroundColor: {r: 0, g: 0.4, b: 0.37254903, a: 1}
   notificationTitleColor: {r: 1, g: 1, b: 1, a: 1}
   notificationDescriptionColor: {r: 1, g: 1, b: 1, a: 1}
   notificationIconColor: {r: 1, g: 1, b: 1, a: 1}

@@ -15,6 +15,9 @@ public class NotificationHandler : MonoBehaviour
     [SerializeField] NotificationManager lootFound;
     [SerializeField] NotificationManager detected;
     [SerializeField] NotificationManager doorLocked;
+    [SerializeField] NotificationManager inspect;
+    [SerializeField] NotificationManager currencyAdded;
+
 
     void Awake()
     {
@@ -54,6 +57,16 @@ public class NotificationHandler : MonoBehaviour
     {
         lootFound.description = desc.ToString();
         lootFound.OpenNotification();
+    }
+    public void Inspect()
+    {
+        inspect.OpenNotification();
+    }
+
+    public void CurrencyAdded(string desc)
+    {
+        currencyAdded.description = desc.ToString();
+        currencyAdded.OpenNotification();
     }
 
     // Función de ejemplo con posibilidad de modificar la notificación en caso de que sea necesario.
