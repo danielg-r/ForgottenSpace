@@ -45,7 +45,6 @@ public class Inventory : MonoBehaviour
     void FreezeGame()
     {
         if (isOpen == true) Time.timeScale = 0f;
-
         else Time.timeScale = 1f;
     }
 

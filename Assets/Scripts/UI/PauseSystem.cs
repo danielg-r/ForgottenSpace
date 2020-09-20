@@ -10,37 +10,18 @@ public class PauseSystem : MonoBehaviour
     public GameObject PauseButton;
     public GameObject InstrucPanel;
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     private void Update()
     {
-        if (IsPaused)
-        {
-            PauseMenu.SetActive(true);
-            PauseButton.SetActive(false);
-            Time.timeScale = 0f;
-            CursorManager.Instance.ShowCursor();
-
-        }
-        else
-        {
-            PauseMenu.SetActive(false);
-            PauseButton.SetActive(true);
-            Time.timeScale = 1f;
-        }
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            IsPaused = !IsPaused;
+            Pause();
             if(!IsPaused) CursorManager.Instance.HideCursor();
         }
     }
 
     public void Exit()
     {
+        Time.timeScale = 1f;        
         SceneManager.LoadScene(0);
     }
 
@@ -52,14 +33,25 @@ public class PauseSystem : MonoBehaviour
     public void CloseInstruc()
     {
         InstrucPanel.SetActive(false);
-    }
-
-
+    }    
 
     public void Pause()
     {
         IsPaused = !IsPaused;
-        CursorManager.Instance.HideCursor();
+        if (IsPaused)
+        {
+            PauseMenu.SetActive(true);
+            PauseButton.SetActive(false);
+            Time.timeScale = 0f;
+            CursorManager.Instance.ShowCursor();
+        }
+        else
+        {
+            PauseMenu.SetActive(false);
+            PauseButton.SetActive(true);
+            Time.timeScale = 1f;
+            CursorManager.Instance.HideCursor();
+        }
     }
 }
 
