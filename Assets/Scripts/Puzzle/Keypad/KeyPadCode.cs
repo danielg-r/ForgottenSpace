@@ -19,6 +19,7 @@ public class KeyPadCode : MonoBehaviour
 
     public UnityEvent CompletedCode;
     public UnityEvent DisableButton;
+    public UnityEvent OnCompleteDelay;
 
 
     List<int> cod = new List<int>();
@@ -58,7 +59,9 @@ public class KeyPadCode : MonoBehaviour
         }
         if (correct)
         {
+            HideCursor();
             CompletedCode.Invoke();
+            Invoke("DelayComplete", 0.5f);
             DisableButton.Invoke();
             Screen.text = CorrectText;
             OffScreen();
@@ -85,6 +88,11 @@ public class KeyPadCode : MonoBehaviour
             Check();
         }
 
+    }
+
+    void DelayComplete()
+    {
+        OnCompleteDelay.Invoke();
     }
 
 
