@@ -22,7 +22,8 @@ public class PlayerSelect : MonoBehaviour
 
     public void CharacterSelected(int CharacterInt)
     {
-        // 1 cryoMale, 2 cryoFemale, 3 crewMale, 4 crewFemale, 5 crewCaptainMale, 6 crewCaptainFemale, 7 junkerMale, 8 junkerFemale, 9 Medic, 10 hunterFemale
+        // 1 cryoMale, 2 cryoFemale, 3 Alien, 4 robotFemale, 5 crewCaptainMale, 6 RichMale (el facherito), 7 medicalMale, 8 MuscleMale
+        // 9 JunkyFemale, 10 HackerFemale, 11 cyberpunkMale, 12 AugmentedMale, 13 Lagartija, 14 alienCabezon, 15 CyberFemale, 16 CyberMale 
 
         PlayerPrefs.SetInt(selectedCharacter, CharacterInt);
     }
