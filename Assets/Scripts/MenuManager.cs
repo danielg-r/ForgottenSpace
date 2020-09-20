@@ -11,7 +11,6 @@ public class MenuManager : MonoBehaviour
 
     public GameObject canvas1Play;
     public GameObject canvas2Players;
-    public GameObject canvasSkins;
 
     //Timer
     public float timer = 0f;
