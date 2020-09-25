@@ -17,7 +17,44 @@ public class MenuManager : MonoBehaviour
     public float d = 1.2f;
     public int mode;
 
+    private string panelFadeIn = "Panel Open";
+    private string panelFadeOut = "Panel Close";
+    private string styleExpand = "Expand";
+    private string styleClose = "Close";
+
+    [Header("STYLE OBJECTS")]
+    public List<GameObject> objects = new List<GameObject>();
+
+    [Header("STYLE PARENTS")]
+    public List<GameObject> panels = new List<GameObject>();
+
+    private GameObject currentPanel;
+    private GameObject nextPanel;
+    private GameObject styleObject;
+
+    [Header("SETTINGS")]
+    public int currentPanelIndex = 0;
+    private int currentStylelIndex = 0;
+
+    private Animator currentPanelAnimator;
+    private Animator styleAnimator;
+    public Animator nextPanelAnimator;
+
     //ESCENA 0 = MENU / ESCENA 1 = JUEGO
+
+    private void Start()
+    {
+        currentPanel = panels[currentPanelIndex];
+        currentPanelAnimator = currentPanel.GetComponent<Animator>();
+        currentPanelAnimator.Play(panelFadeIn);
+
+        styleObject = objects[currentStylelIndex];
+        styleAnimator = styleObject.GetComponent<Animator>();
+        styleAnimator.Play(styleExpand);
+
+        nextPanel = panels[currentPanelIndex];
+        nextPanelAnimator = nextPanel.GetComponent<Animator>();
+    }
 
     public void Update()
     {        
@@ -29,10 +66,12 @@ public class MenuManager : MonoBehaviour
             switch (mode)
             {
                 case 1:
-                    canvas2Players.SetActive(true);                    
+                    //canvas2Players.SetActive(true);
+                    PanelAnim(1);
                     break;
                 case 2:
-                    canvas1Play.SetActive(true);
+                    //canvas1Play.SetActive(true);
+                    PanelAnim(0);
                     break;
             }            
         }
@@ -41,25 +80,26 @@ public class MenuManager : MonoBehaviour
     public void OnPlayClick()
     {
         AudioManager.Instance.Play("Click");
+        styleAnimator.SetTrigger(styleClose);
         camara1Play.SetActive(false);
         camara2Players.SetActive(true);
 
         timer = 0f;
         mode = 1;
 
-        canvas1Play.SetActive(false);
+        //canvas1Play.SetActive(false);
     }
     public void OnReturnClick()
     {
         AudioManager.Instance.Play("Click");
+        styleAnimator.SetTrigger(styleClose);
         camara1Play.SetActive(true);
         camara2Players.SetActive(false);
 
-
         timer = 0f;
         mode = 2;
-        
-        canvas2Players.SetActive(false);
+
+        //canvas2Players.SetActive(false);
     }
 
     public void OnplayerClick(int i) 
@@ -77,5 +117,25 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void PanelAnim(int newPanel)
+    {
+        if (newPanel != currentPanelIndex)
+        {
+            currentPanel = panels[currentPanelIndex];
 
+            currentPanelIndex = newPanel;
+            nextPanel = panels[currentPanelIndex];
+
+            currentPanelAnimator = currentPanel.GetComponent<Animator>();
+            nextPanelAnimator = nextPanel.GetComponent<Animator>();
+
+            currentPanelAnimator.Play(panelFadeOut);
+            nextPanelAnimator.Play(panelFadeIn);
+
+            currentStylelIndex = newPanel;
+            styleObject = objects[currentStylelIndex];
+            styleAnimator = styleObject.GetComponent<Animator>();
+            styleAnimator.Play(styleExpand);
+        }
+    }
 }
