@@ -165,6 +165,18 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+  - Nombre: FemaleDeath
+    pista: {fileID: 8300000, guid: 91dae728c8eb3134896aedf54adf9d93, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: FemaleHurt
+    pista: {fileID: 8300000, guid: b965ecb5e9f8d1145be6ba77b59039cb, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
   - Nombre: Beep5
     pista: {fileID: 8300000, guid: fc0b3531f8424eb4f827bacace2d4890, type: 3}
     Vol: 0.34
