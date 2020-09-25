@@ -20,6 +20,7 @@ public class MenuManager : MonoBehaviour
     private string panelFadeIn = "Panel Open";
     private string panelFadeOut = "Panel Close";
     private string styleExpand = "Expand";
+    private string styleClose = "Close";
 
     [Header("STYLE OBJECTS")]
     public List<GameObject> objects = new List<GameObject>();
@@ -82,6 +83,8 @@ public class MenuManager : MonoBehaviour
         AudioManager.Instance.Play("Click");
         camara1Play.SetActive(false);
         camara2Players.SetActive(true);
+        
+        styleAnimator.SetTrigger(styleClose);
 
         timer = 0f;
         mode = 1;
@@ -94,10 +97,11 @@ public class MenuManager : MonoBehaviour
         camara1Play.SetActive(true);
         camara2Players.SetActive(false);
 
+        styleAnimator.SetTrigger(styleClose);
 
         timer = 0f;
         mode = 2;
-        
+
         //canvas2Players.SetActive(false);
     }
 
