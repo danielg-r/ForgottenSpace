@@ -6,82 +6,62 @@ using UnityEngine;
 
 public class BoxPuzzle : MonoBehaviour
 {
-    public Box boxPrefab;
 
-    public Box[,] boxes = new Box[3, 3];
+    public int sizeRow, sizeCol;
+    int countPoint = 0;
+    int countImageKey = 0;
 
-    public Sprite[] sprites;
+    public List<GameObject> imageKeyList;
+    public List<GameObject> imageOfPictureList;
+    public List<GameObject> CheckpointList;
 
-
-
+    GameObject[,] imageKeytMatrix;
+    GameObject[,] imageOfPictureMatrix;
+    GameObject[,] CheckpointMatrix;
 
     private void Start()
     {
-        Init();
+        CheckPointManager();
+        ImageKeyManager();
     }
 
-    void Init()
+
+    void CheckPointManager()
     {
-        int n = 0;
-        for (int y = 2; y >= 0; y--)
+        for(int i = 0;i<sizeRow; i++)
         {
-            for (int x = 0; x < 3; x++)
+            for(int j = 0; i < sizeRow; i++)
             {
-                Box box = Instantiate(boxPrefab, new Vector2(x, y), Quaternion.identity);
-                box.Init(x, y, n + 1, sprites[n], ClickToSwap);
-                boxes[x, y] = box;
-                n++;
+                CheckpointMatrix[i, j] = CheckpointList[countPoint];
+                countPoint++;
             }
         }
     }
 
-    void ClickToSwap(int x, int y)
+    void ImageKeyManager()
     {
-        int dx = getDx(x, y);
-        int dy = getDy(x, y);
-
-        var from = boxes[x, y];
-        var target = boxes[x + dx, y + dy];
-
-        //Cambia las "Box"
-        boxes[x, y] = target;
-        boxes[x + dx, y + dy] = from;
-
-        //Actualiza la posicion
-        from.UpdatePos(x + dx, y + dy);
-        target.UpdatePos(x, y);
+        for (int i = 0; i < sizeRow; i++)
+        {
+            for (int j = 0; i < sizeRow; i++)
+            {
+                imageKeytMatrix[i, j] = imageKeyList[countImageKey];
+                countImageKey++;
+            }
+        }
     }
 
-    int getDx(int x, int y)
+    void ImageOfNormal()
     {
-        //Derecha vacio
-        if (x < 2 && boxes[x + 1, y].IsEmpty())
-        {
-            return 1;
-        }
-        //Izquierda Vacio
-        if (x > 0 && boxes[x - 1, y].IsEmpty())
-        {
-            return -1;
-        }
-        return 0;
+        imageOfPictureMatrix[0, 0] = imageOfPictureList[0];
+        imageOfPictureMatrix[0, 1] = imageOfPictureList[2];
+        imageOfPictureMatrix[0, 2] = imageOfPictureList[5];
+        imageOfPictureMatrix[1, 0] = imageOfPictureList[4];
+        imageOfPictureMatrix[1, 1] = imageOfPictureList[1];
+        imageOfPictureMatrix[1, 2] = imageOfPictureList[7];
+        imageOfPictureMatrix[2, 0] = imageOfPictureList[3];
+        imageOfPictureMatrix[2, 1] = imageOfPictureList[6];
+        imageOfPictureMatrix[2, 2] = imageOfPictureList[8];
     }
-    int getDy(int x, int y)
-    {
-        //Arriba vacio
-        if (y < 2 && boxes[x, y + 1].IsEmpty())
-        {
-            return 1;
-        }
-        //Abajo vacio
-        if (y > 0 && boxes[x, y - 1].IsEmpty())
-        {
-            return -1;
-        }
-        return 0;
-    }
-
-
 
 
 }
