@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/TextMesh Pro/Examples & Extras/Resources.meta
 guid: 71517147959a9ef45acddc8b8d47f7cb
+=======
+guid: 4d2375629525ba74d81af7c86a8f9fb5
+>>>>>>> 83656341243c3c3ddb2be6600d660461b8cb6af1:Assets/Animations/TesteosdeRamírez.meta
+=======
+guid: 71517147959a9ef45acddc8b8d47f7cb
+>>>>>>> 83656341243c3c3ddb2be6600d660461b8cb6af1
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
