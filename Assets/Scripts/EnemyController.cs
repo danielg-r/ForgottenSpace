@@ -29,8 +29,9 @@ public class EnemyController : MonoBehaviour, IDamageable
     [SerializeField] LayerMask playerMask;
 
 
-    Vector3 lastPosition;
+    Transform lastPosition;
     bool isAttacking;
+    bool playerDetected;
     AudioSource overloadSound;
     #endregion
 
@@ -40,7 +41,7 @@ public class EnemyController : MonoBehaviour, IDamageable
         agent = GetComponent<NavMeshAgent>();
         FindTarget();
         state = EnemyState.Wander;
-        lastPosition = transform.position;       
+        lastPosition = transform;       
         currentHealth = maxHealth;
         overloadSound = GetComponent<AudioSource>();
     }
@@ -60,17 +61,13 @@ public class EnemyController : MonoBehaviour, IDamageable
             default:
             case EnemyState.Wander:
                 FindTarget();
+                playerDetected = false;
                 if (!agent.enabled)
                 { 
                     agent.enabled = true;
                     agent.isStopped = false;       
                 }                    
                 animator.SetBool("Attack",  false);
-                if (distance < followDistance && target != null)
-                {
-                    state = EnemyState.Chase;
-                    AudioManager.Instance.Play("RobotDetect");
-                }
                 break;
             
             case EnemyState.Chase:
@@ -84,13 +81,15 @@ public class EnemyController : MonoBehaviour, IDamageable
                 break;
             
             case EnemyState.BackToStart:
+                playerDetected = false;
                 animator.SetBool("Attack",  false);
-                agent.SetDestination(lastPosition);
+                agent.SetDestination(lastPosition.position);
                 agent.stoppingDistance = 0.1f; 
-                if (Vector3.Distance(transform.position, lastPosition) < 0.5f)
+                if (Vector3.Distance(transform.position, lastPosition.position) < 0.5f)
                 {                    
                     animator.SetBool("IsWalking", false);
                     state = EnemyState.Wander;
+                    transform.rotation = lastPosition.rotation;
                 }
                 break;
             case EnemyState.Attack:
@@ -188,6 +187,16 @@ public class EnemyController : MonoBehaviour, IDamageable
         overloadSound.Play();
         yield return new WaitForSeconds(overloadSound.clip.length);
         Die();
+    }
+
+    public void PlayerDetected()
+    {
+        if (!playerDetected)
+        {
+            state = EnemyState.Chase;
+            AudioManager.Instance.Play("RobotDetect");
+            playerDetected = true;
+        }
     }
 
     void Attack()

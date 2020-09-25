@@ -28,7 +28,7 @@ public class ViewconeDetection : MonoBehaviour {
 			RaycastHit newHit;
 			Debug.DrawRay(transform.position, col.transform.position - transform.position);
 
-			if(Physics.Raycast(new Ray(transform.position, col.transform.position - transform.position), out newHit, Mathf.Infinity, targetLayer))
+			if(Physics.Raycast(new Ray(transform.position, col.transform.position - transform.position), out newHit, Mathf.Infinity))
 			{
 				if(newHit.collider.CompareTag(ObjectTag))
 				{

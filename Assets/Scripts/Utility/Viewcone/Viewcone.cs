@@ -141,7 +141,7 @@ public class Viewcone : MonoBehaviour
 		}
 	}
 
-	private void OnTriggerEnter (Collider col)
+	private void OnTriggerStay (Collider col)
 	{
 		_spotter.ObjectSpotted (col);
 	}

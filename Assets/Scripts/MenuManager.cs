@@ -34,7 +34,6 @@ public class MenuManager : MonoBehaviour
 
     [Header("SETTINGS")]
     public int currentPanelIndex = 0;
-    private int currentButtonlIndex = 0;
     private int currentStylelIndex = 0;
 
     private Animator currentPanelAnimator;
@@ -50,7 +49,7 @@ public class MenuManager : MonoBehaviour
         currentPanelAnimator.Play(panelFadeIn);
 
         styleObject = objects[currentStylelIndex];
-        styleAnimator = currentPanel.GetComponent<Animator>();
+        styleAnimator = styleObject.GetComponent<Animator>();
         styleAnimator.Play(styleExpand);
 
         nextPanel = panels[currentPanelIndex];
@@ -81,10 +80,9 @@ public class MenuManager : MonoBehaviour
     public void OnPlayClick()
     {
         AudioManager.Instance.Play("Click");
+        styleAnimator.SetTrigger(styleClose);
         camara1Play.SetActive(false);
         camara2Players.SetActive(true);
-        
-        styleAnimator.SetTrigger(styleClose);
 
         timer = 0f;
         mode = 1;
@@ -94,10 +92,9 @@ public class MenuManager : MonoBehaviour
     public void OnReturnClick()
     {
         AudioManager.Instance.Play("Click");
+        styleAnimator.SetTrigger(styleClose);
         camara1Play.SetActive(true);
         camara2Players.SetActive(false);
-
-        styleAnimator.SetTrigger(styleClose);
 
         timer = 0f;
         mode = 2;
@@ -136,7 +133,8 @@ public class MenuManager : MonoBehaviour
             nextPanelAnimator.Play(panelFadeIn);
 
             currentStylelIndex = newPanel;
-            styleAnimator = currentPanel.GetComponent<Animator>();
+            styleObject = objects[currentStylelIndex];
+            styleAnimator = styleObject.GetComponent<Animator>();
             styleAnimator.Play(styleExpand);
         }
     }
