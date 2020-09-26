@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Michsky.LSS;
 
 public class MenuManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class MenuManager : MonoBehaviour
 
     public GameObject canvas1Play;
     public GameObject canvas2Players;
+
+    [SerializeField] LoadingScreenManager lsm;
 
     //Timer
     public float timer = 0f;
@@ -108,8 +111,8 @@ public class MenuManager : MonoBehaviour
 
         AudioManager.Instance.Play("Click");
         PlayerSelect.Instance.CharacterSelected(i);
+        lsm.LoadScene("Enemies_Pathfinding");
         this.gameObject.SetActive(false);
-        SceneManager.LoadScene(1);
     }
 
     public void Exit()

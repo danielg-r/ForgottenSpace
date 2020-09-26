@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.019120552, g: 0.009632196, b: 0.039120577, a: 1}
+  m_IndirectSpecularColor: {r: 0.019136017, g: 0.009631307, b: 0.039147314, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -949,8 +949,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4854,8 +4854,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -14118,8 +14118,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "estaci\xF3n valiant"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -14193,7 +14193,7 @@ MonoBehaviour:
     linkCount: 0
     lineCount: 1
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -18733,7 +18733,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -28686,6 +28686,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486093810}
   m_CullTransparentMesh: 0
+--- !u!1 &1486431182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1486431184}
+  - component: {fileID: 1486431183}
+  m_Layer: 0
+  m_Name: Loading Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1486431183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486431182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691872b4669c9ee45847d2d10286d82f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabHelper: ForgottenSpaceLS
+  enableTrigger: 0
+  onTriggerExit: 0
+  onlyLoadWithTag: 0
+  objectTag: Untagged
+  sceneName: 
+  dontDestroyOnLoad: []
+  loadingScreens:
+  - {fileID: 6498329938164979471, guid: a6d6d28fbef5e6f4aa3e250d402fdc36, type: 3}
+  - {fileID: 395881036633011262, guid: 95a7792292d18714aa328b4f7a725165, type: 3}
+  - {fileID: 8643118620972578112, guid: 4c5b18657fca35b43b22f2fd07c29ff3, type: 3}
+  - {fileID: 8643118620972578112, guid: da9ecdb2e25bea342b5be62a75cc51e7, type: 3}
+  - {fileID: 8448866507439987890, guid: 54f98e891bed80f4684d3cf5e66899b5, type: 3}
+  - {fileID: 8985211846813716763, guid: 0569eddbe7ea6c244bd4d9a30147cc55, type: 3}
+  selectedLoadingIndex: 2
+  selectedTagIndex: 0
+--- !u!4 &1486431184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486431182}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1487527833
 GameObject:
   m_ObjectHideFlags: 0
@@ -29165,7 +29224,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 963.7002, y: 0}
+  m_AnchoredPosition: {x: 963.6998, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1506730792
@@ -36145,6 +36204,7 @@ MonoBehaviour:
   camara2Players: {fileID: 1259017827}
   canvas1Play: {fileID: 1756677123}
   canvas2Players: {fileID: 1000590410}
+  lsm: {fileID: 1486431183}
   timer: 0
   d: 2
   mode: 0

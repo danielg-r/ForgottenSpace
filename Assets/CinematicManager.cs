@@ -16,12 +16,14 @@ public class CinematicManager : MonoBehaviour
     public void DisablePlayer()
     {
         PlayerMovement.Instance.enabled = false;
+        PlayerMovement.Instance.GetComponent<Animator>().enabled = false;
         //Time.timeScale = 0f;
     }
 
     public void EnablePlayer()
     {
         PlayerMovement.Instance.enabled = true;
+        PlayerMovement.Instance.GetComponent<Animator>().enabled = true;
         //Time.timeScale = 1f;
     }
 

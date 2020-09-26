@@ -8,6 +8,7 @@ using System.Reflection.Emit;
 
 public class UIDeathControl : MonoBehaviour
 {
+    private static UIDeathControl instance;
     [Header("Death")]
     [SerializeField] TextMeshProUGUI label;
     [SerializeField] GameObject ContinueButton;
@@ -24,6 +25,13 @@ public class UIDeathControl : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject InstrucPanel;
     private bool IsAlive = true;
+
+    public static UIDeathControl Instance { get => instance; }
+
+    void Awake()
+    {
+        if (Instance == null) instance = this;
+    }
 
     void Start()
     {

@@ -2924,7 +2924,6 @@ MonoBehaviour:
   PauseMenu: {fileID: 3405197000719412933}
   PauseButton: {fileID: 3405196999952860045}
   InstrucPanel: {fileID: 3405196999067573563}
-  cursorManager: {fileID: 0}
 --- !u!1 &3405196999362524549
 GameObject:
   m_ObjectHideFlags: 0
