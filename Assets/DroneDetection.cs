@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 
 public class DroneDetection : MonoBehaviour
 {
-    DroneSpawner[] spawners; // = FindObjectsOfType(typeof(DroneSpawner)) as DroneSpawner[];
+    [SerializeField]DroneSpawner[] spawners; // = FindObjectsOfType(typeof(DroneSpawner)) as DroneSpawner[];
     [SerializeField] float detectionCooldown;
     [SerializeField] bool canDetectPlayer;
     [SerializeField] int dronesAmount;
     AudioSource detectionSound;
-    List<float> distances = new List<float>();
+    [SerializeField]List<float> distances = new List<float>();
     float min = 100f;
 
     void Start()
@@ -37,6 +38,11 @@ public class DroneDetection : MonoBehaviour
         }
     }
 
+    // void Update()
+    // {
+    //     if(Input.GetKeyDown(KeyCode.X)) Invoke("GetClosestSpawner", 0.2f);
+    // }
+
     IEnumerator DetectionCooldown()
     {
         yield return new WaitForSeconds(detectionCooldown);
@@ -45,17 +51,27 @@ public class DroneDetection : MonoBehaviour
     }
 
     void GetClosestSpawner()
-    {        
-        int index = 0;
+    {
+        distances.Clear();
         for (int i = 0; i < spawners.Length; i++)
         {
             distances.Add(spawners[i].GetDistance());
-            if (distances[i] < min)
+        }
+
+        for (int j = 0; j < spawners.Length - 1; j++) {
+            for (int i = 0; i < spawners.Length - 1; i++) 
             {
-                min = distances[i];
-                index = i;
+                if (distances[i] > distances[i + 1]) {
+                    float temp = distances[i + 1];
+                    distances[i + 1] = distances[i];
+                    distances[i] = temp;
+                    DroneSpawner temp2 = spawners[i + 1];
+                    spawners[i + 1] = spawners[i];
+                    spawners[i] = temp2;
+                }            
             }
         }
-        spawners[index].StartCoroutine("SpawnDrones", dronesAmount);
+        spawners[0].StartCoroutine("SpawnDrones", dronesAmount);
+        //Debug.Log($"Closest spawner is {spawners[0].name}");
     }    
 }

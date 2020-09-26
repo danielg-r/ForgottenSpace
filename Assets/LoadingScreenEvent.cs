@@ -12,16 +12,13 @@ public class LoadingScreenEvent : MonoBehaviour
 
     void Start()
     {
+        AudioListener.volume = 0;
         loadingScreen = FindObjectOfType<LoadingScreen>();
-        audioListener = FindObjectOfType<AudioListener>();
-        loadingScreen.onFinishEvents.AddListener(playableDirector.Play); 
-        loadingScreen.onFinishEvents.AddListener(EnableAudio);
-        loadingScreen.onFinishEvents.AddListener(EnablePauseSystem);
-    }
-
-    void EnableAudio()
-    {
-        audioListener.enabled = true;
+        if (loadingScreen != null)
+        {
+            loadingScreen.onFinishEvents.AddListener(playableDirector.Play); 
+            loadingScreen.onFinishEvents.AddListener(EnablePauseSystem);
+        }
     }
 
     void EnablePauseSystem()

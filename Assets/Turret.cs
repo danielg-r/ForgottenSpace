@@ -36,8 +36,8 @@ public class Turret : MonoBehaviour
     public void StartShooting()
     {
         print("Player detected started shooting");
-        isShooting = true;
-        if (isShooting) StartCoroutine("ShootLaser");
+        //isShooting = true;
+        if (!isShooting && !player.isDead) StartCoroutine("ShootLaser");
     }
     public void StopShooting()
     {
@@ -49,12 +49,17 @@ public class Turret : MonoBehaviour
 
     IEnumerator ShootLaser()
     {
+        isShooting = true;
         transform.LookAt(player.transform.position + new Vector3(0,1f,0));        
         while (isShooting)
         {
             SpawnLaser();
             yield return new WaitForSeconds(shootInterval);
-            if (player.isDead) isShooting = false;
+            if (player.isDead)
+            {
+                isShooting = false;
+                StopCoroutine("ShootLaser");
+            }
             transform.LookAt(player.transform.position + new Vector3(0,1f,0));
         }
         StopCoroutine("ShootLaser");

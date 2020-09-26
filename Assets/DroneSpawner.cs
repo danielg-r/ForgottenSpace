@@ -23,6 +23,12 @@ public class DroneSpawner : MonoBehaviour
         return distanceToPlayer;
     }
 
+    void Update()
+    {
+        GetDistance();
+        //Testing        
+    }
+
     public IEnumerator SpawnDrones(int droneAmount)
     {
         spawnerLights.SetActive(true);
