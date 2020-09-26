@@ -113,7 +113,7 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Nombre: DroneHover
     pista: {fileID: 8300000, guid: 8a154c4212afe7d409f0fb937b2f603b, type: 3}
-    Vol: 0.17
+    Vol: 0.06
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
