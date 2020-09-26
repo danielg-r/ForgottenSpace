@@ -48,7 +48,8 @@ public class PlayerLife : MonoBehaviour, IDamageable
 
     public void TakeDamage(int amount)
     {
-        AudioManager.Instance.Play("HurtPlayer");
+        if (GetCharacter.Instance.IsMale == true) { AudioManager.Instance.Play("HurtPlayer"); }
+        else { AudioManager.Instance.Play("FemaleHurt"); }
         if (currentLife - amount > 0)
         {
             currentLife -= amount;
@@ -66,7 +67,8 @@ public class PlayerLife : MonoBehaviour, IDamageable
                 isDead = true;
                 staminaBar.value = 0;
                 StopCoroutine(regen);
-                AudioManager.Instance.Play("PlayerDeath");
+                if (GetCharacter.Instance.IsMale == true) { AudioManager.Instance.Play("PlayerDeath"); }
+                else { AudioManager.Instance.Play("FemaleDeath"); }
                 onPlayerDied();
             }
         }
