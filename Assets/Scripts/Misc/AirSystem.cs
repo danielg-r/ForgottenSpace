@@ -14,6 +14,8 @@ public class AirSystem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private GameObject TimerUI;
 
+    [SerializeField] private GameObject LooseUI;
+
     void Start()
     {
         
@@ -33,7 +35,6 @@ public class AirSystem : MonoBehaviour
     {
         TimerUI.SetActive(false);
         CancelInvoke();
-
     }
     private void UpdateTimer()
     {
@@ -42,7 +43,8 @@ public class AirSystem : MonoBehaviour
         {
             if (m == 0)
             {
-                //end Game
+                LooseUI.SetActive(true);
+                StopTimer();
             }
             else
             {

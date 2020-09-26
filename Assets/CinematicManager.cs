@@ -2,14 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class CinematicManager : MonoBehaviour
 {
+
+    public UnityEvent OnOpenShop;
+    public UnityEvent OnOpenCraft;
+
+    public UnityEvent OnCloseShop;
+    public UnityEvent OnCloseraft;
+
     public void DisablePlayer()
     {
         PlayerMovement.Instance.enabled = false;
         //Time.timeScale = 0f;
-
     }
 
     public void EnablePlayer()
@@ -38,4 +45,23 @@ public class CinematicManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
     }
+
+    public void ActiveShopCinematic()
+    {
+        OnOpenShop.Invoke();
+    }
+    public void ActiveCraftCinematic()
+    {
+        OnOpenCraft.Invoke();
+    }
+
+    public void DisableCraftCinematic()
+    {
+        OnCloseraft.Invoke();
+    }
+    public void DisableShopCinematic()
+    {
+        OnCloseShop.Invoke();
+    }
+
 }
