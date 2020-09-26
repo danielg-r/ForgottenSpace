@@ -19671,7 +19671,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 258
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -20083,7 +20083,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 258
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -21571,7 +21571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StaminaValue: 7
   EnergyValue: 2
-  LifeValue: 5
+  LifeValue: 7
 --- !u!114 &2456613217259005793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21821,7 +21821,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   sharpAnimations: 0
-  useCustomValues: 0
+  useCustomValues: 1
   isOn: 0
 --- !u!225 &2456613217349642241
 CanvasGroup:
@@ -22513,8 +22513,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Maquina de Ventas
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fa328c1ae3ffb6b4583cf371153b0be6, type: 2}
-  m_sharedMaterial: {fileID: 21918420405216288, guid: fa328c1ae3ffb6b4583cf371153b0be6,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -22546,7 +22546,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -26690,7 +26690,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2456613218374905820}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.895007, y: 0.83, z: -24.29061}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -30425,7 +30425,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 258
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -31455,8 +31455,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Estacion de Reparacion
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fa328c1ae3ffb6b4583cf371153b0be6, type: 2}
-  m_sharedMaterial: {fileID: 21918420405216288, guid: fa328c1ae3ffb6b4583cf371153b0be6,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -31488,7 +31488,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -37490,7 +37490,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   sharpAnimations: 0
-  useCustomValues: 0
+  useCustomValues: 1
   isOn: 0
 --- !u!225 &2499715631327290355
 CanvasGroup:
@@ -39382,8 +39382,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4830156451850726797}
-  m_LocalRotation: {x: -0, y: -0.91969246, z: -0, w: -0.3926396}
-  m_LocalPosition: {x: -6.274993, y: -0.7895414, z: -0.28939056}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000002533197}
+  m_LocalPosition: {x: 3.73, y: -1.232, z: -1.332}
   m_LocalScale: {x: 0.74999994, y: 0.75, z: 0.74999994}
   m_Children:
   - {fileID: 1295044776576208612}
@@ -39391,7 +39391,7 @@ Transform:
   - {fileID: 865683576678996352}
   m_Father: {fileID: 2456613218374905821}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -226.23799, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180.00002, z: 0}
 --- !u!33 &4861088211189275183
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -63621,15 +63621,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7610683040441651903}
-  m_LocalRotation: {x: -0, y: -0.97360957, z: -0, w: -0.22822042}
-  m_LocalPosition: {x: -3.6049929, y: -0.83, z: 1.2906094}
+  m_LocalRotation: {x: -0, y: 0.92387944, z: -0, w: 0.3826837}
+  m_LocalPosition: {x: -0.345, y: -1.265, z: -1.855}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 4954426667641238295}
   - {fileID: 5215560560882667318}
   m_Father: {fileID: 2456613218374905821}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -206.385, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 135, z: 0}
 --- !u!33 &7632588186804035903
 MeshFilter:
   m_ObjectHideFlags: 0
