@@ -38,11 +38,6 @@ public class DroneDetection : MonoBehaviour
         }
     }
 
-    // void Update()
-    // {
-    //     if(Input.GetKeyDown(KeyCode.X)) Invoke("GetClosestSpawner", 0.2f);
-    // }
-
     IEnumerator DetectionCooldown()
     {
         yield return new WaitForSeconds(detectionCooldown);

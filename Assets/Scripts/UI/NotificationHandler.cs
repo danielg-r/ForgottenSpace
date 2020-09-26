@@ -17,6 +17,7 @@ public class NotificationHandler : MonoBehaviour
     [SerializeField] NotificationManager doorLocked;
     [SerializeField] NotificationManager inspect;
     [SerializeField] NotificationManager currencyAdded;
+    [SerializeField] NotificationManager hazardNotification;
 
 
     void Awake()
@@ -68,6 +69,16 @@ public class NotificationHandler : MonoBehaviour
         currencyAdded.description = desc.ToString();
         currencyAdded.OpenNotification();
     }
+
+    public void HazardNotification(string title, string desc)
+    {
+        hazardNotification.title = title.ToString();
+        hazardNotification.description = desc.ToString();
+        hazardNotification.UpdateUI();
+        hazardNotification.OpenNotification();
+    }
+
+
 
     // Función de ejemplo con posibilidad de modificar la notificación en caso de que sea necesario.
     // public void PuzzleHint(string title, string desc)
