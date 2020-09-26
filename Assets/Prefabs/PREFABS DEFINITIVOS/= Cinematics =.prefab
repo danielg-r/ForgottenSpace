@@ -7557,7 +7557,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Si quieres escapar deberias buscar las piezas de la nave
+  m_text: "Si quieres escapar deber\xEDas buscar las piezas de la nave"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
   m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
@@ -16087,6 +16087,8 @@ PlayableDirector:
   - key: {fileID: 4959671097964321680, guid: 54580cf0cbf1b194ea46f445f2e2cf3c, type: 2}
     value: {fileID: 0}
   - key: {fileID: 2335509468764804760, guid: 54580cf0cbf1b194ea46f445f2e2cf3c, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -8345309478963880666, guid: 54580cf0cbf1b194ea46f445f2e2cf3c, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References:
