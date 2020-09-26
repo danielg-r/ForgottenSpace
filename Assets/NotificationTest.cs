@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class NotificationTest : MonoBehaviour
 {
-    public UnityEvent TestNotifications;
+    public UnityEvent2 TestNotifications;
     void Start()
     {
     }
