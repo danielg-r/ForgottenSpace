@@ -13,10 +13,13 @@ public class CinematicManager : MonoBehaviour
     public UnityEvent OnCloseShop;
     public UnityEvent OnCloseraft;
 
+    [SerializeField] AudioListener audioListener;
+
     public void DisablePlayer()
     {
         PlayerMovement.Instance.enabled = false;
         PlayerMovement.Instance.GetComponent<Animator>().enabled = false;
+        UIDeathControl.Instance.enabled = false;
         //Time.timeScale = 0f;
     }
 
@@ -24,6 +27,7 @@ public class CinematicManager : MonoBehaviour
     {
         PlayerMovement.Instance.enabled = true;
         PlayerMovement.Instance.GetComponent<Animator>().enabled = true;
+        UIDeathControl.Instance.enabled = true;
         //Time.timeScale = 1f;
     }
 
@@ -64,6 +68,11 @@ public class CinematicManager : MonoBehaviour
     public void DisableShopCinematic()
     {
         OnCloseShop.Invoke();
+    }
+
+    public void EnableAudioListener()
+    {
+        AudioListener.volume = 1;
     }
 
 }

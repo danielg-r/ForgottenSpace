@@ -2805,7 +2805,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294889984
+    rgba: 4294946560
   m_fontColor: {r: 0, g: 0.6862745, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -5221,13 +5221,16 @@ MonoBehaviour:
   spinnerParent: {fileID: 6961627924460876571}
   hintsText: {fileID: 438385165067712837}
   changeHintWithTimer: 1
-  hintTimerValue: 4.5
+  hintTimerValue: 4
   hintList:
-  - You can tweak or customize the layout from loading screen prefab.
-  - Tired of the current loading screen? You can easily change it from Loading Manager.
-  - You can easily create Loading Manager from <b>Tools > Loading Screen Studio</b>.
-  - Sorry to keep you waiting, we know you hate loading screens. Believe me, I hate
-    it too.
+  - If Joseph asks you to add something specific to your game, do the exact opposite
+    and hope for the best !
+  - No temas volver a los lugares que ya visitaste, puede que la segunda vez que
+    vayas encuentres algo nuevo.
+  - "La estaci\xF3n espacial Valiant tiene muchos defectos mec\xE1nicos y t\xE9cnicos,
+    no ignores los peligros que vayan surgiendo."
+  - "No se sabe qu\xE9 sucedi\xF3 con la tripulaci\xF3n de la Valiant, por lo que
+    deber\xEDas tener mucho cuidado."
   imageObject: {fileID: 7021417065756049596}
   fadingAnimator: {fileID: 2344237699753492503}
   ImageList:
@@ -5246,7 +5249,7 @@ MonoBehaviour:
   keyCode: 32
   useSpecificKey: 0
   pakCountdownTimer: 5
-  virtualLoadingTimer: 10
+  virtualLoadingTimer: 16
   enableVirtualLoading: 1
   enableTitle: 1
   enableDescription: 0
@@ -5254,7 +5257,7 @@ MonoBehaviour:
   enableRandomHints: 1
   enableRandomImages: 1
   enablePressAnyKey: 0
-  fadingAnimationSpeed: 3
+  fadingAnimationSpeed: 4
   onBeginEvents:
     m_PersistentCalls:
       m_Calls: []
