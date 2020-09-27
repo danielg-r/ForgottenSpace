@@ -19,7 +19,7 @@ public class CutsceneSkipper : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            director.time = director.duration - 1;
+            director.time = director.duration;
         }
     }
 
