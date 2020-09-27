@@ -40,18 +40,20 @@ public class UIDeathControl : MonoBehaviour
         label.text = "";
         if(PlayerLife.Instance != null)
         {
-            PlayerLife.Instance.onPlayerDied += new PlayerLife.OnPlayerDied(OnPlayerDied);
+            PlayerLife.Instance.onPlayerDied += OnPlayerDied;
         }
     }
 
     void OnPlayerDied()
     {
+        Debug.Log("Player muerto");
         bars.SetActive(false);
         bars1.SetActive(false);
         bars2.SetActive(false);
         hotBar.SetActive(false);
         ContinueButton.SetActive(false);
         InstruButton.SetActive(false);
+        PauseMenu.SetActive(true);
 
         label.text = "HAS MUERTO";
         ActivatePistol.Instance.Deactivate();

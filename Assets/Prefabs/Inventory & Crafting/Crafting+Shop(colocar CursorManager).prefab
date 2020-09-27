@@ -19053,7 +19053,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1813282799354496092}
         m_MethodName: SetActive
-        m_Mode: 6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -22023,7 +22023,7 @@ MonoBehaviour:
   confirmButton: {fileID: 2456613218974268643}
   cancelButton: {fileID: 2456613217463603087}
   icon: {fileID: 21300000, guid: ce4f0f0804dfd3b4a84ad79898a71fe9, type: 3}
-  titleText: "Maqu\xEDna de Ventas"
+  titleText: "M\xE1quina de Ventas"
   descriptionText: 
   onConfirm:
     m_PersistentCalls:
@@ -22722,7 +22722,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Maqu\xEDna de Ventas"
+  m_text: "M\xE1quina de Ventas"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
   m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
@@ -31665,7 +31665,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Estacion de Reparacion
+  m_text: "Estaci\xF3n de Reparaci\xF3n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
   m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
@@ -37694,7 +37694,7 @@ MonoBehaviour:
   confirmButton: {fileID: 2499715631757478986}
   cancelButton: {fileID: 2499715630965454407}
   icon: {fileID: 21300000, guid: ce4f0f0804dfd3b4a84ad79898a71fe9, type: 3}
-  titleText: Estacion de Reparacion
+  titleText: "Estaci\xF3n de Reparaci\xF3n"
   descriptionText: 
   onConfirm:
     m_PersistentCalls:
