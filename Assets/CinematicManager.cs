@@ -6,13 +6,6 @@ using UnityEngine.Events;
 
 public class CinematicManager : MonoBehaviour
 {
-
-    public UnityEvent OnOpenShop;
-    public UnityEvent OnOpenCraft;
-
-    public UnityEvent OnCloseShop;
-    public UnityEvent OnCloseraft;
-
     [SerializeField] AudioListener audioListener;
 
     public void DisablePlayer()
@@ -20,6 +13,7 @@ public class CinematicManager : MonoBehaviour
         PlayerMovement.Instance.enabled = false;
         PlayerMovement.Instance.GetComponent<Animator>().enabled = false;
         UIDeathControl.Instance.enabled = false;
+        Inventory.Instance.enabled = false;
         //Time.timeScale = 0f;
     }
 
@@ -28,6 +22,7 @@ public class CinematicManager : MonoBehaviour
         PlayerMovement.Instance.enabled = true;
         PlayerMovement.Instance.GetComponent<Animator>().enabled = true;
         UIDeathControl.Instance.enabled = true;
+        Inventory.Instance.enabled = true;
         //Time.timeScale = 1f;
     }
 
@@ -50,24 +45,6 @@ public class CinematicManager : MonoBehaviour
     public void ShowCursor()
     {
         Cursor.lockState = CursorLockMode.None;
-    }
-
-    public void ActiveShopCinematic()
-    {
-        OnOpenShop.Invoke();
-    }
-    public void ActiveCraftCinematic()
-    {
-        OnOpenCraft.Invoke();
-    }
-
-    public void DisableCraftCinematic()
-    {
-        OnCloseraft.Invoke();
-    }
-    public void DisableShopCinematic()
-    {
-        OnCloseShop.Invoke();
     }
 
     public void EnableAudioListener()

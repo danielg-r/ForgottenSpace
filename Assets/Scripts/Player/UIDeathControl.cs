@@ -9,6 +9,7 @@ using System.Reflection.Emit;
 public class UIDeathControl : MonoBehaviour
 {
     private static UIDeathControl instance;
+
     [Header("Death")]
     [SerializeField] TextMeshProUGUI label;
     [SerializeField] GameObject ContinueButton;
@@ -25,6 +26,7 @@ public class UIDeathControl : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject InstrucPanel;
     private bool IsAlive = true;
+
 
     public static UIDeathControl Instance { get => instance; }
 
@@ -68,11 +70,15 @@ public class UIDeathControl : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && IsAlive == true)
+        if (Input.GetKeyDown(KeyCode.Escape) && ( IsAlive == true )  )
         {
-            label.text = "PAUSA";
-            Pause();
-            if (!IsPaused) CursorManager.Instance.HideCursor();
+            if(Inventory.Instance.isOpen == false)
+            {
+                label.text = "PAUSA";
+                Pause();                
+                if (!IsPaused) CursorManager.Instance.HideCursor();
+
+            }
         }
     }
 
@@ -114,4 +120,7 @@ public class UIDeathControl : MonoBehaviour
     {
         Application.Quit();
     }
+
+
+
 }

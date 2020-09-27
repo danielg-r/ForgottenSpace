@@ -5,52 +5,71 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    //private static Inventory Instance
+
+    private static Inventory instance;
+
     [SerializeField] Image inventory;
     //[SerializeField] GameObject invCamera; ==> Dejar aquí en caso de querer hacer transición más tarde :)
-    bool isOpen;
+    public bool isOpen;
+    //public bool Opened = false;
+
+    public static Inventory Instance { get => instance; }
+
+    void Awake()
+    {
+        if (Instance == null) instance = this;
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I) &&!UIDeathControl.Instance.IsPaused)
+        if (Input.GetKeyDown(KeyCode.I)   )
         {
-            isOpen = !isOpen;
-            OpenInventory();
+            if ( (UIDeathControl.Instance.IsPaused == false) && (UIDeathControl.Instance.isActiveAndEnabled == true) )
+            {
+                isOpen = !isOpen;
+                OpenInventory();                
+            }
         }
     }
+
     void OpenInventory()
     {
-        if (isOpen == true && !UIDeathControl.Instance.IsPaused)
+        
+        if (isOpen == true)
         {
-            UIDeathControl.Instance.enabled = false;
-            GetComponent<PlayerCameraController>().enabled = false;            
+            GetComponent<PlayerCameraController>().enabled = false;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             inventory.rectTransform.localScale = Vector3.one;
             GetComponent<PlayerMovement>().enabled = false;
             FreezeGame();
+            //Opened = true;
+            //invCamera.SetActive(true); ==> Dejar aquí en caso de querer hacer transición más tarde :)
         }
         else
         {
-            UIDeathControl.Instance.enabled = true;
             GetComponent<PlayerCameraController>().enabled = true;
-            inventory.rectTransform.localScale = Vector3.zero;            
+            //invCamera.SetActive(false); ==> Dejar aquí en caso de querer hacer transición más tarde :)
+            inventory.rectTransform.localScale = Vector3.zero;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             GetComponent<PlayerMovement>().enabled = true;
+            //Opened = false;
+            //Invoke("CCDelay", 2); ==> Dejar aquí en caso de querer hacer transición más tarde :)
             FreezeGame();
         }
+
+        
     }
 
     void FreezeGame()
     {
-        if (isOpen == true && !UIDeathControl.Instance.IsPaused)
-        {
-            Time.timeScale = 0f;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        } 
-        else if (!UIDeathControl.Instance.IsPaused)
-        {
-            Time.timeScale = 1f;
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        } 
+        if (isOpen == true) Time.timeScale = 0f;
+        else Time.timeScale = 1f;
+    }
+
+    void CCDelay()
+    {
+        GetComponent<PlayerCameraController>().enabled = true;
     }
 }
