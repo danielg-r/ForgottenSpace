@@ -16,6 +16,7 @@ public class GetCharacter : MonoBehaviour
     [HideInInspector] public bool IsMale;
 
     [SerializeField] SkinnedMeshRenderer Skinnedrenderer;
+    [SerializeField] SkinnedMeshRenderer SkinnedrendererMimido;
 
     void Awake()
     {
@@ -31,21 +32,24 @@ public class GetCharacter : MonoBehaviour
 
     void Start()
     {
-        // 1 cryoMale, 2 cryoFemale, 3 crewMale, 4 crewFemale, 5 crewCaptainMale, 6 crewCaptainFemale, 7 junkerMale
-        //8 junkerFemale, 9 Medic, 10 hunterFemale, 11 name, 12 name, 13 name, 14 name
+        // 1 cryoMale, 2 cryoFemale, 3 Alien, 4 robotFemale, 5 crewCaptainMale, 6 RichMale (el facherito), 7 medicalMale, 8 MuscleMale
+        // 9 JunkyFemale, 10 HackerFemale, 11 cyberpunkMale, 12 AugmentedMale, 13 Lagartija, 14 alienCabezon, 15 CyberFemale, 16 CyberMale 
 
         animator = PlayerMovement.Instance.GetComponent<Animator>();
         getCharacter = PlayerPrefs.GetInt(selectedCharacter);
 
         Skinnedrenderer.sharedMesh = skins[getCharacter - 1];
+        SkinnedrendererMimido.sharedMesh = skins[getCharacter - 1];
 
         if (getCharacter <= 5)
         {
             Skinnedrenderer.material = materials[1];
+            SkinnedrendererMimido.material = materials[1];
         }
         else
         {
             Skinnedrenderer.material = materials[0];
+            SkinnedrendererMimido.material = materials[0];
         }
             
 

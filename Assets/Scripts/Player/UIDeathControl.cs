@@ -70,7 +70,7 @@ public class UIDeathControl : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && ( IsAlive == true )  )
+        if (Input.GetButtonDown("Pause") && ( IsAlive == true ))
         {
             if(Inventory.Instance.isOpen == false)
             {

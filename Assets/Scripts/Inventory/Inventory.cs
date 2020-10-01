@@ -22,7 +22,7 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I)   )
+        if (Input.GetButtonDown("Inventory"))
         {
             if ( (UIDeathControl.Instance.IsPaused == false) && (UIDeathControl.Instance.isActiveAndEnabled == true) )
             {

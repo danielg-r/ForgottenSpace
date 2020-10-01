@@ -38,14 +38,14 @@ public class PlayerMovement : MonoBehaviour
         vertical = Input.GetAxis("Vertical");
         horizontal = Input.GetAxis("Horizontal");
 
-        if (Input.GetMouseButton(1) && CanAim)
+        if (Input.GetButton("Aim") && CanAim)
         {
             camara.m_Lens.FieldOfView = Aim;
             anim.SetBool("Aiming", true);
             anim.SetBool("Running", false);
             Aiming = true;
         }
-        else if (Input.GetButton("Fire3") && CanRun)
+        else if (Input.GetButton("Run") && CanRun)
         {
             camara.m_Lens.FieldOfView = normalView;
             anim.SetBool("Running", true);

@@ -26,7 +26,7 @@ namespace SciFiArsenal
         {
             if (playerMovement.Aiming)
             {
-                if (Input.GetKeyDown(KeyCode.Mouse0) && CanShoot) // Camera.main.ScreenPointToRay(Input.mousePosition) // spawnPosition.position, spawnPosition.forward, out hit, 100f
+                if (Input.GetButtonDown("Shoot") && CanShoot) // Camera.main.ScreenPointToRay(Input.mousePosition) // spawnPosition.position, spawnPosition.forward, out hit, 100f
                 {
                     if (Bar.UseStamina(AmountEnergy))
                     {

@@ -25,7 +25,7 @@ public class Interactable : MonoBehaviour
     {
         if (isInRange && text != null)
         {
-            if (Input.GetKeyDown(interactKey))
+            if (Input.GetKeyDown(interactKey) || Input.GetButtonDown("Interactable"))
             {
                 OnInteract.Invoke();
                 isInRange = false;                

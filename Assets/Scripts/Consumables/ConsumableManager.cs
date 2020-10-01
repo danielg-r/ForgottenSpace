@@ -17,20 +17,20 @@ public class ConsumableManager : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) && consuManager.ConsuLifeRegen > 0)
+        if (Input.GetButtonDown("Alpha1") && consuManager.ConsuLifeRegen > 0)
         {//Life
             ComLifeRegen.SetActive(true);
             consuManager.UseLifeRegen();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && consuManager.ConsumableCooldown > 0)
-        {//Disparo
-            ComPistolRegen.SetActive(true);
-            consuManager.UseCooldown();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && consuManager.ConsuStaminaCooldown > 0)
+        if (Input.GetButtonDown("Alpha2") && consuManager.ConsuStaminaCooldown > 0)
         {//Stamina
             ComStaminaRegen.SetActive(true);
             consuManager.UseRunning();
+        }
+        if (Input.GetButtonDown("Alpha3") && consuManager.ConsumableCooldown > 0)
+        {//Disparo
+            ComPistolRegen.SetActive(true);
+            consuManager.UseCooldown();
         }
     }
 }
