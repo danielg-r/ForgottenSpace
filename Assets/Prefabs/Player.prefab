@@ -3345,7 +3345,7 @@ MonoBehaviour:
   - {fileID: 4300014, guid: 4cf8e35218228c74e87ae151b5dc4516, type: 3}
   - {fileID: 4300006, guid: 4cf8e35218228c74e87ae151b5dc4516, type: 3}
   - {fileID: 4300002, guid: 4cf8e35218228c74e87ae151b5dc4516, type: 3}
-  - {fileID: 4300012, guid: c8c20564eb982f84a96a0d4d8e357cc5, type: 3}
+  - {fileID: 4300000, guid: 4cf8e35218228c74e87ae151b5dc4516, type: 3}
   - {fileID: 4300010, guid: 4cf8e35218228c74e87ae151b5dc4516, type: 3}
   - {fileID: 4300012, guid: 4cf8e35218228c74e87ae151b5dc4516, type: 3}
   materials:
@@ -10157,8 +10157,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850206791837387537}
-  m_LocalRotation: {x: 0.03783391, y: -0.6292755, z: -0.030694047, w: -0.7756538}
-  m_LocalPosition: {x: -2.4997776, y: 0, z: 2.0280292}
+  m_LocalRotation: {x: -0.047604304, y: 0.000000008600946, z: -4.1587264e-10, w: 0.9988663}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1850206792650019520}
@@ -10807,6 +10807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
+  isOpen: 0
 --- !u!114 &-397939196343309588
 MonoBehaviour:
   m_ObjectHideFlags: 0

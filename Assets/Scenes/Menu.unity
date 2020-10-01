@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -714,9 +714,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363b9fbc0fee63841a07f3c1a134d329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previewIcon: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
-  characterIcon: {fileID: 21300000, guid: 05ed106aabf222e4a92a27469b610da7, type: 3}
-  characterName: personaje
+  previewIcon: {fileID: 21300000, guid: 060b843f4fffb0b4a84d74445ffd618d, type: 3}
+  characterIcon: {fileID: 21300000, guid: 060b843f4fffb0b4a84d74445ffd618d, type: 3}
+  characterName: Hugh
   characterType: Support
   characterInfo: Character Info Here. You can add multiple lines and this box will
     resize automatically.
@@ -2691,8 +2691,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "estefan\xEDa"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2724,7 +2724,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2766,7 +2766,7 @@ MonoBehaviour:
     linkCount: 0
     lineCount: 1
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -4097,7 +4097,7 @@ RectTransform:
   m_GameObject: {fileID: 239717178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
   m_Children: []
   m_Father: {fileID: 414776010}
   m_RootOrder: 0
@@ -4120,13 +4120,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15edfcc001bfef948a8ce908fca449c6, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4460,7 +4460,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c3f45a21de2628e45998ea6fd1d4fe37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dd8c361ca134e64b84baa8ac8e1e475, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4487,7 +4487,7 @@ RectTransform:
   m_GameObject: {fileID: 262967224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children: []
   m_Father: {fileID: 2003773419}
   m_RootOrder: 0
@@ -4666,9 +4666,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363b9fbc0fee63841a07f3c1a134d329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previewIcon: {fileID: 21300000, guid: c3f45a21de2628e45998ea6fd1d4fe37, type: 3}
-  characterIcon: {fileID: 21300000, guid: 6deb3459790f0c748b66f4e50108b2fc, type: 3}
-  characterName: personaje
+  previewIcon: {fileID: 21300000, guid: efed2b03bb619fd4fa1b4b35b0a46b52, type: 3}
+  characterIcon: {fileID: 21300000, guid: efed2b03bb619fd4fa1b4b35b0a46b52, type: 3}
+  characterName: cora
   characterType: Support
   characterInfo: Character Info Here. You can add multiple lines and this box will
     resize automatically.
@@ -5719,9 +5719,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363b9fbc0fee63841a07f3c1a134d329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previewIcon: {fileID: 21300000, guid: c3f45a21de2628e45998ea6fd1d4fe37, type: 3}
-  characterIcon: {fileID: 21300000, guid: 6deb3459790f0c748b66f4e50108b2fc, type: 3}
-  characterName: personaje
+  previewIcon: {fileID: 21300000, guid: 8591bbe7aeabcb4458686754feb1695c, type: 3}
+  characterIcon: {fileID: 21300000, guid: 8591bbe7aeabcb4458686754feb1695c, type: 3}
+  characterName: Elise
   characterType: Support
   characterInfo: Character Info Here. You can add multiple lines and this box will
     resize automatically.
@@ -7988,8 +7988,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: personaje
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -8021,7 +8021,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -8061,7 +8061,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -8877,9 +8877,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363b9fbc0fee63841a07f3c1a134d329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previewIcon: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
-  characterIcon: {fileID: 21300000, guid: 05ed106aabf222e4a92a27469b610da7, type: 3}
-  characterName: personaje
+  previewIcon: {fileID: 21300000, guid: 7e0a09d6b265e4f42a065fca3c300097, type: 3}
+  characterIcon: {fileID: 21300000, guid: 7e0a09d6b265e4f42a065fca3c300097, type: 3}
+  characterName: Albert
   characterType: Support
   characterInfo: Character Info Here. You can add multiple lines and this box will
     resize automatically.
@@ -9085,9 +9085,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363b9fbc0fee63841a07f3c1a134d329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previewIcon: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
-  characterIcon: {fileID: 21300000, guid: 05ed106aabf222e4a92a27469b610da7, type: 3}
-  characterName: personaje
+  previewIcon: {fileID: 21300000, guid: 15edfcc001bfef948a8ce908fca449c6, type: 3}
+  characterIcon: {fileID: 21300000, guid: 15edfcc001bfef948a8ce908fca449c6, type: 3}
+  characterName: Eddie
   characterType: Support
   characterInfo: Character Info Here. You can add multiple lines and this box will
     resize automatically.
@@ -10077,7 +10077,7 @@ GameObject:
   - component: {fileID: 531580842}
   - component: {fileID: 531580841}
   m_Layer: 0
-  m_Name: Menu
+  m_Name: Ventanas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10825,8 +10825,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: personaje
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -10858,7 +10858,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -10898,7 +10898,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -10982,8 +10982,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: personaje
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -11015,7 +11015,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -11055,7 +11055,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -11607,9 +11607,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363b9fbc0fee63841a07f3c1a134d329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previewIcon: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
-  characterIcon: {fileID: 21300000, guid: 05ed106aabf222e4a92a27469b610da7, type: 3}
-  characterName: personaje
+  previewIcon: {fileID: 21300000, guid: 1d3a8d1549b8cbb40a1f93a0929a5dc3, type: 3}
+  characterIcon: {fileID: 21300000, guid: 1d3a8d1549b8cbb40a1f93a0929a5dc3, type: 3}
+  characterName: Otto
   characterType: Support
   characterInfo: Character Info Here. You can add multiple lines and this box will
     resize automatically.
@@ -11877,9 +11877,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363b9fbc0fee63841a07f3c1a134d329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previewIcon: {fileID: 21300000, guid: c3f45a21de2628e45998ea6fd1d4fe37, type: 3}
-  characterIcon: {fileID: 21300000, guid: 6deb3459790f0c748b66f4e50108b2fc, type: 3}
-  characterName: personaje
+  previewIcon: {fileID: 21300000, guid: b0b3c0ef2d8a82349b7c8e1243155e24, type: 3}
+  characterIcon: {fileID: 21300000, guid: b0b3c0ef2d8a82349b7c8e1243155e24, type: 3}
+  characterName: April
   characterType: Support
   characterInfo: Character Info Here. You can add multiple lines and this box will
     resize automatically.
@@ -12921,9 +12921,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363b9fbc0fee63841a07f3c1a134d329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previewIcon: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
-  characterIcon: {fileID: 21300000, guid: 05ed106aabf222e4a92a27469b610da7, type: 3}
-  characterName: personaje
+  previewIcon: {fileID: 21300000, guid: d46c06f6fb271c040bfab724ecdd2355, type: 3}
+  characterIcon: {fileID: 21300000, guid: d46c06f6fb271c040bfab724ecdd2355, type: 3}
+  characterName: Shawn
   characterType: Support
   characterInfo: Character Info Here. You can add multiple lines and this box will
     resize automatically.
@@ -14248,13 +14248,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1d3a8d1549b8cbb40a1f93a0929a5dc3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -14757,13 +14757,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e0a09d6b265e4f42a065fca3c300097, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -15545,8 +15545,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: personaje
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -15578,7 +15578,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -15618,7 +15618,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -16114,13 +16114,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 051f345f9c7c81246bff8536f5866ee7, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -16147,7 +16147,7 @@ RectTransform:
   m_GameObject: {fileID: 846201345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
   m_Children: []
   m_Father: {fileID: 978105921}
   m_RootOrder: 0
@@ -16632,8 +16632,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: personaje
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -16665,7 +16665,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -16705,7 +16705,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -17149,13 +17149,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d46c06f6fb271c040bfab724ecdd2355, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -19960,13 +19960,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b47897ef11578440a6efa80d287236c, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -20061,8 +20061,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: personaje
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -20094,7 +20094,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -20134,7 +20134,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -21149,8 +21149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363b9fbc0fee63841a07f3c1a134d329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previewIcon: {fileID: 21300000, guid: c3f45a21de2628e45998ea6fd1d4fe37, type: 3}
-  characterIcon: {fileID: 21300000, guid: c3f45a21de2628e45998ea6fd1d4fe37, type: 3}
+  previewIcon: {fileID: 21300000, guid: 2dd8c361ca134e64b84baa8ac8e1e475, type: 3}
+  characterIcon: {fileID: 21300000, guid: 2dd8c361ca134e64b84baa8ac8e1e475, type: 3}
   characterName: "Estefan\xEDa"
   characterType: Support
   characterInfo: Character Info Here. You can add multiple lines and this box will
@@ -22427,9 +22427,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363b9fbc0fee63841a07f3c1a134d329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previewIcon: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
-  characterIcon: {fileID: 21300000, guid: 05ed106aabf222e4a92a27469b610da7, type: 3}
-  characterName: personaje
+  previewIcon: {fileID: 21300000, guid: b9a5c5aa95172474f9fbaec93a5f27df, type: 3}
+  characterIcon: {fileID: 21300000, guid: b9a5c5aa95172474f9fbaec93a5f27df, type: 3}
+  characterName: Samuel
   characterType: Support
   characterInfo: Character Info Here. You can add multiple lines and this box will
     resize automatically.
@@ -22718,8 +22718,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: personaje
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -22751,7 +22751,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -22791,7 +22791,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -24351,8 +24351,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: personaje
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -24384,7 +24384,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -24424,7 +24424,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -26873,13 +26873,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b9a5c5aa95172474f9fbaec93a5f27df, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -26906,7 +26906,7 @@ RectTransform:
   m_GameObject: {fileID: 1375161308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
   m_Children: []
   m_Father: {fileID: 853583022}
   m_RootOrder: 0
@@ -28201,8 +28201,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: personaje
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -28234,7 +28234,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -28274,7 +28274,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -28803,8 +28803,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: personaje
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -28836,7 +28836,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -28876,7 +28876,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -29224,7 +29224,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 963.6998, y: 0}
+  m_AnchoredPosition: {x: 963.7001, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1506730792
@@ -29305,8 +29305,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: personaje
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -29338,7 +29338,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -29378,7 +29378,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -31197,9 +31197,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363b9fbc0fee63841a07f3c1a134d329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previewIcon: {fileID: 21300000, guid: c3f45a21de2628e45998ea6fd1d4fe37, type: 3}
-  characterIcon: {fileID: 21300000, guid: 6deb3459790f0c748b66f4e50108b2fc, type: 3}
-  characterName: personaje
+  previewIcon: {fileID: 21300000, guid: 3a1b01f7ead418b40b624cb05ba8e662, type: 3}
+  characterIcon: {fileID: 21300000, guid: 3a1b01f7ead418b40b624cb05ba8e662, type: 3}
+  characterName: Hazel
   characterType: Support
   characterInfo: Character Info Here. You can add multiple lines and this box will
     resize automatically.
@@ -32301,8 +32301,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -56.25}
-  m_SizeDelta: {x: 0, y: 37.500008}
+  m_AnchoredPosition: {x: 0, y: -72.5}
+  m_SizeDelta: {x: 0, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1668513721
 MonoBehaviour:
@@ -32317,13 +32317,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c3f45a21de2628e45998ea6fd1d4fe37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8591bbe7aeabcb4458686754feb1695c, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -33606,13 +33606,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cfe7e196d71ad3746b321960e84a4ba9, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -34611,13 +34611,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c3f45a21de2628e45998ea6fd1d4fe37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b0b3c0ef2d8a82349b7c8e1243155e24, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -34644,7 +34644,7 @@ RectTransform:
   m_GameObject: {fileID: 1772869479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children: []
   m_Father: {fileID: 1458649839}
   m_RootOrder: 0
@@ -35442,13 +35442,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f64cc5218e1f9504a8bbed6323aa335a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -36402,9 +36402,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363b9fbc0fee63841a07f3c1a134d329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previewIcon: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
-  characterIcon: {fileID: 21300000, guid: 05ed106aabf222e4a92a27469b610da7, type: 3}
-  characterName: personaje
+  previewIcon: {fileID: 21300000, guid: 2b47897ef11578440a6efa80d287236c, type: 3}
+  characterIcon: {fileID: 21300000, guid: 2b47897ef11578440a6efa80d287236c, type: 3}
+  characterName: Ibraheem
   characterType: Support
   characterInfo: Character Info Here. You can add multiple lines and this box will
     resize automatically.
@@ -37958,8 +37958,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -56.25}
-  m_SizeDelta: {x: 0, y: 37.500008}
+  m_AnchoredPosition: {x: 0, y: -72.5}
+  m_SizeDelta: {x: 0, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1979192097
 MonoBehaviour:
@@ -37974,13 +37974,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c3f45a21de2628e45998ea6fd1d4fe37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: efed2b03bb619fd4fa1b4b35b0a46b52, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -38052,9 +38052,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363b9fbc0fee63841a07f3c1a134d329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previewIcon: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
-  characterIcon: {fileID: 21300000, guid: 05ed106aabf222e4a92a27469b610da7, type: 3}
-  characterName: personaje
+  previewIcon: {fileID: 21300000, guid: 051f345f9c7c81246bff8536f5866ee7, type: 3}
+  characterIcon: {fileID: 21300000, guid: 051f345f9c7c81246bff8536f5866ee7, type: 3}
+  characterName: Seth
   characterType: Support
   characterInfo: Character Info Here. You can add multiple lines and this box will
     resize automatically.
@@ -38329,8 +38329,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: personaje
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -38362,7 +38362,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -38402,7 +38402,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -39666,9 +39666,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363b9fbc0fee63841a07f3c1a134d329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previewIcon: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
-  characterIcon: {fileID: 21300000, guid: 05ed106aabf222e4a92a27469b610da7, type: 3}
-  characterName: personaje
+  previewIcon: {fileID: 21300000, guid: cfe7e196d71ad3746b321960e84a4ba9, type: 3}
+  characterIcon: {fileID: 21300000, guid: cfe7e196d71ad3746b321960e84a4ba9, type: 3}
+  characterName: Rafael
   characterType: Support
   characterInfo: Character Info Here. You can add multiple lines and this box will
     resize automatically.
@@ -40116,9 +40116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363b9fbc0fee63841a07f3c1a134d329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previewIcon: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
-  characterIcon: {fileID: 21300000, guid: 05ed106aabf222e4a92a27469b610da7, type: 3}
-  characterName: personaje
+  previewIcon: {fileID: 21300000, guid: f64cc5218e1f9504a8bbed6323aa335a, type: 3}
+  characterIcon: {fileID: 21300000, guid: f64cc5218e1f9504a8bbed6323aa335a, type: 3}
+  characterName: Mitchell
   characterType: Support
   characterInfo: Character Info Here. You can add multiple lines and this box will
     resize automatically.
@@ -40662,8 +40662,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: personaje
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -40695,7 +40695,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -40735,7 +40735,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -40788,7 +40788,7 @@ RectTransform:
   m_GameObject: {fileID: 2126843149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1.5}
   m_Children: []
   m_Father: {fileID: 1072537856}
   m_RootOrder: 0
@@ -40811,13 +40811,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 060b843f4fffb0b4a84d74445ffd618d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -41168,8 +41168,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: personaje
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -41201,7 +41201,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -41241,7 +41241,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -41470,8 +41470,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -56.25}
-  m_SizeDelta: {x: 0, y: 37.500008}
+  m_AnchoredPosition: {x: 0, y: -72.5}
+  m_SizeDelta: {x: 0, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2145261069
 MonoBehaviour:
@@ -41486,13 +41486,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c3f45a21de2628e45998ea6fd1d4fe37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3a1b01f7ead418b40b624cb05ba8e662, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -43409,8 +43409,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: frederic
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04e21a99874971a4a903e73d42233889, type: 2}
-  m_sharedMaterial: {fileID: 21539391675147262, guid: 04e21a99874971a4a903e73d42233889,
+  m_fontAsset: {fileID: 11400000, guid: 9aa11bee9b09cd743b5d6e8a62fd884f, type: 2}
+  m_sharedMaterial: {fileID: -9184861855962559016, guid: 9aa11bee9b09cd743b5d6e8a62fd884f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -43442,7 +43442,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_textAlignment: 1026
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -43714,8 +43714,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363b9fbc0fee63841a07f3c1a134d329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previewIcon: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
-  characterIcon: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
+  previewIcon: {fileID: 21300000, guid: 7533fc1ae6cad614d825dc0503775ec2, type: 3}
+  characterIcon: {fileID: 21300000, guid: 7533fc1ae6cad614d825dc0503775ec2, type: 3}
   characterName: Frederic
   characterType: Support
   characterInfo: Character Info Here. You can add multiple lines and this box will
@@ -44647,7 +44647,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 038745693df97bd4ca99e7b8151c58c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7533fc1ae6cad614d825dc0503775ec2, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
