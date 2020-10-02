@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Eviroment
   - Enemy
   - Projectile
   layers:
@@ -16,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - Enviroment
+  - Environment
   - PostProcess
   - Player
   - Enemy
