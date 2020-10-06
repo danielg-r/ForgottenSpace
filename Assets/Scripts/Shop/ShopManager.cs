@@ -14,8 +14,10 @@ public class ShopManager : MonoBehaviour
     InventoryManager inventoryManager;
     CurrencyManager currencymanager;
 
+    [SerializeField] GameObject HotBar;
+
     void Awake()
-    {      
+    {
         if (Instance == null)
         {
             Instance = this;
@@ -73,6 +75,11 @@ public class ShopManager : MonoBehaviour
     public void HideCursor()
     {
         CursorManager.Instance.HideCursor();
+    }
+
+    public void ActiveHotBar()
+    {
+        HotBar.SetActive(true);
     }
 
 

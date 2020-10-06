@@ -9,9 +9,6 @@ public class RotateManager : MonoBehaviour
     [SerializeField]
     public Transform[] pictures;
 
-    [Header("Timer")]
-    public AirSystem Timer;
-
     [SerializeField] private GameObject WinUI;
 
     public static bool youWin;
@@ -22,13 +19,23 @@ public class RotateManager : MonoBehaviour
 
     private void Start()
     {
-        Timer.startTimer(); //FUNCION DE PRUEBA
         youWin = false;
     }
 
 
     public void QuestionYouWin()
     {
+        Debug.Log("Question Win");
+        Debug.Log(pictures[0].rotation.z);
+        Debug.Log(pictures[1].rotation.z);
+        Debug.Log(pictures[2].rotation.z);
+        Debug.Log(pictures[3].rotation.z);
+        Debug.Log(pictures[4].rotation.z);
+        Debug.Log(pictures[5].rotation.z);
+        Debug.Log(pictures[6].rotation.z);
+        Debug.Log(pictures[7].rotation.z);
+        Debug.Log(pictures[8].rotation.z);
+
         if (pictures[0].rotation.z == 0 &&
            pictures[1].rotation.z == 0 &&
            pictures[2].rotation.z == 0 &&
@@ -39,8 +46,9 @@ public class RotateManager : MonoBehaviour
            pictures[7].rotation.z == 0 &&
            pictures[8].rotation.z == 0)
         {
+            Debug.Log("Win");
+
             youWin = true;
-            Timer.StopTimer();
             WinUI.SetActive(true);
             OnPuzzleCompleted.Invoke();
             Invoke("DelayComplete", 1.5f);
@@ -59,8 +67,7 @@ public class RotateManager : MonoBehaviour
         pictures[6].rotation = Quaternion.Euler(0f, 0f, 90f);
         pictures[7].rotation = Quaternion.Euler(0f, 0f, 180f);
         pictures[8].rotation = Quaternion.Euler(0f, 0f, 0f);
-        Timer.startTimer();
-
+        youWin = false;
     }
 
     void DelayComplete()
