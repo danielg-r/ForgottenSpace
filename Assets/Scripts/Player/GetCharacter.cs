@@ -39,19 +39,28 @@ public class GetCharacter : MonoBehaviour
         getCharacter = PlayerPrefs.GetInt(selectedCharacter);
 
         Skinnedrenderer.sharedMesh = skins[getCharacter - 1];
-        SkinnedrendererMimido.sharedMesh = skins[getCharacter - 1];
 
         if (getCharacter <= 5)
         {
             Skinnedrenderer.material = materials[1];
-            SkinnedrendererMimido.material = materials[1];
         }
         else
         {
             Skinnedrenderer.material = materials[0];
-            SkinnedrendererMimido.material = materials[0];
         }
-            
+
+        if(SkinnedrendererMimido != null)
+        {
+            SkinnedrendererMimido.sharedMesh = skins[getCharacter - 1];
+            if (getCharacter <= 5)
+            {
+                SkinnedrendererMimido.material = materials[1];
+            }
+            else
+            {
+                SkinnedrendererMimido.material = materials[0];
+            }
+        }    
 
         if (getCharacter == 2 || getCharacter == 4 || getCharacter == 9 || getCharacter == 10 || getCharacter == 15)
         {
