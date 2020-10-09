@@ -37,6 +37,8 @@ public class CraftSystem : MonoBehaviour
     public event OnCurrencySpent onCurrSpent;
     InventoryManager inventoryManager;
 
+    [Header("Pistol Bar")]
+    [SerializeField] GameObject PistolBar;
 
     void Awake()
     {
@@ -67,6 +69,7 @@ public class CraftSystem : MonoBehaviour
             onCurrSpent();
             AudioManager.Instance.Play("Click");            
             ICraftPistol = true;
+            PistolBar.SetActive(true);
             
         }
     }
