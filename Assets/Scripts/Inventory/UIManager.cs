@@ -73,8 +73,8 @@ public class UIManager : MonoBehaviour
 
         CircuitsPistol.text = inventory.currentCircuits.ToString();
         PlatesPistol.text = inventory.currentPlates.ToString();
-        CircuitsArmor.text = inventory.currentCircuits.ToString();
-        PlatesArmor.text = inventory.currentPlates.ToString();
+        //CircuitsArmor.text = inventory.currentCircuits.ToString();
+        //PlatesArmor.text = inventory.currentPlates.ToString();
 
         Currency.text = "$ " + InventoryManager.Instance.currentCurrency.ToString();
     }
