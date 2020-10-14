@@ -45,4 +45,14 @@ public class AudioManager : MonoBehaviour
         }
         s.Source.PlayOneShot(s.Source.clip, s.Source.volume);
     }
+
+    public void Stop(string Nombre)
+    {
+        Sound s = Array.Find(soundList, Sonido => Sonido.Nombre == Nombre);
+        if (s == null)
+        {           
+            return;
+        }
+        s.Source.Stop();
+    }
 }
