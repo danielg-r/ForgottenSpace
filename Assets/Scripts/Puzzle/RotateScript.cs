@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class RotateScript : MonoBehaviour
 {
-    public RotateManager Manager;
+    RotateManager Manager;
+
+    void Start() {
+        Manager = GetComponentInParent<RotateManager>();
+    }
 
     public void OnMouseDown()
     {

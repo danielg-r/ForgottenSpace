@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class RotateManager : MonoBehaviour
 {
-
     [SerializeField]
     public Transform[] pictures;
 
@@ -49,10 +48,10 @@ public class RotateManager : MonoBehaviour
             Debug.Log("Win");
 
             youWin = true;
-            WinUI.SetActive(true);
+            //WinUI.SetActive(true);
             OnPuzzleCompleted.Invoke();
+            HazardManager.Instance.StopHazards();
             Invoke("DelayComplete", 1.5f);
-
         }
     }
 
