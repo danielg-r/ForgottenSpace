@@ -17,6 +17,7 @@ public class Timer : MonoBehaviour
     [SerializeField] bool startAutomatically;
     [SerializeField] bool countDown;
     [SerializeField] bool useProgressBar;
+    [SerializeField] bool useTimer;
     [SerializeField] ProgressBar progressBar;
 
     public UnityEvent2 OnTimerFinished;
@@ -59,6 +60,7 @@ public class Timer : MonoBehaviour
                 timeRemaining = 0;
                 timerIsRunning = false;
                 progressBar.isOn = false;
+                OnTimerFinished.Invoke();
             }
         }
         else if (timerIsRunning && !countDown)
@@ -75,6 +77,7 @@ public class Timer : MonoBehaviour
                 timeRemaining = initialTime;
                 timerIsRunning = false;
                 progressBar.isOn = false;
+                OnTimerFinished.Invoke();
             }
         }
     }
@@ -92,6 +95,7 @@ public class Timer : MonoBehaviour
     {
         timerIsRunning = true;
         EnableGraphics();
+        OnTimerStarted.Invoke();
     }
 
     public void StartTimer(float time)
@@ -124,12 +128,12 @@ public class Timer : MonoBehaviour
     void EnableGraphics()
     {        
         if (useProgressBar) progressBar.gameObject.SetActive(true);
-        timerDisplay.gameObject.SetActive(true);
+        if (useTimer) timerDisplay.gameObject.SetActive(true);
     }
 
     void DisableGraphics() 
     {
         if (useProgressBar) progressBar.gameObject.SetActive(false);
-        timerDisplay.gameObject.SetActive(false);
+        if (useTimer) timerDisplay.gameObject.SetActive(false);
     }
 }

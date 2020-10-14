@@ -12,11 +12,15 @@ public class BasicTriggerEvent : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        onTriggerEnter.Invoke();
+        if (other.CompareTag("Player")) {
+            onTriggerEnter.Invoke();
+        }
     }
     
     void OnTriggerExit(Collider other)
     {
-        onTriggerExit.Invoke();
+        if (other.CompareTag("Player")) {
+            onTriggerExit.Invoke();
+        }
     }
 }

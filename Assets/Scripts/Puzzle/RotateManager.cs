@@ -7,8 +7,10 @@ public class RotateManager : MonoBehaviour
 {
     [SerializeField]
     public Transform[] pictures;
-
     [SerializeField] private GameObject WinUI;
+    public Interactable interactable;
+    public GameObject ps;
+    public GameObject ps2;
 
     public static bool youWin;
 

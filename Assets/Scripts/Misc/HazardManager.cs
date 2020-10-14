@@ -21,18 +21,48 @@ public class HazardManager : MonoBehaviour
         {
             puzzles.Add(rt);
         }
+        Invoke("InstantHazard", 2f);
     }
 
     void Update() {
         t += Time.deltaTime;
+        StartRandomHazard();        
+    }
+
+    void DisablePuzzles() {
+        foreach (RotateManager rt in puzzles) {
+            PlayerCameraController.Instance.canvasText.text = "";
+            rt.interactable.enabled = false;
+            rt.interactable.GetComponent<BoxCollider>().enabled = false;
+            rt.ps.SetActive(false);
+            rt.ps2.SetActive(false);
+        }
+    }
+
+    void EnablePuzzles() {
+        foreach (RotateManager rt in puzzles) {
+            rt.interactable.enabled = true;
+            rt.interactable.GetComponent<BoxCollider>().enabled = true;
+            rt.ps.SetActive(true);
+            rt.ps2.SetActive(true);
+        }
+    }
+
+    public void StartRandomHazard() {
         if (!activeHazard && t > hazardInterval) {
             int rnd = Random.Range(0, hazards.Length);
             hazards[rnd].StartHazard();
             activeHazard = true;
+            EnablePuzzles();
         }
     }
 
-
+    public void InstantHazard() {
+        int rnd = Random.Range(0, hazards.Length);
+        hazards[rnd].StartHazard();
+        activeHazard = true;
+        EnablePuzzles();
+    }
 
     public void StopHazards() {
         foreach (Hazard h in hazards) {
@@ -40,6 +70,7 @@ public class HazardManager : MonoBehaviour
         }
         t = 0;
         activeHazard = false;
+        DisablePuzzles();
     }
 
 }
