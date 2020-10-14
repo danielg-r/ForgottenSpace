@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System.Reflection.Emit;
+using DG.Tweening;
 
 public class UIDeathControl : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class UIDeathControl : MonoBehaviour
     public GameObject InstrucPanel;
     private bool IsAlive = true;
 
+    [Header("Status Text")]
+    [SerializeField] TextMeshProUGUI statusText;
+    public bool showingText;
 
     public static UIDeathControl Instance { get => instance; }
 
@@ -119,6 +123,22 @@ public class UIDeathControl : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void SetStatusText(string status)
+    {
+        showingText = true;
+        statusText.SetText(status);
+        statusText.gameObject.SetActive(true);
+        statusText.gameObject.GetComponent<DOTweenAnimation>().DOPlay(); 
+        Invoke("DisableStatusText", 4f);
+    }
+
+    void DisableStatusText()
+    {
+        statusText.gameObject.SetActive(false);      
+        statusText.gameObject.GetComponent<DOTweenAnimation>().DORewind();
+        showingText = false;
     }
 
 

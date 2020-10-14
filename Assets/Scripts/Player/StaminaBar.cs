@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class StaminaBar : MonoBehaviour
 {
     [SerializeField] Slider staminaBar;
-    [SerializeField] int waitToRegen = 2;
+    [SerializeField] float waitToRegen = 2;
     [SerializeField] int maxStamina = 100;
     public int PlusRegen = 5;
     [SerializeField] int waitToUse = 50;
