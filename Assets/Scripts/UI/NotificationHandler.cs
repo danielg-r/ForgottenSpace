@@ -78,6 +78,10 @@ public class NotificationHandler : MonoBehaviour
         hazardNotification.OpenNotification();
     }
 
+    public void HazardCompleted() {
+        hazardNotification.CloseNotification();
+    }
+
 
 
     // Función de ejemplo con posibilidad de modificar la notificación en caso de que sea necesario.

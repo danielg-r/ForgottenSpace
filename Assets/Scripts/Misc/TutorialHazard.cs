@@ -29,14 +29,16 @@ public class TutorialHazard : MonoBehaviour
         hazardTimer.StartTimer(hazardTime);
         NotificationHandler.Instance.HazardNotification(hazardName, hazardDesc);
         isActive = true;       
-        InvokeRepeating("HazardTick", 5f, eventInterval);         
+        InvokeRepeating("HazardTick", 5f, eventInterval);
     }
 
     public void HazardTick() {
+        Debug.Log("HazardTick");
         PlayerLife.Instance.TakeDamage(damage);
     }
 
     public void StopHazard() {
+        NotificationHandler.Instance.HazardCompleted();
         isActive = false;
         CancelInvoke();
         hazardTimer.StopTimer();
