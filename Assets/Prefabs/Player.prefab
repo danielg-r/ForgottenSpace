@@ -3353,6 +3353,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 4cee7a5983b187943adc589b9cb1f084, type: 2}
   IsMale: 0
   Skinnedrenderer: {fileID: 1748802542073386326}
+  SkinnedrendererMimido: {fileID: 0}
 --- !u!1 &1684989683305938802
 GameObject:
   m_ObjectHideFlags: 0
@@ -4045,6 +4046,7 @@ MonoBehaviour:
   maxStamina: 1500
   PlusRegen: 20
   waitToUse: 50
+  currentStamina: 0
   CantUse:
     m_PersistentCalls:
       m_Calls:
@@ -4320,6 +4322,7 @@ GameObject:
   - component: {fileID: 1684989684113561771}
   - component: {fileID: 1684989684113561764}
   - component: {fileID: 1684989684113561765}
+  - component: {fileID: 867042720434952695}
   m_Layer: 0
   m_Name: PistolBar
   m_TagString: Untagged
@@ -4415,6 +4418,7 @@ MonoBehaviour:
   maxStamina: 10
   PlusRegen: 1
   waitToUse: 1
+  currentStamina: 0
   CantUse:
     m_PersistentCalls:
       m_Calls:
@@ -4443,6 +4447,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &867042720434952695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684989684113561766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b6dd87920127a42974cd4c685c4f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyBar: {fileID: 1684989684113561765}
 --- !u!1 &1684989684117013859
 GameObject:
   m_ObjectHideFlags: 0

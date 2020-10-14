@@ -9,9 +9,11 @@ public class StaminaBar : MonoBehaviour
     [SerializeField] Slider staminaBar;
     [SerializeField] float waitToRegen = 2;
     [SerializeField] int maxStamina = 100;
+    [SerializeField] int waitToRegen = 2;
+    public int maxStamina = 100;
     public int PlusRegen = 5;
     [SerializeField] int waitToUse = 50;
-    int currentStamina;
+    public int currentStamina;
 
     WaitForSeconds regenTick = new WaitForSeconds(0.1f);
     Coroutine regen;
@@ -19,6 +21,7 @@ public class StaminaBar : MonoBehaviour
     public UnityEvent CanUse;
 
     bool WasCalled;
+    bool canPlay;
 
     void Start()
     {
@@ -26,6 +29,11 @@ public class StaminaBar : MonoBehaviour
         staminaBar.maxValue = maxStamina;
         staminaBar.value = maxStamina;
         WasCalled = false;
+        if (gameObject.name == "PistolBar")
+        {
+            canPlay = true;
+        }
+        else { canPlay = false; }
     }
 
     public bool UseStamina(int amount)
@@ -52,10 +60,17 @@ public class StaminaBar : MonoBehaviour
     IEnumerator regenStamina()
     {
         yield return new WaitForSeconds(waitToRegen);
-
-        while(currentStamina < maxStamina)
+        if (canPlay)
         {
-            currentStamina += PlusRegen;
+            AudioManager.Instance.Play("EnergyRecharge");
+        }
+        if (currentStamina == 0)
+        {
+            AudioManager.Instance.Play("EnergyRecharge1"); //Cambiar audio
+        }
+        while (currentStamina < maxStamina)
+        {
+            currentStamina += PlusRegen;           
             staminaBar.value = currentStamina;
             yield return regenTick;
             if (currentStamina > waitToUse && !WasCalled)
