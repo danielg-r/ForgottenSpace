@@ -62,15 +62,18 @@ public class PlayerLife : MonoBehaviour, IDamageable
         }
         else
         {
-            if (onPlayerDied != null)
-            {
-                isDead = true;
-                staminaBar.value = 0;
-                StopCoroutine(regen);
-                if (GetCharacter.Instance.IsMale == true) { AudioManager.Instance.Play("PlayerDeath"); }
-                else { AudioManager.Instance.Play("FemaleDeath"); }
-                onPlayerDied();
-            }
+            Die();
+        }
+    }
+
+    public void Die() {
+        if (onPlayerDied != null) {
+            isDead = true;
+            staminaBar.value = 0;
+            StopCoroutine(regen);
+            if (GetCharacter.Instance.IsMale == true) { AudioManager.Instance.Play("PlayerDeath"); }
+            else { AudioManager.Instance.Play("FemaleDeath"); }
+            onPlayerDied();
         }
     }
 

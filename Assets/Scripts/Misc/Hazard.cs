@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 
 public abstract class Hazard : MonoBehaviour
 {
@@ -10,7 +12,7 @@ public abstract class Hazard : MonoBehaviour
     [TextArea]
     [SerializeField] string hazardDesc;
     bool isActive;
-    [SerializeField] float eventInterval;
+    public float eventInterval;
     [SerializeField] float hazardTime;
 
     void Update()
@@ -18,9 +20,9 @@ public abstract class Hazard : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H)) {
             StartHazard();
         }
-        if (Input.GetKeyDown(KeyCode.J)) {
-            Time.timeScale = 3f;
-        }
+    }
+
+    public virtual void HazardFailed() {        
     }
 
     public virtual void StartHazard() {

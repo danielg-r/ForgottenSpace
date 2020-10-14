@@ -14,16 +14,6 @@ public class TutorialHazard : MonoBehaviour
     [SerializeField] float eventInterval;
     [SerializeField] float hazardTime;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H)) {
-            StartHazard();
-        }
-        if (Input.GetKeyDown(KeyCode.J)) {
-            Time.timeScale = 3f;
-        }
-    }
-
     public void StartHazard() {
         //TO-DO: Agregar cualquier sonido o forma de feedback.
         hazardTimer.StartTimer(hazardTime);
