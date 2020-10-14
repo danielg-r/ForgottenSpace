@@ -58,15 +58,15 @@ public class RotateManager : MonoBehaviour
 
     public void NewGame()
     {
-        pictures[0].rotation = Quaternion.Euler(0f, 0f, 180f);
-        pictures[1].rotation = Quaternion.Euler(0f, 0f, 90f);
-        pictures[2].rotation = Quaternion.Euler(0f, 0f, 270f);
-        pictures[3].rotation = Quaternion.Euler(0f, 0f, 90f);
-        pictures[4].rotation = Quaternion.Euler(0f, 0f, 90f);
-        pictures[5].rotation = Quaternion.Euler(0f, 0f, -90f);
-        pictures[6].rotation = Quaternion.Euler(0f, 0f, 90f);
-        pictures[7].rotation = Quaternion.Euler(0f, 0f, 180f);
-        pictures[8].rotation = Quaternion.Euler(0f, 0f, 0f);
+        pictures[0].rotation = Quaternion.Euler(0f, 0f, 90);
+        pictures[1].rotation = Quaternion.Euler(0f, 0f, 90);
+        pictures[2].rotation = Quaternion.Euler(0f, 0f, 270);
+        pictures[3].rotation = Quaternion.Euler(0f, 0f, 90);
+        pictures[4].rotation = Quaternion.Euler(0f, 0f, 90);
+        pictures[5].rotation = Quaternion.Euler(0f, 0f, 90);
+        pictures[6].rotation = Quaternion.Euler(0f, 0f, 90);
+        pictures[7].rotation = Quaternion.Euler(0f, 0f, 270);
+        pictures[8].rotation = Quaternion.Euler(0f, 0f, 0);
         youWin = false;
     }
 

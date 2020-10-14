@@ -22,9 +22,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI CircuitsPistol;
     [SerializeField] private TextMeshProUGUI PlatesPistol;
 
-    [Header("Armor")]
+    /*[Header("Armor")]
     [SerializeField] private TextMeshProUGUI CircuitsArmor;
-    [SerializeField] private TextMeshProUGUI PlatesArmor;
+    [SerializeField] private TextMeshProUGUI PlatesArmor;*/
 
     [Header("Ship")]
     //[SerializeField] private TextMeshProUGUI CircuitsShip;
@@ -73,6 +73,7 @@ public class UIManager : MonoBehaviour
 
         CircuitsPistol.text = inventory.currentCircuits.ToString();
         PlatesPistol.text = inventory.currentPlates.ToString();
+
         //CircuitsArmor.text = inventory.currentCircuits.ToString();
         //PlatesArmor.text = inventory.currentPlates.ToString();
 
@@ -87,8 +88,9 @@ public class UIManager : MonoBehaviour
 
         CircuitsPistol.text = inventory.currentCircuits.ToString();
         PlatesPistol.text = inventory.currentPlates.ToString();
-        CircuitsArmor.text = inventory.currentCircuits.ToString();
-        PlatesArmor.text = inventory.currentPlates.ToString();
+
+        /*CircuitsArmor.text = inventory.currentCircuits.ToString();
+        PlatesArmor.text = inventory.currentPlates.ToString();*/
 
         Currency.text = "$ " + InventoryManager.Instance.currentCurrency.ToString();
     }
