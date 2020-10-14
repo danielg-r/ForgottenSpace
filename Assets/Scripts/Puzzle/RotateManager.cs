@@ -16,34 +16,26 @@ public class RotateManager : MonoBehaviour
     public UnityEvent OnPuzzleCompleted;
     public UnityEvent OnCompleteDelay;
 
+    public object Break { get; private set; }
+
     private void Start()
     {
         youWin = false;
+        completed = false;
     }
 
-
+    public bool completed = false;
     public void QuestionYouWin()
     {
-        Debug.Log("Question Win");
-        Debug.Log(pictures[0].rotation.z);
-        Debug.Log(pictures[1].rotation.z);
-        Debug.Log(pictures[2].rotation.z);
-        Debug.Log(pictures[3].rotation.z);
-        Debug.Log(pictures[4].rotation.z);
-        Debug.Log(pictures[5].rotation.z);
-        Debug.Log(pictures[6].rotation.z);
-        Debug.Log(pictures[7].rotation.z);
-        Debug.Log(pictures[8].rotation.z);
+        
+        for(int i = 0; i <= pictures.Length-1; i++)
+        {
+            if (pictures[i].rotation.z != 0f) 
+            { completed = false; break; }
+            completed = true;
+        }
 
-        if (pictures[0].rotation.z == 0 &&
-           pictures[1].rotation.z == 0 &&
-           pictures[2].rotation.z == 0 &&
-           pictures[3].rotation.z == 0 &&
-           pictures[4].rotation.z == 0 &&
-           pictures[5].rotation.z == 0 &&
-           pictures[6].rotation.z == 0 &&
-           pictures[7].rotation.z == 0 &&
-           pictures[8].rotation.z == 0)
+        if (completed == true)
         {
             Debug.Log("Win");
 
@@ -53,19 +45,32 @@ public class RotateManager : MonoBehaviour
             HazardManager.Instance.StopHazards();
             Invoke("DelayComplete", 1.5f);
         }
+        else
+        {
+            Debug.Log("No Gano");
+        }
+
     }
 
     public void NewGame()
     {
-        pictures[0].rotation = Quaternion.Euler(0f, 0f, 90);
-        pictures[1].rotation = Quaternion.Euler(0f, 0f, 90);
-        pictures[2].rotation = Quaternion.Euler(0f, 0f, 270);
-        pictures[3].rotation = Quaternion.Euler(0f, 0f, 90);
-        pictures[4].rotation = Quaternion.Euler(0f, 0f, 90);
-        pictures[5].rotation = Quaternion.Euler(0f, 0f, 90);
-        pictures[6].rotation = Quaternion.Euler(0f, 0f, 90);
-        pictures[7].rotation = Quaternion.Euler(0f, 0f, 270);
-        pictures[8].rotation = Quaternion.Euler(0f, 0f, 0);
+        for (int i = 0; i <= pictures.Length-1; i++)
+        {
+            float value;
+            switch (Random.Range(1, 3))
+            {
+                case 1:
+                    value = 90f;
+                    break;
+                case 2:
+                    value = 270f;
+                    break;
+                default:
+                    value = 0f;
+                    break;
+            }
+            pictures[i].rotation = Quaternion.Euler(0f, 0f, value);
+        }
         youWin = false;
     }
 
