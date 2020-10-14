@@ -16,6 +16,7 @@ public class Timer : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerDisplay;
     [SerializeField] bool startAutomatically;
     [SerializeField] bool countDown;
+    [SerializeField] bool useProgressBar;
     [SerializeField] ProgressBar progressBar;
 
     public UnityEvent2 OnTimerFinished;
@@ -93,9 +94,42 @@ public class Timer : MonoBehaviour
         EnableGraphics();
     }
 
+    public void StartTimer(float time)
+    {
+        Debug.Log("Iniciando timer...");
+        initialTime = time;
+        if (countDown)
+        {
+            timeRemaining = time;
+            progressBar.currentPercent = 100f;
+            progressBar.invert = true;
+        } 
+        else 
+        {
+            timeRemaining = 0;
+            progressBar.currentPercent = 0f;
+            progressBar.invert = false;
+        }
+        timerIsRunning = true;
+        EnableGraphics();        
+    }
+
+    public void StopTimer() 
+    {
+        Debug.Log("Stopping time...");
+        timerIsRunning = false;
+        DisableGraphics();
+    }
+
     void EnableGraphics()
     {        
-        progressBar.gameObject.SetActive(true);
+        if (useProgressBar) progressBar.gameObject.SetActive(true);
         timerDisplay.gameObject.SetActive(true);
+    }
+
+    void DisableGraphics() 
+    {
+        if (useProgressBar) progressBar.gameObject.SetActive(false);
+        timerDisplay.gameObject.SetActive(false);
     }
 }

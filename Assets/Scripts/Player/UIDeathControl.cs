@@ -30,6 +30,7 @@ public class UIDeathControl : MonoBehaviour
 
     [Header("Status Text")]
     [SerializeField] TextMeshProUGUI statusText;
+    [SerializeField] DOTweenAnimation scrambleTween;
     public bool showingText;
 
     public static UIDeathControl Instance { get => instance; }
@@ -127,18 +128,19 @@ public class UIDeathControl : MonoBehaviour
 
     public void SetStatusText(string status)
     {
+        statusText.text = status;
         showingText = true;
-        statusText.SetText(status);
         statusText.gameObject.SetActive(true);
         statusText.gameObject.GetComponent<DOTweenAnimation>().DOPlay(); 
-        Invoke("DisableStatusText", 4f);
+        Invoke("DisableStatusText", 5f);
     }
 
-    void DisableStatusText()
+    public void DisableStatusText()
     {
         statusText.gameObject.SetActive(false);      
         statusText.gameObject.GetComponent<DOTweenAnimation>().DORewind();
         showingText = false;
+        statusText.text = "";
     }
 
 
