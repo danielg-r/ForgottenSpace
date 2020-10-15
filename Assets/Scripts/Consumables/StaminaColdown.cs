@@ -5,8 +5,8 @@ using UnityEngine;
 public class StaminaColdown : MonoBehaviour
 {
     [SerializeField] StaminaBar SBar;
-    int AmountRegenOriginal;
-    [SerializeField] int AmountRegenPlus;
+    float AmountRegenOriginal;
+    [SerializeField] float AmountRegenPlus;
 
     float Duration = 15f;
 

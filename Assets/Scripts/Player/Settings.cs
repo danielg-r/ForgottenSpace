@@ -1,59 +1,75 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class Settings : MonoBehaviour
 {
-    public void SetQuality()
+    [SerializeField] AudioMixer mixer;
+    [SerializeField] Dropdown resolutionDropdown;
+    float volumeInitial;
+    int activeScreenResIndex;
+    public Resolution[] resolutions;
+
+    private void Start()
     {
-        changeQualy();
-        SetScreenRes();
+        volumeInitial = PlayerPrefs.GetFloat("vol");
+        activeScreenResIndex = PlayerPrefs.GetInt("screen res index");
+        bool isFullscreenInitial = (PlayerPrefs.GetInt("fullscreen") == 1) ? true : false;
+        mixer.SetFloat("Volume", volumeInitial);
+        SetFullscreen(isFullscreenInitial);
+
+        resolutions = Screen.resolutions;
+        resolutionDropdown.ClearOptions();
+        foreach (Resolution resolution in resolutions)
+        {
+            resolutionDropdown.options.Add(new Dropdown.OptionData(resolution.ToString()));
+        }
+        resolutionDropdown.value = activeScreenResIndex;
+        SetScreenResolution(activeScreenResIndex);
     }
 
-    void changeQualy()
+    public void setVolume(float volume)
     {
-        string level = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
-        switch (level)
-        {
-            case "Low":
-                QualitySettings.SetQualityLevel(0);
-                break;
-            case "Medium":
-                QualitySettings.SetQualityLevel(1);
-                break;
-            case "High":
-                QualitySettings.SetQualityLevel(2);
-                break;
-            case "Ultra":
-                QualitySettings.SetQualityLevel(3);
-                break;
-            case "NoShadows":
-                if(QualitySettings.shadows == ShadowQuality.All)
-                {
-                    QualitySettings.shadows = ShadowQuality.Disable;
-                }
-                else QualitySettings.shadows = ShadowQuality.All;
-                break;
-        }
+        mixer.SetFloat("Volume", volume);
+        PlayerPrefs.SetFloat("vol", volume);
     }
 
-    void SetScreenRes()
+    public void SetQuality(int index)
     {
-        string index = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
-        switch (index)
-        {
-            case "648":
-                Screen.SetResolution(1152, 648, true);
-                break;
-            case "796":
-                Screen.SetResolution(1360, 796, true);
-                break;
-            case "1080":
-                Screen.SetResolution(1920, 1080, true);
-                break;
-            case "1440":
-                Screen.SetResolution(2560, 1440, true);
-                break;
-        }
+        QualitySettings.SetQualityLevel(index);
     }
+
+    public void SetFullscreen(bool isFullscreen)
+    {
+        if (isFullscreen)
+        {
+            Resolution[] allResolutions = Screen.resolutions;
+            Resolution maxResolution = allResolutions[allResolutions.Length - 1];
+            Screen.SetResolution(maxResolution.width, maxResolution.height, true);
+        }
+        else
+        {
+            SetScreenResolution(activeScreenResIndex);
+        }
+
+        PlayerPrefs.SetInt("fullscreen", ((isFullscreen) ? 1 : 0));
+    }
+
+    public void SetScreenResolution(int index)
+    {
+        Screen.SetResolution(resolutions[index].width, resolutions[index].height, Screen.fullScreen);
+        activeScreenResIndex = index;
+        PlayerPrefs.SetInt("screen res index", activeScreenResIndex);
+    }
+
+    public void ChangeShadows(bool isShadow)
+    {
+        if (isShadow == false)
+        {
+            QualitySettings.shadows = ShadowQuality.Disable;
+        }
+        else QualitySettings.shadows = ShadowQuality.All;
+    }                
 }

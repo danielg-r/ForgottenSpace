@@ -13,7 +13,7 @@ namespace SciFiArsenal
         bool CanShoot;
         PlayerMovement playerMovement;
         [SerializeField] StaminaBar Bar;
-        [SerializeField] int AmountEnergy;
+        [SerializeField] float AmountEnergy;
         [SerializeField] int damage;
 
         private void Start()
