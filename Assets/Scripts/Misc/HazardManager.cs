@@ -21,7 +21,7 @@ public class HazardManager : MonoBehaviour
         {
             puzzles.Add(rt);
         }
-        Invoke("InstantHazard", 2f);
+        Invoke("InstantHazard", 60f);
     }
 
     void Update() {

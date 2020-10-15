@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TutorialHazard : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class TutorialHazard : MonoBehaviour
         NotificationHandler.Instance.HazardNotification(hazardName, hazardDesc);
         isActive = true;       
         InvokeRepeating("HazardTick", 5f, eventInterval);
+        ObjectiveManager.Instance.SetCurrentObjective("Busca el generador para activar la energía.");
     }
 
     public void HazardTick() {
@@ -32,5 +34,6 @@ public class TutorialHazard : MonoBehaviour
         isActive = false;
         CancelInvoke();
         hazardTimer.StopTimer();
+        ObjectiveManager.Instance.SetCurrentObjective("Busca la estación de reparación para construir un arma.");
     }
 }

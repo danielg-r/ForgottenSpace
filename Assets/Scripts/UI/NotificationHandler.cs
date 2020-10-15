@@ -40,10 +40,11 @@ public class NotificationHandler : MonoBehaviour
         generatorHint.OpenNotification();
     }
 
-    public void LootFound()
-    {
-        lootFound.OpenNotification();
-    }
+    // public void LootFound()
+    // {        
+    //     hazardNotification.UpdateUI();
+    //     lootFound.OpenNotification();
+    // }
 
     public void Detected()
     {
@@ -57,6 +58,7 @@ public class NotificationHandler : MonoBehaviour
     public void LootFound(string desc)
     {
         lootFound.description = desc.ToString();
+        lootFound.UpdateUI();
         lootFound.OpenNotification();
     }
     public void Inspect()
@@ -67,6 +69,7 @@ public class NotificationHandler : MonoBehaviour
     public void CurrencyAdded(string desc)
     {
         currencyAdded.description = desc.ToString();
+        currencyAdded.UpdateUI();
         currencyAdded.OpenNotification();
     }
 
