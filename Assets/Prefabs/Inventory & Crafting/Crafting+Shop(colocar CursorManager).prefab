@@ -19053,7 +19053,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1813282799354496092}
         m_MethodName: SetActive
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -32718,7 +32718,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2499715630695460728}
   - component: {fileID: 2499715630695460731}
-  - component: {fileID: 2499715630695460734}
   m_Layer: 8
   m_Name: CraftingManager
   m_TagString: Untagged
@@ -32762,23 +32761,6 @@ MonoBehaviour:
   PiecesToShip: 5
   CanCraftShip: 0
   PistolBar: {fileID: 0}
---- !u!114 &2499715630695460734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2499715630695460729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad49e415846916a4cba35581f8989818, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CircuitsPistol: {fileID: 2499715630967621604}
-  PlatesPistol: {fileID: 2499715631753797029}
-  CircuitsArmor: {fileID: 0}
-  PlatesArmor: {fileID: 0}
-  CurrentShipPieces: {fileID: 2456613218430390473}
 --- !u!1 &2499715630712398020
 GameObject:
   m_ObjectHideFlags: 0
@@ -35330,7 +35312,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2499715631327290359}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -61627,7 +61609,18 @@ MonoBehaviour:
   buttonEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6595812072673373287}
+      - m_Target: {fileID: 5557590916377011623}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3386260264882222761}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:

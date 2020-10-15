@@ -25,7 +25,6 @@ public class StaminaBar : MonoBehaviour
 
     float RangeInitial = 0.35f;
     [SerializeField] Light Light;
-    [SerializeField] Material material;
 
     void Start()
     {
