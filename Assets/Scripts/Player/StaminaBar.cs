@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.UI;
 
 public class StaminaBar : MonoBehaviour
 {
     [SerializeField] Slider staminaBar;
     public float waitToRegen = 2;
-    public int maxStamina = 100;
-    public int PlusRegen = 5;
-    [SerializeField] int waitToUse = 50;
-    public int currentStamina;
+    public float maxStamina = 100;
+    public float PlusRegen = 5;
+    [SerializeField] float waitToUse = 50;
+
+    [HideInInspector] public float currentStamina;
 
     WaitForSeconds regenTick = new WaitForSeconds(0.1f);
     Coroutine regen;
@@ -20,6 +22,10 @@ public class StaminaBar : MonoBehaviour
 
     bool WasCalled;
     bool canPlay;
+
+    float RangeInitial = 0.35f;
+    [SerializeField] Light Light;
+    [SerializeField] Material material;
 
     void Start()
     {
@@ -34,13 +40,13 @@ public class StaminaBar : MonoBehaviour
         else { canPlay = false; }
     }
 
-    public bool UseStamina(int amount)
+    public bool UseStamina(float amount)
     {
         if(currentStamina - amount >= 0)
         {
             currentStamina -= amount;
             staminaBar.value = currentStamina;
-
+            if (canPlay) Light.range = (currentStamina * RangeInitial) / maxStamina;
             if (regen != null)
                 StopCoroutine(regen);
             regen = StartCoroutine(regenStamina());
@@ -60,14 +66,16 @@ public class StaminaBar : MonoBehaviour
         yield return new WaitForSeconds(waitToRegen);
         if (canPlay)
         {
-            AudioManager.Instance.Play("EnergyRecharge");
+            if (currentStamina == 0)
+            {
+                AudioManager.Instance.Play("EnergyRecharge"); //Cambiar audio
+            }
+            else AudioManager.Instance.Play("EnergyRecharge");
         }
-        if (currentStamina == 0)
-        {
-            AudioManager.Instance.Play("EnergyRecharge1"); //Cambiar audio
-        }
+        
         while (currentStamina < maxStamina)
         {
+            Light.range = (currentStamina * RangeInitial) / maxStamina;
             currentStamina += PlusRegen;           
             staminaBar.value = currentStamina;
             yield return regenTick;
