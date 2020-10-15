@@ -74,7 +74,7 @@ public class StaminaBar : MonoBehaviour
         
         while (currentStamina < maxStamina)
         {
-            //Light.range = (currentStamina * RangeInitial) / maxStamina;
+            Light.range = (currentStamina * RangeInitial) / maxStamina;
             currentStamina += PlusRegen;           
             staminaBar.value = currentStamina;
             yield return regenTick;
