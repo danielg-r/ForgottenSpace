@@ -56,7 +56,7 @@ public class ConsumableManager : MonoBehaviour
         }
         if (Input.GetAxisRaw("Alpha2") > 0)
         {
-            if (!isAxisInUse_2 && consuManager.ConsuLifeRegen > 0)
+            if (!isAxisInUse_2 && consuManager.ConsuStaminaCooldown > 0)
             {
                 ComStaminaRegen.SetActive(true);
                 consuManager.UseRunning();
@@ -65,7 +65,7 @@ public class ConsumableManager : MonoBehaviour
         }
         if (Input.GetAxisRaw("Alpha2") < 0)
         {
-            if (!isAxisInUse_2 && consuManager.ConsuLifeRegen > 0)
+            if (!isAxisInUse_2 && consuManager.ConsumableCooldown > 0)
             {
                 ComPistolRegen.SetActive(true);
                 consuManager.UseCooldown();
