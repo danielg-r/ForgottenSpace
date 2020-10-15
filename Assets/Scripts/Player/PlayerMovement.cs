@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Animator anim;
     [HideInInspector] public CinemachineFreeLook camara;
     float Aim = 40f, normalView = 70f;
-    [SerializeField] int AmountStamina = 1;
+    [SerializeField] float AmountStamina = 1;
     [HideInInspector] public bool CanAim;
     [HideInInspector] public bool Aiming;
     bool CanRun;

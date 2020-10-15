@@ -69,7 +69,6 @@ public class ConsuManager : MonoBehaviour
     {
         ConsuStaminaCooldown += _runCooldown;
         OnConsumableUses();
-
     }
     #endregion
 
