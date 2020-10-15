@@ -811,10 +811,11 @@ MonoBehaviour:
   titleText: Registro de diario
   descriptionText: "<i>[Entrada personal #418]\r</i>\n<i>Fecha: 10/04/2554\r</i>\n\n<i><<<RECUPERANDO
     FRAGMENTO DE AUDIO>>>\r</i>\n\n<i><<<RECUPERANDO FRAGMENTO DE AUDIO>>>\r</i>\n\r\n<i><<<ERROR:
-    ARCHIVO DE AUDIO CORRUPTO>>>\r</i>\n\n<i><<<PROBANDO: DISMINUCI\xD3N DE EST\xC1TICA>>>\r</i>\n\r\nNo
-    deb\xED abrir mi\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.
-    alien\xEDgena hostil\u2026\u2026\u2026\u2026\u2026\u2026\u2026..tripulantes\r\n\u2026\u2026\u2026\u2026\u2026..
-    abandonaron\u2026\u2026\u2026\u2026\u2026. enviar una se\xF1al\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\r\nescapar\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.
+    ARCHIVO DE AUDIO CORRUPTO>>>\r</i>\n\n<i><<<PROBANDO: DISMINUCI\xD3N DE EST\xC1TICA>>>\r</i>\n\r\nLa
+    IA de la estaci\xF3n.............hostil\u2026\u2026\u2026\u2026\u2026\u2026\u2026..sistemas
+    de seguridad....................matando a todos\r\n\u2026\u2026\u2026........enviar
+    una se\xF1al........................................................\u2026..si
+    alguien escucha esta transmisi\xF3n\u2026\u2026\u2026...................\u2026\u2026.\u2026escapar\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.
     <b>nave</b>\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026. <b>hangar</b>.\r\n\n<i><<<ERROR:
     TRANSMISI\xD3N CORTADA, NO SE PUEDE RECUPERAR>>>\r</i>\n\n\n<i><<<FIN DEL REGISTRO>>>\r</i>\r\n"
   onConfirm:
@@ -2226,10 +2227,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: "<i>[Entrada personal #418]\r</i>\n<i>Fecha: 10/04/2554\r</i>\n\n<i><<<RECUPERANDO
     FRAGMENTO DE AUDIO>>>\r</i>\n\n<i><<<RECUPERANDO FRAGMENTO DE AUDIO>>>\r</i>\n\r\n<i><<<ERROR:
-    ARCHIVO DE AUDIO CORRUPTO>>>\r</i>\n\n<i><<<PROBANDO: DISMINUCI\xD3N DE EST\xC1TICA>>>\r</i>\n\r\nNo
-    deb\xED abrir mi\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.
-    alien\xEDgena hostil\u2026\u2026\u2026\u2026\u2026\u2026\u2026..tripulantes\r\n\u2026\u2026\u2026\u2026\u2026..
-    abandonaron\u2026\u2026\u2026\u2026\u2026. enviar una se\xF1al\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\r\nescapar\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.
+    ARCHIVO DE AUDIO CORRUPTO>>>\r</i>\n\n<i><<<PROBANDO: DISMINUCI\xD3N DE EST\xC1TICA>>>\r</i>\n\r\nLa
+    IA de la estaci\xF3n.............hostil\u2026\u2026\u2026\u2026\u2026\u2026\u2026..sistemas
+    de seguridad....................matando a todos\r\n\u2026\u2026\u2026........enviar
+    una se\xF1al........................................................\u2026..si
+    alguien escucha esta transmisi\xF3n\u2026\u2026\u2026...................\u2026\u2026.\u2026escapar\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.
     <b>nave</b>\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026. <b>hangar</b>.\r\n\n<i><<<ERROR:
     TRANSMISI\xD3N CORTADA, NO SE PUEDE RECUPERAR>>>\r</i>\n\n\n<i><<<FIN DEL REGISTRO>>>\r</i>\r\n"
   m_isRightToLeft: 0
@@ -2301,10 +2303,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 5557850700718200132}
-    characterCount: 467
+    characterCount: 592
     spriteCount: 0
-    spaceCount: 54
-    wordCount: 48
+    spaceCount: 58
+    wordCount: 57
     linkCount: 0
     lineCount: 19
     pageCount: 1
