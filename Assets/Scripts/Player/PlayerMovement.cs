@@ -76,4 +76,13 @@ public class PlayerMovement : MonoBehaviour
     {
         CanRun = true;
     }
+
+    public void Walk1()
+    {
+        AudioManager.Instance.Play("Walk1");
+    }
+    public void Walk2()
+    {
+        AudioManager.Instance.Play("Walk2");
+    }
 }
