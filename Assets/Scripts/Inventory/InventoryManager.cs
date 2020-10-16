@@ -69,11 +69,6 @@ public class InventoryManager : MonoBehaviour
             case 2:
                 {
 
-                }
-                break;
-            case 3:
-                {
-
                     for (int i = 0; i < freeShipSlots; i++)
                     {
                         if (shipSlots[i].GetComponent<Slot>().isEmpty)
@@ -86,6 +81,11 @@ public class InventoryManager : MonoBehaviour
                             break;
                         }
                     }
+                }
+                break;
+            case 3:
+                {
+
                 }
                 break;
         }
