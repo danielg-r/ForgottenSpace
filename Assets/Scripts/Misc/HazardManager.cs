@@ -24,7 +24,7 @@ public class HazardManager : MonoBehaviour
         {
             puzzles.Add(rt);
         }
-        Invoke("InstantHazard", 30f);
+        Invoke("InstantHazard", 10f);
     }
 
     void Update() {
@@ -35,8 +35,8 @@ public class HazardManager : MonoBehaviour
     void DisablePuzzles() {
         foreach (RotateManager rt in puzzles) {
             PlayerCameraController.Instance.canvasText.text = "";
-            rt.interactable.enabled = false;
             rt.interactable.GetComponent<BoxCollider>().enabled = false;
+            rt.interactable.enabled = false;
             rt.ps.SetActive(false);
             rt.ps2.SetActive(false);
         }
@@ -44,8 +44,8 @@ public class HazardManager : MonoBehaviour
 
     void EnablePuzzles() {
         foreach (RotateManager rt in puzzles) {
-            rt.interactable.enabled = true;
             rt.interactable.GetComponent<BoxCollider>().enabled = true;
+            rt.interactable.enabled = true;
             rt.ps.SetActive(true);
             rt.ps2.SetActive(true);
         }
