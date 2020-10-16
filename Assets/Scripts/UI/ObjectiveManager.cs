@@ -31,7 +31,7 @@ public class ObjectiveManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J)) ToggleUI();
+        if (Input.GetKeyDown(KeyCode.Q)) ToggleUI();
     }
 
     void ToggleUI() {

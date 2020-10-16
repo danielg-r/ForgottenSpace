@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
+
 
 public class HazardManager : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class HazardManager : MonoBehaviour
     [SerializeField] List<RotateManager> puzzles;
     [SerializeField] Hazard[] hazards;
     [SerializeField] float hazardInterval;
+    [SerializeField] PlayableDirector pb;
     bool activeHazard;
     float t = 0;
 
