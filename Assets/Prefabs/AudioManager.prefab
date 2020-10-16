@@ -43,7 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17af10a21769ed04fa5949ceb3a3969c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 556244046943261853, guid: c12b7ee7258ca254a894e4611c8cceb7,
+    type: 2}
   soundList:
   - Nombre: HurtPlayer
     pista: {fileID: 8300000, guid: 69941cd5177247742aa147627b28c049, type: 3}
@@ -65,7 +66,7 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Nombre: RobotStun
     pista: {fileID: 8300000, guid: 141d28368b3be0548868f3035936ee89, type: 3}
-    Vol: 0.33
+    Vol: 0.7
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
@@ -107,7 +108,7 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Nombre: Loot
     pista: {fileID: 8300000, guid: 170062204a3b5ad40aa3228dd7f4879f, type: 3}
-    Vol: 0.34
+    Vol: 0.67
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
@@ -125,7 +126,7 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Nombre: DoorOpen
     pista: {fileID: 8300000, guid: 55d230cf2c134d248842972f6781f270, type: 3}
-    Vol: 0.34
+    Vol: 0.73
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
@@ -143,7 +144,7 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Nombre: PickItem
     pista: {fileID: 8300000, guid: 383c7b29906dc5b4f921b8f600867ba6, type: 3}
-    Vol: 0.34
+    Vol: 0.3
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
@@ -190,12 +191,36 @@ MonoBehaviour:
     Loop: 0
     Source: {fileID: 0}
   - Nombre: Walk1
+    pista: {fileID: 8300000, guid: 4d6ef6af8e44f814483fdfb0e57c1a3a, type: 3}
+    Vol: 0.45
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: Walk2
+    pista: {fileID: 8300000, guid: f27b495deeac5154195b75aea8f1cc96, type: 3}
+    Vol: 0.45
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: EnergyRecharge1
+    pista: {fileID: 8300000, guid: 1e927597c39f7e34f945309e1b21c62f, type: 3}
+    Vol: 0.58
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: X
     pista: {fileID: 8300000, guid: 01fff1f6533425849be3ce37ee30837e, type: 3}
     Vol: 0.25
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
-  - Nombre: Walk2
+  - Nombre: X
+    pista: {fileID: 8300000, guid: 01fff1f6533425849be3ce37ee30837e, type: 3}
+    Vol: 0.25
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: X
     pista: {fileID: 8300000, guid: 01fff1f6533425849be3ce37ee30837e, type: 3}
     Vol: 0.25
     Pitch: 1

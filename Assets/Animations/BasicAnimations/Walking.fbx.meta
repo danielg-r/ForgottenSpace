@@ -59,7 +59,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.30208334
+      - time: 0.3414922
         functionName: Walk1
         data: 
         objectReferenceParameter: {instanceID: 0}
