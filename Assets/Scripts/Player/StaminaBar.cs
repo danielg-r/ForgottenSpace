@@ -67,9 +67,9 @@ public class StaminaBar : MonoBehaviour
         {
             if (currentStamina == 0)
             {
-                AudioManager.Instance.Play("EnergyRecharge"); //Cambiar audio
+                AudioManager.Instance.Play("EnergyRecharge");
             }
-            else AudioManager.Instance.Play("EnergyRecharge");
+            else AudioManager.Instance.Play("EnergyRecharge1");
         }
         
         while (currentStamina < maxStamina)
