@@ -22,6 +22,7 @@ namespace Michsky.UI.ModernUIPack
         // Events
         public UnityEvent onConfirm;
         public UnityEvent onCancel;
+        public UnityEvent OnWindowOpen;
 
         // Settings
         public bool sharpAnimations = false;
@@ -77,6 +78,7 @@ namespace Michsky.UI.ModernUIPack
                     mwAnimator.Play("Fade-in");
 
                 isOn = true;
+                Invoke("OnWindowOpenDelay", 0.5f);
             }
         }
 
@@ -114,6 +116,10 @@ namespace Michsky.UI.ModernUIPack
 
                 isOn = false;
             }
+        }
+
+        void OnWindowOpenDelay() {
+            OnWindowOpen.Invoke();
         }
     }
 }

@@ -98,6 +98,7 @@ public class UIManager : MonoBehaviour
     void OnPiecesAdd()
     {
         CurrentShipPieces.text = inventory.shipPieceCount.ToString();
+        ObjectiveManager.Instance.SetCurrentObjective($"Recupera las piezas de tu nave para evacuar la estación. ({inventory.shipPieceCount}/4)");
 
     }
 

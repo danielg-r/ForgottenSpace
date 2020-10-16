@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Michsky.UI.ModernUIPack;
 
 public class CraftSystem : MonoBehaviour
 {
     public static CraftSystem Instance { get; private set; }
+    [SerializeField] ModalWindowManager loreScreen;
 
     #region Pistol
     [Header("Pistola")]
@@ -70,7 +72,9 @@ public class CraftSystem : MonoBehaviour
             AudioManager.Instance.Play("Click");            
             ICraftPistol = true;
             PistolBar.SetActive(true);
-            
+            loreScreen.OpenWindow();
+            ObjectiveManager.Instance.SetCurrentObjective($"Recupera las piezas de tu nave para evacuar la estación. (0/4)");
+             // Mostrar la ventana de advertencia            
         }
     }
 
