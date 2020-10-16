@@ -53,6 +53,7 @@ public class HazardManager : MonoBehaviour
 
     public void StartRandomHazard() {
         if (!activeHazard && t > hazardInterval) {
+            Debug.Log("Starting  random hazard");
             int rnd = Random.Range(0, hazards.Length);
             hazards[rnd].StartHazard();
             activeHazard = true;
@@ -61,6 +62,7 @@ public class HazardManager : MonoBehaviour
     }
 
     public void InstantHazard() {
+        Debug.Log("Starting instant hazard");
         int rnd = Random.Range(0, hazards.Length);
         hazards[rnd].StartHazard();
         activeHazard = true;

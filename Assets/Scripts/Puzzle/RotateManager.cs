@@ -59,16 +59,13 @@ public class RotateManager : MonoBehaviour
         for (int i = 0; i <= pictures.Length-1; i++)
         {
             float value;
-            switch (Random.Range(1, 4))
+            switch (Random.Range(1, 3))
             {
                 case 1:
                     value = 90f;
                     break;
                 case 2:
                     value = 270f;
-                    break;
-                case 3:
-                    value = 0f;
                     break;
                 default:
                     value = 0f;
