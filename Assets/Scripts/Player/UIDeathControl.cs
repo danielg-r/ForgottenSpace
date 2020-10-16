@@ -6,6 +6,9 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using System.Reflection.Emit;
 using DG.Tweening;
+using JetBrains.Annotations;
+using Michsky.UI.ModernUIPack;
+using UnityEngine.Events;
 
 public class UIDeathControl : MonoBehaviour
 {
@@ -32,6 +35,9 @@ public class UIDeathControl : MonoBehaviour
     [SerializeField] TextMeshProUGUI statusText;
     [SerializeField] DOTweenAnimation scrambleTween;
     public bool showingText;
+
+    public ModalWindowManager Instrucciones;
+    public UnityEvent CloseWindow;
 
     public static UIDeathControl Instance { get => instance; }
 
@@ -70,6 +76,7 @@ public class UIDeathControl : MonoBehaviour
         PlayerMovement.Instance.enabled = false;
         PlayerMovement.Instance.GetComponent<CapsuleCollider>().enabled = false;
         PlayerCameraController.Instance.enabled = false;
+        
         IsAlive = false;
     }
 
@@ -77,7 +84,8 @@ public class UIDeathControl : MonoBehaviour
     {
         if (Input.GetButtonDown("Pause") && ( IsAlive == true ))
         {
-            if(Inventory.Instance.isOpen == false)
+            CloseWindow.Invoke();
+            if (Inventory.Instance.isOpen == false)
             {
                 label.text = "PAUSA";
                 Pause();                
@@ -89,7 +97,7 @@ public class UIDeathControl : MonoBehaviour
 
     public void ActivateInstruc()
     {
-        InstrucPanel.SetActive(true);
+        
     }
 
     public void CloseInstruc()
@@ -108,6 +116,7 @@ public class UIDeathControl : MonoBehaviour
         }
         else
         {
+            
             PauseMenu.SetActive(false);
             Time.timeScale = 1f;
             CursorManager.Instance.HideCursor();
