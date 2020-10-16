@@ -8,6 +8,8 @@ public class ActivatePistol : MonoBehaviour
     public static ActivatePistol Instance { get; private set; }
     [SerializeField] Rig Layer;
     [SerializeField] GameObject Pistol;
+    [SerializeField] GameObject Pistolbar;
+
     PlayerMovement playerMovement;
     Animator animator;
 
@@ -45,6 +47,7 @@ public class ActivatePistol : MonoBehaviour
         else animator.runtimeAnimatorController = Resources.Load("PlayerWomanMask") as RuntimeAnimatorController;
         Layer.weight = 1f;
         Pistol.SetActive(true);
+        Pistolbar.SetActive(true);
         playerMovement.CanAim = true;
     }
     public void Deactivate()

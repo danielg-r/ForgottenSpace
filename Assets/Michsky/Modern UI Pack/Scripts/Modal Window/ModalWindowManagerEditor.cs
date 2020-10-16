@@ -77,6 +77,7 @@ namespace Michsky.UI.ModernUIPack
             var descriptionText = serializedObject.FindProperty("descriptionText");
             var onConfirm = serializedObject.FindProperty("onConfirm");
             var onCancel = serializedObject.FindProperty("onCancel");
+            var onWindowOpen = serializedObject.FindProperty("OnWindowOpen");
 
             var windowIcon = serializedObject.FindProperty("windowIcon");
             var windowTitle = serializedObject.FindProperty("windowTitle");
@@ -156,10 +157,12 @@ namespace Michsky.UI.ModernUIPack
 
                     GUILayout.Space(18);
                     GUILayout.Label("EVENTS", customSkin.FindStyle("Header"));
-                    GUILayout.Space(2);
+                    GUILayout.Space(3);
 
                     EditorGUILayout.PropertyField(onConfirm, new GUIContent("On Confirm"), true);
                     EditorGUILayout.PropertyField(onCancel, new GUIContent("On Cancel"), true);
+                    EditorGUILayout.PropertyField(onWindowOpen, new GUIContent("On Window Open"), true);
+
 
                     GUILayout.Space(4);
                     break;
