@@ -184,9 +184,9 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
-  - Nombre: EnergyRecharge
-    pista: {fileID: 8300000, guid: f3480ca92a4619145b937d75e8916618, type: 3}
-    Vol: 0.58
+  - Nombre: X
+    pista: {fileID: 0}
+    Vol: 0.4
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
@@ -204,7 +204,7 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Nombre: EnergyRecharge1
     pista: {fileID: 8300000, guid: 1e927597c39f7e34f945309e1b21c62f, type: 3}
-    Vol: 0.58
+    Vol: 0.4
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
