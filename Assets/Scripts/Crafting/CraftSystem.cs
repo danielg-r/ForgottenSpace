@@ -3,11 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Michsky.UI.ModernUIPack;
+using TMPro;
+using UnityEngine.UI;
+using UnityEngine.Assertions.Must;
 
 public class CraftSystem : MonoBehaviour
 {
     public static CraftSystem Instance { get; private set; }
     [SerializeField] ModalWindowManager loreScreen;
+   
 
     #region Pistol
     [Header("Pistola")]
@@ -42,6 +46,10 @@ public class CraftSystem : MonoBehaviour
     [Header("Pistol Bar")]
     [SerializeField] GameObject PistolBar;
 
+
+    [SerializeField] private TextMeshProUGUI buttonText;
+    [SerializeField] public GameObject soldoutImage;
+
     void Awake()
     {
         if (Instance == null)
@@ -52,7 +60,6 @@ public class CraftSystem : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 
     private void Start()
@@ -74,7 +81,9 @@ public class CraftSystem : MonoBehaviour
             PistolBar.SetActive(true);
             loreScreen.OpenWindow();
             ObjectiveManager.Instance.SetCurrentObjective($"Recupera las piezas de tu nave para evacuar la estación. (0/4)");
-             // Mostrar la ventana de advertencia            
+            // Mostrar la ventana de advertencia    
+            buttonText.text = "<color=red> AGOTADO </color>";
+            soldoutImage.SetActive(true);
         }
     }
 

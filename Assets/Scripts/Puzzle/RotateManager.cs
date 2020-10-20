@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class RotateManager : MonoBehaviour
 {
@@ -17,6 +18,26 @@ public class RotateManager : MonoBehaviour
     [Header("Eventos")]
     public UnityEvent OnPuzzleCompleted;
     public UnityEvent OnCompleteDelay;
+
+    public Sprite[] Imagenes0;
+    public Sprite[] Imagenes1;
+    public Sprite[] Imagenes2;
+    public Sprite[] Imagenes3;
+    public Sprite[] Imagenes4;
+    public Sprite[] Imagenes5;
+    public Sprite[] Imagenes6;
+    public Sprite[] Imagenes7;
+    public Sprite[] Imagenes8;
+
+    public Image Image0;
+    public Image Image1;
+    public Image Image2;
+    public Image Image3;
+    public Image Image4;
+    public Image Image5;
+    public Image Image6;
+    public Image Image7;
+    public Image Image8;
 
     public object Break { get; private set; }
 
@@ -56,6 +77,8 @@ public class RotateManager : MonoBehaviour
 
     public void NewGame()
     {
+        ChangeImage();
+
         for (int i = 0; i <= pictures.Length-1; i++)
         {
             float value;
@@ -75,6 +98,22 @@ public class RotateManager : MonoBehaviour
         }
         youWin = false;
     }
+
+    void ChangeImage()
+    {
+        int i = Random.Range(1, 8);
+
+        Image0.sprite = Imagenes0[i];
+        Image1.sprite = Imagenes1[i];
+        Image2.sprite = Imagenes2[i];
+        Image3.sprite = Imagenes3[i];
+        Image4.sprite = Imagenes4[i];
+        Image5.sprite = Imagenes5[i];
+        Image6.sprite = Imagenes6[i];
+        Image7.sprite = Imagenes7[i];
+        Image8.sprite = Imagenes8[i];
+    }
+
 
     void DelayComplete()
     {
