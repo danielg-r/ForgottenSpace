@@ -22,6 +22,7 @@ public class TutorialHazard : MonoBehaviour
         isActive = true;       
         InvokeRepeating("HazardTick", 5f, eventInterval);
         ObjectiveManager.Instance.SetCurrentObjective("Busca el generador para activar la energía.");
+        PlayerLife.Instance.onPlayerDied += StopHazard;
     }
 
     public void HazardTick() {

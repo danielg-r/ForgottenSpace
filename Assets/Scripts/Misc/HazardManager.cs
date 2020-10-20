@@ -25,6 +25,7 @@ public class HazardManager : MonoBehaviour
             puzzles.Add(rt);
         }
         Invoke("InstantHazard", 30f);
+        PlayerLife.Instance.onPlayerDied += StopHazards;
     }
 
     void Update() {
