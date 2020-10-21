@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/ScriptableObjects.meta
 guid: 8536a47505b8a9c4e8755a4f6982bd23
+=======
+guid: 79aabf230b2ff19498a732e9d31e4eb0
+>>>>>>> 1b530503387cf738f86de18e406144a108fb5cf1:Assets/TextMesh Pro/Examples & Extras/Fonts.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

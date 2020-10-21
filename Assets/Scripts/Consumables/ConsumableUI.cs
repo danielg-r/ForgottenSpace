@@ -13,7 +13,6 @@ public class ConsumableUI : MonoBehaviour
 
     ConsuManager ConsuManager;
 
-
     void Start()
     {
         

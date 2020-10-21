@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/Enemies.meta
 guid: d16c122b2225e5141ba60374e8bc2fd8
+=======
+guid: eed2f09b1b5f56c4cab135d890a20332
+>>>>>>> 1b530503387cf738f86de18e406144a108fb5cf1:Assets/KeyBorad Assets.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

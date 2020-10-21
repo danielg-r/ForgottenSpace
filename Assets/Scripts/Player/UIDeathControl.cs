@@ -37,7 +37,6 @@ public class UIDeathControl : MonoBehaviour
     public bool showingText;
 
     public ModalWindowManager Instrucciones;
-    public UnityEvent CloseWindow;
 
     public static UIDeathControl Instance { get => instance; }
 
@@ -84,7 +83,7 @@ public class UIDeathControl : MonoBehaviour
     {
         if (Input.GetButtonDown("Pause") && ( IsAlive == true ))
         {
-            CloseWindow.Invoke();
+            Instrucciones.CloseWindow();
             if (Inventory.Instance.isOpen == false)
             {
                 label.text = "PAUSA";

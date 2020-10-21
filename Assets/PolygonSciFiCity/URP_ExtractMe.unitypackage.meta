@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/PolygonSciFiCity/URP_ExtractMe.unitypackage.meta
 guid: fd89849814f3d2d42b2d5bfe9d2c2e76
+=======
+guid: 7cdd879f00e18c74cbb80c59e68a5f96
+folderAsset: yes
+>>>>>>> 1b530503387cf738f86de18e406144a108fb5cf1:Assets/TextMesh Pro/Examples & Extras/Materials.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
