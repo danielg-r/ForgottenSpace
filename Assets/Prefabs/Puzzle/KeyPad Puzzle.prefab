@@ -39278,8 +39278,8 @@ MonoBehaviour:
   CorrectCode: 0100000006000000070000000400000004000000
   Screen: {fileID: 3813385895880694092}
   WaitText: Ingrese el codigo
-  ErrorText: <color=red>Codigo Incorrecto</color>
-  CorrectText: <color=green>Codigo Correcto</color>
+  ErrorText: "<color=red>C\xF3digo Incorrecto</color>"
+  CorrectText: "<color=green>C\xF3digo Correcto</color>"
   CompletedCode:
     m_PersistentCalls:
       m_Calls: []

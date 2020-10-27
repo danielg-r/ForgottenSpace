@@ -87,18 +87,6 @@ public class CraftSystem : MonoBehaviour
         }
     }
 
-    public void CraftArmor()
-    {
-        if (CanCraftArmor && ICraftArmor == false  && inventoryManager.currentCircuits >= CircuitsToArmor && inventoryManager.currentPlates >= PlatesToArmor)
-        {            
-            inventoryManager.currentCircuits -= CircuitsToArmor;
-            inventoryManager.currentPlates -= PlatesToArmor;
-            onCurrSpent();
-            AudioManager.Instance.Play("Click");
-            ICraftArmor = true;
-            Armor.gameObject.SetActive(true);
-        }
-    }
 
 
     public void CraftShip()
