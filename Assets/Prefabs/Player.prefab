@@ -1090,7 +1090,6 @@ GameObject:
   - component: {fileID: 47114810045388031}
   - component: {fileID: 47114810045388028}
   - component: {fileID: 47114810045388029}
-  - component: {fileID: 47114810045388030}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1162,23 +1161,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &47114810045388030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47114810045387968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &47114810050918296
 GameObject:
   m_ObjectHideFlags: 0
@@ -4063,7 +4045,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1684989684760274526}
   m_HandleRect: {fileID: 0}
@@ -4346,7 +4328,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1684989683535666609}
   m_HandleRect: {fileID: 0}
@@ -4435,7 +4417,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1684989684048314700}
   m_HandleRect: {fileID: 0}
@@ -5574,7 +5556,6 @@ GameObject:
   - component: {fileID: 1684989685266491216}
   - component: {fileID: 1684989685266491221}
   - component: {fileID: 1684989685266491222}
-  - component: {fileID: 1684989685266491223}
   m_Layer: 0
   m_Name: DeathCanvas
   m_TagString: Untagged
@@ -5649,23 +5630,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &1684989685266491223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684989685266491217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &1684989685326857568
 GameObject:
   m_ObjectHideFlags: 0
@@ -10137,8 +10101,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850206791633882302}
-  m_LocalRotation: {x: -0.11692259, y: -1e-45, z: -0, w: 0.99314106}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0000011920929}
+  m_LocalRotation: {x: -0.11692257, y: 1e-45, z: -0, w: 0.99314106}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1850206792402068688}
@@ -10211,8 +10175,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850206791837387537}
-  m_LocalRotation: {x: -0.047604315, y: -0, z: -0, w: 0.99886626}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0000011920929}
+  m_LocalRotation: {x: -0.047604293, y: -0, z: -0, w: 0.99886626}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1850206792650019520}
@@ -10285,8 +10249,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850206792176606967}
-  m_LocalRotation: {x: 0.06405342, y: -0.62787664, z: -0.05196548, w: -0.7739301}
-  m_LocalPosition: {x: -2.4997776, y: 0, z: 2.0280292}
+  m_LocalRotation: {x: -0.08248181, y: 1e-45, z: -0, w: 0.9965926}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1850206791285674265}

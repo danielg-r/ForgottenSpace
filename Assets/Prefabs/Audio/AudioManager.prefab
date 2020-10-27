@@ -1,0 +1,228 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4925593359452387708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4678364346713745110}
+  - component: {fileID: 736213779903493099}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4678364346713745110
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4925593359452387708}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.8169103, y: -3.2445178, z: 0.28598642}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &736213779903493099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4925593359452387708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17af10a21769ed04fa5949ceb3a3969c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 556244046943261853, guid: c12b7ee7258ca254a894e4611c8cceb7,
+    type: 2}
+  soundList:
+  - Nombre: HurtPlayer
+    pista: {fileID: 8300000, guid: 69941cd5177247742aa147627b28c049, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: PlayerDeath
+    pista: {fileID: 8300000, guid: a2d6948dbd475d540b519ec739704025, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: RobotDetect
+    pista: {fileID: 8300000, guid: db8ed9ee356e02245acf3cf36a754f1a, type: 3}
+    Vol: 0.3
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: RobotStun
+    pista: {fileID: 8300000, guid: 141d28368b3be0548868f3035936ee89, type: 3}
+    Vol: 0.7
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: DroneDeath
+    pista: {fileID: 8300000, guid: ba8309d40647c1e4491ec2f214689445, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: DroneDetect
+    pista: {fileID: 8300000, guid: 22b0e0ad1f5b830499333eee6e0715c7, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: RobotAttack
+    pista: {fileID: 8300000, guid: f219fe45fbf7d1d4cbadcdc2e0320ac7, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: RobotWalk
+    pista: {fileID: 8300000, guid: ba8309d40647c1e4491ec2f214689445, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: Click
+    pista: {fileID: 8300000, guid: e076dd2f325f66a4a910c08aaf333340, type: 3}
+    Vol: 0.45
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: PuzzleSolved
+    pista: {fileID: 8300000, guid: ffb1afa357396884dbd2cdf2e80fcb31, type: 3}
+    Vol: 0.66
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: Loot
+    pista: {fileID: 8300000, guid: 170062204a3b5ad40aa3228dd7f4879f, type: 3}
+    Vol: 0.67
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: DroneHover
+    pista: {fileID: 8300000, guid: 8a154c4212afe7d409f0fb937b2f603b, type: 3}
+    Vol: 0.06
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: LoreText
+    pista: {fileID: 8300000, guid: 3c208ff056bb56444b3123efe79f5ddc, type: 3}
+    Vol: 0.45
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: DoorOpen
+    pista: {fileID: 8300000, guid: 55d230cf2c134d248842972f6781f270, type: 3}
+    Vol: 0.73
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: DoorClose
+    pista: {fileID: 8300000, guid: 8dbd497ec48fd534893863b70ed2ad6b, type: 3}
+    Vol: 0.34
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: VDoorOpen
+    pista: {fileID: 8300000, guid: 8218cc3ba3066b64faa8c68292f5c7b6, type: 3}
+    Vol: 0.41
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: PickItem
+    pista: {fileID: 8300000, guid: 383c7b29906dc5b4f921b8f600867ba6, type: 3}
+    Vol: 0.3
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: Beep
+    pista: {fileID: 8300000, guid: 01fff1f6533425849be3ce37ee30837e, type: 3}
+    Vol: 0.34
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: Beep5
+    pista: {fileID: 8300000, guid: fc0b3531f8424eb4f827bacace2d4890, type: 3}
+    Vol: 0.34
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: Beep3
+    pista: {fileID: 8300000, guid: 8bf956b5bbd97f441b9ef989abe9da0a, type: 3}
+    Vol: 0.34
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: FemaleDeath
+    pista: {fileID: 8300000, guid: 91dae728c8eb3134896aedf54adf9d93, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: FemaleHurt
+    pista: {fileID: 8300000, guid: b965ecb5e9f8d1145be6ba77b59039cb, type: 3}
+    Vol: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: EnergyRecharge
+    pista: {fileID: 8300000, guid: cdd7d8edacbf7424ebb59fddf1bbee51, type: 3}
+    Vol: 0.59
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: EnergyRecharge
+    pista: {fileID: 8300000, guid: f3480ca92a4619145b937d75e8916618, type: 3}
+    Vol: 0.58
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: Walk1
+    pista: {fileID: 8300000, guid: 4d6ef6af8e44f814483fdfb0e57c1a3a, type: 3}
+    Vol: 0.45
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: Walk2
+    pista: {fileID: 8300000, guid: f27b495deeac5154195b75aea8f1cc96, type: 3}
+    Vol: 0.45
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: EnergyRecharge1
+    pista: {fileID: 8300000, guid: 1e927597c39f7e34f945309e1b21c62f, type: 3}
+    Vol: 0.58
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: X
+    pista: {fileID: 8300000, guid: 01fff1f6533425849be3ce37ee30837e, type: 3}
+    Vol: 0.25
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: X
+    pista: {fileID: 8300000, guid: 01fff1f6533425849be3ce37ee30837e, type: 3}
+    Vol: 0.25
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: X
+    pista: {fileID: 8300000, guid: 01fff1f6533425849be3ce37ee30837e, type: 3}
+    Vol: 0.25
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}

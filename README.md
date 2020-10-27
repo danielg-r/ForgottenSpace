@@ -4,17 +4,17 @@ El juego es un survival horror, posee una barra que refleja la salud del jugador
 
 PLUGINS USADOS 
 DoTween (http://dotween.demigiant.com/)
-Modern UI (https://assetstore.unity.com/packages/tools/gui/modern-ui-pack-150824)
+Modern UI Pack (https://assetstore.unity.com/packages/tools/gui/modern-ui-pack-150824)
+Loading Screen studio (https://assetstore.unity.com/packages/tools/gui/loading-screen-studio-169978)
  
 SFX Y MÚSICA
  https://freesound.org y youtube.com (Créditos en la parte final del documento)
  
 ASSETS 
 POR SYNTY STUDIOS (https://syntystore.com/) Modelos 3D: ScifiCity y ScifiSpace VFX: Polygon Arsenal pack.
+Pantallas de lore y notificaciones: Michsky - Modern UI Pack
 
-POSIBLES BUGS 
-Cuando muere el Robot puede crashear el juego [Difícil de reproducir].
-El proyectil del arma choca a veces con los que disparan los enemigos.
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
