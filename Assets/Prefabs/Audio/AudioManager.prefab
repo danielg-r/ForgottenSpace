@@ -209,12 +209,12 @@ MonoBehaviour:
     Loop: 0
     Source: {fileID: 0}
   - Nombre: Rotate
-    pista: {fileID: 8300000, guid: 01fff1f6533425849be3ce37ee30837e, type: 3}
-    Vol: 0.25
+    pista: {fileID: 8300000, guid: ec129ce0b6afc4d46b64c5081fc1844c, type: 3}
+    Vol: 0.5
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
-  - Nombre: X
+  - Nombre: CameraSparks
     pista: {fileID: 8300000, guid: 01fff1f6533425849be3ce37ee30837e, type: 3}
     Vol: 0.25
     Pitch: 1
