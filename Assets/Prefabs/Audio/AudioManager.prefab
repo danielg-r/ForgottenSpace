@@ -204,11 +204,11 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Nombre: EnergyRecharge1
     pista: {fileID: 8300000, guid: 1e927597c39f7e34f945309e1b21c62f, type: 3}
-    Vol: 0.58
+    Vol: 0.3
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
-  - Nombre: X
+  - Nombre: Rotate
     pista: {fileID: 8300000, guid: 01fff1f6533425849be3ce37ee30837e, type: 3}
     Vol: 0.25
     Pitch: 1

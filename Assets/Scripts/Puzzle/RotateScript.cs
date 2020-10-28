@@ -14,6 +14,7 @@ public class RotateScript : MonoBehaviour
     {
         if(!RotateManager.youWin)
         {
+            AudioManager.Instance.Play("Rotate");
             transform.Rotate(0f, 0f, 90f);
             Manager.QuestionYouWin();
         }
