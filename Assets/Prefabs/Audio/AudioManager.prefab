@@ -215,8 +215,8 @@ MonoBehaviour:
     Loop: 0
     Source: {fileID: 0}
   - Nombre: CameraSparks
-    pista: {fileID: 8300000, guid: 01fff1f6533425849be3ce37ee30837e, type: 3}
-    Vol: 0.25
+    pista: {fileID: 8300000, guid: 68dba743727b9274092a300db0621ae2, type: 3}
+    Vol: 0.5
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}

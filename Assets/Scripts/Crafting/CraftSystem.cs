@@ -83,7 +83,7 @@ public class CraftSystem : MonoBehaviour
             ICraftPistol = true;
             PistolBar.SetActive(true);
             loreScreen.OpenWindow();
-            ObjectiveManager.Instance.SetCurrentObjective($"Recupera las piezas de tu nave para evacuar la estación. (0/5)", true);
+            //ObjectiveManager.Instance.SetCurrentObjective($"Recupera las piezas de tu nave para evacuar la estación. (0/5)", true);
             // Mostrar la ventana de advertencia    
             buttonText.text = "<color=red> AGOTADO </color>";
             soldoutImage.SetActive(true);

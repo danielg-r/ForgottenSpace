@@ -47,6 +47,7 @@ public class SecurityCamera : MonoBehaviour, IDamageable
 
     void Enable()
     {
+        AudioManager.Instance.Play("CameraReactivation");
         OnEnable.Invoke();
         detectionSystem.SetActive(true);
         deathCollider.enabled = true;
