@@ -9,8 +9,6 @@ public class ObjectiveManager : MonoBehaviour
     public static ObjectiveManager Instance;
     [SerializeField] TextMeshProUGUI principalObjective, currentObjective;
     [SerializeField] ModalWindowManager objectiveUI;
-    [SerializeField] GameObject objectiveUpdated;
-
     bool isActive; 
 
     void Awake() {
@@ -24,19 +22,8 @@ public class ObjectiveManager : MonoBehaviour
     }
 
     public void SetCurrentObjective(string objective) {
-        currentObjective.text = objective;
-    }
-
-    public void SetCurrentObjective(string objective, bool newObjective) {
-        currentObjective.text = objective;
-        if (newObjective) {
-            objectiveUpdated.SetActive(true);
-            Invoke("HideObjectiveUpdated", 3f);
-        }
-    }
-
-    void HideObjectiveUpdated() {
-        objectiveUpdated.SetActive(false);
+        currentObjective.text  = objective;
+        //Llamar al texto que recuerda que hay nuevos objetivos (evento)
     }
 
     public void SetPrincipalObjective(string objective) {

@@ -38,6 +38,7 @@ public class SecurityCamera : MonoBehaviour, IDamageable
 
     void Disable()
     {
+        AudioManager.Instance.Play("CameraSparks");
         OnDisable.Invoke();
         detectionSystem.SetActive(false);
         deathCollider.enabled = false;

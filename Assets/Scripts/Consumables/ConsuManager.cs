@@ -78,62 +78,60 @@ public class ConsuManager : MonoBehaviour
 
     public void Update()
     {
-        if (consuManager != null)
-        {
+        LimitMaxValues();
 
-             LimitMaxValues();
-            if (Input.GetKeyDown(KeyCode.Alpha1) && consuManager.ConsuLifeRegen > 0)
-            {//Life
+
+        if (Input.GetKeyDown(KeyCode.Alpha1) && consuManager.ConsuLifeRegen > 0)
+        {//Life
+            ComLifeRegen.SetActive(true);
+            consuManager.UseLifeRegen();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2) && consuManager.ConsuStaminaCooldown > 0)
+        {//Stamina
+            ComStaminaRegen.SetActive(true);
+            consuManager.UseRunning();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3) && consuManager.ConsumableCooldown > 0)
+        {//Disparo
+            ComPistolRegen.SetActive(true);
+            consuManager.UseCooldown();
+        }
+
+        if (Input.GetAxisRaw("Alpha1") == 0)
+        {
+            isAxisInUse_1 = false;
+        }
+        if (Input.GetAxisRaw("Alpha1") < 0)
+        {
+            if (!isAxisInUse_1 && consuManager.ConsuLifeRegen > 0)
+            {
                 ComLifeRegen.SetActive(true);
                 consuManager.UseLifeRegen();
+                isAxisInUse_1 = true;
             }
-            if (Input.GetKeyDown(KeyCode.Alpha2) && consuManager.ConsuStaminaCooldown > 0)
-            {//Stamina
+        }
+
+        if (Input.GetAxisRaw("Alpha2") == 0)
+        {
+            isAxisInUse_2 = false;
+        }
+        if (Input.GetAxisRaw("Alpha2") > 0)
+        {
+            if (!isAxisInUse_2 && consuManager.ConsuStaminaCooldown > 0)
+            {
                 ComStaminaRegen.SetActive(true);
                 consuManager.UseRunning();
+                isAxisInUse_2 = true;
             }
-            if (Input.GetKeyDown(KeyCode.Alpha3) && consuManager.ConsumableCooldown > 0)
-            {//Disparo
+        }
+        if (Input.GetAxisRaw("Alpha2") < 0)
+        {
+            if (!isAxisInUse_2 && consuManager.ConsumableCooldown > 0)
+            {
                 ComPistolRegen.SetActive(true);
                 consuManager.UseCooldown();
+                isAxisInUse_2 = true;
             }
-
-            if (Input.GetAxisRaw("Alpha1") == 0)
-            {
-                isAxisInUse_1 = false;
-            }
-            if (Input.GetAxisRaw("Alpha1") < 0)
-            {
-                if (!isAxisInUse_1 && consuManager.ConsuLifeRegen > 0)
-                {
-                    ComLifeRegen.SetActive(true);
-                    consuManager.UseLifeRegen();
-                    isAxisInUse_1 = true;
-                }
-            }
-
-            if (Input.GetAxisRaw("Alpha2") == 0)
-            {
-                isAxisInUse_2 = false;
-            }
-            if (Input.GetAxisRaw("Alpha2") > 0)
-            {
-                if (!isAxisInUse_2 && consuManager.ConsuStaminaCooldown > 0)
-                {
-                    ComStaminaRegen.SetActive(true);
-                    consuManager.UseRunning();
-                    isAxisInUse_2 = true;
-                }
-            }
-            if (Input.GetAxisRaw("Alpha2") < 0)
-            {
-                if (!isAxisInUse_2 && consuManager.ConsumableCooldown > 0)
-                {
-                    ComPistolRegen.SetActive(true);
-                    consuManager.UseCooldown();
-                    isAxisInUse_2 = true;
-                }
-            } 
         }
     }
 

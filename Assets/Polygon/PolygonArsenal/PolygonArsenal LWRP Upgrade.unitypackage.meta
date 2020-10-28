@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Polygon/PolygonArsenal/PolygonArsenal LWRP Upgrade.unitypackage.meta
 guid: aa18934b4ad560c4f94c2b8ed6b6e91a
+=======
+guid: 8536a47505b8a9c4e8755a4f6982bd23
+folderAsset: yes
+>>>>>>> eb1837289ae2bd8e7a11d35db6541411b2263e6d:Assets/Scripts/ScriptableObjects.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
