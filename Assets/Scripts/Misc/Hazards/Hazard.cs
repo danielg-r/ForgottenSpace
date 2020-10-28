@@ -6,7 +6,6 @@ using UnityEngine.Events;
 
 public abstract class Hazard : MonoBehaviour
 {
-    //Peligro simple que va a hacerle daño al jugador cada x segundos hasta que vuelva a activar la energía.(llamar método de MusicManager).
     [SerializeField] Timer hazardTimer;
     [SerializeField] string hazardName;
     [TextArea]
@@ -22,7 +21,7 @@ public abstract class Hazard : MonoBehaviour
     }
 
     public virtual void StartHazard() {
-        //MusicManager.Instance.PlaySong();
+        MusicManager.Instance.PlaySong();
         hazardTimer.StartTimer(hazardTime);
         NotificationHandler.Instance.HazardNotification(hazardName, hazardDesc);
         isActive = true;
@@ -31,7 +30,7 @@ public abstract class Hazard : MonoBehaviour
     public virtual void StopHazard() {
         if (isActive) {
             NotificationHandler.Instance.HazardCompleted();
-            //MusicManager.Instance.StopSong();
+            MusicManager.Instance.StopSong();
             isActive = false;
             CancelInvoke();
             hazardTimer.StopTimer();

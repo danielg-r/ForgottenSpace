@@ -23,6 +23,7 @@ public class Checkpoint : MonoBehaviour
         if (other.CompareTag("Player")) {
             Debug.Log($"Guardando último checkpoint: {this.name}");
             lastCheckpoint = this;
+            GetComponent<BoxCollider>().enabled = false;
         }
     }
 }
