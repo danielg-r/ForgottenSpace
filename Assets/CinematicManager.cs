@@ -52,4 +52,9 @@ public class CinematicManager : MonoBehaviour
         AudioListener.volume = 1;
     }
 
+    public void FinalSequenceObjective() {
+        ObjectiveManager.Instance.SetPrincipalObjective("Escapa de la estación.");
+        ObjectiveManager.Instance.SetCurrentObjective("Ve al segundo piso del hangar para reparar tu nave", true);
+    }
+
 }

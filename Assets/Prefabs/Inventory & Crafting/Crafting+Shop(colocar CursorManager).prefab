@@ -21386,9 +21386,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e545053fdf1815a419e8389d48eae6c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StaminaValue: 7
-  EnergyValue: 2
-  LifeValue: 7
+  StaminaValue: 5
+  EnergyValue: 4
+  LifeValue: 6
+  hasVisitedShop: 0
   HotBar: {fileID: 0}
 --- !u!1 &2456613217341557293
 GameObject:
@@ -22138,9 +22139,9 @@ RectTransform:
   m_Father: {fileID: 2456613218958027053}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 272.5, y: -15}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 272.5, y: 0}
   m_SizeDelta: {x: 0, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2456613217403434886
@@ -26095,6 +26096,7 @@ Transform:
   - {fileID: 2456613218281736583}
   - {fileID: 2499715630695460728}
   - {fileID: 2499715631480104606}
+  - {fileID: 4230031687677573899}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -30073,9 +30075,9 @@ RectTransform:
   m_Father: {fileID: 2499715630604047345}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 272.5, y: -15}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 272.5, y: 0}
   m_SizeDelta: {x: 0, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2499715629660065065
@@ -32770,18 +32772,13 @@ MonoBehaviour:
   CircuitsToPistol: 3
   PlatesToPistol: 2
   CanCraftPistol: 1
-  CircuitsToArmor: 2
-  PlatesToArmor: 3
-  CanCraftArmor: 1
-  Armor: {fileID: 0}
+  ICraftPistol: 0
   PiecesToShip: 5
   CanCraftShip: 0
   PistolBar: {fileID: 0}
   buttonText: {fileID: 2499715630634076981}
   soldoutImage: {fileID: 5125896964662559174}
-  OnShipCraft:
-    m_PersistentCalls:
-      m_Calls: []
+  motor: {fileID: 4035257031984686744}
 --- !u!1 &2499715630712398020
 GameObject:
   m_ObjectHideFlags: 0
@@ -61819,6 +61816,51 @@ Transform:
   m_Father: {fileID: 2456613218611582763}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5286866539853206817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4230031687677573899}
+  - component: {fileID: 4035257031984686744}
+  m_Layer: 0
+  m_Name: HPT MOTOR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4230031687677573899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286866539853206817}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 229.35234, y: 176.74744, z: 28.341366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2456613218374905821}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4035257031984686744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286866539853206817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 540befa0eaaaf174699377c5bd828b55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 2800000, guid: b9ba9912437932040ab755ddb840db23, type: 3}
+  type: 2
 --- !u!1 &5557590916377011623
 GameObject:
   m_ObjectHideFlags: 0

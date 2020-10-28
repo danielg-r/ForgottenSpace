@@ -23,15 +23,6 @@ public class CraftSystem : MonoBehaviour
     #endregion
 
 
-    #region Armadura
-    [Header("Armadura")]
-    public int CircuitsToArmor = 2; //Valor interno
-    public int PlatesToArmor = 3; //Valor interno
-    public bool CanCraftArmor = true;
-    bool ICraftArmor = false;
-    public GameObject Armor;
-    #endregion
-
     #region Ship
     [Header("Ship")]
     public int PiecesToShip = 5; //Valor interno
@@ -42,6 +33,10 @@ public class CraftSystem : MonoBehaviour
 
     public delegate void OnCurrencySpent();
     public event OnCurrencySpent onCurrSpent;
+
+    public delegate void OnShipCrafted();
+    public event OnShipCrafted onShipCrafted;
+
     InventoryManager inventoryManager;
 
     [Header("Pistol Bar")]
@@ -50,7 +45,9 @@ public class CraftSystem : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI buttonText;
     [SerializeField] public GameObject soldoutImage;
-    public UnityEvent OnShipCraft;
+
+    [Header("MOTOR")]
+    [SerializeField] Item motor;
 
 
     void Awake()
@@ -83,7 +80,7 @@ public class CraftSystem : MonoBehaviour
             ICraftPistol = true;
             PistolBar.SetActive(true);
             loreScreen.OpenWindow();
-            //ObjectiveManager.Instance.SetCurrentObjective($"Recupera las piezas de tu nave para evacuar la estación. (0/5)", true);
+            ObjectiveManager.Instance.SetCurrentObjective($"Recupera las piezas de tu nave para evacuar la estación. (0/5)", true);
             // Mostrar la ventana de advertencia    
             buttonText.text = "<color=red> AGOTADO </color>";
             soldoutImage.SetActive(true);
@@ -99,12 +96,10 @@ public class CraftSystem : MonoBehaviour
             onCurrSpent();
             AudioManager.Instance.Play("Click");
             CraftedShip = true;
-            OnShipCraft.Invoke();
-            //Ship.gameObject.SetActive(true); BUSCAR LA NAVE
+            InventoryManager.Instance.AddItem(motor);
+            onShipCrafted();
         }
     }
-
-
 
     //METODOS PARA EL CURSOR
     public void ShowCursor()
