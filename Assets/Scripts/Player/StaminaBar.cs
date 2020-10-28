@@ -28,6 +28,7 @@ public class StaminaBar : MonoBehaviour
 
     void Start()
     {
+        PlayerLife.Instance.onPlayerRespawned += Refill;
         currentStamina = maxStamina;
         staminaBar.maxValue = maxStamina;
         staminaBar.value = maxStamina;
@@ -37,6 +38,12 @@ public class StaminaBar : MonoBehaviour
             canPlay = true;
         }
         else { canPlay = false; }
+    }
+
+    void Refill() {
+        currentStamina = maxStamina;
+        staminaBar.maxValue = maxStamina;
+        staminaBar.value = maxStamina;
     }
 
     public bool UseStamina(float amount)

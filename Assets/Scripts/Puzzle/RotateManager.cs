@@ -19,6 +19,7 @@ public class RotateManager : MonoBehaviour
     public UnityEvent OnPuzzleCompleted;
     public UnityEvent OnCompleteDelay;
 
+    [Header("Imagenes Recortadas")]
     public Sprite[] Imagenes0;
     public Sprite[] Imagenes1;
     public Sprite[] Imagenes2;
@@ -29,6 +30,10 @@ public class RotateManager : MonoBehaviour
     public Sprite[] Imagenes7;
     public Sprite[] Imagenes8;
 
+    [Header("Imagenes - Completas")]
+    public Sprite[] ReferenceImage;
+
+    [Header("Imagenes - Botones")]
     public Image Image0;
     public Image Image1;
     public Image Image2;
@@ -38,6 +43,7 @@ public class RotateManager : MonoBehaviour
     public Image Image6;
     public Image Image7;
     public Image Image8;
+
 
     public object Break { get; private set; }
 
@@ -51,7 +57,7 @@ public class RotateManager : MonoBehaviour
     public void QuestionYouWin()
     {
         
-        for(int i = 0; i <= pictures.Length-1; i++)
+        for(int i = 0; i < pictures.Length; i++)
         {
             if (pictures[i].rotation.z != 0) 
             { completed = false; break; }
@@ -60,8 +66,6 @@ public class RotateManager : MonoBehaviour
 
         if (completed == true)
         {
-            Debug.Log("Win");
-
             youWin = true;
             //WinUI.SetActive(true);
             OnPuzzleCompleted.Invoke();
@@ -70,16 +74,17 @@ public class RotateManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("No Gano");
         }
 
     }
 
     public void NewGame()
     {
+        youWin = false;
         ChangeImage();
+        completed = false;
 
-        for (int i = 0; i <= pictures.Length-1; i++)
+        for (int i = 0; i < pictures.Length; i++)
         {
             float value;
             switch (Random.Range(1, 3))
@@ -95,13 +100,14 @@ public class RotateManager : MonoBehaviour
                     break;
             }
             pictures[i].rotation = Quaternion.Euler(0f, 0f, value);
+            
         }
-        youWin = false;
+
     }
 
     void ChangeImage()
     {
-        int i = Random.Range(1, 8);
+        int i = Random.Range(0, ReferenceImage.Length);
 
         Image0.sprite = Imagenes0[i];
         Image1.sprite = Imagenes1[i];

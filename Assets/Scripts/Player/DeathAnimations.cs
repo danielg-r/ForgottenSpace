@@ -11,7 +11,7 @@ public class DeathAnimations : MonoBehaviour
         anim = GetComponent<Animator>();
         if (PlayerLife.Instance != null)
         {
-            PlayerLife.Instance.onPlayerDied += new PlayerLife.OnPlayerDied(OnPlayerDiedAnimation);
+            PlayerLife.Instance.onPlayerDied += new PlayerLife.PlayerEvents(OnPlayerDiedAnimation);
         }
     }
 

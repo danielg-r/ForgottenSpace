@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 1386056886030092725}
   - component: {fileID: 1388342380118549341}
   - component: {fileID: 1396432509782792783}
-  - component: {fileID: 1429397031580905859}
   - component: {fileID: 1016289431352990961}
-  - component: {fileID: 1496266854136227419}
   - component: {fileID: 4412631417465137041}
+  - component: {fileID: 6029153980521415947}
+  - component: {fileID: 5170610198555672580}
   m_Layer: 0
   m_Name: ShipToilet
   m_TagString: Untagged
@@ -84,20 +84,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1429397031580905859
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382680243219806383}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43043793431104772, guid: b9b845662f4ccba49b124cad8d2bbd99, type: 2}
 --- !u!65 &1016289431352990961
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106,25 +92,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382680243219806383}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2790505, y: 0.8860573, z: 1.0124953}
-  m_Center: {x: 0.22794476, y: 0.44304466, z: -0.010154535}
---- !u!114 &1496266854136227419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382680243219806383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 540befa0eaaaf174699377c5bd828b55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  icon: {fileID: 2800000, guid: 599146cc1c2077d46b3725840260d439, type: 3}
-  type: 3
+  m_Size: {x: 1.6588728, y: 1.2460085, z: 1.5872684}
+  m_Center: {x: 0.017868517, y: 0.62303156, z: 0.0016096656}
 --- !u!114 &4412631417465137041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +147,33 @@ MonoBehaviour:
           m_StringArgument: PickItem
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &6029153980521415947
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382680243219806383}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.82317066, y: 1.1636891, z: 0.6008447}
+  m_Center: {x: 0.0000019073486, y: 0.58184457, z: 0.0000017434359}
+--- !u!114 &5170610198555672580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382680243219806383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 540befa0eaaaf174699377c5bd828b55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 2800000, guid: 16ea3bf48225c4f44af2da0abb9e49dd, type: 3}
+  type: 2
 --- !u!1 &1696262598697771639
 GameObject:
   m_ObjectHideFlags: 0
@@ -24392,7 +24391,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4108137756982808074}
-  - component: {fileID: 9006543112435351074}
   m_Layer: 0
   m_Name: ShipToilet
   m_TagString: Untagged
@@ -24407,7 +24405,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7537448175091593192}
-  m_LocalRotation: {x: -0, y: -0.38268274, z: -0, w: 0.9238798}
+  m_LocalRotation: {x: 0, y: -0.38268343, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.43623, y: 0.43623, z: 0.43623}
   m_Children:
@@ -24415,17 +24413,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -45.000004, z: 0}
---- !u!114 &9006543112435351074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7537448175091593192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 540befa0eaaaf174699377c5bd828b55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  icon: {fileID: 2800000, guid: 16ea3bf48225c4f44af2da0abb9e49dd, type: 3}
-  type: 2

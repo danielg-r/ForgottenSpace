@@ -10,6 +10,8 @@ public class ShopManager : MonoBehaviour
     public int EnergyValue;
     public int LifeValue;
 
+    public bool hasVisitedShop;
+
     ConsuManager consuManager;
     InventoryManager inventoryManager;
     CurrencyManager currencymanager;
@@ -64,9 +66,7 @@ public class ShopManager : MonoBehaviour
             AudioManager.Instance.Play("Click");
         }
     }
-
-
-
+    
     //METODOS PARA EL CURSOR
     public void ShowCursor()
     {
@@ -79,6 +79,7 @@ public class ShopManager : MonoBehaviour
 
     public void ActiveHotBar()
     {
+        hasVisitedShop = true;
         HotBar.SetActive(true);
     }
 

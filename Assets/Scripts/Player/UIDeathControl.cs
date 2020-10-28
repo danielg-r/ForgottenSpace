@@ -18,6 +18,7 @@ public class UIDeathControl : MonoBehaviour
     [SerializeField] TextMeshProUGUI label;
     [SerializeField] GameObject ContinueButton;
     [SerializeField] GameObject InstruButton;
+    [SerializeField] GameObject respawnButton;
 
     [Header("Bars")]
     [SerializeField] GameObject bars;
@@ -53,6 +54,7 @@ public class UIDeathControl : MonoBehaviour
         if(PlayerLife.Instance != null)
         {
             PlayerLife.Instance.onPlayerDied += OnPlayerDied;
+            PlayerLife.Instance.onPlayerRespawned += OnPlayerRespawned;
         }
     }
 
@@ -65,6 +67,7 @@ public class UIDeathControl : MonoBehaviour
         hotBar.SetActive(false);
         ContinueButton.SetActive(false);
         InstruButton.SetActive(false);
+        respawnButton.SetActive(true);
         PauseMenu.SetActive(true);
 
         label.text = "HAS MUERTO";
@@ -77,6 +80,29 @@ public class UIDeathControl : MonoBehaviour
         PlayerCameraController.Instance.enabled = false;
         
         IsAlive = false;
+    }
+
+    void OnPlayerRespawned() {
+        Debug.Log("Respawning... ");
+        PauseMenu.SetActive(false);
+        bars.SetActive(true);
+        bars1.SetActive(true);
+        if (CraftSystem.Instance.ICraftPistol) {
+            bars2.SetActive(true);
+            ActivatePistol.Instance.Activate();
+        }
+        if (ShopManager.Instance.hasVisitedShop) hotBar.SetActive(true);        
+        ContinueButton.SetActive(true);
+        InstruButton.SetActive(true);
+        respawnButton.SetActive(false);
+        label.text = "";
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
+        PlayerMovement.Instance.camara.enabled = true;
+        PlayerMovement.Instance.enabled = true;
+        PlayerMovement.Instance.GetComponent<CapsuleCollider>().enabled = true;
+        PlayerCameraController.Instance.enabled = true;
+        IsAlive = true;
     }
 
     private void Update()
