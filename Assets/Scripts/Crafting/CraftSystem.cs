@@ -6,6 +6,7 @@ using Michsky.UI.ModernUIPack;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Assertions.Must;
+using UnityEngine.Events;
 
 public class CraftSystem : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class CraftSystem : MonoBehaviour
     [Header("Ship")]
     public int PiecesToShip = 5; //Valor interno
     public bool CanCraftShip = true;
-    bool ICraftShip = false;
+    bool CraftedShip = false;
     //public GameObject Ship;
     #endregion
 
@@ -49,6 +50,8 @@ public class CraftSystem : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI buttonText;
     [SerializeField] public GameObject soldoutImage;
+    public UnityEvent OnShipCraft;
+
 
     void Awake()
     {
@@ -91,11 +94,12 @@ public class CraftSystem : MonoBehaviour
 
     public void CraftShip()
     {
-        if (CanCraftShip && ICraftShip == false && (inventoryManager.shipPieceCount == PiecesToShip) )
+        if (CanCraftShip && CraftedShip == false && (inventoryManager.shipPieceCount == PiecesToShip) && (inventoryManager.currentCurrency >= 25))
         {                    
             onCurrSpent();
             AudioManager.Instance.Play("Click");
-            ICraftShip = true;
+            CraftedShip = true;
+            OnShipCraft.Invoke();
             //Ship.gameObject.SetActive(true); BUSCAR LA NAVE
         }
     }
