@@ -83,11 +83,6 @@ public class InventoryManager : MonoBehaviour
                     }
                 }
                 break;
-            case 3:
-                {
-
-                }
-                break;
         }
     }
     void DetectSlots()
