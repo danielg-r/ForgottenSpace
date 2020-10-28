@@ -11,10 +11,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI circsText;
     [SerializeField] private TextMeshProUGUI platesText;
 
-    //[SerializeField] private TextMeshProUGUI ItemLifeText;
-    //[SerializeField] private TextMeshProUGUI ItemStaminaText;
-    //[SerializeField] private TextMeshProUGUI ItemShotText;
-
     private InventoryManager inventory;
     ConsuManager itemManager;
 
@@ -22,12 +18,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI CircuitsPistol;
     [SerializeField] private TextMeshProUGUI PlatesPistol;
 
-    /*[Header("Armor")]
-    [SerializeField] private TextMeshProUGUI CircuitsArmor;
-    [SerializeField] private TextMeshProUGUI PlatesArmor;*/
-
     [Header("Ship")]
-    //[SerializeField] private TextMeshProUGUI CircuitsShip;
     [SerializeField] private TextMeshProUGUI CurrentShipPieces;
 
 
@@ -74,9 +65,6 @@ public class UIManager : MonoBehaviour
         CircuitsPistol.text = inventory.currentCircuits.ToString();
         PlatesPistol.text = inventory.currentPlates.ToString();
 
-        //CircuitsArmor.text = inventory.currentCircuits.ToString();
-        //PlatesArmor.text = inventory.currentPlates.ToString();
-
         Currency.text = "$ " + InventoryManager.Instance.currentCurrency.ToString();
     }
 
@@ -89,16 +77,13 @@ public class UIManager : MonoBehaviour
         CircuitsPistol.text = inventory.currentCircuits.ToString();
         PlatesPistol.text = inventory.currentPlates.ToString();
 
-        /*CircuitsArmor.text = inventory.currentCircuits.ToString();
-        PlatesArmor.text = inventory.currentPlates.ToString();*/
-
         Currency.text = "$ " + InventoryManager.Instance.currentCurrency.ToString();
     }
 
     void OnPiecesAdd()
     {
         CurrentShipPieces.text = inventory.shipPieceCount.ToString();
-        ObjectiveManager.Instance.SetCurrentObjective($"Recupera las piezas de tu nave para evacuar la estación. ({inventory.shipPieceCount}/4)");
+        ObjectiveManager.Instance.SetCurrentObjective($"Recupera las piezas de tu nave para evacuar la estación. ({inventory.shipPieceCount}/5)");
 
     }
 

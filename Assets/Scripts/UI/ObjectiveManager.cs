@@ -23,6 +23,7 @@ public class ObjectiveManager : MonoBehaviour
 
     public void SetCurrentObjective(string objective) {
         currentObjective.text  = objective;
+        //Llamar al texto que recuerda que hay nuevos objetivos (evento)
     }
 
     public void SetPrincipalObjective(string objective) {

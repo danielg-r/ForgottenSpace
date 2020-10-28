@@ -20,9 +20,11 @@ public class PlayerLife : MonoBehaviour, IDamageable
 
     WaitForSeconds regenTick = new WaitForSeconds(0.1f);
     Coroutine regen;
+    Animator animator;
 
-    public delegate void OnPlayerDied();
-    public event OnPlayerDied onPlayerDied;
+    public delegate void PlayerEvents();
+    public event PlayerEvents onPlayerRespawned;
+    public event PlayerEvents onPlayerDied;
     [HideInInspector] public bool isDead;
 
     void Awake()
@@ -37,6 +39,13 @@ public class PlayerLife : MonoBehaviour, IDamageable
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.O)) {
+            Die();
+        }
+    }
+
     void Start()
     {
         currentLife = maxLife;
@@ -44,6 +53,7 @@ public class PlayerLife : MonoBehaviour, IDamageable
         staminaBar.value = maxLife;
         vol.profile.TryGet<Vignette>(out vig);
         vig.intensity.value = 0;
+        animator = GetComponent<Animator>();
     }
 
     public void TakeDamage(int amount)
@@ -70,7 +80,8 @@ public class PlayerLife : MonoBehaviour, IDamageable
         if (onPlayerDied != null) {
             isDead = true;
             staminaBar.value = 0;
-            StopCoroutine(regen);
+            StopAllCoroutines();
+            //StopCoroutine(regen);
             if (GetCharacter.Instance.IsMale == true) { AudioManager.Instance.Play("PlayerDeath"); }
             else { AudioManager.Instance.Play("FemaleDeath"); }
             onPlayerDied();
@@ -89,5 +100,17 @@ public class PlayerLife : MonoBehaviour, IDamageable
             yield return regenTick;
         }
         regen = null;
+    }
+
+    public void Respawn() {
+        if (onPlayerRespawned != null) {
+            animator.applyRootMotion = true;
+            animator.SetTrigger("Respawn");
+            isDead = false;
+            staminaBar.value = maxLife;
+            currentLife = maxLife;
+            vig.intensity.value = 0;            
+            onPlayerRespawned();        
+        }
     }
 }
