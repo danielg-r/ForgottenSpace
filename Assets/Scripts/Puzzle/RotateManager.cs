@@ -32,6 +32,7 @@ public class RotateManager : MonoBehaviour
 
     [Header("Imagenes - Completas")]
     public Sprite[] ReferenceImage;
+    public Image ReferenceObjectImage;
 
     [Header("Imagenes - Botones")]
     public Image Image0;
@@ -107,7 +108,7 @@ public class RotateManager : MonoBehaviour
 
     void ChangeImage()
     {
-        int i = Random.Range(0, ReferenceImage.Length);
+        int i = Random.Range(0, Imagenes0.Length);
 
         Image0.sprite = Imagenes0[i];
         Image1.sprite = Imagenes1[i];
@@ -118,6 +119,8 @@ public class RotateManager : MonoBehaviour
         Image6.sprite = Imagenes6[i];
         Image7.sprite = Imagenes7[i];
         Image8.sprite = Imagenes8[i];
+
+        ReferenceObjectImage.sprite = ReferenceImage[i];
     }
 
 
