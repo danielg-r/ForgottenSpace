@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Polygon/PolygonSciFiSpace/Scenes/Resources.meta
 guid: b9e48987831c38946aea01a23a6e338e
+=======
+guid: 0bb2e2c90224cb347b04ad70a0b1800a
+>>>>>>> 09827c2efb8c0f0150ad0b5618b6bf99c93eff6c:Assets/Animations/Avatar.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
