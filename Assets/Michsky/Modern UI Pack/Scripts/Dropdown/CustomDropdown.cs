@@ -306,5 +306,10 @@ namespace Michsky.UI.ModernUIPack
             Item item = new Item();
             dropdownItems.Add(item);
         }
+
+        public void ClearItems()
+        {
+            dropdownItems.Clear();
+        }
     }
 }

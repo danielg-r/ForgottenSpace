@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using Michsky.UI.ModernUIPack;
 
 public class Settings : MonoBehaviour
 {
     [SerializeField] AudioMixer mixer;
-    [SerializeField] Dropdown resolutionDropdown;
+    [SerializeField] CustomDropdown resolutionDropdown;
     float volumeInitial;
     int activeScreenResIndex;
     public Resolution[] resolutions;
@@ -21,12 +22,14 @@ public class Settings : MonoBehaviour
         SetFullscreen(isFullscreenInitial);
 
         resolutions = Screen.resolutions;
-        resolutionDropdown.ClearOptions();
+        //resolutionDropdown.ClearItems();
         foreach (Resolution resolution in resolutions)
         {
-            resolutionDropdown.options.Add(new Dropdown.OptionData(resolution.ToString()));
+            //resolutionDropdown.options.Add(new Dropdown.OptionData(resolution.ToString()));
+            resolutionDropdown.AddNewItem();
+            resolutionDropdown.SetItemTitle(resolution.width.ToString() + "x" + resolution.height.ToString());
         }
-        resolutionDropdown.value = activeScreenResIndex;
+        //resolutionDropdown.value = activeScreenResIndex;
         SetScreenResolution(activeScreenResIndex);
     }
 

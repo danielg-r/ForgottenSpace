@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     float vertical;
     float horizontal;
 
+    bool isAxisInUse;
+
     void Awake()
     {
         if (Instance == null)
@@ -38,12 +40,17 @@ public class PlayerMovement : MonoBehaviour
         vertical = Input.GetAxis("Vertical");
         horizontal = Input.GetAxis("Horizontal");
 
-        if (Input.GetButton("Aim") && CanAim)
+        if (Input.GetAxisRaw("Aim") == 0) isAxisInUse = false;
+        if (Input.GetAxisRaw("Aim") >= 0.5f || Input.GetButton("Aim"))
         {
-            camara.m_Lens.FieldOfView = Aim;
-            anim.SetBool("Aiming", true);
-            anim.SetBool("Running", false);
-            Aiming = true;
+            if (!isAxisInUse && CanAim)
+            {
+                camara.m_Lens.FieldOfView = Aim;
+                anim.SetBool("Aiming", true);
+                anim.SetBool("Running", false);
+                Aiming = true;
+                isAxisInUse = true;
+            }
         }
         else if (Input.GetButton("Run") && CanRun)
         {

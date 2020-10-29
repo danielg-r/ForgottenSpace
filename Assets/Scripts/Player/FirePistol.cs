@@ -16,6 +16,8 @@ namespace SciFiArsenal
         [SerializeField] float AmountEnergy;
         [SerializeField] int damage;
 
+        bool isAxisInUse;
+
         private void Start()
         {
             playerMovement = PlayerMovement.Instance;
@@ -24,20 +26,26 @@ namespace SciFiArsenal
 
         void Update()
         {
+            if (Input.GetAxisRaw("Shoot") == 0) isAxisInUse = false;
             if (playerMovement.Aiming)
             {
-                if (Input.GetButtonDown("Shoot") && CanShoot) // Camera.main.ScreenPointToRay(Input.mousePosition) // spawnPosition.position, spawnPosition.forward, out hit, 100f
+                if (Input.GetAxisRaw("Shoot") >= 0.5f || Input.GetButtonDown("Shoot")) // Camera.main.ScreenPointToRay(Input.mousePosition) // spawnPosition.position, spawnPosition.forward, out hit, 100f
                 {
-                    if (Bar.UseStamina(AmountEnergy))
+
+                    if (!isAxisInUse && CanShoot)
                     {
-                        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100f))
+                        if (Bar.UseStamina(AmountEnergy))
                         {
-                            GameObject projectile = Instantiate(projectil, spawnPosition.position, Quaternion.identity) as GameObject;
-                            projectile.transform.LookAt(hit.point);
-                            projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * speed);
-                            projectile.GetComponent<SciFiProjectileScript>().gameObject.layer = gameObject.layer;
-                            projectile.GetComponent<SciFiProjectileScript>().impactNormal = hit.normal;
-                            projectile.GetComponent<SciFiProjectileScript>().damageAmount = damage;
+                            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100f))
+                            {
+                                isAxisInUse = true;
+                                GameObject projectile = Instantiate(projectil, spawnPosition.position, Quaternion.identity) as GameObject;
+                                projectile.transform.LookAt(hit.point);
+                                projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * speed);
+                                projectile.GetComponent<SciFiProjectileScript>().gameObject.layer = gameObject.layer;
+                                projectile.GetComponent<SciFiProjectileScript>().impactNormal = hit.normal;
+                                projectile.GetComponent<SciFiProjectileScript>().damageAmount = damage;
+                            }
                         } 
                     }
                 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Experimental.GlobalIllumination;
@@ -25,6 +26,16 @@ public class StaminaBar : MonoBehaviour
 
     float RangeInitial = 0.35f;
     [SerializeField] Light Light;
+    [SerializeField] GameObject charger;
+    Material chargerMaterial;
+    Color colour;
+
+    private void OnEnable()
+    {
+        if (regen != null)
+            StopCoroutine(regen);
+        regen = StartCoroutine(regenStamina());
+    }
 
     void Start()
     {
@@ -38,6 +49,11 @@ public class StaminaBar : MonoBehaviour
             canPlay = true;
         }
         else { canPlay = false; }
+        if (canPlay)
+        {
+            chargerMaterial = charger.GetComponent<Renderer>().material;
+            colour = chargerMaterial.GetColor("_EmissionColor");
+        }
     }
 
     void Refill() {
@@ -52,7 +68,12 @@ public class StaminaBar : MonoBehaviour
         {
             currentStamina -= amount;
             staminaBar.value = currentStamina;
-            if (canPlay) Light.range = (currentStamina * RangeInitial) / maxStamina;
+            if (canPlay) 
+            {
+                Light.range = (currentStamina * RangeInitial) / maxStamina;
+                colour = Vector4.one*(currentStamina / maxStamina);
+                chargerMaterial.SetColor("_EmissionColor", colour);
+            }
             if (regen != null)
                 StopCoroutine(regen);
             regen = StartCoroutine(regenStamina());
@@ -81,7 +102,12 @@ public class StaminaBar : MonoBehaviour
         
         while (currentStamina < maxStamina)
         {
-            if (canPlay) Light.range = (currentStamina * RangeInitial) / maxStamina;
+            if (canPlay)
+            {
+                Light.range = (currentStamina * RangeInitial) / maxStamina;
+                colour = Vector4.one*(currentStamina / maxStamina);
+                chargerMaterial.SetColor("_EmissionColor", colour);
+            }
             currentStamina += PlusRegen;           
             staminaBar.value = currentStamina;
             yield return regenTick;

@@ -35,11 +35,11 @@ public class PlayerCameraController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButton("Aim"))
+        if (Input.GetAxisRaw("Aim") > 0 || Input.GetButton("Aim"))
         {
             aimLayer.weight += Time.deltaTime / aimDuration;
         }
-        else
+        else if (Input.GetAxisRaw("Aim") == 0)
         {
             aimLayer.weight -= Time.deltaTime / aimDuration;
         }

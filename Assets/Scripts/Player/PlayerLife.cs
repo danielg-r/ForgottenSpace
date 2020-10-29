@@ -27,6 +27,13 @@ public class PlayerLife : MonoBehaviour, IDamageable
     public event PlayerEvents onPlayerDied;
     [HideInInspector] public bool isDead;
 
+    private void OnEnable()
+    {
+        if (regen != null)
+            StopCoroutine(regen);
+        regen = StartCoroutine(regenLife());
+    }
+
     void Awake()
     {
         if (Instance == null)

@@ -44,7 +44,7 @@ public class ObjectiveManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) ToggleUI();
+        if (Input.GetButtonDown("Objetives")) ToggleUI();
     }
 
     void ToggleUI() {

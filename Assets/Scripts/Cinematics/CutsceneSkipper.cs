@@ -17,7 +17,7 @@ public class CutsceneSkipper : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("CutScene"))
         {
             director.time = director.duration;
         }
