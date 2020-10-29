@@ -84,20 +84,37 @@ public class ConsuManager : MonoBehaviour
             AudioManager.Instance.Play("UseConsumable");
             ComLifeRegen.SetActive(true);
             UseLifeRegen();
+
+            if(ShopManager.Instance.OutInv == false)
+            {
+                ShopManager.Instance.buyButtons[0].interactable = true;
+                ShopManager.Instance.InvLimnit[0].gameObject.SetActive(false);
+            }
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && ConsuStaminaCooldown > 0)
         {//Stamina
             AudioManager.Instance.Play("UseConsumable");
             ComStaminaRegen.SetActive(true);
             UseRunning();
+
+            if (ShopManager.Instance.OutInv == false)
+            {
+                ShopManager.Instance.buyButtons[1].interactable = true;
+                ShopManager.Instance.InvLimnit[1].gameObject.SetActive(false);
+            }
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && ConsumableCooldown > 0)
         {//Disparo
             AudioManager.Instance.Play("UseConsumable");
             ComPistolRegen.SetActive(true);
             UseCooldown();
+            if (ShopManager.Instance.OutInv == false)
+            {
+                ShopManager.Instance.buyButtons[2].interactable = true;
+                ShopManager.Instance.InvLimnit[2].gameObject.SetActive(false);
+            }
         }
-
+        //-----------------------------------
         if (Input.GetAxisRaw("Alpha1") == 0)
         {
             isAxisInUse_1 = false;
@@ -110,6 +127,11 @@ public class ConsuManager : MonoBehaviour
                 ComLifeRegen.SetActive(true);
                 UseLifeRegen();
                 isAxisInUse_1 = true;
+                if (ShopManager.Instance.OutInv == false)
+                {
+                    ShopManager.Instance.buyButtons[0].interactable = true;
+                    ShopManager.Instance.InvLimnit[0].gameObject.SetActive(false);
+                }
             }
         }
 
@@ -125,6 +147,11 @@ public class ConsuManager : MonoBehaviour
                 ComStaminaRegen.SetActive(true);
                 UseRunning();
                 isAxisInUse_2 = true;
+                if (ShopManager.Instance.OutInv == false)
+                {
+                    ShopManager.Instance.buyButtons[1].interactable = true;
+                    ShopManager.Instance.InvLimnit[1].gameObject.SetActive(false);
+                }
             }
         }
         if (Input.GetAxisRaw("Alpha2") < 0)
@@ -135,6 +162,11 @@ public class ConsuManager : MonoBehaviour
                 ComPistolRegen.SetActive(true);
                 UseCooldown();
                 isAxisInUse_2 = true;
+                if (ShopManager.Instance.OutInv == false)
+                {
+                    ShopManager.Instance.buyButtons[2].interactable = true;
+                    ShopManager.Instance.InvLimnit[2].gameObject.SetActive(false);
+                }
             }
         }
     }

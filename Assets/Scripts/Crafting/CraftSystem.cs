@@ -45,7 +45,8 @@ public class CraftSystem : MonoBehaviour
 
 
     [SerializeField] private TextMeshProUGUI buttonText;
-    [SerializeField] public GameObject soldoutImage;
+    [SerializeField] Button craftButton;
+
 
     [Header("MOTOR")]
     [SerializeField] Item motor;
@@ -84,7 +85,8 @@ public class CraftSystem : MonoBehaviour
             ObjectiveManager.Instance.SetCurrentObjective($"Recupera las piezas de tu nave para evacuar la estación. (0/5)", true);
             // Mostrar la ventana de advertencia    
             buttonText.text = "<color=red> AGOTADO </color>";
-            soldoutImage.SetActive(true);
+            craftButton.enabled = false;
+
         }
     }
 
@@ -99,7 +101,7 @@ public class CraftSystem : MonoBehaviour
             CraftedShip = true;
             InventoryManager.Instance.currentCurrency -= ShipValue;
             InventoryManager.Instance.AddItem(motor);
-            InventoryManager.Instance.shipPieceCount = 0;
+            InventoryManager.Instance.shipPieceCount -= 5;
             Ventanita.CloseWindow();
             HideCursor();
             Invoke("ShipCrafted", 1f);
