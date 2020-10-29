@@ -10,6 +10,9 @@ public class ShopManager : MonoBehaviour
     public int EnergyValue;
     public int LifeValue;
 
+    [SerializeField] int CurrUsed;
+    [SerializeField] int CurrLimit;
+
     public bool hasVisitedShop;
 
     ConsuManager consuManager;
@@ -39,7 +42,7 @@ public class ShopManager : MonoBehaviour
 
     public void BuyStamina()
     {
-        if (inventoryManager.currentCurrency >= StaminaValue)
+        if (inventoryManager.currentCurrency >= StaminaValue && consuManager.ConsuStaminaCooldown > 5 && (CurrLimit <= CurrUsed))
         {
             consuManager.RecolectRunning(1);
             currencymanager.UseCurrency(StaminaValue);
@@ -49,17 +52,18 @@ public class ShopManager : MonoBehaviour
 
     public void BuyEnergy()
     {
-        if (inventoryManager.currentCurrency >= EnergyValue)
+        if (inventoryManager.currentCurrency >= EnergyValue && consuManager.ConsumableCooldown > 5  && (CurrLimit <= CurrUsed) )
         {
             consuManager.RecolectCooldown(1);
             currencymanager.UseCurrency(EnergyValue);
             AudioManager.Instance.Play("Click");
+
         }
     }
 
     public void BuyLife()
     {
-        if (inventoryManager.currentCurrency >= LifeValue)
+        if (inventoryManager.currentCurrency >= LifeValue && consuManager.ConsuLifeRegen > 5 && (CurrLimit <= CurrUsed) )
         {
             consuManager.RecolectLifeRegen(1);
             currencymanager.UseCurrency(LifeValue);
@@ -76,6 +80,10 @@ public class ShopManager : MonoBehaviour
     {
         CursorManager.Instance.HideCursor();
     }
+
+
+
+
 
     public void ActiveHotBar()
     {

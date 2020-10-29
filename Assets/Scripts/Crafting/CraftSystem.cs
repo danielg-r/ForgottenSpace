@@ -26,8 +26,9 @@ public class CraftSystem : MonoBehaviour
     #region Ship
     [Header("Ship")]
     public int PiecesToShip = 5; //Valor interno
-    public bool CanCraftShip = true;
+    [SerializeField] ModalWindowManager Ventanita;
     bool CraftedShip = false;
+    [SerializeField] int ShipValue;
     //public GameObject Ship;
     #endregion
 
@@ -91,13 +92,17 @@ public class CraftSystem : MonoBehaviour
 
     public void CraftShip()
     {
-        if (CanCraftShip && CraftedShip == false && (inventoryManager.shipPieceCount == PiecesToShip) && (inventoryManager.currentCurrency >= 25))
+        if (CraftedShip == false && (inventoryManager.shipPieceCount == PiecesToShip) && (inventoryManager.currentCurrency >= ShipValue))
         {                    
             onCurrSpent();
             AudioManager.Instance.Play("Click");
             CraftedShip = true;
+            InventoryManager.Instance.currentCurrency -= ShipValue;
             InventoryManager.Instance.AddItem(motor);
+            InventoryManager.Instance.shipPieceCount = 0;
             onShipCrafted();
+            Ventanita.CloseWindow();
+            HideCursor();
         }
     }
 
