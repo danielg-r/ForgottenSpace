@@ -105,7 +105,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5607107302208670258}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 360, z: 0}
 --- !u!33 &1064783594811861909
 MeshFilter:
@@ -185,7 +185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1250568579765146984
 Transform:
   m_ObjectHideFlags: 0
@@ -199,7 +199,7 @@ Transform:
   m_Children:
   - {fileID: 1244446126555352348}
   m_Father: {fileID: 5607107302208670258}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &1410826935620731182
 ParticleSystem:
@@ -10222,6 +10222,7 @@ MonoBehaviour:
   interactable: {fileID: 5607107302208670259}
   ps: {fileID: 3673156733614929653}
   ps2: {fileID: 5607107302664173222}
+  ps3: {fileID: 1247652340886162252}
   OnPuzzleCompleted:
     m_PersistentCalls:
       m_Calls:
@@ -10331,7 +10332,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 470372694a119cf46827af08600ba922, type: 3}
   - {fileID: 21300000, guid: 5e0464085bdc1eb48956b5559c279836, type: 3}
   - {fileID: 21300000, guid: 49c1e9d2331ff94448f601eab5633856, type: 3}
-  ReferenceObjectImage: {fileID: 1066125088}
   Image0: {fileID: 4448126513523767168}
   Image1: {fileID: 4448126513564856554}
   Image2: {fileID: 4448126513221118179}
@@ -18382,8 +18382,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1250568579765146984}
   - {fileID: 1054562921527183927}
+  - {fileID: 1250568579765146984}
   - {fileID: 5607107302664173223}
   m_Father: {fileID: 4448126512767147193}
   m_RootOrder: 1

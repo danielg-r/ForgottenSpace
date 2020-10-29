@@ -12,6 +12,7 @@ public class RotateManager : MonoBehaviour
     public Interactable interactable;
     public GameObject ps;
     public GameObject ps2;
+    public GameObject ps3;
 
     public static bool youWin;
 
