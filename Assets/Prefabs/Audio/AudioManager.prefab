@@ -226,3 +226,33 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+  - Nombre: UseConsumable
+    pista: {fileID: 8300000, guid: a2623b5af10db3b4fb2ce1a26888989b, type: 3}
+    Vol: 0.5
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: X
+    pista: {fileID: 8300000, guid: fba86a7bf0616d0469ee9331bf863c67, type: 3}
+    Vol: 0.5
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: X
+    pista: {fileID: 8300000, guid: fba86a7bf0616d0469ee9331bf863c67, type: 3}
+    Vol: 0.5
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: X
+    pista: {fileID: 8300000, guid: fba86a7bf0616d0469ee9331bf863c67, type: 3}
+    Vol: 0.5
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Nombre: X
+    pista: {fileID: 8300000, guid: fba86a7bf0616d0469ee9331bf863c67, type: 3}
+    Vol: 0.5
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
