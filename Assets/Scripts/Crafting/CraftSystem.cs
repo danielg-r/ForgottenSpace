@@ -100,10 +100,14 @@ public class CraftSystem : MonoBehaviour
             InventoryManager.Instance.currentCurrency -= ShipValue;
             InventoryManager.Instance.AddItem(motor);
             InventoryManager.Instance.shipPieceCount = 0;
-            onShipCrafted();
             Ventanita.CloseWindow();
             HideCursor();
+            Invoke("ShipCrafted", 1f);
         }
+    }
+
+    void ShipCrafted() {
+        onShipCrafted();
     }
 
     //METODOS PARA EL CURSOR
