@@ -9,8 +9,7 @@ public class FinalSequenceTrigger : MonoBehaviour
     InventoryManager inventory;
     [SerializeField] GameObject shipLights;
     public UnityEvent onAlphaCompleted;
-    [SerializeField] PlayableDirector HangarCinematic; 
-    [SerializeField] PlayableDirector FinalCinematic;
+    [SerializeField] PlayableDirector HangarCinematic;
 
     void Start()
     {
@@ -29,9 +28,9 @@ public class FinalSequenceTrigger : MonoBehaviour
 
     void ShipCrafted() {
         ObjectiveManager.Instance.SetCurrentObjective("Instala el nuevo motor en tu nave", true);
-        shipLights.SetActive(true);
-        HangarCinematic.Play();
         HazardManager.Instance.StopHazards();
         HazardManager.Instance.enabled = false;
+        shipLights.SetActive(true);
+        HangarCinematic.Play();
     }
 }

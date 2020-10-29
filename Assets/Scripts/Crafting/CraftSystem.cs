@@ -96,12 +96,12 @@ public class CraftSystem : MonoBehaviour
     {
         if (CraftedShip == false && (inventoryManager.shipPieceCount == PiecesToShip) && (inventoryManager.currentCurrency >= ShipValue))
         {                    
-            onCurrSpent();
             AudioManager.Instance.Play("Click");
             CraftedShip = true;
             InventoryManager.Instance.currentCurrency -= ShipValue;
             InventoryManager.Instance.AddItem(motor);
             InventoryManager.Instance.shipPieceCount -= 5;
+            onCurrSpent();
             Ventanita.CloseWindow();
             HideCursor();
             Invoke("ShipCrafted", 1f);

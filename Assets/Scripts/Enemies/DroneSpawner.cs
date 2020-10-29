@@ -19,7 +19,7 @@ public class DroneSpawner : MonoBehaviour
 
     public float GetDistance()
     {
-        distanceToPlayer = Vector3.Distance(transform.position, PlayerLife.Instance.transform.position);
+        if (PlayerLife.Instance != null) distanceToPlayer = Vector3.Distance(transform.position, PlayerLife.Instance.transform.position);
         return distanceToPlayer;
     }
 

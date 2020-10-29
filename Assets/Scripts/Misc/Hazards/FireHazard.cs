@@ -10,13 +10,7 @@ public class FireHazard : Hazard
     public override void StartHazard() {
         base.StartHazard();
         fireFX.SetActive(true);
-    }
-
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.H)) {
-            StartHazard();
-        }
-    }
+    }   
 
     public override void HazardFailed() {
         //PlayerLife.Instance.Die();

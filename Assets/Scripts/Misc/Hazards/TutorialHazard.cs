@@ -15,14 +15,19 @@ public class TutorialHazard : MonoBehaviour
     [SerializeField] float eventInterval;
     [SerializeField] float hazardTime;
 
+    void Start()
+    {
+        PlayerLife.Instance.onPlayerDied += StopHazard;
+        PlayerLife.Instance.onPlayerRespawned += RestartHazard;        
+    }
+
     public void StartHazard() {
         //TO-DO: Agregar cualquier sonido o forma de feedback.
         hazardTimer.StartTimer(hazardTime);
         NotificationHandler.Instance.HazardNotification(hazardName, hazardDesc);
         isActive = true;       
         InvokeRepeating("HazardTick", 5f, eventInterval);
-        ObjectiveManager.Instance.SetCurrentObjective("Busca el generador para activar la energía.");
-        PlayerLife.Instance.onPlayerDied += StopHazard;
+        ObjectiveManager.Instance.SetCurrentObjective("Busca el generador para activar la energía.", true);
     }
 
     public void HazardTick() {
@@ -32,9 +37,21 @@ public class TutorialHazard : MonoBehaviour
 
     public void StopHazard() {
         NotificationHandler.Instance.HazardCompleted();
-        isActive = false;
+        isActive = false;        
         CancelInvoke();
         hazardTimer.StopTimer();
-        ObjectiveManager.Instance.SetCurrentObjective("Busca la estación de reparación para construir un arma.");
+        ObjectiveManager.Instance.SetCurrentObjective("Busca la estación de reparación para construir un arma.", true);
     }
+
+    public void EndHazard() {
+        PlayerLife.Instance.onPlayerRespawned -= RestartHazard;
+        StopHazard();
+    }
+
+    void RestartHazard() {
+        CancelInvoke("HazardTick");
+        StartHazard();
+    }
+
+
 }

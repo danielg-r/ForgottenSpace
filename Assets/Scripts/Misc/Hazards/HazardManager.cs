@@ -40,6 +40,7 @@ public class HazardManager : MonoBehaviour
             rt.interactable.enabled = false;
             rt.ps.SetActive(false);
             rt.ps2.SetActive(false);
+            rt.ps3.SetActive(false);
         }
     }
 
@@ -49,6 +50,7 @@ public class HazardManager : MonoBehaviour
             rt.interactable.enabled = true;
             rt.ps.SetActive(true);
             rt.ps2.SetActive(true);
+            rt.ps3.SetActive(true);
         }
     }
 

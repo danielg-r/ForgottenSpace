@@ -33,6 +33,8 @@ public class EnemyController : MonoBehaviour, IDamageable
     bool isAttacking;
     bool playerDetected;
     AudioSource overloadSound;
+
+    public float FollowDistance { get => followDistance; set => followDistance = value; }
     #endregion
 
     public virtual void Start()
@@ -43,6 +45,7 @@ public class EnemyController : MonoBehaviour, IDamageable
         state = EnemyState.Wander;
         lastPosition = transform;       
         currentHealth = maxHealth;
+        playerDetected = false;
         overloadSound = GetComponent<AudioSource>();
     }
 
@@ -60,8 +63,9 @@ public class EnemyController : MonoBehaviour, IDamageable
         {
             default:
             case EnemyState.Wander:
+                if (playerDetected) state = EnemyState.Chase;
                 FindTarget();
-                playerDetected = false;
+                //playerDetected = false;
                 if (!agent.enabled)
                 { 
                     agent.enabled = true;
@@ -73,7 +77,8 @@ public class EnemyController : MonoBehaviour, IDamageable
             case EnemyState.Chase:
                 agent.isStopped = false;
                 if (currentHealth <= 0) state = EnemyState.Dead;
-                animator.SetBool("IsWalking",  true); 
+                animator.SetBool("IsWalking",  true);
+                FindTarget(); 
                 if (!isAttacking && state != EnemyState.Dead) agent.SetDestination(target.position);
                 agent.stoppingDistance = 1.2f;
                 if (distance < attackDistance && !isAttacking) state = EnemyState.Attack;
@@ -229,12 +234,6 @@ public class EnemyController : MonoBehaviour, IDamageable
     {
         if (distance > attackDistance) state = EnemyState.Chase;
     }
-
-    // private void OnDrawGizmosSelected()
-    // {
-    //     Gizmos.color = Color.red;        
-    //     Gizmos.DrawSphere(transform.position, 4);
-    // }
 }
 
 public enum EnemyState { Wander, Chase,Attack, Dead, BackToStart }
