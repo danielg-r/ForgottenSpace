@@ -186,7 +186,7 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Nombre: EnergyRecharge
     pista: {fileID: 8300000, guid: f3480ca92a4619145b937d75e8916618, type: 3}
-    Vol: 0.58
+    Vol: 0.3
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}

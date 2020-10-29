@@ -2067,6 +2067,9 @@ MonoBehaviour:
   onCancel:
     m_PersistentCalls:
       m_Calls: []
+  OnWindowOpen:
+    m_PersistentCalls:
+      m_Calls: []
   sharpAnimations: 0
   useCustomValues: 0
   isOn: 0
@@ -2078,7 +2081,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7050512345463842959}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0

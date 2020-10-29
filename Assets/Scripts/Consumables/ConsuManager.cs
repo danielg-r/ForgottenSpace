@@ -81,16 +81,19 @@ public class ConsuManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1) && ConsuLifeRegen > 0)
         {//Life
+            AudioManager.Instance.Play("UseConsumable");
             ComLifeRegen.SetActive(true);
             UseLifeRegen();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && ConsuStaminaCooldown > 0)
         {//Stamina
+            AudioManager.Instance.Play("UseConsumable");
             ComStaminaRegen.SetActive(true);
             UseRunning();
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && ConsumableCooldown > 0)
         {//Disparo
+            AudioManager.Instance.Play("UseConsumable");
             ComPistolRegen.SetActive(true);
             UseCooldown();
         }
@@ -103,6 +106,7 @@ public class ConsuManager : MonoBehaviour
         {
             if (!isAxisInUse_1 && ConsuLifeRegen > 0)
             {
+                AudioManager.Instance.Play("UseConsumable");
                 ComLifeRegen.SetActive(true);
                 UseLifeRegen();
                 isAxisInUse_1 = true;
@@ -117,6 +121,7 @@ public class ConsuManager : MonoBehaviour
         {
             if (!isAxisInUse_2 && ConsuStaminaCooldown > 0)
             {
+                AudioManager.Instance.Play("UseConsumable");
                 ComStaminaRegen.SetActive(true);
                 UseRunning();
                 isAxisInUse_2 = true;
@@ -126,6 +131,7 @@ public class ConsuManager : MonoBehaviour
         {
             if (!isAxisInUse_2 && ConsumableCooldown > 0)
             {
+                AudioManager.Instance.Play("UseConsumable");
                 ComPistolRegen.SetActive(true);
                 UseCooldown();
                 isAxisInUse_2 = true;
