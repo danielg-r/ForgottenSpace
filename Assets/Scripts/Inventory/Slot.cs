@@ -10,6 +10,7 @@ public class Slot : MonoBehaviour
 
     public Item item;
     public Texture itemIcon;
+    public int loreId;
     //private SpriteRenderer icon;
 
     void Awake()

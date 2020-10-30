@@ -9,5 +9,6 @@ public class Item : MonoBehaviour
     public Texture icon;
     public int type;
     public ModalWindowManager loreWindow;
+    //public int loreId;
     //1 = Lore / 2 = -- / 3 = Pieza nave
 }

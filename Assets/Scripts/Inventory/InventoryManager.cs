@@ -63,7 +63,20 @@ public class InventoryManager : MonoBehaviour
                         {
                             loreSlots[i].GetComponent<Slot>().item = item;
                             loreSlots[i].GetComponent<Slot>().itemIcon = item.icon;
+                            //loreSlots[i].GetComponent<Slot>().loreId = item.loreId;
                             windowArray[i] = item.loreWindow;
+                           
+                            //if (loreSlots[0].GetComponent<Slot>().isEmpty == true)
+                            //{
+                                
+                            //}
+                            //else if (loreSlots[i - 1].GetComponent<Slot>().loreId != item.loreId)
+                            //{
+                            //    loreSlots[i].GetComponent<Slot>().item = item;
+                            //    loreSlots[i].GetComponent<Slot>().itemIcon = item.icon;
+                            //    loreSlots[i].GetComponent<Slot>().loreId = item.loreId;
+                            //    windowArray[i] = item.loreWindow;
+                            //}
                             break;
                         }
                     }

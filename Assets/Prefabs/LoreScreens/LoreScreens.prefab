@@ -24014,6 +24014,7 @@ MonoBehaviour:
   icon: {fileID: 2800000, guid: 7513e2554f4211448a5b36ede0497248, type: 3}
   type: 1
   loreWindow: {fileID: 0}
+  loreId: 7
 --- !u!1 &6674963053379253035
 GameObject:
   m_ObjectHideFlags: 0
@@ -43100,6 +43101,7 @@ MonoBehaviour:
   icon: {fileID: 2800000, guid: 7513e2554f4211448a5b36ede0497248, type: 3}
   type: 1
   loreWindow: {fileID: 0}
+  loreId: 8
 --- !u!1 &6674963053519507011
 GameObject:
   m_ObjectHideFlags: 0
@@ -120383,6 +120385,7 @@ MonoBehaviour:
   icon: {fileID: 2800000, guid: 7513e2554f4211448a5b36ede0497248, type: 3}
   type: 1
   loreWindow: {fileID: 0}
+  loreId: 3
 --- !u!1 &6674963054243155746
 GameObject:
   m_ObjectHideFlags: 0
@@ -130007,6 +130010,7 @@ MonoBehaviour:
   icon: {fileID: 2800000, guid: 7513e2554f4211448a5b36ede0497248, type: 3}
   type: 1
   loreWindow: {fileID: 0}
+  loreId: 1
 --- !u!1 &6674963054488212662
 GameObject:
   m_ObjectHideFlags: 0
@@ -144560,6 +144564,7 @@ MonoBehaviour:
   icon: {fileID: 2800000, guid: 7513e2554f4211448a5b36ede0497248, type: 3}
   type: 1
   loreWindow: {fileID: 0}
+  loreId: 5
 --- !u!1 &6674963054687878652
 GameObject:
   m_ObjectHideFlags: 0
@@ -149381,6 +149386,7 @@ MonoBehaviour:
   icon: {fileID: 2800000, guid: 7513e2554f4211448a5b36ede0497248, type: 3}
   type: 1
   loreWindow: {fileID: 0}
+  loreId: 4
 --- !u!1 &6674963054785695174
 GameObject:
   m_ObjectHideFlags: 0
@@ -154247,6 +154253,7 @@ MonoBehaviour:
   icon: {fileID: 2800000, guid: 7513e2554f4211448a5b36ede0497248, type: 3}
   type: 1
   loreWindow: {fileID: 0}
+  loreId: 6
 --- !u!1 &6674963055063292370
 GameObject:
   m_ObjectHideFlags: 0
@@ -154359,6 +154366,7 @@ MonoBehaviour:
   icon: {fileID: 2800000, guid: 7513e2554f4211448a5b36ede0497248, type: 3}
   type: 1
   loreWindow: {fileID: 0}
+  loreId: 2
 --- !u!1 &6674963055068415620
 GameObject:
   m_ObjectHideFlags: 0
