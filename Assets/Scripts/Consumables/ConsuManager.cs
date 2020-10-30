@@ -119,13 +119,13 @@ public class ConsuManager : MonoBehaviour
         {
             isAxisInUse_1 = false;
         }
-        if (Input.GetAxisRaw("Alpha1") < 0)
+        if (Input.GetAxisRaw("Alpha1") < 0) //botón abajo mando regenerar vida
         {
-            if (!isAxisInUse_1 && ConsuLifeRegen > 0)
+            if (!isAxisInUse_1 && ConsuStaminaCooldown > 0)
             {
                 AudioManager.Instance.Play("UseConsumable");
-                ComLifeRegen.SetActive(true);
-                UseLifeRegen();
+                ComStaminaRegen.SetActive(true);
+                UseRunning();
                 isAxisInUse_1 = true;
                 if (ShopManager.Instance.OutInv == false)
                 {
@@ -139,13 +139,13 @@ public class ConsuManager : MonoBehaviour
         {
             isAxisInUse_2 = false;
         }
-        if (Input.GetAxisRaw("Alpha2") > 0)
+        if (Input.GetAxisRaw("Alpha2") > 0) //botón derecho mando regenerar correr cooldown
         {
-            if (!isAxisInUse_2 && ConsuStaminaCooldown > 0)
+            if (!isAxisInUse_2 && ConsumableCooldown > 0)
             {
                 AudioManager.Instance.Play("UseConsumable");
-                ComStaminaRegen.SetActive(true);
-                UseRunning();
+                ComPistolRegen.SetActive(true);
+                UseCooldown();
                 isAxisInUse_2 = true;
                 if (ShopManager.Instance.OutInv == false)
                 {
@@ -154,13 +154,13 @@ public class ConsuManager : MonoBehaviour
                 }
             }
         }
-        if (Input.GetAxisRaw("Alpha2") < 0)
+        if (Input.GetAxisRaw("Alpha2") < 0) //botón izquierdo mando regenerar energia pistolita
         {
-            if (!isAxisInUse_2 && ConsumableCooldown > 0)
+            if (!isAxisInUse_2 && ConsuLifeRegen > 0)
             {
                 AudioManager.Instance.Play("UseConsumable");
-                ComPistolRegen.SetActive(true);
-                UseCooldown();
+                ComLifeRegen.SetActive(true);
+                UseLifeRegen();
                 isAxisInUse_2 = true;
                 if (ShopManager.Instance.OutInv == false)
                 {
