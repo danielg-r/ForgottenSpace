@@ -30,5 +30,6 @@ CRÉDITOS
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
-DRIVE CON LOS ARCHIVOS + EJECUTABLE
-https://drive.google.com/drive/folders/1b6nwW98T8DzbYgSNYP7wxu4kVksBdQmk?usp=sharing
+
+CARPETA CON VERSIONES ESTABLES DEL JUEGO + CAMBIOS EN CADA VERSIÓN
+https://drive.google.com/drive/folders/1n1oOJL2efj-WgwC8xsa8qjQngiSGPT8V?usp=sharing
