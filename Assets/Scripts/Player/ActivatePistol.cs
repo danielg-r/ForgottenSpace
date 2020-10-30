@@ -33,11 +33,6 @@ public class ActivatePistol : MonoBehaviour
         Deactivate();
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F)) Activate();
-    }
-
     public void Activate()
     {
         if (GetCharacter.Instance.IsMale)

@@ -29,9 +29,9 @@ namespace SciFiArsenal
             if (Input.GetAxisRaw("Shoot") == 0) isAxisInUse = false;
             if (playerMovement.Aiming)
             {
+                Cursor.lockState = CursorLockMode.Locked;   
                 if (Input.GetAxisRaw("Shoot") >= 0.5f || Input.GetButtonDown("Shoot")) // Camera.main.ScreenPointToRay(Input.mousePosition) // spawnPosition.position, spawnPosition.forward, out hit, 100f
                 {
-
                     if (!isAxisInUse && CanShoot)
                     {
                         if (Bar.UseStamina(AmountEnergy))
@@ -50,8 +50,8 @@ namespace SciFiArsenal
                     }
                 }
             }
+            if (!PlayerLife.Instance.isDead) Debug.DrawRay(Camera.main.ScreenPointToRay(Input.mousePosition).origin, Camera.main.ScreenPointToRay(Input.mousePosition).direction * 100, Color.yellow);
 
-            Debug.DrawRay(Camera.main.ScreenPointToRay(Input.mousePosition).origin, Camera.main.ScreenPointToRay(Input.mousePosition).direction * 100, Color.yellow);
         }
 
         public void NoEnergy()

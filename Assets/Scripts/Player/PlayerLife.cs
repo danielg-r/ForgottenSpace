@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
+using SciFiArsenal;
 
 public class PlayerLife : MonoBehaviour, IDamageable
 {
@@ -21,6 +22,8 @@ public class PlayerLife : MonoBehaviour, IDamageable
     WaitForSeconds regenTick = new WaitForSeconds(0.1f);
     Coroutine regen;
     Animator animator;
+    FirePistol firePistol;
+    
 
     public delegate void PlayerEvents();
     public event PlayerEvents onPlayerRespawned;
@@ -46,13 +49,6 @@ public class PlayerLife : MonoBehaviour, IDamageable
         }
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.O)) {
-            Die();
-        }
-    }
-
     void Start()
     {
         currentLife = maxLife;
@@ -61,6 +57,7 @@ public class PlayerLife : MonoBehaviour, IDamageable
         vol.profile.TryGet<Vignette>(out vig);
         vig.intensity.value = 0;
         animator = GetComponent<Animator>();
+        firePistol = GetComponent<FirePistol>();
     }
 
     public void TakeDamage(int amount)

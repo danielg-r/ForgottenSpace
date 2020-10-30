@@ -32,12 +32,6 @@ public class HangarHazard : MonoBehaviour
         ObjectiveManager.Instance.SetCurrentObjective("Sobrevive mientras carga la energía del motor.", true);
     }
 
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.H)) {
-            StartHazard();
-        }
-    }
-
     public void StopHazard() {
         spawners.SetActive(false);
         NotificationHandler.Instance.HazardCompleted();
