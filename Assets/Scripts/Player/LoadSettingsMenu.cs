@@ -36,7 +36,7 @@ public class LoadSettingsMenu : MonoBehaviour
         {
             //SetScreenResolution(activeScreenResIndex);
             Resolution[] allResolutions = Screen.resolutions;
-            Resolution maxResolution = allResolutions[allResolutions.Length - 2];
+            Resolution maxResolution = allResolutions[allResolutions.Length - 3];
             Screen.SetResolution(maxResolution.width, maxResolution.height, false);
         }
     }

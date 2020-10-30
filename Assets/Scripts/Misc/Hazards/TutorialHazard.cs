@@ -22,7 +22,7 @@ public class TutorialHazard : MonoBehaviour
     }
 
     public void StartHazard() {
-        //TO-DO: Agregar cualquier sonido o forma de feedback.
+        MusicManager.Instance.PlaySong();
         hazardTimer.StartTimer(hazardTime);
         NotificationHandler.Instance.HazardNotification(hazardName, hazardDesc);
         isActive = true;       
@@ -36,6 +36,7 @@ public class TutorialHazard : MonoBehaviour
     }
 
     public void StopHazard() {
+        MusicManager.Instance.StopSong();
         NotificationHandler.Instance.HazardCompleted();
         isActive = false;        
         CancelInvoke();
