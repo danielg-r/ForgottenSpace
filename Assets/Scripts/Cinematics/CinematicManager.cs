@@ -40,7 +40,7 @@ public class CinematicManager : MonoBehaviour
     public void BackToMenu()
     {
         SceneManager.LoadScene(0);
-        CursorManager.Instance.ShowCursor();
+        CursorManager.Instance.ShowCursorUnscaled();
     }
 
     public void ShowCursor()

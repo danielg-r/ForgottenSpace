@@ -34,6 +34,7 @@ public class HangarHazard : MonoBehaviour
 
     public void StopHazard() {
         spawners.SetActive(false);
+        MusicManager.Instance.StopSong();
         NotificationHandler.Instance.HazardCompleted();
         isActive = false;
         hazardTimer.StopTimer();
@@ -42,6 +43,7 @@ public class HangarHazard : MonoBehaviour
     public void EndHazard() {
         StopHazard();
         FinalCinematic.Play();
+        PlayerLife.Instance.gameObject.SetActive(false);
     }
 
     void RestartHazard() {

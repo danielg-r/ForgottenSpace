@@ -50,7 +50,7 @@ public class HangarSpawner : MonoBehaviour
             enemy.GetComponentInChildren<EnemyController>().state = EnemyState.Chase;
             enemy.GetComponentInChildren<EnemyController>().PlayerDetected();
         } else if (random == 0) {
-
+            enemy.GetComponentInChildren<NavMeshAgent>().SetDestination(PlayerLife.Instance.transform.position); 
         }
     }
 
