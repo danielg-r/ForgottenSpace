@@ -10,9 +10,9 @@ using JetBrains.Annotations;
 using Michsky.UI.ModernUIPack;
 using UnityEngine.Events;
 
-public class UIDeathControl : MonoBehaviour
+public class UIPlayerControl : MonoBehaviour
 {
-    private static UIDeathControl instance;
+    private static UIPlayerControl instance;
 
     [Header("Death")]
     [SerializeField] TextMeshProUGUI label;
@@ -29,7 +29,6 @@ public class UIDeathControl : MonoBehaviour
     [Header("Pausa")]
     public bool IsPaused;
     public GameObject PauseMenu;
-    public GameObject InstrucPanel;
     private bool IsAlive = true;
 
     [Header("Status Text")]
@@ -39,7 +38,7 @@ public class UIDeathControl : MonoBehaviour
 
     public ModalWindowManager Instrucciones;
 
-    public static UIDeathControl Instance { get => instance; }
+    public static UIPlayerControl Instance { get => instance; }
 
     void Awake()
     {
@@ -115,19 +114,8 @@ public class UIDeathControl : MonoBehaviour
                 label.text = "PAUSA";
                 Pause();                
                 if (!IsPaused) CursorManager.Instance.HideCursor();
-
             }
         }
-    }
-
-    public void ActivateInstruc()
-    {
-        
-    }
-
-    public void CloseInstruc()
-    {
-        InstrucPanel.SetActive(false);
     }
 
     public void Pause()

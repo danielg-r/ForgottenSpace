@@ -12,7 +12,7 @@ public class CinematicManager : MonoBehaviour
     {
         PlayerMovement.Instance.enabled = false;
         PlayerMovement.Instance.GetComponent<Animator>().enabled = false;
-        UIDeathControl.Instance.enabled = false;
+        UIPlayerControl.Instance.enabled = false;
         Inventory.Instance.enabled = false;
         //Time.timeScale = 0f;
     }
@@ -21,7 +21,7 @@ public class CinematicManager : MonoBehaviour
     {
         PlayerMovement.Instance.enabled = true;
         PlayerMovement.Instance.GetComponent<Animator>().enabled = true;
-        UIDeathControl.Instance.enabled = true;
+        UIPlayerControl.Instance.enabled = true;
         Inventory.Instance.enabled = true;
         //Time.timeScale = 1f;
     }

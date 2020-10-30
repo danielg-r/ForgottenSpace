@@ -16,7 +16,7 @@ public class ZoneTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (!UIDeathControl.Instance.showingText) UIDeathControl.Instance.SetStatusText(myText);
+            if (!UIPlayerControl.Instance.showingText) UIPlayerControl.Instance.SetStatusText(myText);
         }
     }
 }

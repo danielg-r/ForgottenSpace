@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetButtonDown("Inventory"))
         {
-            if ( (UIDeathControl.Instance.IsPaused == false) && (UIDeathControl.Instance.isActiveAndEnabled == true) )
+            if ( (UIPlayerControl.Instance.IsPaused == false) && (UIPlayerControl.Instance.isActiveAndEnabled == true) )
             {
                 isOpen = !isOpen;
                 OpenInventory();                

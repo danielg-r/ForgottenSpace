@@ -23,6 +23,6 @@ public class LoadingScreenEvent : MonoBehaviour
 
     void EnablePauseSystem()
     {
-        UIDeathControl.Instance.enabled = true;
+        UIPlayerControl.Instance.enabled = true;
     }
 }
