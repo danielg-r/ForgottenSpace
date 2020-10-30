@@ -46,6 +46,7 @@ public class TutorialHazard : MonoBehaviour
 
     public void EndHazard() {
         PlayerLife.Instance.onPlayerRespawned -= RestartHazard;
+        PlayerLife.Instance.onPlayerDied -= StopHazard;
         StopHazard();
     }
 

@@ -64,7 +64,7 @@ public class StaminaBar : MonoBehaviour
 
     public bool UseStamina(float amount)
     {
-        if(currentStamina - amount >= 0)
+        if(currentStamina - amount >= 0 && !PlayerLife.Instance.isDead)
         {
             currentStamina -= amount;
             staminaBar.value = currentStamina;

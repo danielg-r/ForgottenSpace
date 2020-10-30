@@ -23,7 +23,7 @@ public class ObjectiveManager : MonoBehaviour
     }
 
     public void SetCurrentObjective(string objective) {
-             currentObjective.text = objective;
+        currentObjective.text = objective;
     }
 
     public void SetCurrentObjective(string objective, bool newObjective) {
