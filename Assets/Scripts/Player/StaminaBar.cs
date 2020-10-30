@@ -40,6 +40,7 @@ public class StaminaBar : MonoBehaviour
     void Start()
     {
         PlayerLife.Instance.onPlayerRespawned += Refill;
+        PlayerLife.Instance.onPlayerRespawned += CanUse.Invoke;
         currentStamina = maxStamina;
         staminaBar.maxValue = maxStamina;
         staminaBar.value = maxStamina;
