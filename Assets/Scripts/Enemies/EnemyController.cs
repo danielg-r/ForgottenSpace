@@ -105,7 +105,6 @@ public class EnemyController : MonoBehaviour, IDamageable
                 animator.SetBool("Attack", true);
                 if (PlayerLife.Instance.isDead)
                 {
-                    this.enabled = false;
                     state = EnemyState.BackToStart;
                 }
                 state = EnemyState.Chase;                 

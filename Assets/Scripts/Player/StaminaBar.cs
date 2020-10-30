@@ -64,7 +64,7 @@ public class StaminaBar : MonoBehaviour
 
     public bool UseStamina(float amount)
     {
-        if(currentStamina - amount >= 0 && !PlayerLife.Instance.isDead)
+        if(currentStamina - amount >= 0)
         {
             currentStamina -= amount;
             staminaBar.value = currentStamina;
@@ -76,7 +76,7 @@ public class StaminaBar : MonoBehaviour
             }
             if (regen != null)
                 StopCoroutine(regen);
-            regen = StartCoroutine(regenStamina());
+            if(!PlayerLife.Instance.isDead) regen = StartCoroutine(regenStamina());
 
             return true;
         }
