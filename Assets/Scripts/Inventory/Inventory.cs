@@ -11,18 +11,20 @@ public class Inventory : MonoBehaviour
     [SerializeField] Image inventory;
     //[SerializeField] GameObject invCamera; ==> Dejar aquí en caso de querer hacer transición más tarde :)
     public bool isOpen;
+    public bool canClose;
     //public bool Opened = false;
 
     public static Inventory Instance { get => instance; }
 
     void Awake()
     {
+        canClose = true;
         if (Instance == null) instance = this;
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Inventory"))
+        if (Input.GetButtonDown("Inventory") && canClose == true)
         {
             if ( (UIPlayerControl.Instance.IsPaused == false) && (UIPlayerControl.Instance.isActiveAndEnabled == true) )
             {

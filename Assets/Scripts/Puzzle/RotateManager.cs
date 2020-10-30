@@ -33,6 +33,7 @@ public class RotateManager : MonoBehaviour
 
     [Header("Imagenes - Completas")]
     public Sprite[] ReferenceImage;
+    public Image ImageReference;
 
     [Header("Imagenes - Botones")]
     public Image Image0;
@@ -100,8 +101,7 @@ public class RotateManager : MonoBehaviour
                     value = 0f;
                     break;
             }
-            pictures[i].rotation = Quaternion.Euler(0f, 0f, value);
-            
+            pictures[i].rotation = Quaternion.Euler(0f, 0f, value);            
         }
 
     }
@@ -109,7 +109,6 @@ public class RotateManager : MonoBehaviour
     void ChangeImage()
     {
         int i = Random.Range(0, ReferenceImage.Length);
-
         Image0.sprite = Imagenes0[i];
         Image1.sprite = Imagenes1[i];
         Image2.sprite = Imagenes2[i];
@@ -119,6 +118,7 @@ public class RotateManager : MonoBehaviour
         Image6.sprite = Imagenes6[i];
         Image7.sprite = Imagenes7[i];
         Image8.sprite = Imagenes8[i];
+        ImageReference.sprite = ReferenceImage[i];
     }
 
 

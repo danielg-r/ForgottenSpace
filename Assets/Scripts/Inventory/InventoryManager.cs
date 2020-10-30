@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Michsky.UI.ModernUIPack;
 
 
 public class InventoryManager : MonoBehaviour
@@ -12,10 +13,11 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] GameObject loreSlotHolder;
     Currency curr;
 
-    private int freeLoreSlots;
+    public int freeLoreSlots;
     private int freeShipSlots;
     private Transform[] shipSlots;
-    private Transform[] loreSlots;
+    public Transform[] loreSlots;
+    public ModalWindowManager[] windowArray;
     public int currentCurrency;
     public int shipPieceCount;
     public int currentCircuits;
@@ -43,6 +45,7 @@ public class InventoryManager : MonoBehaviour
         freeShipSlots = shipSlotHolder.transform.childCount;
         loreSlots = new Transform[freeLoreSlots];
         shipSlots = new Transform[freeShipSlots];
+        windowArray = new ModalWindowManager[9];
         DetectSlots();
         curr = GetComponent<Currency>();
     }
@@ -60,6 +63,7 @@ public class InventoryManager : MonoBehaviour
                         {
                             loreSlots[i].GetComponent<Slot>().item = item;
                             loreSlots[i].GetComponent<Slot>().itemIcon = item.icon;
+                            windowArray[i] = item.loreWindow;
                             break;
                         }
                     }
