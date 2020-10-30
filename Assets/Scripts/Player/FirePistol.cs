@@ -29,7 +29,7 @@ namespace SciFiArsenal
             if (Input.GetAxisRaw("Shoot") == 0) isAxisInUse = false;
             if (playerMovement.Aiming)
             {
-                Cursor.lockState = CursorLockMode.Locked;   
+                if (!PlayerLife.Instance.isDead) Cursor.lockState = CursorLockMode.Locked;   
                 if (Input.GetAxisRaw("Shoot") >= 0.5f || Input.GetButtonDown("Shoot")) // Camera.main.ScreenPointToRay(Input.mousePosition) // spawnPosition.position, spawnPosition.forward, out hit, 100f
                 {
                     if (!isAxisInUse && CanShoot)
